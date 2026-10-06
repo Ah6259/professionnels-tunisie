@@ -331,8 +331,11 @@ const VIR = PRO.virement || {};
 const metierChoix = C.metiers.length > 1 ? `<label for="p-metier">${bi("Métier", "المهنة")}</label>
       <select id="p-metier" name="metier">${C.metiers.map(m => `<option value="${esc(m.fr)}" data-ar="${esc(m.ar)}">${esc(m.fr)}</option>`).join("")}</select>` : `<input type="hidden" name="metier" value="${esc(C.metiers[0].fr)}">`;
 // modes de paiement (règle d'Ahmed du 06/10/2026 : visibles d'un clic sur « Paiement », avant l'inscription)
+// preuve de paiement envoyée par WhatsApp (config.pro.whatsapp_preuve), sans attendre un e-mail
+const WAP = PRO.whatsapp_preuve ? String(PRO.whatsapp_preuve).replace(/\D/g, "") : "";
+const lienPreuve = () => WAP ? `<a class="btn vert" href="https://wa.me/216${WAP}?text=${encodeURIComponent("Bonjour, voici la preuve de paiement de la formule Pro pour : ")}" rel="noopener">${svg("wa")}${bi("Envoyer la preuve de paiement par WhatsApp", "أرسل إثبات الدفع عبر واتساب")}</a>` : "";
 const listePaiements = () => `<dl class="infos rib">
-        <dt>${bi("Virement bancaire", "تحويل بنكي")}</dt><dd>${VIR.rib ? `${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}<br>RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi>` : bi("coordonnées bancaires communiquées à l'ouverture des inscriptions", "تُبلَّغ المعطيات البنكية عند فتح التسجيل")}</dd>
+        ${VIR.rib ? `<dt>${bi("Virement bancaire", "تحويل بنكي")}</dt><dd>${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}<br>RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi></dd>` : ""}
         ${(PRO.autres_paiements || []).map(p => `<dt>${esc(p.nom)}</dt><dd><bdi dir="ltr">${esc(p.detail)}</bdi></dd>`).join("\n        ")}
         <dt>${bi("Montant", "المبلغ")}</dt><dd>${prixTexte()}</dd>
         <dt>${bi("Motif", "سبب الدفع")}</dt><dd>${bi("le nom de votre établissement", "اسم مؤسستك")}</dd>
@@ -359,10 +362,11 @@ const offres = `<section class="offres" id="offres">
         <li>${bi("Le nombre de clients qui vous ont appelé ou écrit depuis le site", "عدد الحرفاء الذين اتصلوا بك أو راسلوك عبر الموقع")}</li>
         <li><strong>${bi("Sans engagement au-delà d'un an", "دون التزام بعد السنة")}</strong></li>
       </ul>
-      <p class="petit">${bi(`Le 1er mois est gratuit. Ensuite, paiement par virement bancaire ou autre moyen indiqué. Pas de renouvellement automatique : sans paiement, votre fiche redevient gratuite, elle n'est jamais supprimée.`, `الشهر الأول مجاني. بعده، الدفع بتحويل بنكي أو وسيلة أخرى مذكورة. لا تجديد آلي: دون دفع تعود بطاقتك مجانية ولا تُحذف أبدًا.`)}</p>
+      <p class="petit">${bi(`Le 1er mois est gratuit. Ensuite, paiement par l'un des moyens indiqués (bouton « Paiement »). Pas de renouvellement automatique : sans paiement, votre fiche redevient gratuite, elle n'est jamais supprimée.`, `الشهر الأول مجاني. بعده، الدفع بإحدى الوسائل المذكورة (زر « الدفع »). لا تجديد آلي: دون دفع تعود بطاقتك مجانية ولا تُحذف أبدًا.`)}</p>
       <details class="paiement" id="paiement"><summary class="btn clair">${bi("Paiement : voir les modes de paiement", "الدفع: طرق الدفع")}</summary>
       ${listePaiements()}
-      <p class="petit">${bi("Le paiement se fait seulement après le mois gratuit. Envoyez la preuve en réponse à l'e-mail de confirmation ; une facture vous est adressée.", "يتم الدفع فقط بعد الشهر المجاني. أرسل الإثبات ردًّا على بريد التأكيد؛ تُرسل إليك فاتورة.")}</p>
+      ${lienPreuve()}
+      <p class="petit">${bi("Le paiement se fait seulement après le mois gratuit. Envoyez ensuite la preuve du paiement par WhatsApp ; une facture vous est adressée.", "يتم الدفع فقط بعد الشهر المجاني. أرسل بعد ذلك إثبات الدفع عبر واتساب؛ تُرسل إليك فاتورة.")}</p>
       </details>
       ${OUVERT ? `<a class="btn" href="#pro">${bi("Je m'inscris : 1er mois gratuit", "أسجّل: الشهر الأول مجاني")}</a>` : `<p class="petit"><strong>${bi("Inscriptions Pro : ouverture prochaine.", "تسجيل Pro: يُفتح قريبًا.")}</strong></p>`}
     </div>
@@ -404,7 +408,8 @@ const formPro = `<section class="carte" id="pro">
       <p>${bi("Nous vérifions votre établissement puis publions votre fiche, en général sous 48 heures. Pour la formule Pro, votre mois gratuit commence à la mise en ligne.", "نتثبت من مؤسستك ثم ننشر بطاقتك، عادة في غضون 48 ساعة. بالنسبة لصيغة Pro، يبدأ شهرك المجاني عند النشر.")}</p>
       <p>${bi(`Pour continuer la formule Pro après le mois gratuit (`, `لمواصلة صيغة Pro بعد الشهر المجاني (`)}${prixTexte()}${bi(`), payez par le moyen de votre choix, avec pour motif le nom de votre établissement :`, `)، ادفع بالوسيلة التي تختارها، مع ذكر اسم مؤسستك كسبب للدفع:`)}</p>
       ${listePaiements()}
-      <p>${bi("Envoyez ensuite la preuve du paiement en réponse à l'e-mail de confirmation. Une facture vous est adressée.", "أرسل بعد ذلك إثبات الدفع ردًّا على بريد التأكيد. تُرسل إليك فاتورة.")}</p>
+      ${lienPreuve()}
+      <p>${bi("Après le mois gratuit, envoyez la preuve du paiement par WhatsApp. Une facture vous est adressée.", "بعد الشهر المجاني، أرسل إثبات الدفع عبر واتساب. تُرسل إليك فاتورة.")}</p>
     </div>
   </section>`;
 
@@ -456,7 +461,7 @@ pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formul
           ${C.specialites.map(s => `<label class="case"><input type="checkbox" name="specialites" value="${esc(s.fr)}"> ${biO(s)}</label>`).join("")}</fieldset>`
         : `<label for="d-spec">${bi("Spécialités (facultatif, jusqu'à 5)", "الاختصاصات (اختياري، حتى 5)")}</label><input id="d-spec" name="specialites" maxlength="200">`}
         <label class="case"><input type="checkbox" name="autorise" value="oui" required> ${bi("Je suis le responsable de cet établissement, ou j'ai son autorisation.", "أنا المسؤول عن هذه المؤسسة أو لديّ ترخيص منه.")}</label>
-        <p class="petit">${bi("Photo ou logo : envoyez-le en réponse à l'e-mail de confirmation.", "الصورة أو الشعار: أرسله ردًّا على بريد التأكيد.")}</p>
+        <p class="petit">${bi(`Photo ou logo : envoyez-le par WhatsApp${WAP ? " au " + WAP.replace(/(\d{2})(\d{3})(\d{3})/, "$1 $2 $3") : ""}.`, `الصورة أو الشعار: أرسله عبر واتساب${WAP ? " على " + WAP : ""}.`)}</p>
       </fieldset>
       <fieldset class="champs-autre" id="champs-autre" disabled hidden>
         <label for="d-message">${bi("Votre demande en quelques mots (ce qu'il faut corriger, ou la raison du retrait)", "طلبك في بضع كلمات (ما يجب تصحيحه أو سبب الحذف)")}</label>
@@ -482,6 +487,7 @@ pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formul
       </ul>
       <p><strong>${bi("Modes de paiement (après le mois gratuit) :", "طرق الدفع (بعد الشهر المجاني):")}</strong></p>
       ${listePaiements()}
+      ${lienPreuve()}
       ${OUVERT ? `<a class="btn btn-pro" href="#pro">${bi("Passer à la formule Pro : 1er mois gratuit", "المرور إلى صيغة Pro: الشهر الأول مجاني")}</a>` : `<p class="petit">${bi("Inscriptions Pro : ouverture prochaine, nous vous préviendrons.", "تسجيل Pro: يُفتح قريبًا وسنعلمك.")}</p>`}
     </div>
   </section>
@@ -508,13 +514,13 @@ if (OUVERT) pages["conditions/"] = tete({ titre: `Conditions pour les profession
 <section class="hero"><div class="wrap">${fil("../", `<a href="../inscription/">${bi("Professionnels", "المهنيون")}</a>`)}<h1>${bi("Conditions pour les professionnels", "شروط المهنيين")}</h1></div></section>
 <main class="wrap"><section class="carte texte">
   <h2>${bi("1. Qui vend", "1. البائع")}</h2>
-  <p>${bi(`${esc(VIR.titulaire || "")}${PRO.vendeur ? ", " + esc(PRO.vendeur) : ""}, éditeur de ${esc(C.nom.fr)}.`, `${esc(VIR.titulaire || "")}${PRO.vendeur ? "، " + esc(PRO.vendeur) : ""}، ناشر ${esc(C.nom.ar)}.`)}</p>
+  <p>${bi(`${esc(PRO.vendeur || VIR.titulaire || "L'éditeur du site")}, éditeur de ${esc(C.nom.fr)}${WAP ? ` (WhatsApp <bdi dir="ltr">${WAP}</bdi>)` : ""}.`, `${esc(PRO.vendeur || VIR.titulaire || "ناشر الموقع")}، ناشر ${esc(C.nom.ar)}.`)}</p>
   <h2>${bi("2. Fiche gratuite", "2. البطاقة المجانية")}</h2>
   <p>${bi("La fiche de base (nom, adresse, téléphone, itinéraire) est gratuite, sans limite de durée. L'établissement peut la vérifier, la corriger ou la faire retirer à tout moment, gratuitement.", "البطاقة الأساسية (الاسم، العنوان، الهاتف، الطريق) مجانية دون حدّ زمني. يمكن للمؤسسة توثيقها أو تصحيحها أو طلب حذفها في أي وقت مجانًا.")}</p>
   <h2>${bi("3. Formule Pro", "3. صيغة Pro")}</h2>
   <p>${bi(`Prix : `, `السعر: `)}${prixTexte()}${bi(`, pour 12 mois. Le ${PRO.mois_gratuits === 1 ? "1er mois est gratuit" : PRO.mois_gratuits + " premiers mois sont gratuits"} et commence à la mise en ligne de la fiche Pro. La formule Pro affiche la fiche en tête de son gouvernorat avec la mention « Pro », une présentation, des spécialités, un bouton WhatsApp et le nombre de contacts reçus depuis le site.`, `، لمدة 12 شهرًا. ${PRO.mois_gratuits === 1 ? "الشهر الأول مجاني" : "الأشهر الأولى مجانية"} ويبدأ عند نشر بطاقة Pro. تُظهر صيغة Pro البطاقة في أعلى ولايتها مع إشارة « Pro »، وتقديمًا واختصاصات وزر واتساب وعدد الاتصالات الواردة عبر الموقع.`)}</p>
   <h2>${bi("4. Paiement et renouvellement", "4. الدفع والتجديد")}</h2>
-  <p>${bi("Paiement par virement bancaire (ou autre moyen indiqué à l'inscription), après le mois gratuit. Une facture est envoyée. Sans engagement au-delà d'un an : il n'y a aucun renouvellement automatique, nous vous prévenons avant la fin ; sans nouveau paiement, la fiche redevient simplement gratuite, sans être supprimée.", "الدفع بتحويل بنكي (أو وسيلة أخرى مذكورة عند التسجيل) بعد الشهر المجاني. تُرسل فاتورة. دون التزام بعد السنة: لا يوجد أي تجديد آلي، نعلمك قبل النهاية؛ ودون دفع جديد تعود البطاقة مجانية ببساطة دون حذف.")}</p>
+  <p>${bi("Paiement par l'un des moyens indiqués sur la page Professionnels, après le mois gratuit. Une facture est envoyée. Sans engagement au-delà d'un an : il n'y a aucun renouvellement automatique, nous vous prévenons avant la fin ; sans nouveau paiement, la fiche redevient simplement gratuite, sans être supprimée.", "الدفع بإحدى الوسائل المذكورة في صفحة المهنيين بعد الشهر المجاني. تُرسل فاتورة. دون التزام بعد السنة: لا يوجد أي تجديد آلي، نعلمك قبل النهاية؛ ودون دفع جديد تعود البطاقة مجانية ببساطة دون حذف.")}</p>
   <h2>${bi("5. Ce que nous ne promettons pas", "5. ما لا نعد به")}</h2>
   <p>${bi("Nous ne garantissons pas un nombre de clients. Nous ne classons pas les professionnels et n'écrivons jamais qu'un établissement est « le meilleur ». Les professions réglementées restent responsables du respect des règles de leur ordre ; nous pouvons refuser ou modifier un texte qui ne les respecte pas.", "لا نضمن عددًا من الحرفاء. لا نرتّب المهنيين ولا نكتب أبدًا أن مؤسسة هي « الأفضل ». تبقى المهن المنظمة مسؤولة عن احترام قواعد هيئتها؛ ويمكننا رفض أو تعديل نص لا يحترمها.")}</p>
   <h2>${bi("6. Données personnelles", "6. المعطيات الشخصية")}</h2>

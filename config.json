@@ -490,10 +490,26 @@
       "url": "https://ah6259.github.io/mariage-tunisie/"
     }
   ],
-  "inscriptions_ouvertes": false,
+  "inscriptions_ouvertes": true,
   "pro": {
     "prix_premiere_annee": 29,
-    "prix_an": 59
+    "prix_an": 59,
+    "inpdp_accord": "Accord de l'INPDP obtenu par Ahmed le 06/10/2026 (contact direct)",
+    "autres_paiements": [
+      {
+        "nom": "D17",
+        "detail": "24 321 390"
+      },
+      {
+        "nom": "IZI",
+        "detail": "24 321 390"
+      },
+      {
+        "nom": "Wafacash",
+        "detail": "24 321 390"
+      }
+    ],
+    "whatsapp_preuve": "24321390"
   },
   "goatcounter": "https://prix-eaux-tunisie.goatcounter.com",
   "formspree": "https://formspree.io/f/mwlpakqj",

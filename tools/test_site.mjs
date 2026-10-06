@@ -167,7 +167,7 @@ else {
     fd.dispatchEvent(new v.w.Event("submit", { bubbles: true, cancelable: true }));
     await new Promise(r => setTimeout(r, 50));
     const ap = v.d.getElementById("apres-ajout");
-    check("ajout gratuit envoyé : l'offre Pro (prix, avantages, sans engagement) et les modes de paiement s'affichent aussitôt", !!ap && !ap.hidden && /Virement bancaire/.test(ap.textContent) && /sans engagement/.test(ap.textContent));
+    check("ajout gratuit envoyé : l'offre Pro (prix, avantages, sans engagement) et les modes de paiement s'affichent aussitôt", !!ap && !ap.hidden && /(Virement bancaire|D17|IZI|Wafacash)/.test(ap.textContent) && /sans engagement/.test(ap.textContent));
   }
   check("retrait : seul le message court est demandé (formulaire complet désactivé)", ins.d.getElementById("champs-ajout").disabled && !ins.d.getElementById("champs-autre").disabled);
   const aj = await ouvrir("inscription/index.html");
@@ -180,11 +180,11 @@ else {
 {
   const ins = lire("inscription/index.html");
   check("bouton « Inscription Pro » visible dans l'en-tête de chaque page, vers les prix et avantages", /class="entete-pro" href="\$\{racine\}inscription\/#offres"/.test(lire("assets/page.js")) && lire("index.html").includes('href="inscription/#offres"') && /class="appel-pro"><a class="btn btn-pro" href="inscription\/#offres"/.test(lire("index.html")));
-  check("bouton « Paiement » : modes de paiement visibles d'un clic avant l'inscription (virement + montant)", /<details class="paiement" id="paiement"><summary[^>]*>[\s\S]*Paiement[\s\S]*Virement bancaire[\s\S]*Montant/.test(ins));
+  check("bouton « Paiement » : modes de paiement visibles d'un clic avant l'inscription (virement ou D17 / IZI / Wafacash + montant)", /<details class="paiement" id="paiement"><summary[^>]*>[\s\S]*Paiement[\s\S]*(Virement bancaire|D17|IZI|Wafacash)[\s\S]*Montant/.test(ins));
   check("professionnels : offre gratuite + formule Pro avec 1er mois gratuit et prix affichés", /class="offre pro"/.test(ins) && /mois offert/.test(ins) && /pour toujours/.test(ins) && /jamais supprimée/.test(ins) && /Sans engagement au-delà d'un an/.test(ins));
   if (C.inscriptions_ouvertes !== true) check("inscriptions fermées (pas de déclaration INPDP) : ni formulaire Pro, ni coordonnées de paiement, ni page conditions",
     !/data-envoi="pro"/.test(ins) && !/id="apres-pro"/.test(ins) && !existsSync(join(root, "conditions", "index.html")));
-  else check("inscriptions ouvertes : déclaration INPDP, titulaire et RIB renseignés dans config.json", !!(C.pro && C.pro.inpdp && C.pro.virement && C.pro.virement.titulaire && C.pro.virement.rib));
+  else check("inscriptions ouvertes : accord ou déclaration INPDP noté, au moins un moyen de paiement, WhatsApp pour la preuve", !!(C.pro && (C.pro.inpdp || C.pro.inpdp_accord) && ((C.pro.virement && C.pro.virement.rib) || (C.pro.autres_paiements || []).length) && C.pro.whatsapp_preuve));
   // simulation complète dans une copie temporaire : inscriptions ouvertes, un Pro en essai, un Pro expiré, une fiche vérifiée
   const { mkdtempSync, cpSync, writeFileSync, rmSync } = await import("fs");
   const { tmpdir } = await import("os");
