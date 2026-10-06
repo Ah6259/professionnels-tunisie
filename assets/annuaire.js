@@ -35,6 +35,11 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("langue", ph); ph();
 });
 
+/* --- statistiques des clics vers nos autres sites --- */
+document.addEventListener("click", e => {
+  const l = e.target.closest && e.target.closest("[data-lien]");
+  if (l) compter(`lien-site/${l.dataset.lien}`, `Lien vers ${l.dataset.lien}`);
+});
 /* --- statistiques des clics sur une fiche --- */
 document.addEventListener("click", e => {
   const a = e.target.closest && e.target.closest("[data-clic]");

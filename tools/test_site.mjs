@@ -104,6 +104,7 @@ check("aucun secret ni adresse e-mail privée dans le site", ![...pages, "config
 check("arabe : le champ anti-robot des formulaires garde 1 px de large (sinon la page arabe est décalée à droite)", /\.formulaire input\.piege[^}]*width:1px/.test(lire("assets/style.css")));
 check("un élément caché (attribut hidden) reste toujours caché, même avec un style d'affichage", /\[hidden\]\{display:none!important\}/.test(lire("assets/style.css")));
 check("filtres : chaque bouton de métier d'une page de gouvernorat a au moins une fiche (jamais de bouton à 0 résultat)", pages.filter(p => p.startsWith("gouvernorat/")).every(p => { const h = lire(p); return [...h.matchAll(/class="puce" data-m="([^"]+)"/g)].every(m => h.includes(`data-m="${m[1]}">`) && new RegExp(`class="fiche-carte[^"]*"[^>]*data-m="${m[1]}"`).test(h)); }));
+check("liens vers nos autres sites : encadré « Gratuit aussi sur nos sites » sur l'accueil, clic compté", !C.liens || !C.liens.length || (/Gratuit aussi sur nos sites/.test(lire("index.html")) && C.liens.every(l => lire("index.html").includes(`href="${l.url}" data-lien=`))));
 check("arabe : aucun élément placé loin hors de l'écran (sinon la page arabe s'affiche blanche sur téléphone)", !/(left|right)\s*:\s*-\d{3,}px/.test(lire("assets/style.css")));
 check("doublons : pas deux fiches au même nom à moins de 300 m", (() => {
   const L = fichesPages.map(p => { const m = lire(p).match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); try { return JSON.parse(m[1]); } catch { return null; } }).filter(x => x && x.geo);

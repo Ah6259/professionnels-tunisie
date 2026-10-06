@@ -27,7 +27,7 @@
     if (p) p.innerHTML = `<div class="wrap">
       <nav><a href="${racine || "./"}">${T("Accueil", "الرئيسية")}</a><a href="${racine}inscription/">${T("Professionnels", "المهنيون")}</a>
         <a href="${racine}a-propos/">${T("À propos et sources", "من نحن والمصادر")}</a><a href="${racine || "./"}#avis">${T("Votre avis", "رأيك")}</a>
-        ${C.liens.map(l => `<a href="${l.url}">${t(l)}</a>`).join("")}</nav>
+        ${C.liens.slice(0, 1).map(l => `<a href="${l.url}">${t(l)}</a>`).join("")}</nav>
       <p>${T("Fiches : © les contributeurs d'OpenStreetMap (licence ODbL) et demandes des professionnels. Site gratuit et non officiel : appelez avant de vous déplacer.",
              "البطاقات: © المساهمون في OpenStreetMap (رخصة ODbL) وطلبات المهنيين. موقع مجاني وغير رسمي: اتصل قبل التنقل.")}</p>
       <p>© 2026 ${t(C.nom)} — ${T("tous droits réservés.", "جميع الحقوق محفوظة.")}</p></div>`;

@@ -195,7 +195,8 @@ const blocPro = racine => `<section class="carte pro-appel">
   </div>
 </section>`;
 
-const liensAmis = () => C.liens && C.liens.length ? `<section class="carte liens-amis">${C.liens.map(l => `<a href="${esc(l.url)}">${biO(l)} →</a>`).join("")}</section>` : "";
+// liens vers nos autres sites gratuits (dans les deux sens : demande d'Ahmed), bien visibles, clics comptés anonymement
+const liensAmis = () => C.liens && C.liens.length ? `<section class="carte liens-amis"><h2>${bi("Gratuit aussi sur nos sites", "مجانًا أيضًا على مواقعنا")}</h2>${C.liens.map(l => `<a href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}"><strong>${biO(l)} →</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</a>`).join("")}</section>` : "";
 
 const AVIS = `<section class="carte avis" id="avis">
   <h2>${bi("Votre avis", "رأيك يهمّنا")}</h2>
