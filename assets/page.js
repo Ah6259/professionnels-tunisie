@@ -21,7 +21,7 @@
     if (e) e.innerHTML = `<div class="wrap">
       <a class="logo" href="${racine || "./"}"><img src="${racine}assets/logo.svg" alt="" width="34" height="34">
         <span>${t(C.nom)}<small>${t(C.sous_titre)}</small></span></a>
-      <div class="entete-boutons"><a class="entete-pro" href="${racine}inscription/#offres">${T("Inscription Pro", "تسجيل Pro")}</a>
+      <div class="entete-boutons"><button class="partager" type="button" aria-label="${T("Partager cette page", "شارك هذه الصفحة")}" title="${T("Partager", "شارك")}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button><a class="entete-pro" href="${racine}inscription/#offres">${T("Inscription Pro", "تسجيل Pro")}</a>
       <button class="langue" type="button">${T("العربية", "Français")}</button></div></div>`;
     const p = document.getElementById("pied");
     if (p) p.innerHTML = `<div class="wrap">
@@ -32,6 +32,13 @@
              "البطاقات: © المساهمون في OpenStreetMap (رخصة ODbL) وطلبات المهنيين. موقع مجاني وغير رسمي: اتصل قبل التنقل.")}</p>
       <p>© 2026 ${t(C.nom)} — ${T("tous droits réservés.", "جميع الحقوق محفوظة.")}</p></div>`;
     document.querySelectorAll(".langue").forEach(b => b.addEventListener("click", () => appliquer(html.lang === "ar" ? "fr" : "ar")));
+    // bouton Partager (demande d'Ahmed) : menu de partage du téléphone, sinon WhatsApp avec le lien
+    document.querySelectorAll(".partager").forEach(b => b.addEventListener("click", async () => {
+      const url = location.href.split("#")[0].replace(/[?&]lang=(fr|ar)/, ""), titre = document.title.split(" | ")[0];
+      try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "partage" + location.pathname.replace(C.base, "/"), title: "Partage", event: true }); } catch (e) {}
+      if (navigator.share) { try { await navigator.share({ title: titre, text: titre, url }); return; } catch (e) { if (e && e.name === "AbortError") return; } }
+      window.open("https://wa.me/?text=" + encodeURIComponent(titre + " " + url), "_blank", "noopener");
+    }));
     document.querySelectorAll("option[data-ar]").forEach(o => { o.dataset.fr = o.dataset.fr || o.textContent; o.textContent = T(o.dataset.fr, o.dataset.ar); });
     const tous = document.querySelector('#choix-g option[value=""]');
     if (tous) tous.textContent = T("Tous les gouvernorats", "كل الولايات");

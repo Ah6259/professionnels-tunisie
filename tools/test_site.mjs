@@ -157,6 +157,9 @@ else {
   const champ = d.getElementById("recherche"); champ.value = "zzzzqqq"; champ.dispatchEvent(new w.Event("input"));
   check("accueil : recherche sans résultat → message « Aucun résultat »", visibles() === 0 && !d.getElementById("aucun").hidden);
   d.querySelector(".langue").dispatchEvent(new w.Event("click"));
+  { const b = d.querySelector("#entete .partager"); let ouvert = "";
+    w.open = u => { ouvert = u; }; if (b) { b.dispatchEvent(new w.Event("click")); await new Promise(r => setTimeout(r, 20)); }
+    check("bouton Partager dans l'en-tête : ouvre WhatsApp avec le lien de la page (si pas de partage du téléphone)", !!b && ouvert.startsWith("https://wa.me/?text=") && decodeURIComponent(ouvert).includes(C.url)); }
   check("accueil : bouton de langue → arabe, de droite à gauche", d.documentElement.lang === "ar" && d.documentElement.dir === "rtl");
   const fTel = attendues.find(f => f.tel) || attendues[0];
   ({ w, d } = await ouvrir(`fiche/${fTel.id}/index.html`));
