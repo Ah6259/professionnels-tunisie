@@ -185,6 +185,7 @@ else {
   const ins = lire("inscription/index.html");
   check("bouton « Inscription Pro » visible dans l'en-tête de chaque page, vers les prix et avantages", /class="entete-pro" href="\$\{racine\}inscription\/#offres"/.test(lire("assets/page.js")) && lire("index.html").includes('href="inscription/#offres"') && /class="appel-pro"><a class="btn btn-pro" href="inscription\/#offres"/.test(lire("index.html")));
   check("bouton « Paiement » : modes de paiement visibles d'un clic avant l'inscription (virement ou D17 / IZI / Wafacash + montant)", /<details class="paiement" id="paiement"><summary[^>]*>[\s\S]*Paiement[\s\S]*(Virement bancaire|D17|IZI|Wafacash)[\s\S]*Montant/.test(ins));
+  check("page Inscription Pro : accroche « Gagnez en visibilité » + profil référencé en arabe et en français, dans le gouvernorat", /Gagnez en visibilité/.test(ins) && /Rendez votre profil accessible et référencé en ligne, en arabe et en français, dans votre gouvernorat/.test(ins));
   check("professionnels : offre gratuite + formule Pro avec 1er mois gratuit et prix affichés", /class="offre pro"/.test(ins) && /mois offert/.test(ins) && /pour toujours/.test(ins) && /jamais supprimée/.test(ins) && /Sans engagement au-delà d'un an/.test(ins));
   if (C.inscriptions_ouvertes !== true) check("inscriptions fermées (pas de déclaration INPDP) : ni formulaire Pro, ni coordonnées de paiement, ni page conditions",
     !/data-envoi="pro"/.test(ins) && !/id="apres-pro"/.test(ins) && !existsSync(join(root, "conditions", "index.html")));

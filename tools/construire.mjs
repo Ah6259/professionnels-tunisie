@@ -419,7 +419,8 @@ const formPro = `<section class="carte" id="pro">
 pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formule Pro | ${C.nom.fr}`, desc: `Professionnel : soyez trouvé par les Tunisiens qui vous cherchent. Fiche gratuite sur ${C.nom.fr}, vérifiée par vous, en français et en arabe.`, chemin: "inscription/", racine: "../" }) + `
 <section class="hero"><div class="wrap">
   ${fil("../", bi("Professionnels", "المهنيون"))}
-  <h1>${bi("Soyez trouvé par les Tunisiens qui vous cherchent", "اجعل التونسيين الذين يبحثون عنك يجدونك")}</h1>
+  <h1>${bi("Gagnez en visibilité", "اكسب مزيدًا من الظهور")}</h1>
+  <p class="intro accroche">${bi("Chaque jour, des Tunisiens recherchent un professionnel près de chez eux. Rendez votre profil accessible et référencé en ligne, en arabe et en français, dans votre gouvernorat, en quelques minutes.", "كل يوم، يبحث تونسيون عن مهني قريب منهم. اجعل ملفك متاحًا ومُدرجًا على الإنترنت، بالعربية والفرنسية، في ولايتك، في بضع دقائق.")}</p>
   <p class="intro">${bi(`Fiche gratuite, en français et en arabe. Déjà ${FICHES.length} établissements dans ${Object.values(compteG).filter(Boolean).length} gouvernorats.`, `بطاقة مجانية بالعربية والفرنسية. حاليًا ${ISO(FICHES.length)} مؤسسة في ${ISO(Object.values(compteG).filter(Boolean).length)} ولاية.`)}</p>
 </div></section>
 <main class="wrap">

@@ -166,3 +166,4 @@ img,svg{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .offre .btn{margin-top:10px}
 .appel-pro{margin:14px 0 0}.hero .btn-pro{box-shadow:0 6px 18px rgba(0,0,0,.25)}
 .puce .n{background:var(--p-clair);color:var(--p);border-radius:999px;padding:0 7px;font-size:12px}.puce.on .n{background:rgba(255,255,255,.25);color:#fff}
+.hero .accroche{font-size:17px;font-weight:600;margin-bottom:8px}
