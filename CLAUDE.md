@@ -47,3 +47,6 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
 ## Professionnels
 `inscriptions_ouvertes: false` tant que la déclaration INPDP n'est pas faite. Formule Pro : 29 DT la 1re année puis 59 DT/an
 (`config.json` → `pro`), 1er mois offert, sans renouvellement automatique.
+
+- **Vidéo de présentation** (06/10/2026) : `assets/video/presentation.mp4` (visiteurs) et `presentation-pro.mp4` (professionnels), + `couverture(-pro).jpg`, 1080 × 1920, sans musique. Le bouton « Partager » envoie la vidéo + le lien quand le téléphone le permet (sinon le lien seul ; vidéo « pro » sur inscription/) ; liens « Vidéo de présentation » en bas de l'accueil et sur À propos ; test dans test_site.mjs.
+  Pour la refaire (vraies captures du site, chiffres lus en ligne) : `python fabriquer.py <id-du-site>` dans le dossier PRIVÉ du PC `videos (outil)/`.

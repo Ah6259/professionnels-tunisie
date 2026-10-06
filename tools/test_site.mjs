@@ -61,6 +61,25 @@ for (const p of pages) {
   }
 }
 check(`sécurité : CSP, aucun script en ligne, aucun on…= ni style="" (${pbSecu.slice(0, 3).join(", ")})`, !pbSecu.length);
+// vidéos de présentation : présentes, ≤ 8 Mo (WhatsApp), format vertical 9:16, couverture JPEG ; CSP media-src ; jamais en cache
+function tailleVideo(buf) {
+  for (let i = buf.indexOf("tkhd"); i > 0; i = buf.indexOf("tkhd", i + 4)) {
+    const v = buf[i + 4], base = i + 8 + (v === 1 ? 32 : 20) + 8 + 2 + 2 + 2 + 2 + 36;
+    const w = buf.readUInt32BE(base) / 65536, h = buf.readUInt32BE(base + 4) / 65536;
+    if (w && h) return [w, h];
+  }
+  return [0, 0];
+}
+for (const nom of ["presentation", "presentation-pro"]) {
+  const f = join(root, "assets", "video", nom + ".mp4"), ok = existsSync(f);
+  const buf = ok ? readFileSync(f) : Buffer.alloc(0), [vw, vh] = ok ? tailleVideo(buf) : [0, 0];
+  check(`vidéo ${nom}.mp4 : présente, ≤ 8 Mo, 1080 × 1920 (9:16) (${(buf.length / 1e6).toFixed(1)} Mo, ${vw} × ${vh})`, ok && buf.length <= 8e6 && vw === 1080 && vh === 1920);
+  const couv = join(root, "assets", "video", nom.replace("presentation", "couverture") + ".jpg");
+  check(`vidéo ${nom} : image de couverture JPEG`, existsSync(couv) && readFileSync(couv).subarray(0, 2).toString("hex") === "ffd8");
+}
+check("CSP : media-src 'self' (vidéo) sur l'accueil", /media-src 'self'/.test(lire("index.html")));
+check("service worker : les vidéos .mp4 ne sont jamais mises en cache", lire("sw.js").includes('/\\.mp4$/i.test(url.pathname)) return'));
+check("liens « Vidéo de présentation » : accueil et À propos", lire("index.html").includes('href="assets/video/presentation.mp4"') && lire("a-propos/index.html").includes('href="../assets/video/presentation-pro.mp4"'));
 check(`référencement : titre, description, canonique, JSON-LD valide (${pbSeo.slice(0, 3).join(", ")})`, !pbSeo.length);
 check(`liens internes vers des fichiers existants (${pbLiens.slice(0, 3).join(" ; ")})`, !pbLiens.length);
 
@@ -160,6 +179,32 @@ else {
   { const b = d.querySelector("#entete .partager"); let ouvert = "";
     w.open = u => { ouvert = u; }; if (b) { b.dispatchEvent(new w.Event("click")); await new Promise(r => setTimeout(r, 20)); }
     check("bouton Partager dans l'en-tête : ouvre WhatsApp avec le lien de la page (si pas de partage du téléphone)", !!b && ouvert.startsWith("https://wa.me/?text=") && decodeURIComponent(ouvert).includes(C.url)); }
+  // Partage de la VIDÉO de présentation (demande d'Ahmed) : faux téléphone qui sait partager des fichiers
+  {
+    const essai = async (page, { fichiers = true, echecFetch = false } = {}) => {
+      const o = await ouvrir(page); const n = o.w.navigator, journal = { partages: [], telecharges: [], ouvert: "" };
+      Object.defineProperty(n, "canShare", { configurable: true, value: x => fichiers || !(x && x.files) });
+      Object.defineProperty(n, "share", { configurable: true, value: async x => { journal.partages.push(x); } });
+      o.w.fetch = async u => { journal.telecharges.push(String(u)); if (echecFetch) throw new Error("réseau"); return { ok: true, blob: async () => new o.w.Blob(["mp4"], { type: "video/mp4" }) }; };
+      o.w.open = u => { journal.ouvert = u; };
+      o.d.querySelector("#entete .partager").dispatchEvent(new o.w.Event("click"));
+      await new Promise(r => setTimeout(r, 60));
+      return journal;
+    };
+    const nomSite = BASE.replace(/\//g, "");
+    let j = await essai("index.html");
+    const p0 = j.partages[0] || {};
+    check("Partager : télécharge la vidéo de présentation et la partage (fichier <site>.mp4, lien dans le texte)",
+      j.telecharges[0] === BASE + "assets/video/presentation.mp4" && p0.files && p0.files[0].name === nomSite + ".mp4" && p0.files[0].type === "video/mp4" && String(p0.text).includes(C.url));
+    j = await essai("inscription/index.html");
+    check("Partager (espace professionnels) : partage la vidéo « professionnel »",
+      j.telecharges[0] === BASE + "assets/video/presentation-pro.mp4" && j.partages[0] && j.partages[0].files[0].name === nomSite + "-pro.mp4");
+    j = await essai("index.html", { fichiers: false });
+    check("Partager : sans partage de fichier possible → lien seul, aucune vidéo téléchargée",
+      !j.telecharges.length && j.partages.length === 1 && !j.partages[0].files && String(j.partages[0].url).startsWith(C.url));
+    j = await essai("index.html", { echecFetch: true });
+    check("Partager : vidéo injoignable → on partage quand même le lien", j.partages.length === 1 && !j.partages[0].files && String(j.partages[0].url).startsWith(C.url));
+  }
   check("accueil : bouton de langue → arabe, de droite à gauche", d.documentElement.lang === "ar" && d.documentElement.dir === "rtl");
   const fTel = attendues.find(f => f.tel) || attendues[0];
   ({ w, d } = await ouvrir(`fiche/${fTel.id}/index.html`));

@@ -32,12 +32,14 @@
              "البطاقات: © المساهمون في OpenStreetMap (رخصة ODbL) وطلبات المهنيين. موقع مجاني وغير رسمي: اتصل قبل التنقل.")}</p>
       <p>© 2026 ${t(C.nom)} — ${T("tous droits réservés.", "جميع الحقوق محفوظة.")}</p></div>`;
     document.querySelectorAll(".langue").forEach(b => b.addEventListener("click", () => appliquer(html.lang === "ar" ? "fr" : "ar")));
-    // bouton Partager (demande d'Ahmed) : menu de partage du téléphone, sinon WhatsApp avec le lien
-    document.querySelectorAll(".partager").forEach(b => b.addEventListener("click", async () => {
+    // bouton Partager (demande d'Ahmed) : la VIDÉO de présentation + le lien quand le téléphone sait partager un fichier
+    // (Instagram, Facebook, TikTok, WhatsApp…), sinon le lien seul (menu de partage du téléphone, sinon WhatsApp).
+    // Espace professionnels (inscription/) : la vidéo « professionnel ».
+    document.querySelectorAll(".partager").forEach(b => b.addEventListener("click", () => {
       const url = location.href.split("#")[0].replace(/[?&]lang=(fr|ar)/, ""), titre = document.title.split(" | ")[0];
       try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path: "partage" + location.pathname.replace(C.base, "/"), title: "Partage", event: true }); } catch (e) {}
-      if (navigator.share) { try { await navigator.share({ title: titre, text: titre, url }); return; } catch (e) { if (e && e.name === "AbortError") return; } }
-      window.open("https://wa.me/?text=" + encodeURIComponent(titre + " " + url), "_blank", "noopener");
+      const pro = location.pathname.indexOf(C.base + "inscription/") === 0, nom = C.base.replace(/\//g, "") + (pro ? "-pro" : "");
+      return window.partagerVideo(C.base + "assets/video/presentation" + (pro ? "-pro" : "") + ".mp4", nom + ".mp4", titre, url);
     }));
     document.querySelectorAll("option[data-ar]").forEach(o => { o.dataset.fr = o.dataset.fr || o.textContent; o.textContent = T(o.dataset.fr, o.dataset.ar); });
     const tous = document.querySelector('#choix-g option[value=""]');
@@ -57,6 +59,49 @@
       try { navigator.serviceWorker.register(C.base + "sw.js", { scope: C.base }).catch(() => {}); } catch (e) {}
     });
   }
+})();
+
+/* Partage de la vidéo de présentation (fichier) + lien dans le texte ; retombe sur le lien seul si le partage de
+   fichier est impossible ou échoue. « Préparation de la vidéo… » pendant le téléchargement. Si le téléphone refuse
+   le partage après l'attente (geste trop ancien), la vidéo reste prête : un second toucher la partage tout de suite. */
+window.partagerVideo = (function () {
+  let pret = null;                                   // { cle, fichier } : vidéo déjà téléchargée
+  function message(texte) {
+    let m = document.getElementById("partage-msg");
+    if (!texte) { if (m) m.hidden = true; return; }
+    if (!m) { m = document.createElement("div"); m.id = "partage-msg"; m.className = "partage-msg"; m.setAttribute("role", "status"); document.body.appendChild(m); }
+    m.textContent = texte; m.hidden = false;
+  }
+  const T2 = (fr, ar) => document.documentElement.lang === "ar" ? ar : fr;
+  async function lienSeul(titre, url) {
+    if (navigator.share) { try { await navigator.share({ title: titre, text: titre, url }); return "lien"; } catch (e) { if (e && e.name === "AbortError") return "annule"; } }
+    window.open("https://wa.me/?text=" + encodeURIComponent(titre + " " + url), "_blank", "noopener");
+    return "whatsapp";
+  }
+  return async function (video, nomFichier, titre, url) {
+    let possible = false;
+    try { possible = !!(navigator.share && navigator.canShare && window.File && window.fetch && navigator.canShare({ files: [new File([""], nomFichier, { type: "video/mp4" })] })); } catch (e) {}
+    if (!possible) return lienSeul(titre, url);
+    try {
+      if (!pret || pret.cle !== video) {
+        message(T2("Préparation de la vidéo…", "جارٍ تحضير الفيديو…"));
+        const r = await fetch(video);
+        if (!r.ok) throw new Error("vidéo absente");
+        const f = new File([await r.blob()], nomFichier, { type: "video/mp4" });
+        if (!navigator.canShare({ files: [f] })) throw new Error("fichier refusé");
+        pret = { cle: video, fichier: f };
+      }
+      await navigator.share({ files: [pret.fichier], title: titre, text: titre + " " + url });
+      message(""); return "video";
+    } catch (e) {
+      if (e && e.name === "AbortError") { message(""); return "annule"; }
+      if (e && e.name === "NotAllowedError" && pret) {      // téléchargement trop long pour le téléphone : on redemande un toucher
+        message(T2("Vidéo prête : touchez encore « Partager »", "الفيديو جاهز: المس « شارك » مرة أخرى"));
+        setTimeout(() => message(""), 6000); return "pret";
+      }
+      message(""); return lienSeul(titre, url);
+    }
+  };
 })();
 
 /* Anti-copie légère (consigne sécurité commune) : images protégées, listes non sélectionnables, source ajoutée au texte copié.

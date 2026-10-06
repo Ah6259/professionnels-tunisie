@@ -19,6 +19,7 @@ self.addEventListener("fetch", e => {
   if (req.method !== "GET") return;
   const url = new URL(req.url);
   if (url.origin !== self.location.origin || !url.pathname.startsWith(PORTEE) || req.headers.has("range")) return;
+  if (/\.mp4$/i.test(url.pathname)) return;      // vidéos de présentation : jamais en cache (trop lourdes)
   e.respondWith(url.searchParams.has("v") && STATIQUE.test(url.pathname) ? cachePuisMaj(e, req, url) : reseauDabord(e, req));
 });
 async function reseauDabord(e, req) {

@@ -91,7 +91,7 @@ const telLisible = t => t ? t.replace(/(\d{2})(\d{3})(\d{3})/, "$1 $2 $3") : "";
 const mobile = t => !!t && /^[2459]/.test(t);                   // portables tunisiens : 2x, 4x, 5x, 9x
 const V = createHash("sha256").update(["assets/style.css", "assets/page.js", "assets/annuaire.js", "assets/avis.js"]
   .map(f => existsSync(join(root, f)) ? readFileSync(join(root, f), "utf8") : "").join("") + JSON.stringify(C)).digest("hex").slice(0, 10);
-const CSP = `default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: ${C.goatcounter}; connect-src 'self' ${C.goatcounter} https://formspree.io; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests`;
+const CSP = `default-src 'self'; script-src 'self' https://gc.zgo.at; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: ${C.goatcounter}; connect-src 'self' ${C.goatcounter} https://formspree.io; media-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self' https://formspree.io; upgrade-insecure-requests`;
 const ICO = {
   tel: '<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/>',
   wa: '<path d="M4 20l1.3-4A8 8 0 1 1 8 19z"/><path d="M9 9.5c.5 2 2.5 4 4.5 4.5l1-1.5 2 1-.5 1.5c-3 0-7-4-7-7l1.5-.5 1 2z"/>',
@@ -200,6 +200,8 @@ const blocPro = racine => `<section class="carte pro-appel">
 const lienVedette = racine => (C.liens || []).filter(l => l.vedette).map(l => `<a class="lien-vedette" href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}">${l.logo ? `<img src="${racine}${esc(l.logo)}" alt="" width="36" height="36">` : ""}<span><strong>${biO(l)}</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</span><span class="lv-fleche" aria-hidden="true">→</span></a>`).join("");
 const liensAmis = () => C.liens && C.liens.length ? `<section class="carte liens-amis"><h2>${bi("Gratuit aussi sur nos sites", "مجانًا أيضًا على مواقعنا")}</h2>${C.liens.map(l => `<a href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}"><strong>${biO(l)} →</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</a>`).join("")}</section>` : "";
 
+// lien discret vers la vidéo de présentation (bas de l'accueil), pour la regarder / la télécharger et la publier à la main
+const lienVideo = racine => `<p class="lien-video"><a href="${racine}assets/video/presentation.mp4">${bi("Vidéo de présentation", "الفيديو التقديمي")}</a></p>`;
 const AVIS = `<section class="carte avis" id="avis">
   <h2>${bi("Votre avis", "رأيك يهمّنا")}</h2>
   <p>${bi("Une remarque, une erreur, une idée ? Écrivez-nous : chaque message est lu.", "ملاحظة، خطأ، فكرة؟ اكتب لنا: كل رسالة تُقرأ.")}</p>
@@ -258,6 +260,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   ${blocPro("")}
   ${liensAmis()}
   ${AVIS}
+  ${lienVideo("")}
 </main>
 ` + pied;
 }
@@ -513,6 +516,10 @@ pages["a-propos/"] = tete({ titre: `À propos et sources | ${C.nom.fr}`, desc: `
   <p>${bi("Ce site n'est lié à aucune administration ni organisation professionnelle. La consultation est gratuite et sans inscription.", "هذا الموقع غير مرتبط بأي إدارة أو هيكل مهني. التصفح مجاني ودون تسجيل.")}</p>
   <h2>${bi("Crédits des photos", "حقوق الصور")}</h2>
   <ul class="credits">${[...(P && P.mosaique ? P.mosaique : [P]), ...C.metiers.map(m => m.photo)].filter(Boolean).filter((ph, i, t) => t.findIndex(x => x.source === ph.source) === i).map(ph => `<li><bdi>${esc(ph.auteur)}</bdi>, <a href="${esc(ph.licence_url)}" rel="noopener license">${esc(ph.licence)}</a>, <a href="${esc(ph.source)}" rel="noopener">Wikimedia Commons</a></li>`).join("")}</ul>
+  <h2>${bi("Vidéos de présentation", "فيديوهات تقديمية")}</h2>
+  <p>${bi("À regarder, télécharger ou partager (Instagram, Facebook, TikTok, WhatsApp) :", "للمشاهدة أو التنزيل أو المشاركة (إنستغرام، فيسبوك، تيك توك، واتساب):")}
+    <a href="../assets/video/presentation.mp4">${bi("Vidéo de présentation", "الفيديو التقديمي")}</a> ·
+    <a href="../assets/video/presentation-pro.mp4">${bi("Vidéo pour les professionnels", "فيديو للمهنيين")}</a></p>
   <h2>${bi("Données personnelles et retrait", "المعطيات الشخصية والحذف")}</h2>
   <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction ou le retrait de sa fiche depuis la page <a href="../inscription/">Professionnels</a> ; un retrait est définitif. Statistiques de visite anonymes, sans cookies (GoatCounter).`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها أو حذفها من صفحة <a href="../inscription/">المهنيون</a>؛ والحذف نهائي. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter).`)}</p>
 </section></main>
