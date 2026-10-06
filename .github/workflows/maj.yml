@@ -1,0 +1,41 @@
+# Robot de nuit de l'annuaire (moteur commun) — tourne sur GitHub, sans PC.
+# Chaque nuit : relevé OpenStreetMap → pages → tests → publication. En cas d'échec, GitHub envoie un e-mail à Ahmed
+# et le site reste tel quel (rien n'est publié si un test échoue).
+name: maj
+on:
+  schedule:
+    - cron: "40 2 * * *"
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: maj-site
+  cancel-in-progress: false
+jobs:
+  maj:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Relevé OpenStreetMap
+        run: python tools/releve_osm.py
+      - name: Reprise des fiches de nos autres annuaires (seulement pour l'annuaire qui les regroupe)
+        run: |
+          if [ -f tools/importer_annuaires.py ]; then python tools/importer_annuaires.py; fi
+      - name: Pages
+        run: node tools/construire.mjs
+      - name: Tests
+        run: |
+          npm install --no-save --no-package-lock jsdom
+          node tools/test_site.mjs
+      - name: Publier
+        run: |
+          git config user.name "robot-annuaire"
+          git config user.email "robot-annuaire@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Mise à jour automatique des fiches ($(date -u +%d/%m/%Y))"
+          git push

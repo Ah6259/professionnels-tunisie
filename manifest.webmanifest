@@ -1,0 +1,31 @@
+{
+  "id": "/professionnels-tunisie/",
+  "name": "Professionnels Tunisie — annuaire",
+  "short_name": "Pros TN",
+  "description": "Annuaire gratuit des professionnels en Tunisie par gouvernorat : plombiers, électriciens, menuisiers, climatisation, garages, informatique, architectes, avocats, comptables, auto-écoles, mariage. En français et en arabe.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "lang": "fr",
+  "dir": "auto",
+  "theme_color": "#2E6B4E",
+  "background_color": "#F4F7FA",
+  "icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

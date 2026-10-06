@@ -1,0 +1,359 @@
+{
+  "id": "professionnels-tunisie",
+  "url": "https://ah6259.github.io/professionnels-tunisie/",
+  "nom": {
+    "fr": "Professionnels Tunisie — annuaire",
+    "ar": "المهنيون في تونس — دليل"
+  },
+  "court": {
+    "fr": "Pros TN",
+    "ar": "المهنيون في تونس"
+  },
+  "sous_titre": {
+    "fr": "Annuaire gratuit · français et arabe",
+    "ar": "دليل مجاني · بالعربية والفرنسية"
+  },
+  "titre_accueil": {
+    "fr": "Trouver un professionnel en Tunisie, gratuit",
+    "ar": "ابحث عن مهني في تونس مجانًا"
+  },
+  "intro": {
+    "fr": "Annuaire gratuit des professionnels en Tunisie : artisans (plombier, électricien, menuisier, climatisation…), garages, informatique, avocats, notaires, comptables, auto-écoles et mariage. Adresse, téléphone, WhatsApp et itinéraire, gouvernorat par gouvernorat. Sans inscription.",
+    "ar": "دليل مجاني للمهنيين في تونس: الحرفيون (سباك، كهربائي، نجار، تكييف…)، ورشات الميكانيك، الإعلامية، المحامون، عدول الإشهاد، المحاسبون، مدارس السياقة والأعراس. العنوان والهاتف وواتساب والطريق، ولاية بولاية. دون تسجيل."
+  },
+  "description": "Annuaire gratuit des professionnels en Tunisie par gouvernorat : plombiers, électriciens, menuisiers, climatisation, garages, informatique, architectes, avocats, comptables, auto-écoles, mariage. En français et en arabe.",
+  "couleur": "#2E6B4E",
+  "couleur_fonce": "#1E4A36",
+  "couleur_claire": "#E5F1EA",
+  "schema": "LocalBusiness",
+  "metiers": [
+    {
+      "id": "auto-ecole",
+      "osm": [
+        "amenity=driving_school"
+      ],
+      "fr": "Auto-école",
+      "fr_pl": "Auto-écoles",
+      "ar": "مدرسة سياقة",
+      "ar_pl": "مدارس السياقة",
+      "mots": "auto-école auto ecole école de conduite permis moniteur conduite مدرسة سياقة تعليم السياقة رخصة"
+    },
+    {
+      "id": "avocat",
+      "osm": [
+        "office=lawyer"
+      ],
+      "fr": "Avocat",
+      "fr_pl": "Avocats",
+      "ar": "محامٍ",
+      "ar_pl": "المحامون",
+      "mots": "avocat avocats cabinet d'avocat maître conseil juridique droit justice tribunal محامي محامٍ محاماة مكتب محاماة"
+    },
+    {
+      "id": "notaire",
+      "osm": [
+        "office=notary"
+      ],
+      "fr": "Notaire",
+      "fr_pl": "Notaires",
+      "ar": "عدل إشهاد",
+      "ar_pl": "عدول الإشهاد",
+      "mots": "notaire notaires notariat acte contrat عدل إشهاد عدول الإشهاد عقد"
+    },
+    {
+      "id": "huissier",
+      "osm": [
+        "office=bailiff"
+      ],
+      "fr": "Huissier de justice",
+      "fr_pl": "Huissiers de justice",
+      "ar": "عدل منفذ",
+      "ar_pl": "عدول التنفيذ",
+      "mots": "huissier huissiers de justice constat signification exécution عدل منفذ عدول التنفيذ"
+    },
+    {
+      "id": "traducteur",
+      "osm": [
+        "office=translator"
+      ],
+      "fr": "Traducteur",
+      "fr_pl": "Traducteurs",
+      "ar": "مترجم",
+      "ar_pl": "المترجمون",
+      "mots": "traducteur traduction traducteur assermenté interprète مترجم ترجمة مترجم محلف"
+    },
+    {
+      "id": "comptable",
+      "osm": [
+        "office=accountant"
+      ],
+      "fr": "Comptable",
+      "fr_pl": "Comptables et experts-comptables",
+      "ar": "محاسب",
+      "ar_pl": "المحاسبون والخبراء المحاسبون",
+      "mots": "comptable expert-comptable expert comptable cabinet comptabilité bilan déclaration محاسب خبير محاسب مكتب محاسبة"
+    },
+    {
+      "id": "conseiller-fiscal",
+      "osm": [
+        "office=tax_advisor"
+      ],
+      "fr": "Conseiller fiscal",
+      "fr_pl": "Conseillers fiscaux",
+      "ar": "مستشار جبائي",
+      "ar_pl": "المستشارون الجبائيون",
+      "mots": "conseiller fiscal conseil fiscal impôt impôts fiscalité déclaration مستشار جبائي جباية ضرائب أداءات"
+    },
+    {
+      "id": "salle-des-fetes",
+      "osm": [
+        "amenity=events_venue",
+        "amenity=wedding_venue"
+      ],
+      "fr": "Salle des fêtes",
+      "fr_pl": "Salles des fêtes",
+      "ar": "قاعة أفراح",
+      "ar_pl": "قاعات الأفراح",
+      "mots": "salle des fêtes salle de mariage réception fête événement espace قاعة أفراح قاعة حفلات عرس"
+    },
+    {
+      "id": "photographe",
+      "osm": [
+        "craft=photographer",
+        "shop=photo"
+      ],
+      "fr": "Photographe",
+      "fr_pl": "Photographes",
+      "ar": "مصور",
+      "ar_pl": "المصورون",
+      "mots": "photographe photo vidéo studio caméraman reportage مصور تصوير استوديو فيديو"
+    },
+    {
+      "id": "traiteur",
+      "osm": [
+        "craft=caterer"
+      ],
+      "fr": "Traiteur",
+      "fr_pl": "Traiteurs",
+      "ar": "ممون حفلات",
+      "ar_pl": "ممونو الحفلات",
+      "mots": "traiteur repas buffet service cuisine fête ممون حفلات طبخ أكل"
+    },
+    {
+      "id": "patisserie",
+      "osm": [
+        "shop=pastry"
+      ],
+      "fr": "Pâtisserie",
+      "fr_pl": "Pâtisseries",
+      "ar": "مرطبات",
+      "ar_pl": "محلات المرطبات",
+      "mots": "pâtisserie gâteau gâteaux traditionnels baklawa pièce montée مرطبات حلويات بقلاوة كعك"
+    },
+    {
+      "id": "coiffure-beaute",
+      "osm": [
+        "shop=hairdresser",
+        "shop=beauty"
+      ],
+      "fr": "Coiffure et beauté",
+      "fr_pl": "Coiffure et beauté",
+      "ar": "حلاقة وتجميل",
+      "ar_pl": "الحلاقة والتجميل",
+      "mots": "coiffure coiffeuse coiffeur beauté esthétique maquillage harqous henné institut حلاقة تجميل ماكياج حرقوس حناء"
+    },
+    {
+      "id": "plombier",
+      "osm": [
+        "craft=plumber"
+      ],
+      "fr": "Plombier",
+      "fr_pl": "Plombiers",
+      "ar": "سبّاك",
+      "ar_pl": "السبّاكون",
+      "mots": "plombier plomberie sanitaire fuite eau chauffe-eau robinet canalisation سباك سباكة ترصيص بلومبي ماء تسرب"
+    },
+    {
+      "id": "electricien",
+      "osm": [
+        "craft=electrician"
+      ],
+      "fr": "Électricien",
+      "fr_pl": "Électriciens",
+      "ar": "كهربائي",
+      "ar_pl": "الكهربائيون",
+      "mots": "électricien électricité installation électrique dépannage câblage tableau كهربائي كهرباء تركيب كهربائي"
+    },
+    {
+      "id": "menuisier",
+      "osm": [
+        "craft=carpenter",
+        "craft=joiner"
+      ],
+      "fr": "Menuisier",
+      "fr_pl": "Menuisiers",
+      "ar": "نجّار",
+      "ar_pl": "النجّارون",
+      "mots": "menuisier menuiserie bois porte fenêtre cuisine meuble ébéniste نجار نجارة خشب أبواب مطبخ"
+    },
+    {
+      "id": "aluminium-vitrerie",
+      "osm": [
+        "craft=window_construction",
+        "craft=glaziery"
+      ],
+      "fr": "Aluminium et vitrerie",
+      "fr_pl": "Aluminium et vitrerie",
+      "ar": "ألومنيوم وبلّور",
+      "ar_pl": "الألومنيوم والبلّور",
+      "mots": "aluminium menuiserie aluminium vitrier vitrerie verre fenêtre baie vitrée miroir ألمنيوم ألومنيوم بلور زجاج شبابيك"
+    },
+    {
+      "id": "peintre",
+      "osm": [
+        "craft=painter"
+      ],
+      "fr": "Peintre en bâtiment",
+      "fr_pl": "Peintres en bâtiment",
+      "ar": "دهّان",
+      "ar_pl": "الدهّانون",
+      "mots": "peintre peinture bâtiment décoration enduit façade دهان دهن طلاء ديكور"
+    },
+    {
+      "id": "climatisation",
+      "osm": [
+        "craft=hvac",
+        "shop=air_conditioning"
+      ],
+      "fr": "Climatisation et chauffage",
+      "fr_pl": "Climatisation et chauffage",
+      "ar": "تكييف وتدفئة",
+      "ar_pl": "التكييف والتدفئة",
+      "mots": "climatisation climatiseur clim chauffage froid frigoriste installation entretien تكييف مكيف كليماتيزور تدفئة تبريد"
+    },
+    {
+      "id": "serrurier",
+      "osm": [
+        "craft=locksmith",
+        "shop=locksmith"
+      ],
+      "fr": "Serrurier",
+      "fr_pl": "Serruriers",
+      "ar": "صانع أقفال",
+      "ar_pl": "صانعو الأقفال",
+      "mots": "serrurier serrurerie clé clés serrure double ouverture de porte قفال أقفال مفاتيح نسخ مفاتيح"
+    },
+    {
+      "id": "mecanicien",
+      "osm": [
+        "shop=car_repair"
+      ],
+      "fr": "Mécanicien auto",
+      "fr_pl": "Garages et mécaniciens",
+      "ar": "ميكانيكي سيارات",
+      "ar_pl": "ورشات الميكانيك",
+      "mots": "mécanicien garage mécanique auto voiture réparation vidange diagnostic carrosserie ميكانيك ميكانيكي ورشة سيارات تصليح"
+    },
+    {
+      "id": "pneus",
+      "osm": [
+        "shop=tyres"
+      ],
+      "fr": "Pneus et vulcanisation",
+      "fr_pl": "Pneus et vulcanisation",
+      "ar": "عجلات وفيلكانيزاسيون",
+      "ar_pl": "محلات العجلات",
+      "mots": "pneu pneus pneumatique vulcanisation crevaison équilibrage parallélisme عجلات كاوتشو فيلكانيزاسيون"
+    },
+    {
+      "id": "reparation-telephone",
+      "osm": [
+        "craft=electronics_repair",
+        "shop=mobile_phone"
+      ],
+      "fr": "Téléphones et réparation",
+      "fr_pl": "Téléphones et réparation",
+      "ar": "هواتف وإصلاح",
+      "ar_pl": "الهواتف والإصلاح",
+      "mots": "réparation téléphone smartphone portable écran informatique ordinateur électronique إصلاح هاتف هواتف جوال شاشة حاسوب"
+    },
+    {
+      "id": "informatique",
+      "osm": [
+        "shop=computer",
+        "office=it"
+      ],
+      "fr": "Informatique",
+      "fr_pl": "Informatique",
+      "ar": "إعلامية",
+      "ar_pl": "الإعلامية",
+      "mots": "informatique ordinateur pc portable réparation maintenance réseau imprimante إعلامية حاسوب كمبيوتر صيانة"
+    },
+    {
+      "id": "architecte",
+      "osm": [
+        "office=architect"
+      ],
+      "fr": "Architecte",
+      "fr_pl": "Architectes",
+      "ar": "مهندس معماري",
+      "ar_pl": "المهندسون المعماريون",
+      "mots": "architecte architecture plan permis de bâtir construction maison مهندس معماري هندسة معمارية مثال بناء رخصة بناء"
+    },
+    {
+      "id": "demenagement",
+      "osm": [
+        "office=moving_company"
+      ],
+      "fr": "Déménagement",
+      "fr_pl": "Déménageurs",
+      "ar": "نقل الأثاث",
+      "ar_pl": "شركات نقل الأثاث",
+      "mots": "déménagement déménageur transport meubles camion نقل أثاث ترحيل شاحنة"
+    }
+  ],
+  "liens": [
+    {
+      "fr": "Auto-écoles : l'annuaire spécialisé",
+      "ar": "مدارس السياقة: الدليل المختص",
+      "url": "https://ah6259.github.io/auto-ecoles-tunisie/"
+    },
+    {
+      "fr": "Avocats et notaires : l'annuaire spécialisé",
+      "ar": "المحامون وعدول الإشهاد: الدليل المختص",
+      "url": "https://ah6259.github.io/avocats-notaires-tunisie/"
+    },
+    {
+      "fr": "Comptables et conseillers : l'annuaire spécialisé",
+      "ar": "المحاسبون والمستشارون: الدليل المختص",
+      "url": "https://ah6259.github.io/comptables-tunisie/"
+    },
+    {
+      "fr": "Mariage : l'annuaire des prestataires",
+      "ar": "الأعراس: دليل مزودي الخدمات",
+      "url": "https://ah6259.github.io/mariage-tunisie/"
+    }
+  ],
+  "inscriptions_ouvertes": false,
+  "pro": {
+    "prix_premiere_annee": 29,
+    "prix_an": 59
+  },
+  "goatcounter": "https://prix-eaux-tunisie.goatcounter.com",
+  "formspree": "https://formspree.io/f/mwlpakqj",
+  "photo": {
+    "fichier": "assets/photo-accueil.webp",
+    "largeur": 900,
+    "hauteur": 675,
+    "alt": {
+      "fr": "Caisse à outils ouverte : clés, tournevis, mètre et petit outillage d'artisan",
+      "ar": "صندوق أدوات مفتوح: مفاتيح، مفكات، متر وأدوات صغيرة للحرفي"
+    },
+    "auteur": "Rieul Techer",
+    "licence": "CC BY-SA 4.0",
+    "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "source": "https://commons.wikimedia.org/wiki/File:Caisse_%C3%A0_outils_avec_petit_outillage.JPG",
+    "preuve": "annuaires/preuves/2026-10-06/professionnels-tunisie__Caisse_à_outils_avec_petit_outillage.JPG_page.html"
+  },
+  "og_image": "og-image-v1.jpg"
+}

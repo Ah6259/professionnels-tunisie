@@ -1,0 +1,158 @@
+/* Moteur d'annuaire — style commun (les couleurs du site sont dans couleurs.css, fabriqué depuis config.json) */
+:root{--fond:#F4F7FA;--carte:#fff;--texte:#14202E;--doux:#5B6878;--ligne:#E1E7EE;--vert:#1E8E4E;--ombre:0 1px 3px rgba(14,34,56,.08),0 4px 14px rgba(14,34,56,.05)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fond);color:var(--texte);font:16px/1.55 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
+html[lang="ar"] body{font-family:"Noto Kufi Arabic",Figtree,system-ui,sans-serif}
+html[lang="fr"] [data-l="ar"],html[lang="ar"] [data-l="fr"]{display:none}
+a{color:var(--p)}
+.wrap{max-width:1000px;margin:0 auto;padding:0 16px}
+/* en-tête */
+.entete{background:#fff;border-bottom:1px solid var(--ligne);position:sticky;top:0;z-index:5}
+.entete .wrap{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:58px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--texte);font-weight:800;line-height:1.15}
+.logo small{display:block;font-weight:600;font-size:12px;color:var(--doux)}
+.langue{border:1px solid var(--ligne);background:#fff;border-radius:999px;padding:6px 12px;font:inherit;font-weight:700;color:var(--p);cursor:pointer}
+/* bandeau */
+.hero{background:linear-gradient(135deg,var(--p),var(--p-fonce));color:#fff;padding:22px 0 30px}
+.hero h1{margin:6px 0 8px;font-size:clamp(24px,5vw,34px);line-height:1.2}
+.hero .intro{margin:0;opacity:.95;max-width:680px}
+.hero .chiffre{display:inline-block;margin:14px 0 0;background:rgba(255,255,255,.16);border-radius:999px;padding:6px 14px;font-weight:700;font-size:14px}
+.fil{margin:0;font-size:13px;opacity:.9}.fil a{color:#fff}
+.nom-ar{margin:-4px 0 8px;font-size:20px;font-family:"Noto Kufi Arabic",sans-serif}
+main.wrap{padding-top:18px;padding-bottom:30px}
+/* filtres */
+.filtres{display:grid;grid-template-columns:1fr auto;gap:10px;margin:0 0 6px}
+.recherche{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:0 12px;box-shadow:var(--ombre)}
+.recherche svg{width:20px;height:20px;stroke:var(--doux);fill:none;stroke-width:2;flex:none}
+.recherche input{border:0;outline:0;font:inherit;padding:12px 0;width:100%;background:transparent}
+select{font:inherit;border:1px solid var(--ligne);border-radius:12px;padding:10px 12px;background:#fff;color:var(--texte);box-shadow:var(--ombre);max-width:100%}
+.puces{grid-column:1/-1;display:flex;flex-wrap:wrap;gap:8px}
+.puce{border:1px solid var(--ligne);background:#fff;border-radius:999px;padding:7px 14px;font:inherit;font-weight:700;color:var(--doux);cursor:pointer}
+.puce.on{background:var(--p);border-color:var(--p);color:#fff}
+.compte{color:var(--doux);font-size:14px;margin:8px 2px 10px}
+@media (max-width:560px){.filtres{grid-template-columns:1fr}}
+/* liste de fiches */
+.liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.fiche-carte{display:flex;flex-direction:column;gap:4px;background:var(--carte);border:1px solid var(--ligne);border-radius:14px;padding:14px;text-decoration:none;color:var(--texte);box-shadow:var(--ombre)}
+.fiche-carte:hover{border-color:var(--p)}
+.fiche-carte.pro{border:2px solid var(--p)}
+.fc-nom{font-weight:800;font-size:16px;line-height:1.3}
+.fc-ar{display:block;font-weight:600;color:var(--doux);font-family:"Noto Kufi Arabic",sans-serif;font-size:14px}
+.fc-lieu,.fc-tel,.fc-metier{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--doux)}
+.fc-tel{color:var(--p);font-weight:700}
+.fiche-carte svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
+.vide{color:var(--doux);background:#fff;border:1px dashed var(--ligne);border-radius:12px;padding:16px;text-align:center}
+/* gouvernorats */
+.titre-section{font-size:18px;margin:26px 0 10px}
+.gouvernorats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
+.gouvernorats a{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--texte);font-weight:700}
+.gouvernorats .n{background:var(--p-clair);color:var(--p);border-radius:999px;padding:1px 9px;font-size:13px}
+/* cartes, boutons */
+.carte{background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:18px;margin:16px 0;box-shadow:var(--ombre)}
+.carte h2{margin:0 0 6px;font-size:18px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:var(--p);color:#fff;border:0;border-radius:12px;padding:12px 16px;font:inherit;font-weight:800;text-decoration:none;cursor:pointer}
+.btn.vert{background:var(--vert)}.btn.clair{background:var(--p-clair);color:var(--p)}
+.btn svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.btn[disabled]{opacity:.5}
+.actions{display:flex;flex-wrap:wrap;gap:10px}
+.actions.petites{margin-top:14px;flex-direction:column;gap:8px;font-size:14px}
+.actions.petites a{display:inline-flex;align-items:center;gap:8px;color:var(--doux)}
+.actions.petites svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
+.infos{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:16px 0 0}
+.infos dt{color:var(--doux);font-size:14px}.infos dd{margin:0;font-weight:600}
+.source{font-size:13px;color:var(--doux);margin:14px 0 0}
+.pro-appel{background:var(--p-clair);border-color:transparent}
+.liens-amis a{display:block;font-weight:700;padding:4px 0}
+.note{background:#FFF6E5;border:1px solid #F6D58E;border-radius:12px;padding:12px 14px;font-size:14px}
+.texte p{margin:0 0 12px}
+/* formulaires */
+.formulaire{display:grid;gap:8px}
+.formulaire label{font-weight:700;font-size:14px}
+.formulaire input,.formulaire textarea,.formulaire select{font:inherit;border:1px solid var(--ligne);border-radius:10px;padding:10px 12px;width:100%;box-shadow:none}
+.choix-action{border:0;padding:0;margin:0 0 6px;display:grid;gap:6px}.choix-action label{font-weight:600}
+.choix-action input{width:auto}
+.piege,.formulaire input.piege{position:absolute;inset-inline-start:0;width:1px;height:1px;padding:0;border:0;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;opacity:0}
+.statut{min-height:1.2em;margin:0;font-weight:700;color:var(--p)}
+.mention,.fiche-choisie{font-size:13px;color:var(--doux);margin:0}
+/* pied */
+footer{background:#14202E;color:#C9D3DD;padding:22px 0;font-size:14px}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-bottom:10px}
+footer a{color:#fff}
+footer p{margin:6px 0}
+/* images (checklist visuelle) */
+.hero-accueil .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:22px;align-items:center}
+.hero-photo{margin:0}.hero-photo img{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,.25);display:block}
+.hero .credit{font-size:11.5px;color:rgba(255,255,255,.8);margin:6px 2px 0}.hero .credit a{color:inherit}
+@media (max-width:720px){.hero-accueil .wrap{grid-template-columns:1fr}.hero-photo img{aspect-ratio:16/9}}
+.ill-metier{flex:none;border-radius:10px;display:block}
+.fiche-carte{display:grid;grid-template-columns:auto 1fr;column-gap:12px;align-items:start}
+.fiche-carte>.ill-metier{grid-row:span 4}
+.fiche-carte>span{grid-column:2}
+.puce{display:inline-flex;align-items:center;gap:6px}.puce .ill-metier{border-radius:6px}
+.metiers{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:0 0 14px}
+.metier{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;background:#fff;border:1px solid var(--ligne);border-radius:14px;padding:12px 8px;text-decoration:none;color:var(--texte);font-weight:700;box-shadow:var(--ombre)}
+.metier .n{background:var(--p-clair);color:var(--p);border-radius:999px;padding:0 9px;font-size:13px}
+.titre-fiche{display:flex;align-items:center;gap:12px}.titre-fiche .ill-metier{background:#fff;padding:3px;border-radius:12px}
+/* la petite image du métier dans le titre d'une fiche ne doit pas prendre la règle des photos du bandeau (.hero-photo img) */
+.hero-photo .titre-fiche img.ill-metier{width:48px;height:48px;aspect-ratio:auto;box-shadow:none;border-radius:12px}
+/* carte de la Tunisie (moteur commun) */
+.bloc-carte{display:grid;grid-template-columns:230px 1fr;gap:18px;align-items:start}
+.bloc-carte figure{margin:0}.bloc-carte figcaption{font-size:12.5px;color:var(--doux);text-align:center;margin-top:6px;font-weight:600}
+.carte-tn{width:100%;height:auto;overflow:visible}
+.tn-terre{fill:var(--p-clair);stroke:var(--p);stroke-width:1.3;stroke-linejoin:round}
+.tn-b circle{fill:var(--p);fill-opacity:.9;stroke:#fff;stroke-width:1.6}
+.tn-b:hover circle{fill-opacity:1}
+.tn-b.vide circle{fill:var(--doux);fill-opacity:.35}
+.tn-b.actif circle{fill:#F2B33D;fill-opacity:1;stroke:var(--p-fonce);stroke-width:2.5}
+.tn-b text{fill:#fff;font:800 10.5px Figtree,system-ui,sans-serif;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+.bloc-carte.petite{grid-template-columns:170px 1fr}
+@media (max-width:560px){.bloc-carte,.bloc-carte.petite{grid-template-columns:1fr}.bloc-carte figure{max-width:230px;margin:0 auto}}
+/* bandeau : photo en fond + carte de la Tunisie en haut (règle d'Ahmed) */
+.hero-accueil{position:relative;overflow:hidden}
+.hero-fond{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.22;mix-blend-mode:luminosity;pointer-events:none}
+.hero-accueil .wrap{position:relative}
+.hero-accueil>.wrap:first-of-type{display:grid;grid-template-columns:1fr 250px;gap:24px;align-items:center}
+.hero-carte{margin:0;background:rgba(255,255,255,.95);border-radius:18px;padding:10px 10px 6px;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.hero-carte figcaption{font-size:12px;color:var(--doux);text-align:center;font-weight:700;margin-top:2px}
+.hero-carte.petite{max-width:200px;justify-self:end}
+@media (max-width:640px){.hero-accueil>.wrap:first-of-type{grid-template-columns:1fr}.hero-carte,.hero-carte.petite{max-width:250px;margin:0 auto;width:100%;justify-self:center}}
+.protege{-webkit-user-select:none;user-select:none}
+img,svg{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
+.appel-vide{background:#FFF8E8;border-color:#F6D58E}
+/* espace professionnels : badges, offres, formule Pro (06/10/2026) */
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin:2px 0}
+.fiche-carte>.badges{grid-column:2}
+.badge{display:inline-flex;align-items:center;gap:4px;border-radius:999px;padding:1px 9px;font-size:12px;font-weight:800;line-height:1.6}
+.badge.pro{background:#F2B33D;color:#3A2A00}
+.badge.verifiee{background:#E3F4EA;color:var(--vert)}
+.badge svg,.source svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:3;vertical-align:-2px}
+.hero .badges{margin-top:8px}.hero .badge.verifiee{background:rgba(255,255,255,.9)}
+.note-pro{font-size:13px;color:var(--doux);margin:0 2px 10px}
+.description{margin:0 0 12px;font-size:16px}
+.specialites{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0 0 14px}
+.specialites li{background:var(--p-clair);color:var(--p);border-radius:999px;padding:3px 11px;font-size:13px;font-weight:700}
+.offres{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:4px 0 16px}
+@media (max-width:640px){.offres{grid-template-columns:1fr}}
+.offre{position:relative;background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:18px;box-shadow:var(--ombre)}
+.offre.pro{border:2px solid var(--p)}
+.offre h2{margin:0 0 4px;font-size:19px}
+.prix{font-size:22px;font-weight:800;color:var(--p);margin:0 0 10px}.prix small{font-size:14px;color:var(--doux);font-weight:600}
+.avantages{margin:0 0 10px;padding-inline-start:20px}.avantages li{margin:4px 0}
+.ruban{position:absolute;top:-12px;inset-inline-end:14px;margin:0;background:#F2B33D;color:#3A2A00;font-weight:800;font-size:13px;border-radius:999px;padding:3px 12px}
+.petit{font-size:13px;color:var(--doux);margin:0}
+.case{display:flex;gap:8px;align-items:flex-start;font-weight:600}.case input{width:auto;margin-top:4px}
+.apres-pro{background:#F1FAF4;border:1px solid #BFE3CC;border-radius:14px;padding:16px}
+.apres-pro h3{margin:0 0 8px}.rib dd{font-weight:800}
+/* photos réelles par métier (06/10/2026) */
+.hero-photo{position:relative;overflow:hidden}.hero-photo .wrap{position:relative}
+.metier.avec-photo{padding:0 0 10px;overflow:hidden;position:relative}
+.metier .photo-metier{width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;display:block}
+.metier.avec-photo .ill-metier{position:absolute;top:8px;inset-inline-start:8px;background:#fff;border-radius:10px;padding:3px;box-shadow:var(--ombre);width:36px;height:36px}
+.credits{font-size:13px;color:var(--doux);padding-inline-start:18px}
+/* formulaire complet d'ajout (06/10/2026) — min-width:0 : sinon un fieldset déborde (page arabe décalée) */
+.champs-ajout,.champs-autre,.specialites-choix{border:0;padding:0;margin:0;display:grid;gap:8px;min-width:0}
+.champs-ajout>legend{font-weight:800;font-size:14px;color:var(--p);margin-bottom:4px;padding:0}
+.specialites-choix{grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:4px 12px}.specialites-choix legend{font-weight:700;font-size:14px;padding:0}
+.choix-action{min-width:0}
+[hidden]{display:none!important}
