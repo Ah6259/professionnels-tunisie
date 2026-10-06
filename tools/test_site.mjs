@@ -27,7 +27,7 @@ const retraits = existsSync(join(root, "donnees/retraits.json")) ? JSON.parse(li
 const manuels = existsSync(join(root, "donnees/manuels.json")) ? JSON.parse(lire("donnees/manuels.json")).fiches : [];
 const inscrits = existsSync(join(root, "donnees/inscrits.json")) ? JSON.parse(lire("donnees/inscrits.json")).fiches : [];
 const prosIds = existsSync(join(root, "donnees/pros.json")) ? (JSON.parse(lire("donnees/pros.json")).pros || []).map(p => p.fiche) : [];
-const contact = f => !!(f.tel || f.whatsapp || f.site || f.source_url || prosIds.includes(f.id));
+const contact = f => !!(f.tel || f.whatsapp || (f.adresse && String(f.adresse).trim().length > 5) || prosIds.includes(f.id));
 const sansContact = [...osm, ...manuels, ...inscrits, ...(existsSync(join(root, "donnees/importes.json")) ? JSON.parse(lire("donnees/importes.json")).fiches : [])].filter(f => !retraits.includes(f.id) && !contact(f));
 const importes = existsSync(join(root, "donnees/importes.json")) ? JSON.parse(lire("donnees/importes.json")).fiches : [];
 const attendues = [...osm, ...manuels, ...inscrits, ...importes].filter(f => !retraits.includes(f.id) && contact(f));
@@ -37,7 +37,10 @@ const fichesPages = pages.filter(p => p.startsWith("fiche/"));
 check("accueil, à propos, professionnels et 24 pages de gouvernorat", ["index.html", "a-propos/index.html", "inscription/index.html"].every(p => pages.includes(p)) && pages.filter(p => p.startsWith("gouvernorat/")).length === 24);
 check(`une page par fiche (au plus ${attendues.length} : doublons fusionnés), aucune fiche retirée publiée`, fichesPages.length <= attendues.length && fichesPages.length >= attendues.length * 0.8 && retraits.every(id => !existsSync(join(root, "fiche", id))));
 check("au moins une fiche (le relevé OpenStreetMap a fonctionné)", attendues.length > 0);
-check("aucune fiche vide : les fiches sans téléphone, WhatsApp, site ni page publique ne sont pas publiées (règle d'Ahmed)", sansContact.every(f => !existsSync(join(root, "fiche", f.id))));
+{
+  const vides = fichesPages.filter(p => { const h = lire(p); return !/href="tel:\+216/.test(h) && !/wa\.me\/216/.test(h) && !/<dt><span data-l="fr">Adresse<\/span>/.test(h) && !/badge pro/.test(h); });
+  check(`aucune fiche vide : chaque fiche publiée a un téléphone, un WhatsApp ou une adresse (règle d'Ahmed)${vides.length ? " — " + vides.slice(0, 3).join(", ") : ""}`, !vides.length);
+}
 check("fiches « web » (page publique de l'établissement) et « officiel » (liste d'une administration) : lien, date de relevé et bonne mention de la source sur la fiche",
   manuels.every(f => ["web", "officiel"].includes(f.source) && /^https?:\/\//.test(f.source_url || "") && f.releve && (!contact(f) || (existsSync(join(root, "fiche", f.id, "index.html")) &&
     lire(`fiche/${f.id}/index.html`).includes(f.source === "web" ? "sa page publique" : "la liste officielle publiée par")))));
@@ -100,6 +103,7 @@ check("aucun secret ni adresse e-mail privée dans le site", ![...pages, "config
 
 check("arabe : le champ anti-robot des formulaires garde 1 px de large (sinon la page arabe est décalée à droite)", /\.formulaire input\.piege[^}]*width:1px/.test(lire("assets/style.css")));
 check("un élément caché (attribut hidden) reste toujours caché, même avec un style d'affichage", /\[hidden\]\{display:none!important\}/.test(lire("assets/style.css")));
+check("filtres : chaque bouton de métier d'une page de gouvernorat a au moins une fiche (jamais de bouton à 0 résultat)", pages.filter(p => p.startsWith("gouvernorat/")).every(p => { const h = lire(p); return [...h.matchAll(/class="puce" data-m="([^"]+)"/g)].every(m => h.includes(`data-m="${m[1]}">`) && new RegExp(`class="fiche-carte[^"]*"[^>]*data-m="${m[1]}"`).test(h)); }));
 check("arabe : aucun élément placé loin hors de l'écran (sinon la page arabe s'affiche blanche sur téléphone)", !/(left|right)\s*:\s*-\d{3,}px/.test(lire("assets/style.css")));
 check("doublons : pas deux fiches au même nom à moins de 300 m", (() => {
   const L = fichesPages.map(p => { const m = lire(p).match(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/); try { return JSON.parse(m[1]); } catch { return null; } }).filter(x => x && x.geo);

@@ -73,9 +73,10 @@ for (const f of gardees) {
     for (const k of ["description", "specialites", "whatsapp", "horaires"]) if (p[k]) f[k] = p[k];
   }
 }
-// règle d'Ahmed (06/10/2026) : aucune fiche vide. Une fiche sans téléphone, sans WhatsApp, sans site et sans page publique
+// règle d'Ahmed (06/10/2026) : aucune fiche vide. Une fiche sans téléphone, sans WhatsApp et sans adresse
 // de l'établissement n'est pas publiée (elle reste dans les données et revient toute seule dès qu'un contact est connu).
-export const aUnContact = f => !!(f.tel || f.whatsapp || f.site || f.source_url || ETAT_PROS[f.id]);
+// règle renforcée (06/10/2026) : une fiche publiée a un TÉLÉPHONE, un WhatsApp ou une ADRESSE ; nom + lien seuls = fiche vide
+export const aUnContact = f => !!(f.tel || f.whatsapp || (f.adresse && String(f.adresse).trim().length > 5) || ETAT_PROS[f.id]);
 const vides = gardees.filter(f => !aUnContact(f)).length;
 if (vides) console.log(`(${vides} fiche(s) sans aucun contact non publiées)`);
 export const FICHES = gardees.filter(aUnContact)
@@ -174,11 +175,13 @@ function carte(f, racine) {
 </a>`;
 }
 
-function filtres(racine, gouvernoratFixe) {
+function filtres(racine, gouvernoratFixe, liste = FICHES) {
+  const nb = Object.fromEntries(C.metiers.map(m => [m.id, liste.filter(f => f.metier === m.id).length]));
+  const presents = C.metiers.filter(m => nb[m.id] > 0);
   return `<div class="filtres" id="filtres">
   <label class="recherche">${svg("loupe")}<input type="search" id="recherche" autocomplete="off" aria-label="Rechercher"></label>
   ${gouvernoratFixe ? "" : `<select id="choix-g" aria-label="Gouvernorat"><option value="">${esc("Tous les gouvernorats")}</option>${GOUVERNORATS.map(g => `<option value="${g[0]}" data-ar="${esc(g[2])}">${esc(g[1])}</option>`).join("")}</select>`}
-  ${C.metiers.length > 1 ? `<div class="puces">${C.metiers.map(m => `<button type="button" class="puce" data-m="${m.id}">${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}</button>`).join("")}</div>` : ""}
+  ${presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}">${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
 </div>
 <p class="compte" id="compte" aria-live="polite"></p>`;
 }
@@ -239,7 +242,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   <figure class="hero-carte">${carteTunisie("", compteG)}<figcaption>${bi("Touchez un gouvernorat", "اضغط على ولاية")}</figcaption></figure>
 </div>${P ? `<div class="wrap">${creditPhoto()}</div>` : ""}</section>
 <main class="wrap">
-  ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="#liste" data-m="${m.id}">${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
+  ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.filter(m => FICHES.some(f => f.metier === m.id)).map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="#liste" data-m="${m.id}">${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
   ${filtres("", false)}
   ${notePro(FICHES)}
   <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>
@@ -269,7 +272,7 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
   <figure class="hero-carte petite">${carteTunisie("../../", compteG, slug)}<figcaption>${bi("Autres gouvernorats : touchez la carte", "ولايات أخرى: اضغط على الخريطة")}</figcaption></figure>
 </div></section>
 <main class="wrap">
-  ${liste.length ? filtres("../../", true) + notePro(liste) + `<div class="liste protege" id="liste">${liste.map(f => carte(f, "../../")).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>`
+  ${liste.length ? filtres("../../", true, liste) + notePro(liste) + `<div class="liste protege" id="liste">${liste.map(f => carte(f, "../../")).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>`
     : `<section class="carte appel-vide"><h2>${bi(`Soyez parmi les premiers à ${esc(fr)}`, `كن من الأوائل في ${esc(ar)}`)}</h2><p>${bi(`Aucune fiche pour l'instant dans le gouvernorat de ${esc(fr)}. Vous êtes un professionnel ici, ou vous en connaissez un ? L'ajout est gratuit.`, `لا توجد بطاقة حاليًا في ولاية ${esc(ar)}. هل أنت مهني هنا أو تعرف مهنيًا؟ الإضافة مجانية.`)}</p><a class="btn" href="../../inscription/">${bi("Ajouter une fiche gratuitement", "أضف بطاقة مجانًا")}</a></section>`}
   <section class="carte">
     <h2>${bi("Autres gouvernorats", "ولايات أخرى")}</h2>
