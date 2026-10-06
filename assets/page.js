@@ -1,5 +1,7 @@
 /* Moteur d'annuaire — langue (français / arabe), en-tête et pied communs, protection légère, installation.
    Les textes propres au site viennent de assets/conf.js (fabriqué par tools/construire.mjs). */
+// La mémoire du navigateur est PARTAGÉE par tous les sites d'ah6259.github.io : n'accepter que « fr » ou « ar »
+// (le site des conférences gardait « en » → textes tous cachés)
 (function () {
   if (window.top === window.self) return;                       // anti-cadre : pas d'affichage dans un autre site
   let meme = false;
@@ -10,7 +12,7 @@
 (function () {
   const html = document.documentElement, racine = html.dataset.racine || "", C = window.CONF;
   let langue = "fr";
-  try { langue = localStorage.getItem("langue") || ((navigator.language || "").startsWith("ar") ? "ar" : "fr"); } catch (e) {}
+  try { langue = (/^(fr|ar)$/.test(localStorage.getItem("langue") || "") ? localStorage.getItem("langue") : "") || ((navigator.language || "").startsWith("ar") ? "ar" : "fr"); } catch (e) {}
   const demande = new URLSearchParams(location.search).get("lang");
   if (demande === "ar" || demande === "fr") langue = demande;
   window.T = (fr, ar) => html.lang === "ar" ? ar : fr;

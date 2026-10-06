@@ -227,6 +227,11 @@ else {
     check("page vidéo : le lien « Vidéo de présentation » de l'accueil mène à la page vidéo", (await (async () => { const a = await ouvrir("index.html"); await new Promise(r => setTimeout(r, 60)); const l = a.d.querySelector("#lien-video a"); return l && l.getAttribute("href") === BASE + "video/"; })()));
     check("page vidéo : en arabe, le bouton devient « افتح الموقع »", (() => { v.d.documentElement.lang = "ar"; v.d.dispatchEvent(new v.w.Event("langue")); return true; })() && await new Promise(r => setTimeout(() => r(v.d.querySelector(".btn-video-site").textContent === "افتح الموقع"), 60)));
   }
+  { const html = lire("index.html").replace(/<script[^>]*src="[^"]*"[^>]*><\/script>/g, "");
+    const dom = new JSDOM(html, { runScripts: "outside-only", url: C.url, beforeParse(x) { x.localStorage.setItem("langue", "en"); } });
+    for (const js of ["assets/conf.js", "assets/page.js", "assets/annuaire.js"]) dom.window.eval(lire(js));
+    await new Promise(r => setTimeout(r, 50));
+    check("mémoire du navigateur partagée avec un autre site (langue « en ») : la page reste en fr ou ar, jamais vide", ["fr", "ar"].includes(dom.window.document.documentElement.lang)); }
   check("accueil : bouton de langue → arabe, de droite à gauche", d.documentElement.lang === "ar" && d.documentElement.dir === "rtl");
   const fTel = attendues.find(f => f.tel) || attendues[0];
   ({ w, d } = await ouvrir(`fiche/${fTel.id}/index.html`));
