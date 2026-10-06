@@ -1,0 +1,72 @@
+# Bouton « Activer un Pro » : Ahmed le lance depuis l'application GitHub du téléphone (onglet Actions → activer-pro →
+# Run workflow), sans PC. La fiche passe en Pro (ou vérifiée), les pages sont refaites, testées puis publiées.
+name: activer-pro
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: "essai = 1er mois gratuit ; paye = paiement reçu ; verifiee = fiche gratuite vérifiée ; arret = fin du Pro"
+        type: choice
+        options: [essai, paye, verifiee, arret]
+        required: true
+      fiche:
+        description: "Identifiant de la fiche (dans son adresse : …/fiche/IDENTIFIANT/). Vide si nouvelle fiche."
+        required: false
+      mois:
+        description: "Mois payés (pour « paye »)"
+        default: "12"
+      nom:
+        description: "Nouvelle fiche seulement : nom de l'établissement"
+        required: false
+      metier:
+        description: "Nouvelle fiche : métier (ex. avocat, salle-des-fetes, plombier)"
+        required: false
+      gouvernorat:
+        description: "Nouvelle fiche : gouvernorat (ex. sfax, ben-arous)"
+        required: false
+      ville:
+        description: "Nouvelle fiche : ville"
+        required: false
+      telephone:
+        description: "Nouvelle fiche : téléphone (8 chiffres)"
+        required: false
+permissions:
+  contents: write
+concurrency:
+  group: maj-site
+  cancel-in-progress: false
+jobs:
+  activer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+      - name: Activer
+        env:
+          A_ACTION: ${{ inputs.action }}
+          A_FICHE: ${{ inputs.fiche }}
+          A_MOIS: ${{ inputs.mois }}
+          A_NOM: ${{ inputs.nom }}
+          A_METIER: ${{ inputs.metier }}
+          A_GOUV: ${{ inputs.gouvernorat }}
+          A_VILLE: ${{ inputs.ville }}
+          A_TEL: ${{ inputs.telephone }}
+        run: python tools/activer_pro.py --action "$A_ACTION" --fiche "$A_FICHE" --mois "${A_MOIS:-12}" --nom "$A_NOM" --metier "$A_METIER" --gouvernorat "$A_GOUV" --ville "$A_VILLE" --telephone "$A_TEL"
+      - name: Pages
+        run: node tools/construire.mjs
+      - name: Tests
+        run: |
+          npm install --no-save --no-package-lock jsdom
+          node tools/test_site.mjs
+      - name: Publier
+        run: |
+          git config user.name "robot-annuaire"
+          git config user.email "robot-annuaire@users.noreply.github.com"
+          git add -A
+          git diff --cached --quiet || git commit -m "Formule Pro : ${{ inputs.action }} ${{ inputs.fiche }}${{ inputs.nom }}"
+          git pull --rebase
+          git push
