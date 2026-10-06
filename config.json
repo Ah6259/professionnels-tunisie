@@ -473,8 +473,8 @@
       "fr": "Modèles de contrats et documents gratuits",
       "ar": "نماذج عقود ووثائق مجانية",
       "url": "https://ah6259.github.io/documents-tunisie/",
-      "desc_fr": "Location, vente, travail : en français et en arabe",
-      "desc_ar": "كراء، بيع، شغل: بالعربية والفرنسية",
+      "desc_fr": "Contrats de location, de vente, de travail…",
+      "desc_ar": "عقود الكراء والبيع والشغل…",
       "logo": "assets/liens/documents.svg",
       "vedette": true
     },
@@ -482,8 +482,8 @@
       "fr": "Calculs gratuits : salaire, impôt, auto-entrepreneur",
       "ar": "حسابات مجانية: الأجر، الضريبة، المبادر الذاتي",
       "url": "https://ah6259.github.io/outils-pratiques-tunisie/",
-      "desc_fr": "Barèmes officiels tunisiens",
-      "desc_ar": "حسب الجداول الرسمية التونسية",
+      "desc_fr": "Selon les barèmes officiels",
+      "desc_ar": "حسب الجداول الرسمية",
       "logo": "assets/liens/outils.svg",
       "vedette": true
     },
