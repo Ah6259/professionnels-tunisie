@@ -9,6 +9,7 @@ import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import { createHash } from "crypto";
 import { TN_CONTOUR, TN_DJERBA, TN_POS } from "./carte_tunisie.mjs";
+import { pagesVideo } from "./page_video.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const lire = (f, defaut) => existsSync(join(root, f)) ? JSON.parse(readFileSync(join(root, f), "utf8")) : defaut;
@@ -200,8 +201,6 @@ const blocPro = racine => `<section class="carte pro-appel">
 const lienVedette = racine => (C.liens || []).filter(l => l.vedette).map(l => `<a class="lien-vedette" href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}">${l.logo ? `<img src="${racine}${esc(l.logo)}" alt="" width="36" height="36">` : ""}<span><strong>${biO(l)}</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</span><span class="lv-fleche" aria-hidden="true">→</span></a>`).join("");
 const liensAmis = () => C.liens && C.liens.length ? `<section class="carte liens-amis"><h2>${bi("Gratuit aussi sur nos sites", "مجانًا أيضًا على مواقعنا")}</h2>${C.liens.map(l => `<a href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}"><strong>${biO(l)} →</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</a>`).join("")}</section>` : "";
 
-// lien discret vers la vidéo de présentation (bas de l'accueil), pour la regarder / la télécharger et la publier à la main
-const lienVideo = racine => `<p class="lien-video"><a href="${racine}assets/video/presentation.mp4">${bi("Vidéo de présentation", "الفيديو التقديمي")}</a></p>`;
 const AVIS = `<section class="carte avis" id="avis">
   <h2>${bi("Votre avis", "رأيك يهمّنا")}</h2>
   <p>${bi("Une remarque, une erreur, une idée ? Écrivez-nous : chaque message est lu.", "ملاحظة، خطأ، فكرة؟ اكتب لنا: كل رسالة تُقرأ.")}</p>
@@ -260,7 +259,6 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   ${blocPro("")}
   ${liensAmis()}
   ${AVIS}
-  ${lienVideo("")}
 </main>
 ` + pied;
 }
@@ -516,10 +514,6 @@ pages["a-propos/"] = tete({ titre: `À propos et sources | ${C.nom.fr}`, desc: `
   <p>${bi("Ce site n'est lié à aucune administration ni organisation professionnelle. La consultation est gratuite et sans inscription.", "هذا الموقع غير مرتبط بأي إدارة أو هيكل مهني. التصفح مجاني ودون تسجيل.")}</p>
   <h2>${bi("Crédits des photos", "حقوق الصور")}</h2>
   <ul class="credits">${[...(P && P.mosaique ? P.mosaique : [P]), ...C.metiers.map(m => m.photo)].filter(Boolean).filter((ph, i, t) => t.findIndex(x => x.source === ph.source) === i).map(ph => `<li><bdi>${esc(ph.auteur)}</bdi>, <a href="${esc(ph.licence_url)}" rel="noopener license">${esc(ph.licence)}</a>, <a href="${esc(ph.source)}" rel="noopener">Wikimedia Commons</a></li>`).join("")}</ul>
-  <h2>${bi("Vidéos de présentation", "فيديوهات تقديمية")}</h2>
-  <p>${bi("À regarder, télécharger ou partager (Instagram, Facebook, TikTok, WhatsApp) :", "للمشاهدة أو التنزيل أو المشاركة (إنستغرام، فيسبوك، تيك توك، واتساب):")}
-    <a href="../assets/video/presentation.mp4">${bi("Vidéo de présentation", "الفيديو التقديمي")}</a> ·
-    <a href="../assets/video/presentation-pro.mp4">${bi("Vidéo pour les professionnels", "فيديو للمهنيين")}</a></p>
   <h2>${bi("Données personnelles et retrait", "المعطيات الشخصية والحذف")}</h2>
   <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction ou le retrait de sa fiche depuis la page <a href="../inscription/">Professionnels</a> ; un retrait est définitif. Statistiques de visite anonymes, sans cookies (GoatCounter).`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها أو حذفها من صفحة <a href="../inscription/">المهنيون</a>؛ والحذف نهائي. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter).`)}</p>
 </section></main>
@@ -574,4 +568,19 @@ Sitemap: ${URL_SITE}sitemap.xml
 # Robots d'intelligence artificielle et aspirateurs : non
 ${["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-Web", "anthropic-ai", "CCBot", "Google-Extended", "Applebot-Extended", "PerplexityBot", "Bytespider", "Amazonbot", "Meta-ExternalAgent", "FacebookBot", "Diffbot", "Omgilibot", "cohere-ai", "ImagesiftBot", "HTTrack", "WebCopier", "WebZIP", "Offline Explorer", "wget", "SiteSnagger"].map(b => `User-agent: ${b}\nDisallow: /`).join("\n\n")}
 `, "utf8");
+// pages vidéo (video/ et video-pro/) tirées de la page À propos : mêmes en-tête, pied, CSP et ?v= (tools/page_video.mjs)
+pagesVideo(root, {
+  site: URL_SITE, logo: "assets/logo.svg", defaut: "fr",
+  nom: { fr: C.nom.fr.split(" — ")[0], ar: C.nom.ar.split(" — ")[0] },
+  partager: { fr: "Partager la vidéo", ar: "شارك الفيديو" },
+  pages: [
+    { chemin: "video/", video: "presentation", couverture: "couverture.jpg", apercu: "apercu-video.jpg", site: "",
+      titre: { fr: "Vidéo de présentation", ar: "الفيديو التقديمي" },
+      description: { fr: `Vidéo de présentation : ${C.description}`, ar: `فيديو تقديمي: ${C.titre_accueil.ar}` },
+      bouton: { fr: "Ouvrir le site", ar: "افتح الموقع" } },
+    { chemin: "video-pro/", video: "presentation-pro", couverture: "couverture-pro.jpg", apercu: "apercu-video-pro.jpg", site: "inscription/#offres",
+      titre: { fr: "Professionnels, soyez trouvés", ar: "أيها المهنيون، اجعلوا الحرفاء يجدونكم" },
+      description: { fr: `Professionnels : fiche gratuite sur ${C.nom.fr}, formule Pro avec le 1er mois offert, sans engagement au-delà d'un an.`, ar: `للمهنيين: بطاقة مجانية، وصيغة Pro مع الشهر الأول مجانًا.` },
+      bouton: { fr: "Ouvrir le site", ar: "افتح الموقع" } },
+  ] });
 console.log(`${Object.keys(pages).length} pages (${FICHES.length} fiches, ${retraits.size} retirée(s)), version ${V}`);

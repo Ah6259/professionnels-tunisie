@@ -70,16 +70,37 @@ function tailleVideo(buf) {
   }
   return [0, 0];
 }
+// piste son (musique de fond CC0) : présente (mp4a) et débit > 0 (lu dans la boîte esds)
+function debitSon(buf) {
+  const i = buf.indexOf("esds"); if (i < 0 || buf.indexOf("soun") < 0 || buf.indexOf("mp4a") < 0) return 0;
+  let j = i + 8; const lng = () => { while (buf[j] & 0x80) j++; j++; };
+  if (buf[j] !== 0x03) return 0; j++; lng(); j += 3;
+  if (buf[j] !== 0x04) return 0; j++; lng();
+  return Math.max(buf.readUInt32BE(j + 5), buf.readUInt32BE(j + 9));
+}
 for (const nom of ["presentation", "presentation-pro"]) {
   const f = join(root, "assets", "video", nom + ".mp4"), ok = existsSync(f);
   const buf = ok ? readFileSync(f) : Buffer.alloc(0), [vw, vh] = ok ? tailleVideo(buf) : [0, 0];
   check(`vidéo ${nom}.mp4 : présente, ≤ 8 Mo, 1080 × 1920 (9:16) (${(buf.length / 1e6).toFixed(1)} Mo, ${vw} × ${vh})`, ok && buf.length <= 8e6 && vw === 1080 && vh === 1920);
+  check(`vidéo ${nom}.mp4 : piste son présente (musique de fond), débit > 0`, ok && debitSon(buf) > 0);
   const couv = join(root, "assets", "video", nom.replace("presentation", "couverture") + ".jpg");
   check(`vidéo ${nom} : image de couverture JPEG`, existsSync(couv) && readFileSync(couv).subarray(0, 2).toString("hex") === "ffd8");
 }
 check("CSP : media-src 'self' (vidéo) sur l'accueil", /media-src 'self'/.test(lire("index.html")));
 check("service worker : les vidéos .mp4 ne sont jamais mises en cache", lire("sw.js").includes('/\\.mp4$/i.test(url.pathname)) return'));
-check("liens « Vidéo de présentation » : accueil et À propos", lire("index.html").includes('href="assets/video/presentation.mp4"') && lire("a-propos/index.html").includes('href="../assets/video/presentation-pro.mp4"'));
+// pages vidéo (video/, video-pro/) : lecteur, gros bouton vers le site, aperçu WhatsApp / Facebook (og:video, og:image), sitemap
+for (const [chemin, mp4, cible] of [["video/", "presentation", '"../"'], ["video-pro/", "presentation-pro", '"../inscription/#offres"']]) {
+  const f = join(root, chemin, "index.html"), h = existsSync(f) ? readFileSync(f, "utf8") : "";
+  check(`page ${chemin} : lecteur vidéo, bouton « Ouvrir le site », bouton Partager`, /<video class="video-lecteur" controls playsinline preload="metadata"[^>]*poster="\.\.\/assets\/video\/couverture/.test(h)
+    && h.includes(`src="../assets/video/${mp4}.mp4"`) && h.includes(`class="btn-video-site" href=${cible}`) && h.includes("data-partager-video") && h.includes('data-var="افتح الموقع"'));
+  check(`page ${chemin} : og:type video.other, og:video (mp4 1080 × 1920), og:image 1200 × 630, canonique`,
+    h.includes('<meta property="og:type" content="video.other">') && h.includes(`<meta property="og:video:secure_url" content="${C.url}assets/video/${mp4}.mp4">`)
+    && h.includes('<meta property="og:video:type" content="video/mp4">') && h.includes('<meta property="og:video:height" content="1920">')
+    && /<meta property="og:image" content="[^"]*apercu-video[^"]*\.jpg">/.test(h) && h.includes('<meta property="og:image:width" content="1200">')
+    && h.includes(`<link rel="canonical" href="${C.url}${chemin}">`) && existsSync(join(root, "assets/video", (chemin === "video/" ? "apercu-video" : "apercu-video-pro") + ".jpg")));
+  check(`page ${chemin} : même CSP (media-src) et même en-tête / pied que les autres pages`, /media-src 'self'/.test(h) && h.includes('id="entete"') && h.includes('id="pied"'));
+  check(`page ${chemin} : dans le sitemap`, lire("sitemap.xml").includes(`<loc>${C.url}${chemin}</loc>`));
+}
 check(`référencement : titre, description, canonique, JSON-LD valide (${pbSeo.slice(0, 3).join(", ")})`, !pbSeo.length);
 check(`liens internes vers des fichiers existants (${pbLiens.slice(0, 3).join(" ; ")})`, !pbLiens.length);
 
@@ -179,31 +200,32 @@ else {
   { const b = d.querySelector("#entete .partager"); let ouvert = "";
     w.open = u => { ouvert = u; }; if (b) { b.dispatchEvent(new w.Event("click")); await new Promise(r => setTimeout(r, 20)); }
     check("bouton Partager dans l'en-tête : ouvre WhatsApp avec le lien de la page (si pas de partage du téléphone)", !!b && ouvert.startsWith("https://wa.me/?text=") && decodeURIComponent(ouvert).includes(C.url)); }
-  // Partage de la VIDÉO de présentation (demande d'Ahmed) : faux téléphone qui sait partager des fichiers
+  // Partager (demande d'Ahmed) : un LIEN vers la page vidéo + l'adresse du site ; jamais de fichier
   {
-    const essai = async (page, { fichiers = true, echecFetch = false } = {}) => {
-      const o = await ouvrir(page); const n = o.w.navigator, journal = { partages: [], telecharges: [], ouvert: "" };
-      Object.defineProperty(n, "canShare", { configurable: true, value: x => fichiers || !(x && x.files) });
-      Object.defineProperty(n, "share", { configurable: true, value: async x => { journal.partages.push(x); } });
-      o.w.fetch = async u => { journal.telecharges.push(String(u)); if (echecFetch) throw new Error("réseau"); return { ok: true, blob: async () => new o.w.Blob(["mp4"], { type: "video/mp4" }) }; };
-      o.w.open = u => { journal.ouvert = u; };
+    const essai = async (page, { share = true } = {}) => {
+      const o = await ouvrir(page); const n = o.w.navigator, j = { partages: [], telecharges: [], ouvert: "" };
+      if (share) {
+        Object.defineProperty(n, "canShare", { configurable: true, value: () => true });
+        Object.defineProperty(n, "share", { configurable: true, value: async x => { j.partages.push(x); } });
+      }
+      o.w.fetch = async u => { j.telecharges.push(String(u)); return { ok: true }; };
+      o.w.open = u => { j.ouvert = u; };
       o.d.querySelector("#entete .partager").dispatchEvent(new o.w.Event("click"));
       await new Promise(r => setTimeout(r, 60));
-      return journal;
+      return j;
     };
-    const nomSite = BASE.replace(/\//g, "");
-    let j = await essai("index.html");
-    const p0 = j.partages[0] || {};
-    check("Partager : télécharge la vidéo de présentation et la partage (fichier <site>.mp4, lien dans le texte)",
-      j.telecharges[0] === BASE + "assets/video/presentation.mp4" && p0.files && p0.files[0].name === nomSite + ".mp4" && p0.files[0].type === "video/mp4" && String(p0.text).includes(C.url));
+    let j = await essai("index.html"); const p0 = j.partages[0] || {};
+    check("Partager : lien vers la page vidéo (url) + adresse du site dans le texte, aucun fichier",
+      p0.url === C.url + "video/" && String(p0.text).includes(C.url) && !p0.files && !j.telecharges.length);
     j = await essai("inscription/index.html");
-    check("Partager (espace professionnels) : partage la vidéo « professionnel »",
-      j.telecharges[0] === BASE + "assets/video/presentation-pro.mp4" && j.partages[0] && j.partages[0].files[0].name === nomSite + "-pro.mp4");
-    j = await essai("index.html", { fichiers: false });
-    check("Partager : sans partage de fichier possible → lien seul, aucune vidéo téléchargée",
-      !j.telecharges.length && j.partages.length === 1 && !j.partages[0].files && String(j.partages[0].url).startsWith(C.url));
-    j = await essai("index.html", { echecFetch: true });
-    check("Partager : vidéo injoignable → on partage quand même le lien", j.partages.length === 1 && !j.partages[0].files && String(j.partages[0].url).startsWith(C.url));
+    check("Partager (espace professionnels) : page video-pro/ + lien vers l'inscription", (j.partages[0] || {}).url === C.url + "video-pro/" && String(j.partages[0].text).includes(C.url + "inscription/"));
+    j = await essai("index.html", { share: false });
+    check("Partager sans menu de partage : WhatsApp avec la page vidéo et l'adresse du site",
+      j.ouvert.startsWith("https://wa.me/?text=") && decodeURIComponent(j.ouvert).includes(C.url + "video/") && !j.telecharges.length);
+    const v = await ouvrir("video/index.html");
+    for (let k = 0; k < 40 && !v.d.querySelector(".video-lecteur"); k++) await new Promise(r => setTimeout(r, 25));
+    check("page vidéo : le lien « Vidéo de présentation » de l'accueil mène à la page vidéo", (await (async () => { const a = await ouvrir("index.html"); await new Promise(r => setTimeout(r, 60)); const l = a.d.querySelector("#lien-video a"); return l && l.getAttribute("href") === BASE + "video/"; })()));
+    check("page vidéo : en arabe, le bouton devient « افتح الموقع »", (() => { v.d.documentElement.lang = "ar"; v.d.dispatchEvent(new v.w.Event("langue")); return true; })() && await new Promise(r => setTimeout(() => r(v.d.querySelector(".btn-video-site").textContent === "افتح الموقع"), 60)));
   }
   check("accueil : bouton de langue → arabe, de droite à gauche", d.documentElement.lang === "ar" && d.documentElement.dir === "rtl");
   const fTel = attendues.find(f => f.tel) || attendues[0];
