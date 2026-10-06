@@ -21,7 +21,8 @@
     if (e) e.innerHTML = `<div class="wrap">
       <a class="logo" href="${racine || "./"}"><img src="${racine}assets/logo.svg" alt="" width="34" height="34">
         <span>${t(C.nom)}<small>${t(C.sous_titre)}</small></span></a>
-      <button class="langue" type="button">${T("العربية", "Français")}</button></div>`;
+      <div class="entete-boutons"><a class="entete-pro" href="${racine}inscription/#offres">${T("Inscription Pro", "تسجيل Pro")}</a>
+      <button class="langue" type="button">${T("العربية", "Français")}</button></div></div>`;
     const p = document.getElementById("pied");
     if (p) p.innerHTML = `<div class="wrap">
       <nav><a href="${racine || "./"}">${T("Accueil", "الرئيسية")}</a><a href="${racine}inscription/">${T("Professionnels", "المهنيون")}</a>

@@ -36,7 +36,20 @@
       "fr_pl": "Auto-écoles",
       "ar": "مدرسة سياقة",
       "ar_pl": "مدارس السياقة",
-      "mots": "auto-école auto ecole école de conduite permis moniteur conduite مدرسة سياقة تعليم السياقة رخصة"
+      "mots": "auto-école auto ecole école de conduite permis moniteur conduite مدرسة سياقة تعليم السياقة رخصة",
+      "photo": {
+        "fichier": "assets/metiers-photos/auto-ecole.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Panneaux de direction bilingues arabe-français sur une route tunisienne",
+          "ar": "لافتات اتجاه ثنائية اللغة عربي-فرنسي على طريق تونسية"
+        },
+        "auteur": "Eugenijus Radlinskas",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Road_signs_Tunisia.jpg"
+      }
     },
     {
       "id": "avocat",
@@ -47,7 +60,20 @@
       "fr_pl": "Avocats",
       "ar": "محامٍ",
       "ar_pl": "المحامون",
-      "mots": "avocat avocats cabinet d'avocat maître conseil juridique droit justice tribunal محامي محامٍ محاماة مكتب محاماة"
+      "mots": "avocat avocats cabinet d'avocat maître conseil juridique droit justice tribunal محامي محامٍ محاماة مكتب محاماة",
+      "photo": {
+        "fichier": "assets/metiers-photos/avocat.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Statue de la Justice tenant une balance",
+          "ar": "تمثال العدالة يحمل الميزان"
+        },
+        "auteur": "DP Singh Bhullar",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_Lady_Justice_statue_holding_scales,_symbolizing_justice_and_fairness.jpg"
+      }
     },
     {
       "id": "notaire",
@@ -58,7 +84,20 @@
       "fr_pl": "Notaires",
       "ar": "عدل إشهاد",
       "ar_pl": "عدول الإشهاد",
-      "mots": "notaire notaires notariat acte contrat عدل إشهاد عدول الإشهاد عقد"
+      "mots": "notaire notaires notariat acte contrat عدل إشهاد عدول الإشهاد عقد",
+      "photo": {
+        "fichier": "assets/metiers-photos/notaire.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Tampon en bois pour authentifier les actes",
+          "ar": "ختم خشبي لتوثيق العقود"
+        },
+        "auteur": "Auteur inconnu (Paris Musées, musée Jean Moulin)",
+        "licence": "CC0",
+        "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Tampon_encreur_pour_timbre_humide_du_Service_Cin%C3%A9matographique_FFI,_2002.73(2).jpg"
+      }
     },
     {
       "id": "huissier",
@@ -69,7 +108,20 @@
       "fr_pl": "Huissiers de justice",
       "ar": "عدل منفذ",
       "ar_pl": "عدول التنفيذ",
-      "mots": "huissier huissiers de justice constat signification exécution عدل منفذ عدول التنفيذ"
+      "mots": "huissier huissiers de justice constat signification exécution عدل منفذ عدول التنفيذ",
+      "photo": {
+        "fichier": "assets/metiers-photos/huissier.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Acte d'huissier manuscrit portant un cachet officiel",
+          "ar": "محضر عدل منفذ مكتوب بخط اليد وعليه ختم رسمي"
+        },
+        "auteur": "Auteur inconnu (Paris Musées, maison de Balzac)",
+        "licence": "CC0",
+        "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Sommation_par_huissier_de_justice_%C3%A0_l%E2%80%99encontre_de_Jean_Gigoux,_BAL_46.3.jpg"
+      }
     },
     {
       "id": "traducteur",
@@ -80,7 +132,20 @@
       "fr_pl": "Traducteurs",
       "ar": "مترجم",
       "ar_pl": "المترجمون",
-      "mots": "traducteur traduction traducteur assermenté interprète مترجم ترجمة مترجم محلف"
+      "mots": "traducteur traduction traducteur assermenté interprète مترجم ترجمة مترجم محلف",
+      "photo": {
+        "fichier": "assets/metiers-photos/traducteur.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Dictionnaire arabe ancien ouvert",
+          "ar": "قاموس عربي قديم مفتوح"
+        },
+        "auteur": "Mauro Cateb",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Arabic_dictionary_(1923).jpg"
+      }
     },
     {
       "id": "comptable",
@@ -91,7 +156,20 @@
       "fr_pl": "Comptables et experts-comptables",
       "ar": "محاسب",
       "ar_pl": "المحاسبون والخبراء المحاسبون",
-      "mots": "comptable expert-comptable expert comptable cabinet comptabilité bilan déclaration محاسب خبير محاسب مكتب محاسبة"
+      "mots": "comptable expert-comptable expert comptable cabinet comptabilité bilan déclaration محاسب خبير محاسب مكتب محاسبة",
+      "photo": {
+        "fichier": "assets/metiers-photos/comptable.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Registre comptable ouvert sur un bureau en bois",
+          "ar": "دفتر محاسبة مفتوح على مكتب خشبي"
+        },
+        "auteur": "Øyvind Holmstad",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Accounting_book.jpg"
+      }
     },
     {
       "id": "conseiller-fiscal",
@@ -102,7 +180,20 @@
       "fr_pl": "Conseillers fiscaux",
       "ar": "مستشار جبائي",
       "ar_pl": "المستشارون الجبائيون",
-      "mots": "conseiller fiscal conseil fiscal impôt impôts fiscalité déclaration مستشار جبائي جباية ضرائب أداءات"
+      "mots": "conseiller fiscal conseil fiscal impôt impôts fiscalité déclaration مستشار جبائي جباية ضرائب أداءات",
+      "photo": {
+        "fichier": "assets/metiers-photos/conseiller-fiscal.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Registre de comptes tenu à la main, sur une table en bois",
+          "ar": "سجل حسابات مكتوب باليد على طاولة خشبية"
+        },
+        "auteur": "Øyvind Holmstad",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Accounting_book.jpg"
+      }
     },
     {
       "id": "salle-des-fetes",
@@ -114,7 +205,20 @@
       "fr_pl": "Salles des fêtes",
       "ar": "قاعة أفراح",
       "ar_pl": "قاعات الأفراح",
-      "mots": "salle des fêtes salle de mariage réception fête événement espace قاعة أفراح قاعة حفلات عرس"
+      "mots": "salle des fêtes salle de mariage réception fête événement espace قاعة أفراح قاعة حفلات عرس",
+      "photo": {
+        "fichier": "assets/metiers-photos/salle-des-fetes.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Salle de réception décorée pour un mariage",
+          "ar": "قاعة استقبال مزيّنة لحفل زفاف"
+        },
+        "auteur": "Shixart1985",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Elegant_banquet_setup_for_wedding_reception_with_beautifully_arranged_tables_in_soft_lighting.jpg"
+      }
     },
     {
       "id": "photographe",
@@ -126,7 +230,20 @@
       "fr_pl": "Photographes",
       "ar": "مصور",
       "ar_pl": "المصورون",
-      "mots": "photographe photo vidéo studio caméraman reportage مصور تصوير استوديو فيديو"
+      "mots": "photographe photo vidéo studio caméraman reportage مصور تصوير استوديو فيديو",
+      "photo": {
+        "fichier": "assets/metiers-photos/photographe.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Photographe de mariage en train de prendre une photo de groupe",
+          "ar": "مصوّر أعراس يلتقط صورة جماعية"
+        },
+        "auteur": "Ildar Sagdejev (Specious)",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2012-05-20_Professional_wedding_group_portrait_on_the_lawn.jpg"
+      }
     },
     {
       "id": "traiteur",
@@ -137,7 +254,20 @@
       "fr_pl": "Traiteurs",
       "ar": "ممون حفلات",
       "ar_pl": "ممونو الحفلات",
-      "mots": "traiteur repas buffet service cuisine fête ممون حفلات طبخ أكل"
+      "mots": "traiteur repas buffet service cuisine fête ممون حفلات طبخ أكل",
+      "photo": {
+        "fichier": "assets/metiers-photos/traiteur.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Buffet de plats tunisiens : pains, couscous, salade méchouia",
+          "ar": "بوفيه أطباق تونسية: خبز وكسكسي وسلطة مشوية"
+        },
+        "auteur": "Gigi sorrentino",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cucina_tunisina.JPG"
+      }
     },
     {
       "id": "patisserie",
@@ -148,7 +278,20 @@
       "fr_pl": "Pâtisseries",
       "ar": "مرطبات",
       "ar_pl": "محلات المرطبات",
-      "mots": "pâtisserie gâteau gâteaux traditionnels baklawa pièce montée مرطبات حلويات بقلاوة كعك"
+      "mots": "pâtisserie gâteau gâteaux traditionnels baklawa pièce montée مرطبات حلويات بقلاوة كعك",
+      "photo": {
+        "fichier": "assets/metiers-photos/patisserie.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Plateau de pâtisseries tunisiennes traditionnelles",
+          "ar": "صينية حلويات تونسية تقليدية"
+        },
+        "auteur": "Kritzolina",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sweets_of_Tunisia_01.jpg"
+      }
     },
     {
       "id": "coiffure-beaute",
@@ -160,7 +303,20 @@
       "fr_pl": "Coiffure et beauté",
       "ar": "حلاقة وتجميل",
       "ar_pl": "الحلاقة والتجميل",
-      "mots": "coiffure coiffeuse coiffeur beauté esthétique maquillage harqous henné institut حلاقة تجميل ماكياج حرقوس حناء"
+      "mots": "coiffure coiffeuse coiffeur beauté esthétique maquillage harqous henné institut حلاقة تجميل ماكياج حرقوس حناء",
+      "photo": {
+        "fichier": "assets/metiers-photos/coiffure-beaute.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Main décorée au henné d'une mariée en tenue traditionnelle",
+          "ar": "يد عروس مزيّنة بالحنّاء في لباس تقليدي"
+        },
+        "auteur": "Brahim FARAJI",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Henna_Party_-_Moroccan_Wedding_-_Brahim_FARAJI.jpg"
+      }
     },
     {
       "id": "plombier",
@@ -346,14 +502,69 @@
     "largeur": 900,
     "hauteur": 675,
     "alt": {
-      "fr": "Caisse à outils ouverte : clés, tournevis, mètre et petit outillage d'artisan",
-      "ar": "صندوق أدوات مفتوح: مفاتيح، مفكات، متر وأدوات صغيرة للحرفي"
+      "fr": "Mosaïque de photos de métiers : justice, salle des fêtes, comptabilité, route, photographie, traduction, pâtisserie, notariat, traiteur",
+      "ar": "فسيفساء صور لمهن مختلفة"
     },
-    "auteur": "Rieul Techer",
+    "auteur": "Plusieurs auteurs (mosaïque)",
     "licence": "CC BY-SA 4.0",
     "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
-    "source": "https://commons.wikimedia.org/wiki/File:Caisse_%C3%A0_outils_avec_petit_outillage.JPG",
-    "preuve": "annuaires/preuves/2026-10-06/professionnels-tunisie__Caisse_à_outils_avec_petit_outillage.JPG_page.html"
+    "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_Lady_Justice_statue_holding_scales,_symbolizing_justice_and_fairness.jpg",
+    "mosaique": [
+      {
+        "auteur": "DP Singh Bhullar",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_Lady_Justice_statue_holding_scales,_symbolizing_justice_and_fairness.jpg"
+      },
+      {
+        "auteur": "Shixart1985",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Elegant_banquet_setup_for_wedding_reception_with_beautifully_arranged_tables_in_soft_lighting.jpg"
+      },
+      {
+        "auteur": "Øyvind Holmstad",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Accounting_book.jpg"
+      },
+      {
+        "auteur": "Eugenijus Radlinskas",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Road_signs_Tunisia.jpg"
+      },
+      {
+        "auteur": "Ildar Sagdejev (Specious)",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:2012-05-20_Professional_wedding_group_portrait_on_the_lawn.jpg"
+      },
+      {
+        "auteur": "Mauro Cateb",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Arabic_dictionary_(1923).jpg"
+      },
+      {
+        "auteur": "Kritzolina",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Sweets_of_Tunisia_01.jpg"
+      },
+      {
+        "auteur": "Auteur inconnu (Paris Musées, musée Jean Moulin)",
+        "licence": "CC0",
+        "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/wiki/File:Tampon_encreur_pour_timbre_humide_du_Service_Cin%C3%A9matographique_FFI,_2002.73(2).jpg"
+      },
+      {
+        "auteur": "Gigi sorrentino",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Cucina_tunisina.JPG"
+      }
+    ]
   },
   "og_image": "og-image-v1.jpg"
 }

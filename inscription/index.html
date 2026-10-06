@@ -26,11 +26,11 @@
 <meta name="theme-color" content="#2E6B4E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&amp;family=Noto+Kufi+Arabic:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=0991a372df">
-<link rel="stylesheet" href="../assets/couleurs.css?v=0991a372df">
-<script defer src="../assets/conf.js?v=0991a372df"></script>
-<script defer src="../assets/page.js?v=0991a372df"></script>
-<script defer src="../assets/annuaire.js?v=0991a372df"></script>
+<link rel="stylesheet" href="../assets/style.css?v=b1aa59d2ca">
+<link rel="stylesheet" href="../assets/couleurs.css?v=b1aa59d2ca">
+<script defer src="../assets/conf.js?v=b1aa59d2ca"></script>
+<script defer src="../assets/page.js?v=b1aa59d2ca"></script>
+<script defer src="../assets/annuaire.js?v=b1aa59d2ca"></script>
 
 <script data-goatcounter="https://prix-eaux-tunisie.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 </head>
@@ -62,8 +62,19 @@
         <li><span data-l="fr">Description en français et en arabe, spécialités, horaires</span><span data-l="ar">تقديم بالعربية والفرنسية، الاختصاصات، التوقيت</span></li>
         <li><span data-l="fr">Bouton WhatsApp direct</span><span data-l="ar">زر واتساب مباشر</span></li>
         <li><span data-l="fr">Le nombre de clients qui vous ont appelé ou écrit depuis le site</span><span data-l="ar">عدد الحرفاء الذين اتصلوا بك أو راسلوك عبر الموقع</span></li>
+        <li><strong><span data-l="fr">Sans engagement au-delà d'un an</span><span data-l="ar">دون التزام بعد السنة</span></strong></li>
       </ul>
       <p class="petit"><span data-l="fr">Le 1er mois est gratuit. Ensuite, paiement par virement bancaire ou autre moyen indiqué. Pas de renouvellement automatique : sans paiement, votre fiche redevient gratuite, elle n'est jamais supprimée.</span><span data-l="ar">الشهر الأول مجاني. بعده، الدفع بتحويل بنكي أو وسيلة أخرى مذكورة. لا تجديد آلي: دون دفع تعود بطاقتك مجانية ولا تُحذف أبدًا.</span></p>
+      <details class="paiement" id="paiement"><summary class="btn clair"><span data-l="fr">Paiement : voir les modes de paiement</span><span data-l="ar">الدفع: طرق الدفع</span></summary>
+      <dl class="infos rib">
+        <dt><span data-l="fr">Virement bancaire</span><span data-l="ar">تحويل بنكي</span></dt><dd><span data-l="fr">coordonnées bancaires communiquées à l'ouverture des inscriptions</span><span data-l="ar">تُبلَّغ المعطيات البنكية عند فتح التسجيل</span></dd>
+        
+        <dt><span data-l="fr">Montant</span><span data-l="ar">المبلغ</span></dt><dd><span data-l="fr">29 DT la 1re année, puis 59 DT/an</span><span data-l="ar">⁦29⁩ د.ت السنة الأولى، ثم ⁦59⁩ د.ت في السنة</span></dd>
+        <dt><span data-l="fr">Motif</span><span data-l="ar">سبب الدفع</span></dt><dd><span data-l="fr">le nom de votre établissement</span><span data-l="ar">اسم مؤسستك</span></dd>
+      </dl>
+      <p class="petit"><span data-l="fr">Le paiement se fait seulement après le mois gratuit. Envoyez la preuve en réponse à l'e-mail de confirmation ; une facture vous est adressée.</span><span data-l="ar">يتم الدفع فقط بعد الشهر المجاني. أرسل الإثبات ردًّا على بريد التأكيد؛ تُرسل إليك فاتورة.</span></p>
+      </details>
+      <p class="petit"><strong><span data-l="fr">Inscriptions Pro : ouverture prochaine.</span><span data-l="ar">تسجيل Pro: يُفتح قريبًا.</span></strong></p>
     </div>
   </section>
   <p class="note"><span data-l="fr">La vérification des fiches et la formule Pro ouvriront bientôt. En attendant, vous pouvez déjà demander gratuitement l'ajout, la correction ou le retrait d'une fiche.</span><span data-l="ar">توثيق البطاقات وصيغة Pro سيُفتحان قريبًا. في الأثناء يمكنك طلب إضافة بطاقة أو تصحيحها أو حذفها مجانًا.</span></p>
@@ -118,6 +129,25 @@
       <p class="statut" role="status" aria-live="polite"></p>
       <p class="mention"><span data-l="fr">Vos coordonnées servent seulement à vérifier la demande ; elles ne sont pas publiées sans votre accord. Un retrait demandé est définitif.</span><span data-l="ar">تُستعمل بياناتك للتثبت من الطلب فقط ولا تُنشر دون موافقتك. الحذف المطلوب نهائي.</span></p>
     </form>
+    <div class="apres-pro" id="apres-ajout" hidden>
+      <h3><span data-l="fr">Merci, votre fiche gratuite est bien demandée</span><span data-l="ar">شكرًا، وصلنا طلب بطاقتك المجانية</span></h3>
+      <p><span data-l="fr">Nous la vérifions puis la publions, en général sous 48 heures. Une confirmation vous est envoyée.</span><span data-l="ar">نتثبت منها ثم ننشرها، عادة في غضون 48 ساعة. يُرسل إليك تأكيد.</span></p>
+      <h3><span data-l="fr">Et pour être vu en premier ? La formule Pro</span><span data-l="ar">ولتظهر أولًا؟ صيغة Pro</span></h3>
+      <p class="prix"><span data-l="fr">29 DT la 1re année, puis 59 DT/an</span><span data-l="ar">⁦29⁩ د.ت السنة الأولى، ثم ⁦59⁩ د.ت في السنة</span> <small><span data-l="fr">· 1 mois offert · sans engagement au-delà d'un an</span><span data-l="ar">· ⁦1⁩ شهر مجاني · دون التزام بعد السنة</span></small></p>
+      <ul class="avantages">
+        <li><span data-l="fr">En tête de votre gouvernorat, avec la mention « Pro »</span><span data-l="ar">في أعلى قائمة ولايتك، مع إشارة « Pro »</span></li>
+        <li><span data-l="fr">Description en français et en arabe, spécialités, horaires, bouton WhatsApp</span><span data-l="ar">تقديم بالعربية والفرنسية، الاختصاصات، التوقيت، زر واتساب</span></li>
+        <li><span data-l="fr">Le nombre de clients qui vous ont appelé ou écrit depuis le site</span><span data-l="ar">عدد الحرفاء الذين اتصلوا بك أو راسلوك عبر الموقع</span></li>
+      </ul>
+      <p><strong><span data-l="fr">Modes de paiement (après le mois gratuit) :</span><span data-l="ar">طرق الدفع (بعد الشهر المجاني):</span></strong></p>
+      <dl class="infos rib">
+        <dt><span data-l="fr">Virement bancaire</span><span data-l="ar">تحويل بنكي</span></dt><dd><span data-l="fr">coordonnées bancaires communiquées à l'ouverture des inscriptions</span><span data-l="ar">تُبلَّغ المعطيات البنكية عند فتح التسجيل</span></dd>
+        
+        <dt><span data-l="fr">Montant</span><span data-l="ar">المبلغ</span></dt><dd><span data-l="fr">29 DT la 1re année, puis 59 DT/an</span><span data-l="ar">⁦29⁩ د.ت السنة الأولى، ثم ⁦59⁩ د.ت في السنة</span></dd>
+        <dt><span data-l="fr">Motif</span><span data-l="ar">سبب الدفع</span></dt><dd><span data-l="fr">le nom de votre établissement</span><span data-l="ar">اسم مؤسستك</span></dd>
+      </dl>
+      <p class="petit"><span data-l="fr">Inscriptions Pro : ouverture prochaine, nous vous préviendrons.</span><span data-l="ar">تسجيل Pro: يُفتح قريبًا وسنعلمك.</span></p>
+    </div>
   </section>
 </main>
 <footer id="pied"></footer>

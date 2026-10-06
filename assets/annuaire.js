@@ -84,11 +84,12 @@ document.addEventListener("submit", async e => {
   try {
     const rep = await fetch(f.action, { method: "POST", body: new FormData(f), headers: { Accept: "application/json" } });
     if (!rep.ok) throw new Error(rep.status);
-    const formule = new FormData(f).get("formule") || "";
+    const formule = new FormData(f).get("formule") || "", action = new FormData(f).get("action") || "";
     f.reset(); statut.textContent = T("Merci, c'est envoyé. Nous lisons chaque message.", "شكرًا، تم الإرسال. نقرأ كل رسالة.");
     compter(`envoi-${f.dataset.envoi}${formule ? "-" + formule : ""}`, `Formulaire ${f.dataset.envoi} envoyé`);
     // inscription : confirmation et coordonnées du virement, montrées seulement après l'envoi
-    const apres = f.dataset.envoi === "pro" && document.getElementById("apres-pro");
+    // ajout gratuit : on montre aussitôt l'offre Pro et les modes de paiement (règle d'Ahmed du 06/10/2026)
+    const apres = (f.dataset.envoi === "pro" && document.getElementById("apres-pro")) || (f.dataset.envoi === "demande" && action === "ajouter" && document.getElementById("apres-ajout"));
     if (apres) { f.hidden = true; apres.hidden = false; apres.scrollIntoView && apres.scrollIntoView({ block: "start" }); }
   } catch (err) {
     statut.textContent = T("Envoi impossible pour l'instant. Réessayez plus tard.", "تعذّر الإرسال حاليًا. أعد المحاولة لاحقًا.");

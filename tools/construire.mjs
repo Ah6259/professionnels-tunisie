@@ -109,7 +109,7 @@ const P = C.photo;
 // photo réelle par métier (config.metiers[].photo, Wikimedia, licence libre) : plus de sérieux ; crédits sur la page À propos
 const photoDe = m => (m && m.photo) || P;
 const fondPhoto = (ph, racine) => ph ? `<img class="hero-fond" src="${racine}${esc(ph.fichier)}" alt="" width="${ph.largeur || 900}" height="${ph.hauteur || 675}">` : "";
-const creditPhoto = () => P ? `<p class="credit">${bi("Photo", "صورة")} : <bdi>${esc(P.auteur)}</bdi>, <a href="${esc(P.licence_url)}" rel="noopener license">${esc(P.licence)}</a>, <a href="${esc(P.source)}" rel="noopener">Wikimedia Commons</a></p>` : "";
+const creditPhoto = () => P && P.mosaique ? `<p class="credit">${bi("Mosaïque de photos", "فسيفساء صور")} : ${P.mosaique.map(c => `<bdi>${esc(c.auteur)}</bdi>`).join(", ")} — ${bi("licences libres", "رخص حرة")} (<a href="${esc(P.licence_url)}" rel="noopener license">${esc(P.licence)}</a>…), <a href="a-propos/">${bi("détail", "التفاصيل")}</a>, Wikimedia Commons</p>` : P ? `<p class="credit">${bi("Photo", "صورة")} : <bdi>${esc(P.auteur)}</bdi>, <a href="${esc(P.licence_url)}" rel="noopener license">${esc(P.licence)}</a>, <a href="${esc(P.source)}" rel="noopener">Wikimedia Commons</a></p>` : "";
 
 function tete({ titre, desc, chemin, racine, jsonld = [] }) {
   return `<!doctype html>
@@ -186,7 +186,10 @@ function filtres(racine, gouvernoratFixe) {
 const blocPro = racine => `<section class="carte pro-appel">
   <h2>${bi("Vous êtes un professionnel ?", "هل أنت مهني؟")}</h2>
   <p>${bi("Soyez trouvé par les Tunisiens qui vous cherchent. Votre fiche existe peut-être déjà : ajoutez-la, vérifiez-la ou corrigez-la gratuitement.", "اجعل التونسيين الذين يبحثون عنك يجدونك. ربما بطاقتك موجودة: أضفها أو وثّقها أو صحّحها مجانًا.")}</p>
-  <a class="btn" href="${racine}inscription/">${svg("crayon")}${bi("Espace professionnels : c'est gratuit", "فضاء المهنيين: مجانًا")}</a>
+  <div class="actions">
+    <a class="btn btn-pro" href="${racine}inscription/#offres">${bi("Inscription Pro : 1er mois gratuit", "تسجيل Pro: الشهر الأول مجاني")}</a>
+    <a class="btn clair" href="${racine}inscription/">${svg("crayon")}${bi("Fiche gratuite", "بطاقة مجانية")}</a>
+  </div>
 </section>`;
 
 const liensAmis = () => C.liens && C.liens.length ? `<section class="carte liens-amis">${C.liens.map(l => `<a href="${esc(l.url)}">${biO(l)} →</a>`).join("")}</section>` : "";
@@ -231,6 +234,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   <h1>${biO(C.titre_accueil)}</h1>
   <p class="intro">${biO(C.intro)}</p>
   <p class="chiffre">${bi(`${FICHES.length} ${esc(metierPl.fr_pl.toLowerCase())} dans ${Object.values(compteG).filter(Boolean).length} gouvernorats`, `${ISO(FICHES.length)} ${esc(metierPl.ar_pl)} في ${ISO(Object.values(compteG).filter(Boolean).length)} ولاية`)}</p>
+  <p class="appel-pro"><a class="btn btn-pro" href="inscription/#offres">${bi("Professionnel ? Inscription Pro : 1er mois gratuit", "مهني؟ تسجيل Pro: الشهر الأول مجاني")}</a></p>
   </div>
   <figure class="hero-carte">${carteTunisie("", compteG)}<figcaption>${bi("Touchez un gouvernorat", "اضغط على ولاية")}</figcaption></figure>
 </div>${P ? `<div class="wrap">${creditPhoto()}</div>` : ""}</section>
@@ -326,6 +330,13 @@ for (const f of FICHES) {
 const VIR = PRO.virement || {};
 const metierChoix = C.metiers.length > 1 ? `<label for="p-metier">${bi("Métier", "المهنة")}</label>
       <select id="p-metier" name="metier">${C.metiers.map(m => `<option value="${esc(m.fr)}" data-ar="${esc(m.ar)}">${esc(m.fr)}</option>`).join("")}</select>` : `<input type="hidden" name="metier" value="${esc(C.metiers[0].fr)}">`;
+// modes de paiement (règle d'Ahmed du 06/10/2026 : visibles d'un clic sur « Paiement », avant l'inscription)
+const listePaiements = () => `<dl class="infos rib">
+        <dt>${bi("Virement bancaire", "تحويل بنكي")}</dt><dd>${VIR.rib ? `${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}<br>RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi>` : bi("coordonnées bancaires communiquées à l'ouverture des inscriptions", "تُبلَّغ المعطيات البنكية عند فتح التسجيل")}</dd>
+        ${(PRO.autres_paiements || []).map(p => `<dt>${esc(p.nom)}</dt><dd><bdi dir="ltr">${esc(p.detail)}</bdi></dd>`).join("\n        ")}
+        <dt>${bi("Montant", "المبلغ")}</dt><dd>${prixTexte()}</dd>
+        <dt>${bi("Motif", "سبب الدفع")}</dt><dd>${bi("le nom de votre établissement", "اسم مؤسستك")}</dd>
+      </dl>`;
 const offres = `<section class="offres" id="offres">
     <div class="offre">
       <h2>${bi("Fiche gratuite", "بطاقة مجانية")}</h2>
@@ -346,8 +357,14 @@ const offres = `<section class="offres" id="offres">
         <li>${bi("Description en français et en arabe, spécialités, horaires", "تقديم بالعربية والفرنسية، الاختصاصات، التوقيت")}</li>
         <li>${bi("Bouton WhatsApp direct", "زر واتساب مباشر")}</li>
         <li>${bi("Le nombre de clients qui vous ont appelé ou écrit depuis le site", "عدد الحرفاء الذين اتصلوا بك أو راسلوك عبر الموقع")}</li>
+        <li><strong>${bi("Sans engagement au-delà d'un an", "دون التزام بعد السنة")}</strong></li>
       </ul>
       <p class="petit">${bi(`Le 1er mois est gratuit. Ensuite, paiement par virement bancaire ou autre moyen indiqué. Pas de renouvellement automatique : sans paiement, votre fiche redevient gratuite, elle n'est jamais supprimée.`, `الشهر الأول مجاني. بعده، الدفع بتحويل بنكي أو وسيلة أخرى مذكورة. لا تجديد آلي: دون دفع تعود بطاقتك مجانية ولا تُحذف أبدًا.`)}</p>
+      <details class="paiement" id="paiement"><summary class="btn clair">${bi("Paiement : voir les modes de paiement", "الدفع: طرق الدفع")}</summary>
+      ${listePaiements()}
+      <p class="petit">${bi("Le paiement se fait seulement après le mois gratuit. Envoyez la preuve en réponse à l'e-mail de confirmation ; une facture vous est adressée.", "يتم الدفع فقط بعد الشهر المجاني. أرسل الإثبات ردًّا على بريد التأكيد؛ تُرسل إليك فاتورة.")}</p>
+      </details>
+      ${OUVERT ? `<a class="btn" href="#pro">${bi("Je m'inscris : 1er mois gratuit", "أسجّل: الشهر الأول مجاني")}</a>` : `<p class="petit"><strong>${bi("Inscriptions Pro : ouverture prochaine.", "تسجيل Pro: يُفتح قريبًا.")}</strong></p>`}
     </div>
   </section>`;
 const formPro = `<section class="carte" id="pro">
@@ -386,10 +403,7 @@ const formPro = `<section class="carte" id="pro">
       <h3>${bi("Merci, votre inscription est bien reçue", "شكرًا، وصلنا تسجيلك")}</h3>
       <p>${bi("Nous vérifions votre établissement puis publions votre fiche, en général sous 48 heures. Pour la formule Pro, votre mois gratuit commence à la mise en ligne.", "نتثبت من مؤسستك ثم ننشر بطاقتك، عادة في غضون 48 ساعة. بالنسبة لصيغة Pro، يبدأ شهرك المجاني عند النشر.")}</p>
       <p>${bi(`Pour continuer la formule Pro après le mois gratuit (`, `لمواصلة صيغة Pro بعد الشهر المجاني (`)}${prixTexte()}${bi(`), payez par le moyen de votre choix, avec pour motif le nom de votre établissement :`, `)، ادفع بالوسيلة التي تختارها، مع ذكر اسم مؤسستك كسبب للدفع:`)}</p>
-      <dl class="infos rib">
-        <dt>${bi("Virement bancaire", "تحويل بنكي")}</dt><dd>${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}<br>RIB <bdi dir="ltr">${esc(VIR.rib || "")}</bdi></dd>
-        ${(PRO.autres_paiements || []).map(p => `<dt>${esc(p.nom)}</dt><dd><bdi dir="ltr">${esc(p.detail)}</bdi></dd>`).join("\n        ")}
-      </dl>
+      ${listePaiements()}
       <p>${bi("Envoyez ensuite la preuve du paiement en réponse à l'e-mail de confirmation. Une facture vous est adressée.", "أرسل بعد ذلك إثبات الدفع ردًّا على بريد التأكيد. تُرسل إليك فاتورة.")}</p>
     </div>
   </section>`;
@@ -456,6 +470,20 @@ pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formul
       <p class="statut" role="status" aria-live="polite"></p>
       <p class="mention">${bi("Vos coordonnées servent seulement à vérifier la demande ; elles ne sont pas publiées sans votre accord. Un retrait demandé est définitif.", "تُستعمل بياناتك للتثبت من الطلب فقط ولا تُنشر دون موافقتك. الحذف المطلوب نهائي.")}</p>
     </form>
+    <div class="apres-pro" id="apres-ajout" hidden>
+      <h3>${bi("Merci, votre fiche gratuite est bien demandée", "شكرًا، وصلنا طلب بطاقتك المجانية")}</h3>
+      <p>${bi("Nous la vérifions puis la publions, en général sous 48 heures. Une confirmation vous est envoyée.", "نتثبت منها ثم ننشرها، عادة في غضون 48 ساعة. يُرسل إليك تأكيد.")}</p>
+      <h3>${bi("Et pour être vu en premier ? La formule Pro", "ولتظهر أولًا؟ صيغة Pro")}</h3>
+      <p class="prix">${prixTexte()} <small>${bi(`· ${PRO.mois_gratuits} mois offert · sans engagement au-delà d'un an`, `· ${ISO(PRO.mois_gratuits)} شهر مجاني · دون التزام بعد السنة`)}</small></p>
+      <ul class="avantages">
+        <li>${bi("En tête de votre gouvernorat, avec la mention « Pro »", "في أعلى قائمة ولايتك، مع إشارة « Pro »")}</li>
+        <li>${bi("Description en français et en arabe, spécialités, horaires, bouton WhatsApp", "تقديم بالعربية والفرنسية، الاختصاصات، التوقيت، زر واتساب")}</li>
+        <li>${bi("Le nombre de clients qui vous ont appelé ou écrit depuis le site", "عدد الحرفاء الذين اتصلوا بك أو راسلوك عبر الموقع")}</li>
+      </ul>
+      <p><strong>${bi("Modes de paiement (après le mois gratuit) :", "طرق الدفع (بعد الشهر المجاني):")}</strong></p>
+      ${listePaiements()}
+      ${OUVERT ? `<a class="btn btn-pro" href="#pro">${bi("Passer à la formule Pro : 1er mois gratuit", "المرور إلى صيغة Pro: الشهر الأول مجاني")}</a>` : `<p class="petit">${bi("Inscriptions Pro : ouverture prochaine, nous vous préviendrons.", "تسجيل Pro: يُفتح قريبًا وسنعلمك.")}</p>`}
+    </div>
   </section>
 </main>
 ` + pied;
@@ -469,7 +497,7 @@ pages["a-propos/"] = tete({ titre: `À propos et sources | ${C.nom.fr}`, desc: `
   <h2>${bi("Site gratuit et non officiel", "موقع مجاني وغير رسمي")}</h2>
   <p>${bi("Ce site n'est lié à aucune administration ni organisation professionnelle. La consultation est gratuite et sans inscription.", "هذا الموقع غير مرتبط بأي إدارة أو هيكل مهني. التصفح مجاني ودون تسجيل.")}</p>
   <h2>${bi("Crédits des photos", "حقوق الصور")}</h2>
-  <ul class="credits">${[P, ...C.metiers.map(m => m.photo)].filter(Boolean).map(ph => `<li><bdi>${esc(ph.auteur)}</bdi>, <a href="${esc(ph.licence_url)}" rel="noopener license">${esc(ph.licence)}</a>, <a href="${esc(ph.source)}" rel="noopener">Wikimedia Commons</a></li>`).join("")}</ul>
+  <ul class="credits">${[...(P && P.mosaique ? P.mosaique : [P]), ...C.metiers.map(m => m.photo)].filter(Boolean).filter((ph, i, t) => t.findIndex(x => x.source === ph.source) === i).map(ph => `<li><bdi>${esc(ph.auteur)}</bdi>, <a href="${esc(ph.licence_url)}" rel="noopener license">${esc(ph.licence)}</a>, <a href="${esc(ph.source)}" rel="noopener">Wikimedia Commons</a></li>`).join("")}</ul>
   <h2>${bi("Données personnelles et retrait", "المعطيات الشخصية والحذف")}</h2>
   <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction ou le retrait de sa fiche depuis la page <a href="../inscription/">Professionnels</a> ; un retrait est définitif. Statistiques de visite anonymes, sans cookies (GoatCounter).`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها أو حذفها من صفحة <a href="../inscription/">المهنيون</a>؛ والحذف نهائي. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter).`)}</p>
 </section></main>
@@ -486,7 +514,7 @@ if (OUVERT) pages["conditions/"] = tete({ titre: `Conditions pour les profession
   <h2>${bi("3. Formule Pro", "3. صيغة Pro")}</h2>
   <p>${bi(`Prix : `, `السعر: `)}${prixTexte()}${bi(`, pour 12 mois. Le ${PRO.mois_gratuits === 1 ? "1er mois est gratuit" : PRO.mois_gratuits + " premiers mois sont gratuits"} et commence à la mise en ligne de la fiche Pro. La formule Pro affiche la fiche en tête de son gouvernorat avec la mention « Pro », une présentation, des spécialités, un bouton WhatsApp et le nombre de contacts reçus depuis le site.`, `، لمدة 12 شهرًا. ${PRO.mois_gratuits === 1 ? "الشهر الأول مجاني" : "الأشهر الأولى مجانية"} ويبدأ عند نشر بطاقة Pro. تُظهر صيغة Pro البطاقة في أعلى ولايتها مع إشارة « Pro »، وتقديمًا واختصاصات وزر واتساب وعدد الاتصالات الواردة عبر الموقع.`)}</p>
   <h2>${bi("4. Paiement et renouvellement", "4. الدفع والتجديد")}</h2>
-  <p>${bi("Paiement par virement bancaire (ou autre moyen indiqué à l'inscription), après le mois gratuit. Une facture est envoyée. Il n'y a aucun renouvellement automatique : nous vous prévenons avant la fin ; sans nouveau paiement, la fiche redevient simplement gratuite, sans être supprimée.", "الدفع بتحويل بنكي (أو وسيلة أخرى مذكورة عند التسجيل) بعد الشهر المجاني. تُرسل فاتورة. لا يوجد أي تجديد آلي: نعلمك قبل النهاية؛ ودون دفع جديد تعود البطاقة مجانية ببساطة دون حذف.")}</p>
+  <p>${bi("Paiement par virement bancaire (ou autre moyen indiqué à l'inscription), après le mois gratuit. Une facture est envoyée. Sans engagement au-delà d'un an : il n'y a aucun renouvellement automatique, nous vous prévenons avant la fin ; sans nouveau paiement, la fiche redevient simplement gratuite, sans être supprimée.", "الدفع بتحويل بنكي (أو وسيلة أخرى مذكورة عند التسجيل) بعد الشهر المجاني. تُرسل فاتورة. دون التزام بعد السنة: لا يوجد أي تجديد آلي، نعلمك قبل النهاية؛ ودون دفع جديد تعود البطاقة مجانية ببساطة دون حذف.")}</p>
   <h2>${bi("5. Ce que nous ne promettons pas", "5. ما لا نعد به")}</h2>
   <p>${bi("Nous ne garantissons pas un nombre de clients. Nous ne classons pas les professionnels et n'écrivons jamais qu'un établissement est « le meilleur ». Les professions réglementées restent responsables du respect des règles de leur ordre ; nous pouvons refuser ou modifier un texte qui ne les respecte pas.", "لا نضمن عددًا من الحرفاء. لا نرتّب المهنيين ولا نكتب أبدًا أن مؤسسة هي « الأفضل ». تبقى المهن المنظمة مسؤولة عن احترام قواعد هيئتها؛ ويمكننا رفض أو تعديل نص لا يحترمها.")}</p>
   <h2>${bi("6. Données personnelles", "6. المعطيات الشخصية")}</h2>
