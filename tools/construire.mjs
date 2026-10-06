@@ -196,6 +196,8 @@ const blocPro = racine => `<section class="carte pro-appel">
 </section>`;
 
 // liens vers nos autres sites gratuits (dans les deux sens : demande d'Ahmed), bien visibles, clics comptés anonymement
+// lien VEDETTE (demande d'Ahmed) : en haut, dans le bandeau, avec le logo du site lié, pour qu'on le voie tout de suite
+const lienVedette = racine => (C.liens || []).filter(l => l.vedette).map(l => `<a class="lien-vedette" href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}">${l.logo ? `<img src="${racine}${esc(l.logo)}" alt="" width="36" height="36">` : ""}<span><strong>${biO(l)}</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</span><span class="lv-fleche" aria-hidden="true">→</span></a>`).join("");
 const liensAmis = () => C.liens && C.liens.length ? `<section class="carte liens-amis"><h2>${bi("Gratuit aussi sur nos sites", "مجانًا أيضًا على مواقعنا")}</h2>${C.liens.map(l => `<a href="${esc(l.url)}" data-lien="${esc(new URL(l.url).pathname.replace(/^\/|\/$/g, ""))}"><strong>${biO(l)} →</strong>${l.desc_fr ? `<small>${biO({ fr: l.desc_fr, ar: l.desc_ar || l.desc_fr })}</small>` : ""}</a>`).join("")}</section>` : "";
 
 const AVIS = `<section class="carte avis" id="avis">
@@ -239,6 +241,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   <p class="intro">${biO(C.intro)}</p>
   <p class="chiffre">${bi(`${FICHES.length} ${esc(metierPl.fr_pl.toLowerCase())} dans ${Object.values(compteG).filter(Boolean).length} gouvernorats`, `${ISO(FICHES.length)} ${esc(metierPl.ar_pl)} في ${ISO(Object.values(compteG).filter(Boolean).length)} ولاية`)}</p>
   <p class="appel-pro"><a class="btn btn-pro" href="inscription/#offres">${bi("Professionnel ? Inscription Pro : 1er mois gratuit", "مهني؟ تسجيل Pro: الشهر الأول مجاني")}</a></p>
+  ${lienVedette("")}
   </div>
   <figure class="hero-carte">${carteTunisie("", compteG)}<figcaption>${bi("Touchez un gouvernorat", "اضغط على ولاية")}</figcaption></figure>
 </div>${P ? `<div class="wrap">${creditPhoto()}</div>` : ""}</section>
@@ -269,6 +272,7 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
   ${fil("../../", bi(esc(fr), esc(ar)))}
   <h1>${bi(`${esc(metierPl.fr_pl)} à ${esc(fr)}`, `${esc(metierPl.ar_pl)} في ولاية ${esc(ar)}`)}</h1>
   <p class="intro">${bi(`${liste.length} fiche(s), triées par nom. Annuaire gratuit.`, `${ISO(liste.length)} بطاقة، مرتبة حسب الاسم. دليل مجاني.`)}</p>
+  ${lienVedette("../../")}
   </div>
   <figure class="hero-carte petite">${carteTunisie("../../", compteG, slug)}<figcaption>${bi("Autres gouvernorats : touchez la carte", "ولايات أخرى: اضغط على الخريطة")}</figcaption></figure>
 </div></section>
