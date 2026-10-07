@@ -1,5 +1,11 @@
 # Professionnels Tunisie — annuaire (professionnels-tunisie)
 
+> ⚠️ **À REPORTER DANS LE MOTEUR DU PC (`annuaires/moteur/`) AVANT TOUTE SYNCHRONISATION** (07/10/2026) : correction des grandes
+> cartes de métier qui filtrent la liste (`a.metier[data-m]` → `choisir()` dans `assets/annuaire.js`) + son test dans
+> `tools/test_site.mjs` (« une grande carte de métier filtre la liste »). Faite depuis le téléphone, elle a déjà été effacée une
+> fois par `synchroniser.py` le 07/10 : copier `assets/annuaire.js` et `tools/test_site.mjs` de ce dépôt vers le moteur, puis supprimer ce bloc.
+
+
 > **Ce site** : https://ah6259.github.io/professionnels-tunisie/ — annuaire gratuit qui REGROUPE les métiers de nos 4 annuaires
 > spécialisés (auto-écoles, avocats/notaires/huissiers/traducteurs, comptables/conseillers fiscaux, mariage) et ajoute 13 métiers
 > d'artisans et de services. Couleur vert sobre (#2E6B4E), icône mallette. Les 4 annuaires spécialisés continuent à vivre séparément.
