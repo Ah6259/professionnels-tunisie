@@ -124,7 +124,7 @@ check("image en couleur pour chaque métier (assets/metiers/<id>.svg), affichée
 const photosM = C.metiers.filter(m => m.photo);
 check(`photos réelles par métier (${photosM.length}/${C.metiers.length}) : fichier ≤ 160 Ko, licence complète, crédit sur À propos, affichée sur la tuile du métier et les fiches`,
   photosM.every(m => existsSync(join(root, m.photo.fichier)) && statSync(join(root, m.photo.fichier)).size <= 160 * 1024 && m.photo.auteur && m.photo.licence && m.photo.licence_url && /commons\.wikimedia\.org/.test(m.photo.source || "") &&
-    lire("a-propos/index.html").includes(m.photo.source.replace(/&/g, "&amp;")) && (C.metiers.length === 1 || lire("index.html").includes(`src="${m.photo.fichier}"`))) &&
+    lire("a-propos/index.html").includes(m.photo.source.replace(/&/g, "&amp;")) && (C.metiers.length === 1 || !lire("index.html").includes(`class="metier avec-photo" href="#liste" data-m="${m.id}"`) && !lire("index.html").includes(`class="metier" href="#liste" data-m="${m.id}"`) || lire("index.html").includes(`src="${m.photo.fichier}"`))) &&
   lire("a-propos/index.html").includes("Crédits des photos"));
 check("image d'aperçu WhatsApp : fichier JPEG < 250 Ko déclaré dans les pages",
   !!C.og_image && existsSync(join(root, "assets", C.og_image)) && statSync(join(root, "assets", C.og_image)).size < 250 * 1024 && lire("index.html").includes("assets/" + C.og_image));

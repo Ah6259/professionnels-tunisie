@@ -373,7 +373,20 @@
       "fr_pl": "Peintres en bâtiment",
       "ar": "دهّان",
       "ar_pl": "الدهّانون",
-      "mots": "peintre peinture bâtiment décoration enduit façade دهان دهن طلاء ديكور"
+      "mots": "peintre peinture bâtiment décoration enduit façade دهان دهن طلاء ديكور",
+      "photo": {
+        "fichier": "assets/metiers-photos/peintre.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Rouleau de peinture sur un mur en parpaings",
+          "ar": "أسطوانة طلاء على جدار من الآجر"
+        },
+        "auteur": "Michael Coghlan from Adelaide, Australia",
+        "licence": "CC BY-SA 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Rolling_in_the_Middle_(34571931105)_(cropped).jpg"
+      }
     },
     {
       "id": "climatisation",
@@ -397,7 +410,20 @@
       "fr_pl": "Serruriers",
       "ar": "صانع أقفال",
       "ar_pl": "صانعو الأقفال",
-      "mots": "serrurier serrurerie clé clés serrure double ouverture de porte قفال أقفال مفاتيح نسخ مفاتيح"
+      "mots": "serrurier serrurerie clé clés serrure double ouverture de porte قفال أقفال مفاتيح نسخ مفاتيح",
+      "photo": {
+        "fichier": "assets/metiers-photos/serrurier.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Machine à reproduire les clés dans un atelier de serrurerie",
+          "ar": "آلة نسخ المفاتيح في ورشة أقفال"
+        },
+        "auteur": "Visualeagle",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/wiki/File:Key_Duplication_Machine_Code_Cutter.jpg"
+      }
     },
     {
       "id": "mecanicien",
@@ -408,7 +434,20 @@
       "fr_pl": "Garages et mécaniciens",
       "ar": "ميكانيكي سيارات",
       "ar_pl": "ورشات الميكانيك",
-      "mots": "mécanicien garage mécanique auto voiture réparation vidange diagnostic carrosserie ميكانيك ميكانيكي ورشة سيارات تصليح"
+      "mots": "mécanicien garage mécanique auto voiture réparation vidange diagnostic carrosserie ميكانيك ميكانيكي ورشة سيارات تصليح",
+      "photo": {
+        "fichier": "assets/metiers-photos/mecanicien.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Mains d'un mécanicien qui répare le moteur d'une voiture",
+          "ar": "يدا ميكانيكي يصلح محرك سيارة"
+        },
+        "auteur": "Bembety",
+        "licence": "CC0",
+        "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+        "source": "https://commons.wikimedia.org/wiki/File:Mechanic_repairing_car_engine_1.jpg"
+      }
     },
     {
       "id": "pneus",
