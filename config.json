@@ -327,7 +327,20 @@
       "fr_pl": "Plombiers",
       "ar": "سبّاك",
       "ar_pl": "السبّاكون",
-      "mots": "plombier plomberie sanitaire fuite eau chauffe-eau robinet canalisation سباك سباكة ترصيص بلومبي ماء تسرب"
+      "mots": "plombier plomberie sanitaire fuite eau chauffe-eau robinet canalisation سباك سباكة ترصيص بلومبي ماء تسرب",
+      "photo": {
+        "fichier": "assets/metiers-photos/plombier.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Tuyau d'évacuation sous un évier",
+          "ar": "أنبوب صرف تحت حوض المطبخ"
+        },
+        "auteur": "Tony Webster",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=160475495"
+      }
     },
     {
       "id": "electricien",
@@ -338,7 +351,20 @@
       "fr_pl": "Électriciens",
       "ar": "كهربائي",
       "ar_pl": "الكهربائيون",
-      "mots": "électricien électricité installation électrique dépannage câblage tableau كهربائي كهرباء تركيب كهربائي"
+      "mots": "électricien électricité installation électrique dépannage câblage tableau كهربائي كهرباء تركيب كهربائي",
+      "photo": {
+        "fichier": "assets/metiers-photos/electricien.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Tableau électrique avec ses disjoncteurs",
+          "ar": "لوحة كهربائية بقواطعها"
+        },
+        "auteur": "Dmitry G",
+        "licence": "CC BY-SA 3.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=11768173"
+      }
     },
     {
       "id": "menuisier",
@@ -350,7 +376,20 @@
       "fr_pl": "Menuisiers",
       "ar": "نجّار",
       "ar_pl": "النجّارون",
-      "mots": "menuisier menuiserie bois porte fenêtre cuisine meuble ébéniste نجار نجارة خشب أبواب مطبخ"
+      "mots": "menuisier menuiserie bois porte fenêtre cuisine meuble ébéniste نجار نجارة خشب أبواب مطبخ",
+      "photo": {
+        "fichier": "assets/metiers-photos/menuisier.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Atelier de menuiserie avec des planches de bois et une chaise",
+          "ar": "ورشة نجارة بها ألواح خشب وكرسي"
+        },
+        "auteur": "Mostafameraji",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=57915833"
+      }
     },
     {
       "id": "aluminium-vitrerie",
@@ -398,7 +437,20 @@
       "fr_pl": "Climatisation et chauffage",
       "ar": "تكييف وتدفئة",
       "ar_pl": "التكييف والتدفئة",
-      "mots": "climatisation climatiseur clim chauffage froid frigoriste installation entretien تكييف مكيف كليماتيزور تدفئة تبريد"
+      "mots": "climatisation climatiseur clim chauffage froid frigoriste installation entretien تكييف مكيف كليماتيزور تدفئة تبريد",
+      "photo": {
+        "fichier": "assets/metiers-photos/climatisation.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Climatiseur mural dans une pièce",
+          "ar": "مكيف هواء حائطي داخل غرفة"
+        },
+        "auteur": "Mohsinister",
+        "licence": "CC BY-SA 3.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=35392058"
+      }
     },
     {
       "id": "serrurier",
@@ -458,7 +510,20 @@
       "fr_pl": "Pneus et vulcanisation",
       "ar": "عجلات وفيلكانيزاسيون",
       "ar_pl": "محلات العجلات",
-      "mots": "pneu pneus pneumatique vulcanisation crevaison équilibrage parallélisme عجلات كاوتشو فيلكانيزاسيون"
+      "mots": "pneu pneus pneumatique vulcanisation crevaison équilibrage parallélisme عجلات كاوتشو فيلكانيزاسيون",
+      "photo": {
+        "fichier": "assets/metiers-photos/pneus.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Piles de pneus",
+          "ar": "أكداس من العجلات المطاطية"
+        },
+        "auteur": "Andy F",
+        "licence": "CC BY-SA 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=14141154"
+      }
     },
     {
       "id": "reparation-telephone",
@@ -470,7 +535,20 @@
       "fr_pl": "Téléphones et réparation",
       "ar": "هواتف وإصلاح",
       "ar_pl": "الهواتف والإصلاح",
-      "mots": "réparation téléphone smartphone portable écran informatique ordinateur électronique إصلاح هاتف هواتف جوال شاشة حاسوب"
+      "mots": "réparation téléphone smartphone portable écran informatique ordinateur électronique إصلاح هاتف هواتف جوال شاشة حاسوب",
+      "photo": {
+        "fichier": "assets/metiers-photos/reparation-telephone.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Mains qui réparent un téléphone portable",
+          "ar": "يدان تصلحان هاتفا جوالا"
+        },
+        "auteur": "Fairphone",
+        "licence": "CC BY-SA 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=69190948"
+      }
     },
     {
       "id": "informatique",
@@ -482,7 +560,20 @@
       "fr_pl": "Informatique",
       "ar": "إعلامية",
       "ar_pl": "الإعلامية",
-      "mots": "informatique ordinateur pc portable réparation maintenance réseau imprimante إعلامية حاسوب كمبيوتر صيانة"
+      "mots": "informatique ordinateur pc portable réparation maintenance réseau imprimante إعلامية حاسوب كمبيوتر صيانة",
+      "photo": {
+        "fichier": "assets/metiers-photos/informatique.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Carte mère d'ordinateur",
+          "ar": "اللوحة الأم لحاسوب"
+        },
+        "auteur": "Autopilot",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=39693335"
+      }
     },
     {
       "id": "architecte",
