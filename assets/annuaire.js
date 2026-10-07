@@ -26,14 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (champ) champ.addEventListener("input", filtrer);
   if (choixG) choixG.addEventListener("change", filtrer);
-  const choisir = m => {
-    metier = m;
+  document.querySelectorAll(".puce").forEach(b => b.addEventListener("click", () => {
+    metier = metier === b.dataset.m ? "" : b.dataset.m;
     document.querySelectorAll(".puce").forEach(x => x.classList.toggle("on", x.dataset.m === metier));
     filtrer();
-  };
-  // petits boutons : un 2e clic retire le filtre ; grandes cartes de métier : filtrent puis descendent à la liste (#liste)
-  document.querySelectorAll(".puce").forEach(b => b.addEventListener("click", () => choisir(metier === b.dataset.m ? "" : b.dataset.m)));
-  document.querySelectorAll("a.metier[data-m]").forEach(a => a.addEventListener("click", () => choisir(a.dataset.m)));
+  }));
   const ph = () => { if (champ) champ.placeholder = T("Nom, ville, quartier…", "الاسم، المدينة، الحي…"); filtrer(); };
   document.addEventListener("langue", ph); ph();
 });

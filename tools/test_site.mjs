@@ -191,14 +191,6 @@ else {
   check("accueil : en-tête et pied fabriqués (nom du site, crédit OpenStreetMap)", d.getElementById("entete").textContent.includes(C.nom.fr) && /OpenStreetMap/.test(d.getElementById("pied").textContent));
   const visibles = () => [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).length;
   check("accueil : toutes les fiches visibles au départ", visibles() === fichesPages.length);
-  { const carte = d.querySelector("a.metier[data-m]");
-    if (carte) {
-      const m = carte.dataset.m; carte.dispatchEvent(new w.MouseEvent("click", { bubbles: true, cancelable: true }));
-      const vis = [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden);
-      check("accueil : une grande carte de métier filtre la liste sur ce métier (et allume son bouton)", vis.length > 0 && vis.every(c => c.dataset.m === m) && d.querySelector(`.puce[data-m="${m}"]`).classList.contains("on"));
-      d.querySelector(`.puce[data-m="${m}"]`).dispatchEvent(new w.Event("click"));
-      check("accueil : un 2e clic sur le bouton du métier retire le filtre", visibles() === fichesPages.length);
-    } }
   const g = attendues[0].gouvernorat;
   d.getElementById("choix-g").value = g; d.getElementById("choix-g").dispatchEvent(new w.Event("change"));
   check("accueil : le filtre par gouvernorat ne garde que ce gouvernorat", visibles() > 0 && [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).every(c => c.dataset.g === g));
