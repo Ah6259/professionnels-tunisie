@@ -200,3 +200,5 @@ html[dir="rtl"] .cat{padding:6px 7px 6px 13px}
 .cat .ill-metier{border-radius:6px}
 .cat.on{background:var(--p);color:#fff;border-color:var(--p)}
 .metier[hidden],.puce[hidden]{display:none}
+/* liens vers les applications de paiement (D17, IZI) */
+.appli{color:var(--p);font-weight:800;text-decoration:underline;text-underline-offset:2px}

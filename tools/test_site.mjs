@@ -286,6 +286,9 @@ else {
 {
   const ins = lire("inscription/index.html");
   check("bouton « Inscription Pro » visible dans l'en-tête de chaque page, vers les prix et avantages", /class="entete-pro" href="\$\{racine\}inscription\/#offres"/.test(lire("assets/page.js")) && lire("index.html").includes('href="inscription/#offres"') && /class="appel-pro"><a class="btn btn-pro" href="inscription\/#offres"/.test(lire("index.html")));
+  check("paiement : D17 et IZI mènent à leurs applications officielles (Google Play + iPhone), mode d'emploi du transfert, plus de Wafacash (pas de compte, décision d'Ahmed du 08/10/2026)",
+    !/Wafacash/i.test(ins) && ins.includes('href="https://play.google.com/store/apps/details?id=tn.mobipost"') && ins.includes('href="https://play.google.com/store/apps/details?id=tn.izi.consumer"') &&
+    ins.includes("apps.apple.com/tn/app/digipostbank-d17/id1475640303") && ins.includes("apps.apple.com/tn/app/izi/id1603653941") && /Transfert rapide/.test(ins));
   check("bouton « Paiement » : modes de paiement visibles d'un clic avant l'inscription (virement ou D17 / IZI / Wafacash + montant)", /<details class="paiement" id="paiement"><summary[^>]*>[\s\S]*Paiement[\s\S]*(Virement bancaire|D17|IZI|Wafacash)[\s\S]*Montant/.test(ins));
   check("page Inscription Pro : accroche « Gagnez en visibilité » + profil référencé en arabe et en français, dans le gouvernorat", /Gagnez en visibilité/.test(ins) && /Rendez votre profil accessible et référencé en ligne, en arabe et en français, dans votre gouvernorat/.test(ins));
   check("professionnels : offre gratuite + formule Pro avec 1er mois gratuit et prix affichés", /class="offre pro"/.test(ins) && /mois offert/.test(ins) && /pour toujours/.test(ins) && /jamais supprimée/.test(ins) && /Sans engagement au-delà d'un an/.test(ins));

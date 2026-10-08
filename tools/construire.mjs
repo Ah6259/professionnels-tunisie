@@ -351,7 +351,8 @@ const WAP = PRO.whatsapp_preuve ? String(PRO.whatsapp_preuve).replace(/\D/g, "")
 const lienPreuve = () => WAP ? `<a class="btn vert" href="https://wa.me/216${WAP}?text=${encodeURIComponent("Bonjour, voici la preuve de paiement de la formule Pro pour : ")}" rel="noopener">${svg("wa")}${bi("Envoyer la preuve de paiement par WhatsApp", "أرسل إثبات الدفع عبر واتساب")}</a>` : "";
 const listePaiements = () => `<dl class="infos rib">
         ${VIR.rib ? `<dt>${bi("Virement bancaire", "تحويل بنكي")}</dt><dd>${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}<br>RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi></dd>` : ""}
-        ${(PRO.autres_paiements || []).map(p => `<dt>${esc(p.nom)}</dt><dd><bdi dir="ltr">${esc(p.detail)}</bdi></dd>`).join("\n        ")}
+        ${(PRO.autres_paiements || []).map(p => `<dt>${p.android ? `<a class="appli" href="${esc(p.android)}" target="_blank" rel="noopener noreferrer">${esc(p.nom)}</a>` : esc(p.nom)}</dt><dd><bdi dir="ltr">${esc(p.detail)}</bdi>${p.iphone ? ` · <a class="appli" href="${esc(p.iphone)}" target="_blank" rel="noopener noreferrer">iPhone</a>` : ""}</dd>`).join("\n        ")}
+        ${(PRO.autres_paiements || []).some(p => p.android) ? `<dt>${bi("Comment payer", "طريقة الدفع")}</dt><dd>${bi(`Touchez D17 ou IZI pour ouvrir l'application (sur iPhone : le lien « iPhone »). Dans D17 : « Transfert d'argent » puis « Transfert rapide » ; dans IZI : « Transfert ». Tapez le numéro ${esc(PRO.autres_paiements[0].detail)} et le montant, puis « Envoyer ».`, `اضغط على D17 أو IZI لفتح التطبيق (على آيفون: رابط « iPhone »). في D17: « تحويل الأموال » ثم « التحويل السريع »؛ في IZI: « تحويل ». أدخل الرقم ⁨${esc(PRO.autres_paiements[0].detail)}⁩ والمبلغ ثم « إرسال ».`)}</dd>` : ""}
         <dt>${bi("Montant", "المبلغ")}</dt><dd>${prixTexte()}</dd>
         <dt>${bi("Motif", "سبب الدفع")}</dt><dd>${bi("le nom de votre établissement", "اسم مؤسستك")}</dd>
       </dl>`;
