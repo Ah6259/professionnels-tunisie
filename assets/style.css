@@ -193,3 +193,10 @@ img,svg{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .btn-pro:active,.entete-pro:active{transform:translateY(2px);box-shadow:0 1px 0 #8A5A00!important}
 @keyframes paie-reflet{0%{left:-60%}30%,100%{left:130%}}
 @media (prefers-reduced-motion:reduce){.btn-pro::after,.entete-pro::after{animation:none;display:none}}
+/* catégories de métiers (rangée de boutons au-dessus des métiers, comme Documents) */
+.cats{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 12px}
+.cat{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--ligne);background:var(--carte);color:var(--texte);border-radius:999px;padding:6px 13px 6px 7px;font:inherit;font-size:14px;font-weight:700;cursor:pointer}
+html[dir="rtl"] .cat{padding:6px 7px 6px 13px}
+.cat .ill-metier{border-radius:6px}
+.cat.on{background:var(--p);color:#fff;border-color:var(--p)}
+.metier[hidden],.puce[hidden]{display:none}

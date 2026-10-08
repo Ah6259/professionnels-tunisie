@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!liste) return;
   const cartes = [...liste.querySelectorAll(".fiche-carte")];
   const champ = document.getElementById("recherche"), choixG = document.getElementById("choix-g"), compte = document.getElementById("compte");
-  let metier = "";
+  let metier = "", cat = "";
   const depart = new URLSearchParams(location.search);
   if (choixG && depart.get("g")) choixG.value = depart.get("g");
   function filtrer() {
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const g = choixG ? choixG.value : "";
     let n = 0;
     for (const c of cartes) {
-      const ok = (!g || c.dataset.g === g) && (!metier || c.dataset.m === metier) && mots.every(m => sansAccent(c.dataset.cherche).includes(m));
+      const ok = (!g || c.dataset.g === g) && (!metier || c.dataset.m === metier) && (!cat || catDe[c.dataset.m] === cat) && mots.every(m => sansAccent(c.dataset.cherche).includes(m));
       c.hidden = !ok; if (ok) n++;
     }
     const vide = document.getElementById("aucun"); if (vide) vide.hidden = n > 0;
@@ -35,6 +35,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // (correction du 06/10/2026, effacée par une synchronisation du moteur du PC le 07/10, remise le 07/10 : à reporter dans annuaires/moteur/)
   document.querySelectorAll(".puce").forEach(b => b.addEventListener("click", () => choisir(metier === b.dataset.m ? "" : b.dataset.m)));
   document.querySelectorAll("a.metier[data-m]").forEach(a => a.addEventListener("click", () => choisir(a.dataset.m)));
+  // catégories (rangée de boutons au-dessus des métiers) : ne montrent que les métiers et les fiches de la catégorie ;
+  // un 2e clic sur la même catégorie montre tout (08/10/2026)
+  const catDe = {};
+  document.querySelectorAll("[data-m][data-cat]").forEach(x => { catDe[x.dataset.m] = x.dataset.cat; });
+  const choisirCat = k => {
+    cat = k;
+    document.querySelectorAll(".cat").forEach(x => x.classList.toggle("on", x.dataset.cat === cat));
+    document.querySelectorAll("a.metier[data-m], .puce").forEach(x => { x.hidden = !!cat && x.dataset.cat !== cat; });
+    if (metier && cat && catDe[metier] !== cat) choisir(""); else filtrer();
+  };
+  document.querySelectorAll(".cat[data-cat]").forEach(b => b.addEventListener("click", () => choisirCat(cat === b.dataset.cat ? "" : b.dataset.cat)));
   const ph = () => { if (champ) champ.placeholder = T("Nom, ville, quartier…", "الاسم، المدينة، الحي…"); filtrer(); };
   document.addEventListener("langue", ph); ph();
 });

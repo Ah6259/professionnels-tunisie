@@ -87,6 +87,11 @@ export const FICHES = gardees.filter(aUnContact)
 const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const bi = (fr, ar) => `<span data-l="fr">${fr}</span><span data-l="ar">${ar}</span>`;
 const biO = o => bi(esc(o.fr), esc(o.ar));
+// catégories de métiers (facultatives, config.categories : [{id, fr, ar, metiers: [ids]}]) : rangée de boutons sur l'accueil,
+// comme les catégories de Documents (demande d'Ahmed, 08/10/2026). Chaque métier appartient à une seule catégorie (testé).
+const CATS = C.categories || [];
+const catDe = id => (CATS.find(k => k.metiers.includes(id)) || {}).id || "";
+const dCat = id => CATS.length ? ` data-cat="${catDe(id)}"` : "";
 const ISO = t => "⁦" + t + "⁩";
 const telLisible = t => t ? t.replace(/(\d{2})(\d{3})(\d{3})/, "$1 $2 $3") : "";
 const mobile = t => !!t && /^[2459]/.test(t);                   // portables tunisiens : 2x, 4x, 5x, 9x
@@ -182,7 +187,7 @@ function filtres(racine, gouvernoratFixe, liste = FICHES) {
   return `<div class="filtres" id="filtres">
   <label class="recherche">${svg("loupe")}<input type="search" id="recherche" autocomplete="off" aria-label="Rechercher"></label>
   ${gouvernoratFixe ? "" : `<select id="choix-g" aria-label="Gouvernorat"><option value="">${esc("Tous les gouvernorats")}</option>${GOUVERNORATS.map(g => `<option value="${g[0]}" data-ar="${esc(g[2])}">${esc(g[1])}</option>`).join("")}</select>`}
-  ${presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}">${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
+  ${presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}"${dCat(m.id)}>${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
 </div>
 <p class="compte" id="compte" aria-live="polite"></p>`;
 }
@@ -247,7 +252,8 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   <figure class="hero-carte">${carteTunisie("", compteG)}<figcaption>${bi("Touchez un gouvernorat", "اضغط على ولاية")}</figcaption></figure>
 </div>${P ? `<div class="wrap">${creditPhoto()}</div>` : ""}</section>
 <main class="wrap">
-  ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.filter(m => FICHES.some(f => f.metier === m.id)).map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="#liste" data-m="${m.id}">${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
+  ${CATS.length > 1 ? `<div class="cats" id="cats">${CATS.filter(k => k.metiers.some(id => FICHES.some(f => f.metier === id))).map(k => { const m = C.metiers.find(x => x.id === k.metiers.find(id => FICHES.some(f => f.metier === id))); return `<button type="button" class="cat" data-cat="${k.id}">${imgMetier(m, "", 22)}${biO(k)}</button>`; }).join("")}</div>` : ""}
+  ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.filter(m => FICHES.some(f => f.metier === m.id)).map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="#liste" data-m="${m.id}"${dCat(m.id)}>${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
   ${filtres("", false)}
   ${notePro(FICHES)}
   <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>

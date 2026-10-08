@@ -121,6 +121,13 @@ check("photo du bandeau : fichier présent (≤ 200 Ko), crédit complet (auteur
   lire("index.html").includes(P.fichier) && lire("index.html").includes(P.licence) && /Wikimedia Commons/.test(lire("index.html")));
 check("image en couleur pour chaque métier (assets/metiers/<id>.svg), affichée sur les fiches",
   C.metiers.every(m => existsSync(join(root, "assets/metiers", m.id + ".svg")) && /<svg[\s\S]*viewBox/.test(lire("assets/metiers/" + m.id + ".svg"))) && s0.includes("assets/metiers/" + f0.metier + ".svg"));
+if (C.categories) {
+  const ids = C.categories.flatMap(k => k.metiers);
+  check(`catégories de métiers : chaque métier dans UNE seule catégorie (${C.categories.length} catégories, ${C.metiers.length} métiers), noms FR + AR`,
+    C.metiers.every(m => ids.filter(i => i === m.id).length === 1) && ids.every(i => C.metiers.some(m => m.id === i)) &&
+    C.categories.every(k => k.id && k.fr && /[؀-ۿ]/.test(k.ar || "") && k.metiers.length));
+  check("catégories de métiers : rangée de boutons sur l'accueil", (lire("index.html").match(/<button type="button" class="cat" data-cat=/g) || []).length >= 2);
+}
 const photosM = C.metiers.filter(m => m.photo);
 check(`photos réelles par métier (${photosM.length}/${C.metiers.length}) : fichier ≤ 160 Ko, licence complète, crédit sur À propos, affichée sur la tuile du métier et les fiches`,
   photosM.every(m => existsSync(join(root, m.photo.fichier)) && statSync(join(root, m.photo.fichier)).size <= 160 * 1024 && m.photo.auteur && m.photo.licence && m.photo.licence_url && /commons\.wikimedia\.org/.test(m.photo.source || "") &&
@@ -198,6 +205,16 @@ else {
       check("accueil : une grande carte de métier filtre la liste sur ce métier (et allume son bouton)", vis.length > 0 && vis.every(c => c.dataset.m === m) && d.querySelector(`.puce[data-m="${m}"]`).classList.contains("on"));
       d.querySelector(`.puce[data-m="${m}"]`).dispatchEvent(new w.Event("click"));
       check("accueil : un 2e clic sur le bouton du métier retire le filtre", visibles() === fichesPages.length);
+    } }
+  { const b = d.querySelector(".cat[data-cat]");
+    if (b) {
+      const k = b.dataset.cat, dans = new Set(C.categories.find(x => x.id === k).metiers);
+      b.dispatchEvent(new w.Event("click"));
+      const vis = [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden);
+      const metiersVis = [...d.querySelectorAll("a.metier[data-m]")].filter(a => !a.hidden);
+      check("accueil : un bouton de catégorie ne garde que les métiers et les fiches de cette catégorie", b.classList.contains("on") && vis.length > 0 && vis.every(c => dans.has(c.dataset.m)) && metiersVis.length > 0 && metiersVis.every(a => dans.has(a.dataset.m)));
+      b.dispatchEvent(new w.Event("click"));
+      check("accueil : un 2e clic sur la catégorie montre tout de nouveau", visibles() === fichesPages.length && [...d.querySelectorAll("a.metier[data-m]")].every(a => !a.hidden));
     } }
   const g = attendues[0].gouvernorat;
   d.getElementById("choix-g").value = g; d.getElementById("choix-g").dispatchEvent(new w.Event("change"));
