@@ -391,13 +391,18 @@ const metierChoix = C.metiers.length > 1 ? `<label for="p-metier">${bi("Métier"
 // preuve de paiement envoyée par WhatsApp (config.pro.whatsapp_preuve), sans attendre un e-mail
 const WAP = PRO.whatsapp_preuve ? String(PRO.whatsapp_preuve).replace(/\D/g, "") : "";
 const lienPreuve = () => WAP ? `<a class="btn vert" href="https://wa.me/216${WAP}?text=${encodeURIComponent("Bonjour, voici la preuve de paiement de la formule Pro pour : ")}" rel="noopener">${svg("wa")}${bi("Envoyer la preuve de paiement par WhatsApp", "أرسل إثبات الدفع عبر واتساب")}</a>` : "";
-const listePaiements = () => `<dl class="infos rib">
-        ${VIR.rib ? `<dt>${bi("Virement bancaire", "تحويل بنكي")}</dt><dd>${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}<br>RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi></dd>` : ""}
-        ${(PRO.autres_paiements || []).map(p => `<dt>${p.android ? `<a class="appli" href="${esc(p.android)}" target="_blank" rel="noopener noreferrer">${esc(p.nom)}</a>` : esc(p.nom)}</dt><dd><bdi dir="ltr">${esc(p.detail)}</bdi>${p.iphone ? ` · <a class="appli" href="${esc(p.iphone)}" target="_blank" rel="noopener noreferrer">iPhone</a>` : ""}</dd>`).join("\n        ")}
-        ${(PRO.autres_paiements || []).some(p => p.android) ? `<dt>${bi("Comment payer", "طريقة الدفع")}</dt><dd>${bi(`Touchez D17 ou IZI pour ouvrir l'application (sur iPhone : le lien « iPhone »). Dans D17 : « Transfert d'argent » puis « Transfert rapide » ; dans IZI : « Transfert ». Tapez le numéro ${esc(PRO.autres_paiements[0].detail)} et le montant, puis « Envoyer ».`, `اضغط على D17 أو IZI لفتح التطبيق (على آيفون: رابط « iPhone »). في D17: « تحويل الأموال » ثم « التحويل السريع »؛ في IZI: « تحويل ». أدخل الرقم ⁨${esc(PRO.autres_paiements[0].detail)}⁩ والمبلغ ثم « إرسال ».`)}</dd>` : ""}
-        <dt>${bi("Montant", "المبلغ")}</dt><dd>${prixTexte()}</dd>
-        <dt>${bi("Motif", "سبب الدفع")}</dt><dd>${bi("le nom de votre établissement", "اسم مؤسستك")}</dd>
-      </dl>`;
+// paiement en 3 étapes numérotées + phrase de confiance (demande d'Ahmed, 08/10/2026 : simple, rassurant, on ne se perd pas)
+const listePaiements = () => {
+  const ap = PRO.autres_paiements || [], num = esc(((PRO.autres_paiements || [])[0] || {}).detail || "");
+  const ios = ap.filter(p => p.iphone).map(p => `<a class="appli" href="${esc(p.iphone)}" target="_blank" rel="noopener noreferrer">${esc(p.nom)}</a>`).join(" · ");
+  return `<ol class="paie-etapes">
+        <li>${bi("Ouvrez l'application :", "افتح التطبيق:")} <span class="applis">${ap.map(p => p.android ? `<a class="appli-btn" href="${esc(p.android)}" target="_blank" rel="noopener noreferrer">${esc(p.nom)}</a>` : `<span class="appli-btn">${esc(p.nom)}</span>`).join("")}</span>${ios ? `<br><span class="petit">${bi("Sur iPhone :", "على آيفون:")} ${ios}</span>` : ""}</li>
+        <li>${bi("Choisissez « Transfert rapide » (dans IZI : « Transfert ») et tapez le numéro", "اختر « التحويل السريع » (في IZI: « تحويل ») وأدخل الرقم")} <strong><bdi dir="ltr">${num}</bdi></strong>.<br>${bi("Montant :", "المبلغ:")} <strong>${prixTexte()}</strong></li>
+        <li>${bi("Motif :", "سبب الدفع:")} <strong>${bi("le nom de votre établissement", "اسم مؤسستك")}</strong>. ${bi("Puis envoyez la capture du paiement par WhatsApp (bouton vert).", "ثم أرسل لقطة الدفع عبر واتساب (الزر الأخضر).")}</li>
+      </ol>
+      ${VIR.rib ? `<p class="petit">${bi("Ou par virement bancaire :", "أو بتحويل بنكي:")} ${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}, RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi></p>` : ""}
+      <p class="confiance">${bi("Vous payez directement dans l'application officielle de La Poste Tunisienne (D17) ou de Zitouna Paiement (IZI) : nous ne voyons jamais vos codes.", "تدفع مباشرة في التطبيق الرسمي للبريد التونسي (D17) أو لزيتونة للدفع (IZI): لا نطّلع أبدًا على رموزك.")}</p>`;
+};
 const offres = `<section class="offres" id="offres">
     <div class="offre">
       <h2>${bi("Fiche gratuite", "بطاقة مجانية")}</h2>
@@ -413,14 +418,14 @@ const offres = `<section class="offres" id="offres">
       <p class="ruban">${bi(`${PRO.mois_gratuits} mois offert`, `${ISO(PRO.mois_gratuits)} شهر مجاني`)}</p>
       <h2>${bi("Formule Pro", "صيغة Pro")}</h2>
       <p class="prix">${prixTexte()}</p>
-      <ul class="avantages">
+      <ul class="avantages masque-si-paiement">
         <li>${bi("En tête de votre gouvernorat, avec la mention « Pro »", "في أعلى قائمة ولايتك، مع إشارة « Pro »")}</li>
         <li>${bi("Description en français et en arabe, spécialités, horaires", "تقديم بالعربية والفرنسية، الاختصاصات، التوقيت")}</li>
         <li>${bi("Bouton WhatsApp direct", "زر واتساب مباشر")}</li>
         <li>${bi("Le nombre de clients qui vous ont appelé ou écrit depuis le site", "عدد الحرفاء الذين اتصلوا بك أو راسلوك عبر الموقع")}</li>
         <li><strong>${bi("Sans engagement au-delà d'un an", "دون التزام بعد السنة")}</strong></li>
       </ul>
-      <p class="petit">${bi(`Le 1er mois est gratuit. Ensuite, paiement par l'un des moyens indiqués (bouton « Paiement »). Pas de renouvellement automatique : sans paiement, votre fiche redevient gratuite, elle n'est jamais supprimée.`, `الشهر الأول مجاني. بعده، الدفع بإحدى الوسائل المذكورة (زر « الدفع »). لا تجديد آلي: دون دفع تعود بطاقتك مجانية ولا تُحذف أبدًا.`)}</p>
+      <p class="petit masque-si-paiement">${bi(`Le 1er mois est gratuit. Ensuite, paiement par l'un des moyens indiqués (bouton « Paiement »). Pas de renouvellement automatique : sans paiement, votre fiche redevient gratuite, elle n'est jamais supprimée.`, `الشهر الأول مجاني. بعده، الدفع بإحدى الوسائل المذكورة (زر « الدفع »). لا تجديد آلي: دون دفع تعود بطاقتك مجانية ولا تُحذف أبدًا.`)}</p>
       <details class="paiement" id="paiement"><summary class="btn clair">${bi("Paiement : voir les modes de paiement", "الدفع: طرق الدفع")}</summary>
       ${listePaiements()}
       ${lienPreuve()}

@@ -306,6 +306,9 @@ else {
   check("paiement : D17 et IZI mènent à leurs applications officielles (Google Play + iPhone), mode d'emploi du transfert, plus de Wafacash (pas de compte, décision d'Ahmed du 08/10/2026)",
     !/Wafacash/i.test(ins) && ins.includes('href="https://play.google.com/store/apps/details?id=tn.mobipost"') && ins.includes('href="https://play.google.com/store/apps/details?id=tn.izi.consumer"') &&
     ins.includes("apps.apple.com/tn/app/digipostbank-d17/id1475640303") && ins.includes("apps.apple.com/tn/app/izi/id1603653941") && /Transfert rapide/.test(ins));
+  check("paiement simple et rassurant (règle commune du 08/10/2026) : 3 étapes numérotées, phrase de confiance, et la description de l'offre se cache quand « Paiement » est ouvert",
+    /<ol class="paie-etapes">(\s*<li>[\s\S]*?<\/li>){3}\s*<\/ol>/.test(ins) && /class="confiance"/.test(ins) && /class="avantages masque-si-paiement"/.test(ins) &&
+    lire("assets/style.css").includes(":has(> details.paiement[open]) > .masque-si-paiement{display:none}"));
   check("bouton « Paiement » : modes de paiement visibles d'un clic avant l'inscription (virement ou D17 / IZI / Wafacash + montant)", /<details class="paiement" id="paiement"><summary[^>]*>[\s\S]*Paiement[\s\S]*(Virement bancaire|D17|IZI|Wafacash)[\s\S]*Montant/.test(ins));
   check("page Inscription Pro : accroche « Gagnez en visibilité » + profil référencé en arabe et en français, dans le gouvernorat", /Gagnez en visibilité/.test(ins) && /Rendez votre profil accessible et référencé en ligne, en arabe et en français, dans votre gouvernorat/.test(ins));
   check("professionnels : offre gratuite + formule Pro avec 1er mois gratuit et prix affichés", /class="offre pro"/.test(ins) && /mois offert/.test(ins) && /pour toujours/.test(ins) && /jamais supprimée/.test(ins) && /Sans engagement au-delà d'un an/.test(ins));
@@ -342,7 +345,7 @@ else {
     const io = L("inscription/index.html");
     check("inscriptions ouvertes : formulaire Pro (formule, cases d'autorisation et de conditions), page conditions sans renouvellement automatique",
       /data-envoi="pro"/.test(io) && /name="formule" value="pro"/.test(io) && /name="autorise"[^>]*required/.test(io) && /name="conditions"[^>]*required/.test(io) && /aucun renouvellement automatique/.test(L("conditions/index.html")));
-    check("coordonnées de paiement (virement + D17) dans le bouton « Paiement » de l'offre Pro ET dans la confirmation après l'envoi", /<details class="paiement"[\s\S]*00 000 0000000000000 00[\s\S]*D17[\s\S]*99 999 999[\s\S]*<\/details>/.test(io) && /<div class="apres-pro" id="apres-pro" hidden>[\s\S]*00 000 0000000000000 00/.test(io) && /href="#pro"/.test(io));
+    check("coordonnées de paiement (virement + D17) dans le bouton « Paiement » de l'offre Pro ET dans la confirmation après l'envoi", ["00 000 0000000000000 00", "D17", "99 999 999"].every(x => ((io.match(/<details class="paiement"[\s\S]*?<\/details>/) || [""])[0]).includes(x)) && /<div class="apres-pro" id="apres-pro" hidden>[\s\S]*00 000 0000000000000 00/.test(io) && /href="#pro"/.test(io));
     check("fiche non Pro : lien « Vérifiez votre fiche gratuitement » vers le formulaire Pro", L(`fiche/${idVerif}/index.html`).includes(`inscription/?fiche=${idVerif}&amp;nom=`));
     check("jamais « meilleur » dans l'espace professionnels", !/meilleur/i.test(io.replace(/n'écrivons jamais qu'un établissement est « le meilleur »/g, "")) && !/meilleur/i.test(L("conditions/index.html").replace(/« le meilleur »/g, "")));
     if (JSDOM) {
