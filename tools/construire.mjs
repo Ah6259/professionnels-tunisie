@@ -401,7 +401,7 @@ const listePaiements = () => {
         <li>${bi("Motif :", "سبب الدفع:")} <strong>${bi("le nom de votre établissement", "اسم مؤسستك")}</strong>. ${bi("Puis envoyez la capture du paiement par WhatsApp (bouton vert).", "ثم أرسل لقطة الدفع عبر واتساب (الزر الأخضر).")}</li>
       </ol>
       ${VIR.rib ? `<p class="petit">${bi("Ou par virement bancaire :", "أو بتحويل بنكي:")} ${esc(VIR.titulaire || "")}${VIR.banque ? " — " + esc(VIR.banque) : ""}, RIB <bdi dir="ltr">${esc(VIR.rib)}</bdi></p>` : ""}
-      <p class="confiance">${bi("Vous payez directement dans l'application officielle de La Poste Tunisienne (D17) ou de Zitouna Paiement (IZI) : nous ne voyons jamais vos codes.", "تدفع مباشرة في التطبيق الرسمي للبريد التونسي (D17) أو لزيتونة للدفع (IZI): لا نطّلع أبدًا على رموزك.")}</p>`;
+      <p class="paie-confiance">${bi("Vous payez directement dans l'application officielle de La Poste Tunisienne (D17) ou de Zitouna Paiement (IZI) : nous ne voyons jamais vos codes.", "تدفع مباشرة في التطبيق الرسمي للبريد التونسي (D17) أو لزيتونة للدفع (IZI): لا نطّلع أبدًا على رموزك.")}</p>`;
 };
 const offres = `<section class="offres" id="offres">
     <div class="offre">

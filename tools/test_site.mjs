@@ -307,7 +307,7 @@ else {
     !/Wafacash/i.test(ins) && ins.includes('href="https://play.google.com/store/apps/details?id=tn.mobipost"') && ins.includes('href="https://play.google.com/store/apps/details?id=tn.izi.consumer"') &&
     ins.includes("apps.apple.com/tn/app/digipostbank-d17/id1475640303") && ins.includes("apps.apple.com/tn/app/izi/id1603653941") && /Transfert rapide/.test(ins));
   check("paiement simple et rassurant (règle commune du 08/10/2026) : 3 étapes numérotées, phrase de confiance, et la description de l'offre se cache quand « Paiement » est ouvert",
-    /<ol class="paie-etapes">(\s*<li>[\s\S]*?<\/li>){3}\s*<\/ol>/.test(ins) && /class="confiance"/.test(ins) && /class="avantages masque-si-paiement"/.test(ins) &&
+    /<ol class="paie-etapes">(\s*<li>[\s\S]*?<\/li>){3}\s*<\/ol>/.test(ins) && /class="paie-confiance"/.test(ins) && /class="avantages masque-si-paiement"/.test(ins) &&
     lire("assets/style.css").includes(":has(> details.paiement[open]) > .masque-si-paiement{display:none}"));
   check("bouton « Paiement » : modes de paiement visibles d'un clic avant l'inscription (virement ou D17 / IZI / Wafacash + montant)", /<details class="paiement" id="paiement"><summary[^>]*>[\s\S]*Paiement[\s\S]*(Virement bancaire|D17|IZI|Wafacash)[\s\S]*Montant/.test(ins));
   check("page Inscription Pro : accroche « Gagnez en visibilité » + profil référencé en arabe et en français, dans le gouvernorat", /Gagnez en visibilité/.test(ins) && /Rendez votre profil accessible et référencé en ligne, en arabe et en français, dans votre gouvernorat/.test(ins));
