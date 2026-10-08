@@ -169,6 +169,23 @@ const man = JSON.parse(lire("manifest.webmanifest"));
 check("manifeste : id unique du site, icônes présentes", man.id === BASE && man.icons.every(i => existsSync(join(root, i.src))) && existsSync(join(root, "assets/icons/apple-touch-icon.png")) && existsSync(join(root, "assets/logo.svg")));
 const sm = lire("sitemap.xml");
 check("plan du site : toutes les pages", pages.every(p => sm.includes(C.url + p.replace(/index\.html$/, ""))));
+// pages « métier » et « métier dans un gouvernorat » (visibilité Google, 08/10/2026)
+if (C.metiers.length > 1) {
+  const paires = {};
+  for (const [, g, m] of lire("index.html").matchAll(/class="fiche-carte[^"]*" href="[^"]*" data-cherche="[^"]*" data-g="([^"]+)" data-m="([^"]+)"/g)) paires[m + "/" + g] = (paires[m + "/" + g] || 0) + 1;
+  const metiersAvec = [...new Set(Object.keys(paires).map(k => k.split("/")[0]))];
+  const pagesMG = pages.filter(p => /^metier\/[^/]+\/[^/]+\/index\.html$/.test(p));
+  check(`pages « métier » (${metiersAvec.length}) et « métier dans un gouvernorat » (${Object.keys(paires).length}) : une par combinaison qui a des fiches, jamais de page vide, dans le plan du site`,
+    metiersAvec.length > 1 && metiersAvec.every(m => pages.includes(`metier/${m}/index.html`)) && pagesMG.length === Object.keys(paires).length &&
+    Object.entries(paires).every(([k, n]) => pages.includes(`metier/${k}/index.html`) && (lire(`metier/${k}/index.html`).match(/class="fiche-carte/g) || []).length === n && sm.includes(`${C.url}metier/${k}/`)));
+  const [k0] = Object.keys(paires), m0 = C.metiers.find(m => m.id === k0.split("/")[0]), p0 = lire(`metier/${k0}/index.html`);
+  check("page « métier dans un gouvernorat » : titre « <métier> à <gouvernorat> », FR + AR, liens vers les autres gouvernorats de ce métier",
+    p0.includes(`<title>${m0.fr_pl} à `) && p0.includes('data-l="ar"') && p0.includes(`href="../../../metier/${m0.id}/"`));
+  check("liens internes : l'accueil mène aux pages métier, chaque gouvernorat à ses pages « métier dans ce gouvernorat »",
+    metiersAvec.every(m => lire("index.html").includes(`href="metier/${m}/"`)) && lire(`gouvernorat/${k0.split("/")[1]}/index.html`).includes(`href="../../metier/${k0}/"`));
+}
+{ const web = attendues.find(f => f.source === "web" && /^https:\/\//.test(f.source_url || "") && existsSync(join(root, `fiche/${f.id}/index.html`)));
+  if (web) check("données Google de la fiche : lien « sameAs » vers la page du professionnel lui-même", lire(`fiche/${web.id}/index.html`).includes(`"sameAs":["${web.source_url}`) || lire(`fiche/${web.id}/index.html`).includes(JSON.stringify(web.source_url))); }
 check("robots.txt : moteurs autorisés, robots d'IA refusés, plan du site", /Allow: \//.test(lire("robots.txt")) && /GPTBot[\s\S]*Disallow: \//.test(lire("robots.txt")) && lire("robots.txt").includes("sitemap.xml"));
 check("service worker : portée du site, caches propres au site", /PREFIXE/.test(lire("sw.js")) && /startsWith\(PREFIXE\)/.test(lire("sw.js")));
 

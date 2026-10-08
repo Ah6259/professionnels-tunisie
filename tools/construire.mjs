@@ -159,6 +159,9 @@ ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replac
 <header class="entete" id="entete"></header>`;
 }
 const pied = `<footer id="pied"></footer>\n</body>\n</html>\n`;
+const parMetier = id => FICHES.filter(f => f.metier === id);
+const AVEC_PAGES_METIER = C.metiers.length > 1;
+const sameAs = f => [...new Set([f.site, f.source === "web" ? f.source_url : null].filter(u => u && /^https:\/\//.test(u)))];
 const fil = (racine, ...etapes) => `<p class="fil"><a href="${racine || "./"}">${bi("Accueil", "الرئيسية")}</a>${etapes.map(e => " › " + e).join("")}</p>`;
 
 // badges honnêtes : « Pro » = formule payante (affichée en premier), « Vérifiée » = l'établissement a confirmé sa fiche
@@ -258,6 +261,8 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   ${notePro(FICHES)}
   <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>
   <p class="vide" id="aucun" hidden>${bi("Aucun résultat. Essayez un autre mot ou un autre gouvernorat.", "لا توجد نتيجة. جرّب كلمة أو ولاية أخرى.")}</p>
+  ${AVEC_PAGES_METIER ? `<h2 class="titre-section">${bi("Par métier", "حسب المهنة")}</h2>
+  <section class="carte"><div class="gouvernorats">${C.metiers.filter(m => parMetier(m.id).length).map(m => `<a href="metier/${m.id}/">${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${parMetier(m.id).length}</span></a>`).join("")}</div></section>` : ""}
   <h2 class="titre-section">${bi("Par gouvernorat", "حسب الولاية")}</h2>
   <section class="carte">
     <div class="gouvernorats">${GOUVERNORATS.map(g => `<a href="gouvernorat/${g[0]}/">${bi(esc(g[1]), esc(g[2]))}<span class="n">${compteG[g[0]]}</span></a>`).join("")}</div>
@@ -286,6 +291,10 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
 <main class="wrap">
   ${liste.length ? filtres("../../", true, liste) + notePro(liste) + `<div class="liste protege" id="liste">${liste.map(f => carte(f, "../../")).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>`
     : `<section class="carte appel-vide"><h2>${bi(`Soyez parmi les premiers à ${esc(fr)}`, `كن من الأوائل في ${esc(ar)}`)}</h2><p>${bi(`Aucune fiche pour l'instant dans le gouvernorat de ${esc(fr)}. Vous êtes un professionnel ici, ou vous en connaissez un ? L'ajout est gratuit.`, `لا توجد بطاقة حاليًا في ولاية ${esc(ar)}. هل أنت مهني هنا أو تعرف مهنيًا؟ الإضافة مجانية.`)}</p><a class="btn" href="../../inscription/">${bi("Ajouter une fiche gratuitement", "أضف بطاقة مجانًا")}</a></section>`}
+  ${AVEC_PAGES_METIER && liste.length ? `<section class="carte">
+    <h2>${bi(`Par métier à ${esc(fr)}`, `حسب المهنة في ولاية ${esc(ar)}`)}</h2>
+    <div class="gouvernorats">${C.metiers.map(m => [m, liste.filter(f => f.metier === m.id).length]).filter(x => x[1]).map(([m, n]) => `<a href="../../metier/${m.id}/${slug}/">${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${n}</span></a>`).join("")}</div>
+  </section>` : ""}
   <section class="carte">
     <h2>${bi("Autres gouvernorats", "ولايات أخرى")}</h2>
     <div class="gouvernorats">${GOUVERNORATS.filter(g => g[0] !== slug).map(g => `<a href="../../gouvernorat/${g[0]}/">${bi(esc(g[1]), esc(g[2]))}<span class="n">${compteG[g[0]]}</span></a>`).join("")}</div>
@@ -296,12 +305,45 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
 ` + pied;
 }
 
+// pages « métier » (toute la Tunisie) et « métier dans un gouvernorat » (« Plombiers à Sfax ») : c'est ce que les gens tapent
+// dans Google (visibilité, 08/10/2026). Seulement les combinaisons qui ont au moins une fiche (jamais de page vide).
+function pageMetier({ m, slug, liste, compteMG }) {
+  const g = slug ? G[slug] : null, racine = slug ? "../../../" : "../../", chemin = `metier/${m.id}/${slug ? slug + "/" : ""}`;
+  const lieuFr = g ? `à ${g[1]}` : "en Tunisie", lieuAr = g ? `في ولاية ${g[2]}` : "في تونس";
+  const titre = `${m.fr_pl} ${lieuFr} (${liste.length}) — téléphone et adresse, gratuit | ${C.nom.fr}`;
+  const autres = GOUVERNORATS.filter(x => compteMG[x[0]] && x[0] !== slug);
+  return tete({ titre, desc: `${m.fr_pl} ${lieuFr} : ${liste.length} fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. ${m.ar_pl} ${lieuAr}.`, chemin, racine }) + `
+<section class="hero hero-photo">${fondPhoto(photoDe(m), racine)}<div class="wrap">
+  ${fil(racine, g ? `<a href="${racine}metier/${m.id}/">${biO({ fr: m.fr_pl, ar: m.ar_pl })}</a>` : biO({ fr: m.fr_pl, ar: m.ar_pl }), ...(g ? [bi(esc(g[1]), esc(g[2]))] : []))}
+  <h1 class="titre-fiche">${imgMetier(m, racine, 48)}<span>${bi(`${esc(m.fr_pl)} ${esc(lieuFr)}`, `${esc(m.ar_pl)} ${esc(lieuAr)}`)}</span></h1>
+  <p class="intro">${bi(`${liste.length} fiche(s), triées par nom. Annuaire gratuit.`, `${ISO(liste.length)} بطاقة، مرتبة حسب الاسم. دليل مجاني.`)}</p>
+</div></section>
+<main class="wrap">
+  ${filtres(racine, true, liste)}${notePro(liste)}<div class="liste protege" id="liste">${liste.map(f => carte(f, racine)).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>
+  ${autres.length ? `<section class="carte">
+    <h2>${bi(`${esc(m.fr_pl)} dans les autres gouvernorats`, `${esc(m.ar_pl)} في الولايات الأخرى`)}</h2>
+    <div class="gouvernorats">${autres.map(x => `<a href="${racine}metier/${m.id}/${x[0]}/">${bi(esc(x[1]), esc(x[2]))}<span class="n">${compteMG[x[0]]}</span></a>`).join("")}</div>
+  </section>` : ""}
+  ${blocPro(racine)}
+  ${liensAmis()}
+</main>
+` + pied;
+}
+if (AVEC_PAGES_METIER) for (const m of C.metiers) {
+  const toutes = parMetier(m.id);
+  if (!toutes.length) continue;
+  const compteMG = Object.fromEntries(GOUVERNORATS.map(x => [x[0], toutes.filter(f => f.gouvernorat === x[0]).length]));
+  pages[`metier/${m.id}/`] = pageMetier({ m, slug: null, liste: toutes, compteMG });
+  for (const [slug] of GOUVERNORATS) if (compteMG[slug]) pages[`metier/${m.id}/${slug}/`] = pageMetier({ m, slug, liste: toutes.filter(f => f.gouvernorat === slug), compteMG });
+}
+
 // une page par fiche
 for (const f of FICHES) {
   const g = G[f.gouvernorat], m = M[f.metier];
   const ld = { "@context": "https://schema.org", "@type": C.schema || "LocalBusiness", name: f.nom, url: `${URL_SITE}fiche/${f.id}/`,
     address: { "@type": "PostalAddress", addressLocality: f.ville || g[1], addressRegion: g[1], addressCountry: "TN", ...(f.adresse ? { streetAddress: f.adresse } : {}) },
-    ...(f.tel ? { telephone: "+216" + f.tel } : {}), ...(f.lat ? { geo: { "@type": "GeoCoordinates", latitude: f.lat, longitude: f.lon } } : {}) };
+    ...(f.tel ? { telephone: "+216" + f.tel } : {}), ...(f.lat ? { geo: { "@type": "GeoCoordinates", latitude: f.lat, longitude: f.lon } } : {}),
+    ...(sameAs(f).length ? { sameAs: sameAs(f) } : {}) };
   const itin = f.lat ? `https://www.openstreetmap.org/directions?to=${f.lat}%2C${f.lon}#map=17/${f.lat}/${f.lon}` : null;
   const titre = `${f.nom} — ${m.fr} à ${f.ville || g[1]} : téléphone, adresse | ${C.nom.fr}`;
   pages[`fiche/${f.id}/`] = tete({ titre, desc: `${f.nom}, ${m.fr.toLowerCase()} à ${f.ville || g[1]} (gouvernorat de ${g[1]}) : ${f.tel ? "téléphone, " : ""}adresse et itinéraire. Annuaire gratuit.`, chemin: `fiche/${f.id}/`, racine: "../../", jsonld: [ld] }) + `
