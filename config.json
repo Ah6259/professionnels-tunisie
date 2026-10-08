@@ -706,18 +706,8 @@
     "prix_an": 59,
     "inpdp_accord": "Accord de l'INPDP obtenu par Ahmed le 06/10/2026 (contact direct)",
     "autres_paiements": [
-      {
-        "nom": "D17",
-        "detail": "24 321 390"
-      },
-      {
-        "nom": "IZI",
-        "detail": "24 321 390"
-      },
-      {
-        "nom": "Wafacash",
-        "detail": "24 321 390"
-      }
+      {"nom": "D17", "detail": "24 321 390", "android": "https://play.google.com/store/apps/details?id=tn.mobipost", "iphone": "https://apps.apple.com/tn/app/digipostbank-d17/id1475640303"},
+      {"nom": "IZI", "detail": "24 321 390", "android": "https://play.google.com/store/apps/details?id=tn.izi.consumer", "iphone": "https://apps.apple.com/tn/app/izi/id1603653941"}
     ],
     "whatsapp_preuve": "24321390"
   },
