@@ -598,6 +598,68 @@
       "mots": "déménagement déménageur transport meubles camion نقل أثاث ترحيل شاحنة"
     }
   ],
+  "categories": [
+    {
+      "id": "juridique",
+      "fr": "Juridique et comptable",
+      "ar": "القانون والمحاسبة",
+      "metiers": [
+        "avocat",
+        "notaire",
+        "huissier",
+        "traducteur",
+        "comptable",
+        "conseiller-fiscal"
+      ]
+    },
+    {
+      "id": "fetes",
+      "fr": "Fêtes et beauté",
+      "ar": "الأفراح والتجميل",
+      "metiers": [
+        "salle-des-fetes",
+        "photographe",
+        "traiteur",
+        "patisserie",
+        "coiffure-beaute"
+      ]
+    },
+    {
+      "id": "maison",
+      "fr": "Maison et travaux",
+      "ar": "المنزل والأشغال",
+      "metiers": [
+        "plombier",
+        "electricien",
+        "menuisier",
+        "aluminium-vitrerie",
+        "peintre",
+        "climatisation",
+        "serrurier",
+        "architecte"
+      ]
+    },
+    {
+      "id": "auto",
+      "fr": "Voiture et transport",
+      "ar": "السيارة والنقل",
+      "metiers": [
+        "auto-ecole",
+        "mecanicien",
+        "pneus",
+        "demenagement"
+      ]
+    },
+    {
+      "id": "tech",
+      "fr": "Téléphone et informatique",
+      "ar": "الهاتف والإعلامية",
+      "metiers": [
+        "reparation-telephone",
+        "informatique"
+      ]
+    }
+  ],
   "liens": [
     {
       "fr": "Modèles de contrats et documents gratuits",
