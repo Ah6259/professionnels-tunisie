@@ -1,11 +1,5 @@
 # Professionnels Tunisie — annuaire (professionnels-tunisie)
 
-> ⚠️ **À REPORTER DANS LE MOTEUR DU PC (`annuaires/moteur/`) AVANT TOUTE SYNCHRONISATION** (07/10/2026) : correction des grandes
-> cartes de métier qui filtrent la liste (`a.metier[data-m]` → `choisir()` dans `assets/annuaire.js`) + son test dans
-> `tools/test_site.mjs` (« une grande carte de métier filtre la liste »). Faite depuis le téléphone, elle a déjà été effacée une
-> fois par `synchroniser.py` le 07/10 : copier `assets/annuaire.js` et `tools/test_site.mjs` de ce dépôt vers le moteur, puis supprimer ce bloc.
-
-
 > **Ce site** : https://ah6259.github.io/professionnels-tunisie/ — annuaire gratuit qui REGROUPE les métiers de nos 4 annuaires
 > spécialisés (auto-écoles, avocats/notaires/huissiers/traducteurs, comptables/conseillers fiscaux, mariage) et ajoute 13 métiers
 > d'artisans et de services. Couleur vert sobre (#2E6B4E), icône mallette. Les 4 annuaires spécialisés continuent à vivre séparément.
@@ -24,6 +18,14 @@ Répondre à Ahmed **en français**, simplement. Règles communes : `../../regle
   architecte (`office=architect`), demenagement (`office=moving_company`).
 - Images des métiers : `assets/metiers/<id>.svg` (48 × 48, fond pastel, aplats, accent doré) ; celles des 12 métiers repris viennent
   des annuaires d'origine.
+
+- **Catégories** (`config.json` → `categories`, 08/10/2026) : 5 boutons sur l'accueil (juridique et comptable, fêtes et beauté,
+  maison et travaux, voiture et transport, téléphone et informatique). Chaque métier est dans UNE seule catégorie (testé) :
+  tout nouveau métier doit être ajouté à une catégorie (ou à une nouvelle catégorie, nom FR + AR).
+- **Un nouveau métier par jour** (demande d'Ahmed, 08/10/2026) : routine cloud `professionnels-nouveau-metier` (2h30, heure de
+  Tunis, avant le relevé OpenStreetMap de 3h40). Elle choisit un métier absent, vérifie dans OpenStreetMap qu'il existe en Tunisie
+  avec assez de fiches joignables, l'ajoute (étiquettes OSM, noms FR + AR, mots de recherche, catégorie, image SVG), teste et
+  publie. Jamais de santé ni de cours particuliers.
 
 ## D'où viennent les fiches
 1. `donnees/osm.json` : robot OpenStreetMap (`tools/releve_osm.py`, moteur commun).
