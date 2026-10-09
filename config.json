@@ -589,6 +589,30 @@
       }
     },
     {
+      "id": "opticien",
+      "osm": [
+        "shop=optician"
+      ],
+      "fr": "Opticien",
+      "fr_pl": "Opticiens",
+      "ar": "بائع نظارات",
+      "ar_pl": "محلات النظارات",
+      "mots": "opticien optique lunettes lunette verres monture lentilles nadhdhara nadhara نظارات نضارات بصريات عدسات إطار نظارة",
+      "photo": {
+        "fichier": "assets/metiers-photos/opticien.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Lunettes de vue à monture noire",
+          "ar": "نظارات طبية بإطار أسود"
+        },
+        "auteur": "Gaurav Dhwaj Khadka",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=97552019"
+      }
+    },
+    {
       "id": "architecte",
       "osm": [
         "office=architect"
@@ -660,7 +684,8 @@
         "photographe",
         "traiteur",
         "patisserie",
-        "coiffure-beaute"
+        "coiffure-beaute",
+        "opticien"
       ]
     },
     {
