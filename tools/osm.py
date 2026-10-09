@@ -5,12 +5,13 @@ import time
 import urllib.parse
 import urllib.request
 
-SERVEURS = ["https://overpass-api.de/api/interpreter", "https://overpass.kumi.systems/api/interpreter",
-            "https://overpass.private.coffee/api/interpreter"]
+SERVEURS = ["https://overpass-api.de/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+            "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter",
+            "https://overpass.openstreetmap.fr/api/interpreter"]   # un serveur en panne est simplement sauté
 AGENT = "annuaires-tunisie/1.0 (sites gratuits pour la Tunisie ; robot de nuit)"
 
 
-def requete(q, essais=6, verifier=None):
+def requete(q, essais=10, verifier=None):
     derniere = None
     for i in range(essais):
         url = SERVEURS[i % len(SERVEURS)]
