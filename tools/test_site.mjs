@@ -129,6 +129,8 @@ if (C.categories) {
   check("catégories de métiers : rangée de boutons sur l'accueil", (lire("index.html").match(/<button type="button" class="cat" data-cat=/g) || []).length >= 2);
 }
 const photosM = C.metiers.filter(m => m.photo);
+// règle d'Ahmed : une vraie photo par métier (oubli relevé le 09/10/2026 : architecte, déménagement, aluminium sans photo)
+check(`chaque métier a sa vraie photo (tools/photo_metier.py) ${C.metiers.filter(m => !m.photo).map(m => m.id).join(" ")}`, photosM.length === C.metiers.length);
 check(`photos réelles par métier (${photosM.length}/${C.metiers.length}) : fichier ≤ 160 Ko, licence complète, crédit sur À propos, affichée sur la tuile du métier et les fiches`,
   photosM.every(m => existsSync(join(root, m.photo.fichier)) && statSync(join(root, m.photo.fichier)).size <= 160 * 1024 && m.photo.auteur && m.photo.licence && m.photo.licence_url && /commons\.wikimedia\.org/.test(m.photo.source || "") &&
     lire("a-propos/index.html").includes(m.photo.source.replace(/&/g, "&amp;")) && (C.metiers.length === 1 || !lire("index.html").includes(`class="metier avec-photo" href="#liste" data-m="${m.id}"`) && !lire("index.html").includes(`class="metier" href="#liste" data-m="${m.id}"`) || lire("index.html").includes(`src="${m.photo.fichier}"`))) &&
