@@ -401,7 +401,20 @@
       "fr_pl": "Aluminium et vitrerie",
       "ar": "ألومنيوم وبلّور",
       "ar_pl": "الألومنيوم والبلّور",
-      "mots": "aluminium menuiserie aluminium vitrier vitrerie verre fenêtre baie vitrée miroir ألمنيوم ألومنيوم بلور زجاج شبابيك"
+      "mots": "aluminium menuiserie aluminium vitrier vitrerie verre fenêtre baie vitrée miroir ألمنيوم ألومنيوم بلور زجاج شبابيك",
+      "photo": {
+        "fichier": "assets/metiers-photos/aluminium-vitrerie.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Coupe d'un cadre de fenêtre moderne avec double vitrage",
+          "ar": "مقطع لإطار نافذة حديثة بزجاج مزدوج"
+        },
+        "auteur": "Shixart1985",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=189236117"
+      }
     },
     {
       "id": "peintre",
@@ -584,7 +597,20 @@
       "fr_pl": "Architectes",
       "ar": "مهندس معماري",
       "ar_pl": "المهندسون المعماريون",
-      "mots": "architecte architecture plan permis de bâtir construction maison مهندس معماري هندسة معمارية مثال بناء رخصة بناء"
+      "mots": "architecte architecture plan permis de bâtir construction maison مهندس معماري هندسة معمارية مثال بناء رخصة بناء",
+      "photo": {
+        "fichier": "assets/metiers-photos/architecte.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Maquette d'architecte d'un quartier avec bâtiments et rues",
+          "ar": "مجسّم معماري لحيّ سكني بمبانيه وطرقاته"
+        },
+        "auteur": "iKix 3D Prints",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=99971121"
+      }
     },
     {
       "id": "demenagement",
@@ -595,7 +621,20 @@
       "fr_pl": "Déménageurs",
       "ar": "نقل الأثاث",
       "ar_pl": "شركات نقل الأثاث",
-      "mots": "déménagement déménageur transport meubles camion نقل أثاث ترحيل شاحنة"
+      "mots": "déménagement déménageur transport meubles camion نقل أثاث ترحيل شاحنة",
+      "photo": {
+        "fichier": "assets/metiers-photos/demenagement.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Camion de déménagement ouvert, rempli de cartons et de meubles",
+          "ar": "شاحنة نقل أثاث مفتوحة مليئة بالكراتين والأثاث"
+        },
+        "auteur": "brownpau",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=50576123"
+      }
     }
   ],
   "categories": [
