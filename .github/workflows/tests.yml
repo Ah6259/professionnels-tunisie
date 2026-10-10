@@ -1,6 +1,14 @@
 # Tests à chaque modification du site (e-mail GitHub à Ahmed si un test échoue).
 name: tests
-on: [push, workflow_dispatch]
+# Audit des robots du 10/10/2026 : pas de tests pour un envoi qui ne change que des notes (.md) ; un nouvel envoi annule le précédent.
+on:
+  push:
+    branches: [main, "entretien-tests/**"]
+    paths-ignore: ["**.md"]
+  workflow_dispatch:
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
 jobs:
   tests:
     runs-on: ubuntu-latest

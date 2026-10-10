@@ -1,10 +1,10 @@
 # Robot de nuit de l'annuaire (moteur commun) — tourne sur GitHub, sans PC.
-# Chaque nuit : relevé OpenStreetMap → pages → tests → publication. En cas d'échec, GitHub envoie un e-mail à Ahmed
+# Une fois par mois (le 1er, 3h40 à Tunis) : relevé OpenStreetMap → pages → tests → publication. En cas d'échec, GitHub envoie un e-mail à Ahmed
 # et le site reste tel quel (rien n'est publié si un test échoue).
 name: maj
 on:
   schedule:
-    - cron: "40 2 * * *"
+    - cron: "40 2 1 * *"   # le 1er de chaque mois (décision d'Ahmed du 10/10/2026, audit des robots : chaque nuit = inutile)
   workflow_dispatch:
 permissions:
   contents: write
