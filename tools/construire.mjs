@@ -599,9 +599,12 @@ for (const [chemin, html] of Object.entries(pages)) {
   const d = join(root, chemin); mkdirSync(d, { recursive: true });
   writeFileSync(join(d, "index.html"), html, "utf8");
 }
+// adresse propre (11 octobre 2026, domaine clicvia.com) : fichier CNAME lu par GitHub Pages ; aucun sur l'ancienne adresse
+{ const hote = new URL(C.url).host;
+  if (hote !== "ah6259.github.io") writeFileSync(join(root, "CNAME"), hote + "\n", "utf8"); }
 // conf.js (lu par page.js : pas de script dans les pages, la CSP l'interdit)
 writeFileSync(join(root, "assets", "conf.js"), `/* FABRIQUÉ par tools/construire.mjs à partir de config.json — ne pas modifier */
-window.CONF = ${JSON.stringify({ nom: C.nom, sous_titre: C.sous_titre, base: BASE, liens: C.liens || [], gouvernorats: GOUVERNORATS })};
+window.CONF = ${JSON.stringify({ id: C.id, url: C.url, nom: C.nom, sous_titre: C.sous_titre, base: BASE, liens: C.liens || [], gouvernorats: GOUVERNORATS })};
 `, "utf8");
 writeFileSync(join(root, "assets", "couleurs.css"), `/* FABRIQUÉ par tools/construire.mjs à partir de config.json */
 :root{--p:${C.couleur};--p-fonce:${C.couleur_fonce};--p-clair:${C.couleur_claire}}

@@ -60,6 +60,11 @@
   }
 })();
 
+/* Adresse propre (11 octobre 2026, ex. comptables.clicvia.com, site à la racine « / ») : GoatCounter garde le préfixe
+   /<id du site> (compteur commun à tous les sites d'Ahmed, séparés par chemin). Lu au moment du comptage (CONF chargé). */
+window.goatcounter = window.goatcounter || {};
+window.goatcounter.path = function (p) { var C = window.CONF || {}; return C.base === "/" && C.id ? "/" + C.id + p : p; };
+
 /* >>> vidéo de présentation : page video/ (et video-pro/ pour l'espace professionnels), partagée par le bouton « Partager » */
 window.VIDEO_SITE = { base: (window.CONF || {}).base || "/", defaut: "fr", pro: ["inscription/", "video-pro/"], site_pro: "inscription/", ancre_pro: "#offres",
   nom: { fr: ((window.CONF || {}).nom || {}).fr ? window.CONF.nom.fr.split(" — ")[0] : "", ar: ((window.CONF || {}).nom || {}).ar ? window.CONF.nom.ar.split(" — ")[0] : "" },
@@ -69,7 +74,7 @@ window.VIDEO_SITE = { base: (window.CONF || {}).base || "/", defaut: "fr", pro: 
    affichent l'aperçu de la page vidéo (grande image, vidéo lisible sur Facebook). Menu de partage du téléphone, sinon WhatsApp.
    Espace professionnels des annuaires : page « video-pro/ ». Réglages : window.VIDEO_SITE (juste au-dessus). */
 (function () {
-  var S = window.VIDEO_SITE, ORIGINE = "https://ah6259.github.io";
+  var S = window.VIDEO_SITE, ORIGINE = (window.CONF || {}).url ? new URL(window.CONF.url).origin : "https://ah6259.github.io";
   function langue() { return document.documentElement.lang || S.defaut; }
   function M(o) { return o[langue()] || o[S.defaut] || o.fr; }
   // page vidéo à partager (et page du site correspondante) selon la page où l'on est
