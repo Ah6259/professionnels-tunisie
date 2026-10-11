@@ -659,6 +659,30 @@
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=50576123"
       }
+    },
+    {
+      "id": "location-voiture",
+      "osm": [
+        "amenity=car_rental"
+      ],
+      "fr": "Location de voitures",
+      "fr_pl": "Loueurs de voitures",
+      "ar": "كراء السيارات",
+      "ar_pl": "وكالات كراء السيارات",
+      "mots": "location voiture voitures louer auto loueur rent a car كراء سيارة سيارات كرا طوموبيل kiraa karhba kra",
+      "photo": {
+        "fichier": "assets/metiers-photos/location-voiture.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Une personne remet une clé à une autre",
+          "ar": "شخص يسلّم مفتاحًا لشخص آخر"
+        },
+        "auteur": "@kaboompics",
+        "licence": "CC0",
+        "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=91322012"
+      }
     }
   ],
   "categories": [
@@ -711,7 +735,8 @@
         "auto-ecole",
         "mecanicien",
         "pneus",
-        "demenagement"
+        "demenagement",
+        "location-voiture"
       ]
     },
     {
@@ -770,8 +795,18 @@
     "prix_an": 59,
     "inpdp_accord": "Accord de l'INPDP obtenu par Ahmed le 06/10/2026 (contact direct)",
     "autres_paiements": [
-      {"nom": "D17", "detail": "24 321 390", "android": "https://play.google.com/store/apps/details?id=tn.mobipost", "iphone": "https://apps.apple.com/tn/app/digipostbank-d17/id1475640303"},
-      {"nom": "IZI", "detail": "24 321 390", "android": "https://play.google.com/store/apps/details?id=tn.izi.consumer", "iphone": "https://apps.apple.com/tn/app/izi/id1603653941"}
+      {
+        "nom": "D17",
+        "detail": "24 321 390",
+        "android": "https://play.google.com/store/apps/details?id=tn.mobipost",
+        "iphone": "https://apps.apple.com/tn/app/digipostbank-d17/id1475640303"
+      },
+      {
+        "nom": "IZI",
+        "detail": "24 321 390",
+        "android": "https://play.google.com/store/apps/details?id=tn.izi.consumer",
+        "iphone": "https://apps.apple.com/tn/app/izi/id1603653941"
+      }
     ],
     "whatsapp_preuve": "24321390"
   },
