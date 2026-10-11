@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://ah6259.github.io/professionnels-tunisie/sitemap.xml
+Sitemap: https://pros.clicvia.com/sitemap.xml
 
 # Robots d'intelligence artificielle et aspirateurs : non
 User-agent: GPTBot

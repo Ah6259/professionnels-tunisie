@@ -8,7 +8,7 @@ et écrit le bloc « photo » du métier dans config.json. Wikimedia limite le n
 import datetime, io, json, pathlib, re, sys, time, urllib.parse, urllib.request
 sys.stdout.reconfigure(encoding="utf-8")
 RACINE = pathlib.Path(__file__).resolve().parent.parent
-UA = {"User-Agent": "annuaires-tunisie/1.0 (https://ah6259.github.io/professionnels-tunisie/)"}
+UA = {"User-Agent": "annuaires-tunisie/1.0 (https://pros.clicvia.com/)"}
 API = "https://commons.wikimedia.org/w/api.php?action=query&format=json&prop=imageinfo&iiprop=url|size|extmetadata"
 
 

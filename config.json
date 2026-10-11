@@ -1,6 +1,6 @@
 {
   "id": "professionnels-tunisie",
-  "url": "https://ah6259.github.io/professionnels-tunisie/",
+  "url": "https://pros.clicvia.com/",
   "nom": {
     "fr": "Professionnels Tunisie — annuaire",
     "ar": "المهنيون في تونس — دليل"
@@ -746,22 +746,22 @@
     {
       "fr": "Auto-écoles : l'annuaire spécialisé",
       "ar": "مدارس السياقة: الدليل المختص",
-      "url": "https://ah6259.github.io/auto-ecoles-tunisie/"
+      "url": "https://auto-ecoles.clicvia.com/"
     },
     {
       "fr": "Avocats et notaires : l'annuaire spécialisé",
       "ar": "المحامون وعدول الإشهاد: الدليل المختص",
-      "url": "https://ah6259.github.io/avocats-notaires-tunisie/"
+      "url": "https://avocats.clicvia.com/"
     },
     {
       "fr": "Comptables et conseillers : l'annuaire spécialisé",
       "ar": "المحاسبون والمستشارون: الدليل المختص",
-      "url": "https://ah6259.github.io/comptables-tunisie/"
+      "url": "https://comptables.clicvia.com/"
     },
     {
       "fr": "Mariage : l'annuaire des prestataires",
       "ar": "الأعراس: دليل مزودي الخدمات",
-      "url": "https://ah6259.github.io/mariage-tunisie/"
+      "url": "https://mariage.clicvia.com/"
     }
   ],
   "inscriptions_ouvertes": true,

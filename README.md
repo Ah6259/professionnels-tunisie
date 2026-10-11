@@ -5,7 +5,7 @@ artisans (plombier, électricien, menuisier, aluminium, peintre, climatisation, 
 informatique, architectes, déménagement, ainsi que les métiers de nos annuaires spécialisés (auto-écoles, avocats et notaires,
 comptables, mariage).
 
-Site : https://ah6259.github.io/professionnels-tunisie/
+Site : https://pros.clicvia.com/
 
 - Fiches : © les contributeurs d'OpenStreetMap (licence ODbL), pages publiques des établissements eux-mêmes (lien et date
   affichés sur chaque fiche), fiches de nos annuaires spécialisés, et demandes des professionnels.
