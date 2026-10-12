@@ -683,6 +683,30 @@
         "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "source": "https://commons.wikimedia.org/w/index.php?curid=91322012"
       }
+    },
+    {
+      "id": "couturier",
+      "osm": [
+        "shop=tailor"
+      ],
+      "fr": "Couturier / tailleur",
+      "fr_pl": "Couturiers et tailleurs",
+      "ar": "خيّاط",
+      "ar_pl": "الخيّاطون",
+      "mots": "couturier couturiere tailleur retouche retouches couture robe costume habit sewing tailor خياط خياطة تفصيل خياط نساء خياط رجال khayet khayat couture",
+      "photo": {
+        "fichier": "assets/metiers-photos/couturier.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Une machine à coudre",
+          "ar": "آلة خياطة"
+        },
+        "auteur": "Gurdeepdali",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=79255139"
+      }
     }
   ],
   "categories": [
@@ -709,7 +733,8 @@
         "traiteur",
         "patisserie",
         "coiffure-beaute",
-        "opticien"
+        "opticien",
+        "couturier"
       ]
     },
     {
