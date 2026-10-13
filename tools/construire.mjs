@@ -618,12 +618,23 @@ writeFileSync(join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 ${Object.keys(pages).map(p => `  <url><loc>${URL_SITE}${p}</loc></url>`).join("\n")}
 </urlset>
 `, "utf8");
-writeFileSync(join(root, "robots.txt"), `User-agent: *
+writeFileSync(join(root, "robots.txt"), `# Assistants IA qui répondent à une question en citant leur source : bienvenus (référencement sur les IA, 13/10/2026)
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: MistralAI-User
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: *
 Allow: /
 Sitemap: ${URL_SITE}sitemap.xml
 
 # Robots d'intelligence artificielle et aspirateurs : non
-${["GPTBot", "ChatGPT-User", "OAI-SearchBot", "ClaudeBot", "Claude-Web", "anthropic-ai", "CCBot", "Google-Extended", "Applebot-Extended", "PerplexityBot", "Bytespider", "Amazonbot", "Meta-ExternalAgent", "FacebookBot", "Diffbot", "Omgilibot", "cohere-ai", "ImagesiftBot", "HTTrack", "WebCopier", "WebZIP", "Offline Explorer", "wget", "SiteSnagger"].map(b => `User-agent: ${b}\nDisallow: /`).join("\n\n")}
+${["GPTBot", "ClaudeBot", "Claude-Web", "anthropic-ai", "CCBot", "Google-Extended", "Applebot-Extended", "Bytespider", "Amazonbot", "Meta-ExternalAgent", "FacebookBot", "Diffbot", "Omgilibot", "cohere-ai", "ImagesiftBot", "HTTrack", "WebCopier", "WebZIP", "Offline Explorer", "wget", "SiteSnagger"].map(b => `User-agent: ${b}\nDisallow: /`).join("\n\n")}
 `, "utf8");
 // pages vidéo (video/ et video-pro/) tirées de la page À propos : mêmes en-tête, pied, CSP et ?v= (tools/page_video.mjs)
 pagesVideo(root, {
