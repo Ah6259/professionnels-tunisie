@@ -240,6 +240,7 @@ else {
   check("accueil : le filtre par gouvernorat ne garde que ce gouvernorat", visibles() > 0 && [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).every(c => c.dataset.g === g));
   const champ = d.getElementById("recherche"); champ.value = "zzzzqqq"; champ.dispatchEvent(new w.Event("input"));
   check("accueil : recherche sans résultat → message « Aucun résultat »", visibles() === 0 && !d.getElementById("aucun").hidden);
+  check("recherche sans résultat : comptée pour le relevé des demandes (événement recherche-vide@<annuaire>/mot, une fois par mot)", /recherche-vide@\$\{/.test(lire("assets/annuaire.js")) && /cherches\.has\(mot\)/.test(lire("assets/annuaire.js")));
   d.querySelector(".langue").dispatchEvent(new w.Event("click"));
   { const b = d.querySelector("#entete .partager"); let ouvert = "";
     w.open = u => { ouvert = u; }; if (b) { b.dispatchEvent(new w.Event("click")); await new Promise(r => setTimeout(r, 20)); }

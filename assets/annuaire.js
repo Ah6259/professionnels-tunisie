@@ -10,7 +10,8 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!liste) return;
   const cartes = [...liste.querySelectorAll(".fiche-carte")];
   const champ = document.getElementById("recherche"), choixG = document.getElementById("choix-g"), compte = document.getElementById("compte");
-  let metier = "", cat = "";
+  let metier = "", cat = "", attente = 0;
+  const cherches = new Set();
   const depart = new URLSearchParams(location.search);
   if (choixG && depart.get("g")) choixG.value = depart.get("g");
   function filtrer() {
@@ -22,6 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
       c.hidden = !ok; if (ok) n++;
     }
     const vide = document.getElementById("aucun"); if (vide) vide.hidden = n > 0;
+    // recherche sans résultat : comptée UNE fois par mot, 1,5 s après la dernière frappe (13/10/2026). Le robot privé de relevé
+    // en fait la liste « ce que les visiteurs cherchent et ne trouvent pas » ; seul le mot est compté, rien de personnel.
+    clearTimeout(attente);
+    if (!n && mots.length) attente = setTimeout(() => {
+      const mot = mots.join("-").slice(0, 60);
+      if (mot.length >= 3 && !cherches.has(mot)) { cherches.add(mot); compter(`recherche-vide@${(window.CONF || {}).id || "annuaire"}/${mot}`, "Recherche sans résultat : " + mot); }
+    }, 1500);
     if (compte) compte.textContent = T(`${n} résultat${n > 1 ? "s" : ""}`, `${n} نتيجة`);
   }
   if (champ) champ.addEventListener("input", filtrer);
