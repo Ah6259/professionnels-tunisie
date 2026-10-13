@@ -707,6 +707,30 @@
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=79255139"
       }
+    },
+    {
+      "id": "salle-de-sport",
+      "osm": [
+        "leisure=fitness_centre"
+      ],
+      "fr": "Salle de sport",
+      "fr_pl": "Salles de sport",
+      "ar": "قاعة رياضة",
+      "ar_pl": "قاعات الرياضة",
+      "mots": "salle de sport gym fitness musculation coach entrainement abonnement club fitness gym قاعة رياضة جيم لياقة بدنية كمال أجسام صالة رياضية salle sport",
+      "photo": {
+        "fichier": "assets/metiers-photos/salle-de-sport.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Une rangée d'haltères lourds",
+          "ar": "صفّ من الأثقال الحديدية"
+        },
+        "auteur": "Shixart1985",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=197293168"
+      }
     }
   ],
   "categories": [
@@ -734,7 +758,8 @@
         "patisserie",
         "coiffure-beaute",
         "opticien",
-        "couturier"
+        "couturier",
+        "salle-de-sport"
       ]
     },
     {

@@ -1,0 +1,117 @@
+{
+ "date": "2026-10-13",
+ "titre": "File:A close-up view of a set of heavy dumbbells.jpg",
+ "page": "https://commons.wikimedia.org/wiki/File:A_close-up_view_of_a_set_of_heavy_dumbbells.jpg",
+ "reponse_api": {
+  "batchcomplete": "",
+  "query": {
+   "pages": {
+    "197293168": {
+     "pageid": 197293168,
+     "ns": 6,
+     "title": "File:A close-up view of a set of heavy dumbbells.jpg",
+     "imagerepository": "local",
+     "imageinfo": [
+      {
+       "size": 9888501,
+       "width": 3457,
+       "height": 5179,
+       "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/A_close-up_view_of_a_set_of_heavy_dumbbells.jpg/1280px-A_close-up_view_of_a_set_of_heavy_dumbbells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+       "thumbwidth": 1200,
+       "thumbheight": 1798,
+       "responsiveUrls": {
+        "2": "https://upload.wikimedia.org/wikipedia/commons/5/50/A_close-up_view_of_a_set_of_heavy_dumbbells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled"
+       },
+       "thumbattribs": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/50/A_close-up_view_of_a_set_of_heavy_dumbbells.jpg/1280px-A_close-up_view_of_a_set_of_heavy_dumbbells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "decoding": "async",
+        "loading": "lazy",
+        "width": 1200,
+        "height": 1798,
+        "srcset": "https://upload.wikimedia.org/wikipedia/commons/5/50/A_close-up_view_of_a_set_of_heavy_dumbbells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled 2x"
+       },
+       "url": "https://upload.wikimedia.org/wikipedia/commons/5/50/A_close-up_view_of_a_set_of_heavy_dumbbells.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+       "descriptionurl": "https://commons.wikimedia.org/wiki/File:A_close-up_view_of_a_set_of_heavy_dumbbells.jpg",
+       "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=197293168",
+       "extmetadata": {
+        "DateTime": {
+         "value": "2026-08-12 09:42:48",
+         "source": "mediawiki-metadata",
+         "hidden": ""
+        },
+        "ObjectName": {
+         "value": "A close-up view of a set of heavy dumbbells",
+         "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+         "value": 1.2,
+         "source": "extension",
+         "hidden": ""
+        },
+        "Categories": {
+         "value": "Dumbbells|Self-published work|Weight rooms",
+         "source": "commons-categories",
+         "hidden": ""
+        },
+        "Assessments": {
+         "value": "",
+         "source": "commons-categories",
+         "hidden": ""
+        },
+        "ImageDescription": {
+         "value": "A close-up view of a set of heavy dumbbells arranged neatly on a rack in a gym. The lighting emphasizes the weights, showcasing a space designed for fitness enthusiasts.",
+         "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+         "value": "2020-06-23 09:11:51",
+         "source": "commons-desc-page"
+        },
+        "Credit": {
+         "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+         "source": "commons-desc-page"
+        },
+        "Artist": {
+         "value": "<a href=\"//commons.wikimedia.org/wiki/User:Shixart1985\" title=\"User:Shixart1985\">Shixart1985</a>",
+         "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+         "value": "CC BY 2.0",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "UsageTerms": {
+         "value": "Creative Commons Attribution 2.0",
+         "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+         "value": "true",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "LicenseUrl": {
+         "value": "https://creativecommons.org/licenses/by/2.0",
+         "source": "commons-desc-page"
+        },
+        "Copyrighted": {
+         "value": "True",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "Restrictions": {
+         "value": "",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "License": {
+         "value": "cc-by-2.0",
+         "source": "commons-templates",
+         "hidden": ""
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ }
+}
