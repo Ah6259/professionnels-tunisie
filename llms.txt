@@ -1,0 +1,43 @@
+# annuaire
+
+> Annuaire gratuit des professionnels en Tunisie par gouvernorat : plombiers, électriciens, menuisiers, climatisation, garages, informatique, architectes, avocats, comptables, auto-écoles, mariage. En français et en arabe.
+
+Site gratuit et indépendant, publié par Clicvia (https://clicvia.com/), le portail de services pratiques pour la Tunisie. Adresse : https://pros.clicvia.com/
+Langues : français, arabe.
+
+## Pages principales
+
+- [À propos et sources](https://pros.clicvia.com/a-propos/) : D'où viennent les fiches de Professionnels Tunisie — annuaire (OpenStreetMap, demandes des professionnels), données personnelles et retrait.
+- [3am salah — Menuisier à sidi hassine : téléphone, adresse](https://pros.clicvia.com/fiche/osm-n11140095099/) : 3am salah, menuisier à sidi hassine (gouvernorat de Tunis) : adresse et itinéraire. Annuaire gratuit.
+- [AAC — Comptable à Gafsa : téléphone, adresse](https://pros.clicvia.com/fiche/co-web-gafsa-oect-aac/) : AAC, comptable à Gafsa (gouvernorat de Gafsa) : téléphone, adresse et itinéraire. Annuaire gratuit.
+- [ABA architecture — Architecte à Nabeul : téléphone, adresse](https://pros.clicvia.com/fiche/osm-n11270254886/) : ABA architecture, architecte à Nabeul (gouvernorat de Nabeul) : téléphone, adresse et itinéraire. Annuaire gratuit.
+- [Abdelaziz BACCOUCHE — Comptable à Mahdia : téléphone, adresse](https://pros.clicvia.com/fiche/co-web-mahdia-oct-abdelaziz-baccouche/) : Abdelaziz BACCOUCHE, comptable à Mahdia (gouvernorat de Mahdia) : téléphone, adresse et itinéraire. Annuaire gratuit.
+- [Abderrazek DHIBI — Comptable à Gafsa : téléphone, adresse](https://pros.clicvia.com/fiche/co-web-gafsa-oct-abderrazek-dhibi/) : Abderrazek DHIBI, comptable à Gafsa (gouvernorat de Gafsa) : téléphone, adresse et itinéraire. Annuaire gratuit.
+- [Abderrazek LABBEN — Comptable à Kairouan : téléphone, adresse](https://pros.clicvia.com/fiche/co-web-kairouan-oct-abderrazek-labben/) : Abderrazek LABBEN, comptable à Kairouan (gouvernorat de Kairouan) : téléphone, adresse et itinéraire. Annuaire gratuit.
+- [Abla coiff — Coiffure et beauté à سيدي حسين : téléphone, adresse](https://pros.clicvia.com/fiche/osm-n11143196913/) : Abla coiff, coiffure et beauté à سيدي حسين (gouvernorat de Tunis) : adresse et itinéraire. Annuaire gratuit.
+- [ACCODEV CONSULTING — Comptable à Sousse : téléphone, adresse](https://pros.clicvia.com/fiche/co-web-sousse-oect-accodev-consulting/) : ACCODEV CONSULTING, comptable à Sousse (gouvernorat de Sousse) : téléphone, adresse et itinéraire. Annuaire gratuit.
+- [Auto-écoles en Tunisie (122) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/) : Auto-écoles en Tunisie : 122 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في تونس.
+- [Auto-écoles à Ariana (5) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/ariana/) : Auto-écoles à Ariana : 5 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية أريانة.
+- [Auto-écoles à Béja (2) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/beja/) : Auto-écoles à Béja : 2 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية باجة.
+- [Auto-écoles à Ben Arous (11) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/ben-arous/) : Auto-écoles à Ben Arous : 11 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية بن عروس.
+- [Auto-écoles à Bizerte (6) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/bizerte/) : Auto-écoles à Bizerte : 6 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية بنزرت.
+- [Auto-écoles à Gabès (3) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/gabes/) : Auto-écoles à Gabès : 3 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية قابس.
+- [Auto-écoles à Gafsa (2) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/gafsa/) : Auto-écoles à Gafsa : 2 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية قفصة.
+- [Auto-écoles à Jendouba (2) — téléphone et adresse, gratuit](https://pros.clicvia.com/metier/auto-ecole/jendouba/) : Auto-écoles à Jendouba : 2 fiche(s) avec téléphone, adresse, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مدارس السياقة في ولاية جندوبة.
+- [professionnels à Ariana (41) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/ariana/) : professionnels dans le gouvernorat de Ariana : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية أريانة.
+- [professionnels à Béja (23) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/beja/) : professionnels dans le gouvernorat de Béja : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية باجة.
+- [professionnels à Ben Arous (42) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/ben-arous/) : professionnels dans le gouvernorat de Ben Arous : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية بن عروس.
+- [professionnels à Bizerte (39) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/bizerte/) : professionnels dans le gouvernorat de Bizerte : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية بنزرت.
+- [professionnels à Gabès (34) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/gabes/) : professionnels dans le gouvernorat de Gabès : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية قابس.
+- [professionnels à Gafsa (24) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/gafsa/) : professionnels dans le gouvernorat de Gafsa : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية قفصة.
+- [professionnels à Jendouba (23) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/jendouba/) : professionnels dans le gouvernorat de Jendouba : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية جندوبة.
+- [professionnels à Kairouan (27) — adresse et téléphone, gratuit](https://pros.clicvia.com/gouvernorat/kairouan/) : professionnels dans le gouvernorat de Kairouan : adresse, téléphone, WhatsApp et itinéraire. Annuaire gratuit en français et en arabe. مهنيين في ولاية القيروان.
+
+Le site compte 1259 pages au total ; la liste complète est dans le plan du site : https://pros.clicvia.com/sitemap.xml
+
+## À savoir
+
+- Annuaire gratuit ; les fiches viennent d'OpenStreetMap et des professionnels eux-mêmes.
+- Site non officiel : en cas de doute, la source officielle indiquée sur la page fait foi.
+- Pour citer : « annuaire » avec le lien de la page utilisée.
+- Les assistants IA qui répondent à une question en citant leur source sont les bienvenus ; l'aspiration du contenu pour entraîner un modèle n'est pas autorisée (voir robots.txt).
