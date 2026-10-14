@@ -150,6 +150,8 @@ check("anti-copie : meta noai sur chaque page, script de protection (copie, clic
 const SECRETS = /(AIza[0-9A-Za-z_-]{20,}|gh[pousr]_[0-9A-Za-z]{20,}|sk-[0-9A-Za-z]{20,}|[0-9a-z._%+-]+@(yahoo|gmail|hotmail|outlook)\.[a-z]+)/i;
 check("aucun secret ni adresse e-mail privée dans le site", ![...pages, "config.json", "assets/page.js", "assets/annuaire.js", "assets/conf.js"].some(f => SECRETS.test(lire(f))));
 
+check("Votre avis : e-mail obligatoire (15/10/2026) et confirmation dans la carte (avis-merci)", /<input type="email" id="avis-email" name="email" maxlength="200" autocomplete="email" required>/.test(lire("index.html"))
+  && /obligatoire, pour vous répondre/.test(lire("index.html")) && /function merciAvis\(/.test(lire("assets/annuaire.js")) && /Merci ! Votre avis a bien été envoyé/.test(lire("assets/annuaire.js")));
 check("arabe : le champ anti-robot des formulaires garde 1 px de large (sinon la page arabe est décalée à droite)", /\.formulaire input\.piege[^}]*width:1px/.test(lire("assets/style.css")));
 check("un élément caché (attribut hidden) reste toujours caché, même avec un style d'affichage", /\[hidden\]\{display:none!important\}/.test(lire("assets/style.css")));
 check("filtres : chaque bouton de métier d'une page de gouvernorat a au moins une fiche (jamais de bouton à 0 résultat)", pages.filter(p => p.startsWith("gouvernorat/")).every(p => { const h = lire(p); return [...h.matchAll(/class="puce" data-m="([^"]+)"/g)].every(m => h.includes(`data-m="${m[1]}">`) && new RegExp(`class="fiche-carte[^"]*"[^>]*data-m="${m[1]}"`).test(h)); }));

@@ -215,8 +215,8 @@ const AVIS = `<section class="carte avis" id="avis">
   <form class="formulaire" data-envoi="avis" action="${C.formspree}" method="POST">
     <label for="avis-message">${bi("Votre message", "رسالتك")}</label>
     <textarea id="avis-message" name="message" required maxlength="1000" rows="4"></textarea>
-    <label for="avis-email">${bi("Votre e-mail (facultatif, pour vous répondre)", "بريدك الإلكتروني (اختياري، للرد عليك)")}</label>
-    <input type="email" id="avis-email" name="email" maxlength="200" autocomplete="email">
+    <label for="avis-email">${bi("Votre e-mail (obligatoire, pour vous répondre)", "بريدك الإلكتروني (إجباري، للرد عليك)")}</label>
+    <input type="email" id="avis-email" name="email" maxlength="200" autocomplete="email" required>
     <input type="hidden" name="site" value="${esc(C.nom.fr)}"><input type="hidden" name="_subject" value="Avis — ${esc(C.nom.fr)}">
     <input type="text" name="_gotcha" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
     <button type="submit" class="btn">${bi("Envoyer", "إرسال")}</button>

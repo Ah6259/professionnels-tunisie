@@ -101,6 +101,25 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+/* « Votre avis » envoyé : le formulaire est remplacé DANS la carte par une confirmation bien visible (demande d'Ahmed, 15/10/2026) */
+function merciAvis(f, statut, mail) {
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
+  let boite = document.getElementById("avis-merci");
+  if (!boite) {
+    boite = document.createElement("div");
+    boite.id = "avis-merci"; boite.className = "avis-merci"; boite.tabIndex = -1;
+    boite.setAttribute("role", "status"); boite.setAttribute("aria-live", "polite");
+    f.parentNode.insertBefore(boite, f.nextSibling);
+  }
+  statut.textContent = "";
+  boite.innerHTML = '<p class="avis-merci-titre">✅ ' + esc(T("Merci ! Votre avis a bien été envoyé.", "شكرًا! تم إرسال رأيك بنجاح.")) + "</p><p>" +
+    esc(T("Nous l’avons bien reçu et nous vous répondrons à l’adresse :", "وصلنا رأيك وسنرد عليك على العنوان:")) + ' <b dir="ltr">' + esc(mail) +
+    '</b></p><button type="button" class="btn-avis-autre">' + esc(T("Envoyer un autre message", "أرسل رسالة أخرى")) + "</button>";
+  boite.querySelector("button").addEventListener("click", () => { boite.hidden = true; f.hidden = false; f.elements.message && f.elements.message.focus(); });
+  f.hidden = true; boite.hidden = false;
+  try { boite.focus({ preventScroll: true }); boite.scrollIntoView({ behavior: "smooth", block: "center" }); } catch { /* ancien navigateur */ }
+}
+
 /* --- formulaires : envoi au clic seulement (Formspree), message clair --- */
 document.addEventListener("submit", async e => {
   const f = e.target.closest && e.target.closest("form[data-envoi]");
@@ -108,6 +127,13 @@ document.addEventListener("submit", async e => {
   e.preventDefault();
   const statut = f.querySelector(".statut"), bouton = f.querySelector("button[type=submit]");
   if (f._gotcha && f._gotcha.value) return;
+  // « Votre avis » (15/10/2026, demande d'Ahmed) : e-mail obligatoire pour pouvoir répondre
+  const mail = f.dataset.envoi === "avis" ? String((f.elements.email && f.elements.email.value) || "").trim() : "";
+  if (f.dataset.envoi === "avis" && !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(mail)) {
+    statut.textContent = T("Écrivez votre adresse e-mail (obligatoire) pour que nous puissions vous répondre.", "اكتب بريدك الإلكتروني (إجباري) لنتمكن من الرد عليك.");
+    statut.classList.add("err"); f.elements.email && f.elements.email.focus(); return;
+  }
+  statut.classList.remove("err");
   bouton.disabled = true; statut.textContent = T("Envoi…", "جارٍ الإرسال…");
   try {
     const rep = await fetch(f.action, { method: "POST", body: new FormData(f), headers: { Accept: "application/json" } });
@@ -119,6 +145,7 @@ document.addEventListener("submit", async e => {
     // ajout gratuit : on montre aussitôt l'offre Pro et les modes de paiement (règle d'Ahmed du 06/10/2026)
     const apres = (f.dataset.envoi === "pro" && document.getElementById("apres-pro")) || (f.dataset.envoi === "demande" && action === "ajouter" && document.getElementById("apres-ajout"));
     if (apres) { f.hidden = true; apres.hidden = false; apres.scrollIntoView && apres.scrollIntoView({ block: "start" }); }
+    if (f.dataset.envoi === "avis") merciAvis(f, statut, mail);
   } catch (err) {
     statut.textContent = T("Envoi impossible pour l'instant. Réessayez plus tard.", "تعذّر الإرسال حاليًا. أعد المحاولة لاحقًا.");
   } finally { bouton.disabled = false; }
