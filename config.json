@@ -731,6 +731,30 @@
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=197293168"
       }
+    },
+    {
+      "id": "agence-immobiliere",
+      "osm": [
+        "office=estate_agent"
+      ],
+      "fr": "Agence immobilière",
+      "fr_pl": "Agences immobilières",
+      "ar": "وكالة عقارية",
+      "ar_pl": "الوكالات العقارية",
+      "mots": "agence immobilière immobilier agent immobilier vente location appartement villa terrain logement bien courtier simsar semsar wakala 3akarat وكالة عقارية عقار عقارات سمسار بيع كراء شقة فيلا أرض",
+      "photo": {
+        "fichier": "assets/metiers-photos/agence-immobiliere.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Une main qui tient un trousseau de clés",
+          "ar": "يد تمسك بحزمة مفاتيح"
+        },
+        "auteur": "Shixart1985",
+        "licence": "CC BY 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=197293183"
+      }
     }
   ],
   "categories": [
@@ -774,7 +798,8 @@
         "peintre",
         "climatisation",
         "serrurier",
-        "architecte"
+        "architecte",
+        "agence-immobiliere"
       ]
     },
     {
