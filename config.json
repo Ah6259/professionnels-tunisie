@@ -755,6 +755,30 @@
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=197293183"
       }
+    },
+    {
+      "id": "agence-voyage",
+      "osm": [
+        "shop=travel_agency"
+      ],
+      "fr": "Agence de voyage",
+      "fr_pl": "Agences de voyage",
+      "ar": "وكالة أسفار",
+      "ar_pl": "وكالات الأسفار",
+      "mots": "agence de voyage voyage voyages billet avion omra omrah hajj visa tourisme séjour vacances hôtel réservation wakalat asfar safar tayara oumra 7ajj وكالة أسفار سفر رحلات تذكرة طائرة عمرة حج تأشيرة سياحة",
+      "photo": {
+        "fichier": "assets/metiers-photos/agence-voyage.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Une valise rayée de voyage",
+          "ar": "حقيبة سفر مخططة"
+        },
+        "auteur": "Sandrine Z",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=37736547"
+      }
     }
   ],
   "categories": [
@@ -811,7 +835,8 @@
         "mecanicien",
         "pneus",
         "demenagement",
-        "location-voiture"
+        "location-voiture",
+        "agence-voyage"
       ]
     },
     {
