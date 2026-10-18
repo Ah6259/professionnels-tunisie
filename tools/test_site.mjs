@@ -35,6 +35,20 @@ const fichesPages = pages.filter(p => p.startsWith("fiche/"));
 
 // -- structure
 check("accueil, à propos, professionnels et 24 pages de gouvernorat", ["index.html", "a-propos/index.html", "inscription/index.html"].every(p => pages.includes(p)) && pages.filter(p => p.startsWith("gouvernorat/")).length === 24);
+// -- lieux (règle commune § 11.11, 18/10/2026) : la liste des gouvernorats proposée est EXACTEMENT celle de La Poste (24),
+//    dans les deux sens : toutes les officielles présentes ET rien d'autre (aucune exception admise dans les annuaires)
+{ const OFFICIELS = ["ariana", "beja", "ben arous", "bizerte", "gabes", "gafsa", "jendouba", "kairouan", "kasserine", "kebili", "kef", "mahdia",
+    "manouba", "medenine", "monastir", "nabeul", "sfax", "sidi bouzid", "siliana", "sousse", "tataouine", "tozeur", "tunis", "zaghouan"];
+  const norm = s => String(s).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/-/g, " ").replace(/^(la|le) /, "").trim();
+  const memes = l => { const n = l.map(norm); return n.length === 24 && new Set(n).size === 24 && OFFICIELS.every(o => n.includes(o)) && n.every(x => OFFICIELS.includes(x)); };
+  const acc = lire("index.html"), ins = lire("inscription/index.html");
+  const opts = (h, id) => { const m = h.match(new RegExp(`<select id="${id}"[^>]*>([\\s\\S]*?)</select>`)); return m ? [...m[1].matchAll(/<option value="([^"]*)"[^>]*>([^<]*)</g)].filter(o => o[1]).map(o => [o[1], o[2]]) : null; };
+  const g = opts(acc, "choix-g");
+  check("lieux : la liste « Gouvernorat » de l'accueil = les 24 gouvernorats officiels, rien d'autre (valeurs et noms)", !!g && memes(g.map(o => o[0])) && memes(g.map(o => o[1])));
+  check("lieux : les pages de gouvernorat = les 24 officiels, rien d'autre", memes(pages.filter(p => /^gouvernorat\/[^/]+\/index\.html$/.test(p)).map(p => p.split("/")[1])));
+  check("lieux : les formulaires (Pro, ajout de fiche) proposent les 24 gouvernorats officiels, rien d'autre", ["p-g", "d-g"].every(id => { const o = opts(ins, id); return !!o && memes(o.map(x => x[1])); }));
+  check("lieux : la carte de l'accueil a une bulle par gouvernorat officiel, rien d'autre", memes([...acc.matchAll(/class="tn-b[^"]*" data-gouv="([^"]+)"/g)].map(m => m[1])));
+  check("lieux : chaque page « métier dans un gouvernorat » est dans un gouvernorat officiel", pages.filter(p => /^metier\/[^/]+\/[^/]+\/index\.html$/.test(p)).every(p => OFFICIELS.includes(norm(p.split("/")[2])))); }
 check(`une page par fiche (au plus ${attendues.length} : doublons fusionnés), aucune fiche retirée publiée`, fichesPages.length <= attendues.length && fichesPages.length >= attendues.length * 0.8 && retraits.every(id => !existsSync(join(root, "fiche", id))));
 check("au moins une fiche (le relevé OpenStreetMap a fonctionné)", attendues.length > 0);
 {
@@ -240,6 +254,7 @@ else {
   const g = attendues[0].gouvernorat;
   d.getElementById("choix-g").value = g; d.getElementById("choix-g").dispatchEvent(new w.Event("change"));
   check("accueil : le filtre par gouvernorat ne garde que ce gouvernorat", visibles() > 0 && [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).every(c => c.dataset.g === g));
+  check("accueil : la carte suit le filtre (le gouvernorat choisi, et lui seul, est entouré sur la carte — règle § 11.11)", (() => { const a = [...d.querySelectorAll(".carte-tn .tn-b.actif")]; return a.length === 1 && a[0].dataset.gouv === g; })());
   const champ = d.getElementById("recherche"); champ.value = "zzzzqqq"; champ.dispatchEvent(new w.Event("input"));
   check("accueil : recherche sans résultat → message « Aucun résultat »", visibles() === 0 && !d.getElementById("aucun").hidden);
   check("recherche sans résultat : comptée pour le relevé des demandes (événement recherche-vide@<annuaire>/mot, une fois par mot)", /recherche-vide@\$\{/.test(lire("assets/annuaire.js")) && /cherches\.has\(mot\)/.test(lire("assets/annuaire.js")));

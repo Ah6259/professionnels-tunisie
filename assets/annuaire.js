@@ -23,6 +23,8 @@ document.addEventListener("DOMContentLoaded", () => {
       c.hidden = !ok; if (ok) n++;
     }
     const vide = document.getElementById("aucun"); if (vide) vide.hidden = n > 0;
+    // la carte suit le filtre (règle commune § 11.11, 18/10/2026) : le gouvernorat choisi est entouré sur la carte de l'accueil
+    if (choixG) document.querySelectorAll(".carte-tn .tn-b[data-gouv]").forEach(b => b.classList.toggle("actif", b.dataset.gouv === g));
     // recherche sans résultat : comptée UNE fois par mot, 1,5 s après la dernière frappe (13/10/2026). Le robot privé de relevé
     // en fait la liste « ce que les visiteurs cherchent et ne trouvent pas » ; seul le mot est compté, rien de personnel.
     clearTimeout(attente);

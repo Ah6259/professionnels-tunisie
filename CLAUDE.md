@@ -68,3 +68,5 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
   à partir des vraies fiches : recherche par nom, par gouvernorat, par métier (un filtre de plus ne donne jamais plus de résultats), page
   d'un gouvernorat, fiche avec son bouton « Appeler », accueil en arabe. Lancé par `tests.yml` et `maj.yml` (étape « Visiteur simule »).
   1re anomalie trouvée : en-tête trop large sur téléphone (Mariage 395 px, Professionnels 417 px) → corrigé dans style.css du moteur.
+
+- **Lieux officiels (18/10/2026, règle commune § 11.11)** : test_site.mjs vérifie dans les deux sens que la liste « Gouvernorat » (accueil, formulaires, pages, carte) = les 24 gouvernorats de La Poste, rien d'autre (les annuaires ne filtrent pas par délégation ; « ville » = texte libre) ; la carte de l'accueil entoure le gouvernorat choisi dans le filtre (annuaire.js).
