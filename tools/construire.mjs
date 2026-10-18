@@ -136,7 +136,7 @@ function tete({ titre, desc, chemin, racine, jsonld = [] }) {
 <meta property="og:title" content="${esc(titre)}">
 <meta property="og:description" content="${esc(desc)}">
 <meta property="og:url" content="${URL_SITE}${chemin}">
-<meta property="og:locale" content="fr_TN"><meta property="og:locale:alternate" content="ar_TN">
+<meta property="og:locale" content="fr_FR"><meta property="og:locale:alternate" content="ar_AR">
 ${C.og_image ? `<meta property="og:image" content="${URL_SITE}assets/${C.og_image}"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta name="twitter:card" content="summary_large_image">` : ""}
 <link rel="icon" href="${racine}assets/logo.svg" type="image/svg+xml">
 <link rel="manifest" href="${racine}manifest.webmanifest">
