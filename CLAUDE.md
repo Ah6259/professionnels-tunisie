@@ -46,6 +46,7 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
 ## Robots (sans PC)
 - `maj.yml` chaque nuit (02h40 UTC) : relevé OSM → reprise des 4 annuaires (étape présente aussi dans le maj.yml du moteur, sans
   effet sur les sites qui n'ont pas `tools/importer_annuaires.py`) → pages → tests → publication. `tests.yml` à chaque modification.
+- **18/10/2026 (VS.8, règle commune du 15/10)** : `maj.yml` ENREGISTRE (commit + push avec 5 essais) `donnees/osm.json` (+ `importes.json`) juste après le relevé, AVANT les pages et les tests ; les pages ne sont publiées que si les tests passent. Tout dans le même robot (un seul robot en attente par groupe de concurrence). Le `maj.yml` n'est PAS copié par `synchroniser.py` : le même fichier est dans les 5 annuaires, à modifier partout pareil.
 - Le moteur commun (`annuaires/moteur/`) est copié ici par `python annuaires/synchroniser.py` (CLAUDE.md et README.md jamais écrasés).
   Ne pas modifier les fichiers du moteur dans ce dossier.
 

@@ -1,6 +1,8 @@
 # Robot de nuit de l'annuaire (moteur commun) — tourne sur GitHub, sans PC.
-# Une fois par mois (le 1er, 3h40 à Tunis) : relevé OpenStreetMap → pages → tests → publication. En cas d'échec, GitHub envoie un e-mail à Ahmed
-# et le site reste tel quel (rien n'est publié si un test échoue).
+# Une fois par mois (le 1er, 3h40 à Tunis) : relevé OpenStreetMap → ENREGISTREMENT des données → pages → tests → publication.
+# Règle commune (15/10/2026) : les données relevées sont enregistrées AVANT les pages et les tests : un test rouge bloque
+# la publication des pages, jamais la sauvegarde du relevé. Tout reste dans CE robot (GitHub ne garde qu'un robot en attente
+# par groupe de concurrence). En cas d'échec, GitHub envoie un e-mail à Ahmed et le site reste tel quel.
 name: maj
 on:
   schedule:
@@ -26,6 +28,19 @@ jobs:
       - name: Reprise des fiches de nos autres annuaires (seulement pour l'annuaire qui les regroupe)
         run: |
           if [ -f tools/importer_annuaires.py ]; then python tools/importer_annuaires.py; fi
+      - name: Enregistrer les données relevées (avant les pages et les tests)
+        run: |
+          git config user.name "robot-annuaire"
+          git config user.email "robot-annuaire@users.noreply.github.com"
+          git add donnees/osm.json
+          if [ -f donnees/importes.json ]; then git add donnees/importes.json; fi
+          if git diff --cached --quiet; then echo "Données inchangées : rien à enregistrer"; exit 0; fi
+          git commit -q -m "Relevé OpenStreetMap enregistré ($(date -u +%d/%m/%Y))"
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase --autostash && git push -q && { echo "Données enregistrées"; exit 0; }
+            echo "Envoi refusé ou réseau en panne, nouvel essai dans $((i * 10)) s"; sleep $((i * 10))
+          done
+          echo "ÉCHEC : données non enregistrées"; exit 1
       - name: Pages
         run: node tools/construire.mjs
       - name: Tests
@@ -34,11 +49,12 @@ jobs:
           node tools/test_site.mjs
       - name: Visiteur simule (téléphone de 390 px, recherches et fiche comme un visiteur)
         run: python3 tools/visiteur_simule.py
-      - name: Publier
+      - name: Publier les pages (seulement si les tests sont passés)
         run: |
-          git config user.name "robot-annuaire"
-          git config user.email "robot-annuaire@users.noreply.github.com"
           git add -A
           git diff --cached --quiet || git commit -m "Mise à jour automatique des fiches ($(date -u +%d/%m/%Y))"
-          git pull -q --rebase --autostash
-          git push
+          for i in 1 2 3 4 5; do
+            git pull -q --rebase --autostash && git push -q && { echo "Pages publiées"; exit 0; }
+            echo "Envoi refusé ou réseau en panne, nouvel essai dans $((i * 10)) s"; sleep $((i * 10))
+          done
+          echo "ÉCHEC : pages non publiées"; exit 1
