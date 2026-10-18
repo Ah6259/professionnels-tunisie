@@ -1,0 +1,119 @@
+[
+ {
+  "page": "",
+  "nom": "recherche par nom (« AAC ») : la fiche et son téléphone s'affichent",
+  "etapes": [
+   {
+    "sel": "#recherche",
+    "valeur": "AAC"
+   }
+  ],
+  "lire": ".fiche-carte:not([hidden]) .fc-tel"
+ },
+ {
+  "page": "",
+  "nom": "recherche par nom + gouvernorat (Gafsa) : nombre de résultats",
+  "etapes": [
+   {
+    "sel": "#choix-g",
+    "valeur": "gafsa"
+   },
+   {
+    "sel": "#recherche",
+    "valeur": "AAC"
+   }
+  ],
+  "lire": "#compte",
+  "groupe": "gouvernorat",
+  "ordre": 1,
+  "croissant": true
+ },
+ {
+  "page": "",
+  "nom": "recherche par gouvernorat (Gafsa) : nombre de résultats",
+  "etapes": [
+   {
+    "sel": "#choix-g",
+    "valeur": "gafsa"
+   }
+  ],
+  "lire": "#compte",
+  "groupe": "gouvernorat",
+  "ordre": 2,
+  "croissant": true
+ },
+ {
+  "page": "",
+  "nom": "accueil sans filtre : nombre total de fiches",
+  "lire": "#compte",
+  "groupe": "gouvernorat",
+  "ordre": 3,
+  "croissant": true
+ },
+ {
+  "page": "",
+  "nom": "métier (Comptables et experts-comptables) + gouvernorat (Gafsa) : nombre de résultats",
+  "etapes": [
+   {
+    "sel": "#choix-g",
+    "valeur": "gafsa"
+   },
+   {
+    "sel": ".puce[data-m=\"comptable\"]",
+    "clic": true
+   }
+  ],
+  "lire": "#compte",
+  "groupe": "metier",
+  "ordre": 1,
+  "croissant": true
+ },
+ {
+  "page": "",
+  "nom": "métier (Comptables et experts-comptables) dans toute la Tunisie : nombre de résultats",
+  "etapes": [
+   {
+    "sel": ".puce[data-m=\"comptable\"]",
+    "clic": true
+   }
+  ],
+  "lire": "#compte",
+  "groupe": "metier",
+  "ordre": 2,
+  "croissant": true
+ },
+ {
+  "page": "",
+  "nom": "accueil sans filtre (métiers) : nombre total de fiches",
+  "lire": "#compte",
+  "groupe": "metier",
+  "ordre": 3,
+  "croissant": true
+ },
+ {
+  "page": "gouvernorat/gafsa/",
+  "nom": "page du gouvernorat (Gafsa) : nombre de fiches affiché",
+  "lire": ".hero .intro"
+ },
+ {
+  "page": "fiche/co-web-gafsa-oect-aac/",
+  "nom": "fiche d'un professionnel (AAC) : bouton « Appeler » avec le numéro",
+  "lire": ".fiche a[data-clic=\"tel\"]"
+ },
+ {
+  "page": "metier/comptable/gafsa/",
+  "nom": "page « Comptables et experts-comptables à Gafsa » : nombre de fiches affiché",
+  "lire": ".hero .intro"
+ },
+ {
+  "page": "",
+  "nom": "accueil en arabe (bouton ع) : page lisible, nombre de résultats",
+  "etapes": [
+   {
+    "sel": "button.langue",
+    "clic": true
+   }
+  ],
+  "lire": "#compte"
+ }
+]

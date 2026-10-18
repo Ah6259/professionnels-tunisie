@@ -60,3 +60,10 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
   Pour refaire les vidéos : `python fabriquer.py <id-du-site>` dans le dossier PRIVÉ du PC `videos (outil)/`.
 
 - **Adresse depuis le 11/10/2026 : https://pros.clicvia.com/** (config.json « url » ; le moteur écrit le fichier CNAME, préfixe GoatCounter /professionnels-tunisie). Ligne DNS `CNAME pros → ah6259.github.io` nuage gris. L'ancienne adresse ah6259.github.io/professionnels-tunisie/ redirige seule.
+
+- **Visiteur simulé (18/10/2026, règle générale d'Ahmed : signaler les problèmes AVANT le visiteur réel)** : `python3 tools/visiteur_simule.py`
+  (outil COMMUN à tous les sites, copie identique, ne pas le modifier ici) — liens/images internes morts, puis Chrome à 390 px : page plus
+  large que l'écran, image cassée, « NaN / undefined », page vide. Scénarios `tools/scenarios-visiteur.json` FABRIQUÉS par construire.mjs
+  à partir des vraies fiches : recherche par nom, par gouvernorat, par métier (un filtre de plus ne donne jamais plus de résultats), page
+  d'un gouvernorat, fiche avec son bouton « Appeler », accueil en arabe. Lancé par `tests.yml` et `maj.yml` (étape « Visiteur simule »).
+  1re anomalie trouvée : en-tête trop large sur téléphone (Mariage 395 px, Professionnels 417 px) → corrigé dans style.css du moteur.

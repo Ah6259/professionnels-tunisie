@@ -21,3 +21,7 @@ jobs:
         with: { node-version: "20" }
       - run: npm install --no-save --no-package-lock jsdom
       - run: node tools/test_site.mjs
+      # Visiteur simulé (règle générale du 18/10/2026) : téléphone de 390 px dans Chrome, recherches par nom / gouvernorat / métier,
+      # une fiche ouverte (tools/scenarios-visiteur.json, fabriqué par construire.mjs) : signale les problèmes AVANT le visiteur réel.
+      - name: Visiteur simule
+        run: python3 tools/visiteur_simule.py

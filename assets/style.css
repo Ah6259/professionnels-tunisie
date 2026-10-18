@@ -160,6 +160,9 @@ img,svg{-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}
 .entete-boutons{display:flex;align-items:center;gap:8px;flex:none}
 .entete-pro{background:#F2B33D;color:#3A2A00;border-radius:999px;padding:6px 12px;font-weight:800;font-size:14px;text-decoration:none;white-space:nowrap}
 @media (max-width:420px){.entete-pro{padding:5px 9px;font-size:12.5px}.logo small{display:none}}
+/* visiteur simulé (18/10/2026) : sur un téléphone de 390 px, un nom long (« Professionnels », « Mariage ») poussait les boutons hors de l'écran */
+.logo{min-width:0}.logo span{min-width:0;overflow-wrap:anywhere}
+@media (max-width:420px){.entete .wrap{gap:6px;padding:0 12px}.logo{font-size:13.5px;gap:7px}.logo img{width:30px;height:30px}.entete-boutons{gap:5px}.entete-pro{padding:5px 8px;font-size:12px}.partager{width:32px;height:32px}.langue{padding:5px 9px}}
 .btn-pro{background:#F2B33D;color:#3A2A00}
 .paiement{margin:12px 0}.paiement summary{list-style:none;cursor:pointer}.paiement summary::-webkit-details-marker{display:none}
 .paiement[open] summary{margin-bottom:10px}

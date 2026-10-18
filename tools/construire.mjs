@@ -651,4 +651,33 @@ pagesVideo(root, {
       description: { fr: `Professionnels : fiche gratuite sur ${C.nom.fr}, formule Pro avec le 1er mois offert, sans engagement au-delà d'un an.`, ar: `للمهنيين: بطاقة مجانية، وصيغة Pro مع الشهر الأول مجانًا.` },
       bouton: { fr: "Ouvrir le site", ar: "افتح الموقع" } },
   ] });
+/* ---------------- visiteur simulé (règle générale d'Ahmed du 18/10/2026) ----------------
+   tools/scenarios-visiteur.json, FABRIQUÉ ici à partir des vraies fiches : le robot (tools/visiteur_simule.py, outil commun à tous les
+   sites) cherche comme un visiteur sur un téléphone de 390 px — par nom, par gouvernorat, par métier —, ouvre une fiche et lit ce qui
+   est affiché. Dans un groupe « croissant », un filtre de plus ne peut jamais donner PLUS de résultats (sinon : anomalie). */
+{
+  const uniques = FICHES.filter(f => f.tel && FICHES.filter(x => nomN(x.nom) === nomN(f.nom)).length === 1);
+  const f1 = uniques[0] || FICHES.find(f => f.tel);
+  const sc = [];
+  if (f1) {
+    const g = G[f1.gouvernorat], m = M[f1.metier];
+    const puces = C.metiers.filter(x => FICHES.some(f => f.metier === x.id)).length > 1;
+    sc.push(
+      { page: "", nom: `recherche par nom (« ${f1.nom} ») : la fiche et son téléphone s'affichent`, etapes: [{ sel: "#recherche", valeur: f1.nom }], lire: ".fiche-carte:not([hidden]) .fc-tel" },
+      { page: "", nom: `recherche par nom + gouvernorat (${g[1]}) : nombre de résultats`, etapes: [{ sel: "#choix-g", valeur: g[0] }, { sel: "#recherche", valeur: f1.nom }], lire: "#compte", groupe: "gouvernorat", ordre: 1, croissant: true },
+      { page: "", nom: `recherche par gouvernorat (${g[1]}) : nombre de résultats`, etapes: [{ sel: "#choix-g", valeur: g[0] }], lire: "#compte", groupe: "gouvernorat", ordre: 2, croissant: true },
+      { page: "", nom: "accueil sans filtre : nombre total de fiches", lire: "#compte", groupe: "gouvernorat", ordre: 3, croissant: true });
+    if (puces) sc.push(
+      { page: "", nom: `métier (${m.fr_pl}) + gouvernorat (${g[1]}) : nombre de résultats`, etapes: [{ sel: "#choix-g", valeur: g[0] }, { sel: `.puce[data-m="${m.id}"]`, clic: true }], lire: "#compte", groupe: "metier", ordre: 1, croissant: true },
+      { page: "", nom: `métier (${m.fr_pl}) dans toute la Tunisie : nombre de résultats`, etapes: [{ sel: `.puce[data-m="${m.id}"]`, clic: true }], lire: "#compte", groupe: "metier", ordre: 2, croissant: true },
+      { page: "", nom: "accueil sans filtre (métiers) : nombre total de fiches", lire: "#compte", groupe: "metier", ordre: 3, croissant: true });
+    sc.push(
+      { page: `gouvernorat/${g[0]}/`, nom: `page du gouvernorat (${g[1]}) : nombre de fiches affiché`, lire: ".hero .intro" },
+      { page: `fiche/${f1.id}/`, nom: `fiche d'un professionnel (${f1.nom}) : bouton « Appeler » avec le numéro`, lire: '.fiche a[data-clic="tel"]' });
+    if (AVEC_PAGES_METIER) sc.push({ page: `metier/${m.id}/${g[0]}/`, nom: `page « ${m.fr_pl} à ${g[1]} » : nombre de fiches affiché`, lire: ".hero .intro" });
+    // en DERNIER : la langue choisie reste en mémoire du navigateur pour les visites suivantes
+    sc.push({ page: "", nom: "accueil en arabe (bouton ع) : page lisible, nombre de résultats", etapes: [{ sel: "button.langue", clic: true }], lire: "#compte" });
+  }
+  writeFileSync(join(root, "tools", "scenarios-visiteur.json"), JSON.stringify(sc, null, 1) + "\n", "utf8");
+}
 console.log(`${Object.keys(pages).length} pages (${FICHES.length} fiches, ${retraits.size} retirée(s)), version ${V}`);

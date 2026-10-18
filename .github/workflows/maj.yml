@@ -32,6 +32,8 @@ jobs:
         run: |
           npm install --no-save --no-package-lock jsdom
           node tools/test_site.mjs
+      - name: Visiteur simule (téléphone de 390 px, recherches et fiche comme un visiteur)
+        run: python3 tools/visiteur_simule.py
       - name: Publier
         run: |
           git config user.name "robot-annuaire"
