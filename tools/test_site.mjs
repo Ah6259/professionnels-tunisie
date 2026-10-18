@@ -260,7 +260,7 @@ else {
     // même résultat pour deux écritures d'un même nom (règle § 11.11, 18/10/2026 : Jerba = Djerba) ; et une vraie ville d'une fiche,
     // écrite autrement (lettre doublée), trouve les mêmes fiches
     const v = (attendues.find(f => /[a-z]{4,}/i.test(f.ville || "")) || {}).ville || "";
-    const paires = [["Djerba", "Jerba"], ["Hammamet", "Hamamet"], ["Kairouan", "Qairouan"], ["Houmet Souk", "Houmt Souk"], ["El Ghazala", "Ghazela"]]
+    const paires = [["Djerba", "Jerba"], ["Hammamet", "Hamamet"], ["Kairouan", "Qairouan"], ["Houmet Souk", "Houmt Souk"], ["El Ghazala", "Ghazela"], ["Hammamet", "Hammmamet"]]
       .concat(v ? [[v, v.replace(/([bcdfgklmnprst])/i, "$1$1")]] : []);
     const diff = paires.filter(([x, y]) => nb(x) !== nb(y));
     check("recherche « au son » : deux écritures d'un même lieu donnent le même nombre de fiches " + JSON.stringify(diff), !diff.length && (!v || nb(v) > 0));
