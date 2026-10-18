@@ -2,6 +2,13 @@
    Statistiques : GoatCounter compte « clic-<type>/<fiche> » (appel, WhatsApp, itinéraire) : c'est ce qui permettra
    de montrer à un professionnel combien de clients l'ont contacté. Jamais de donnée personnelle. */
 const sansAccent = s => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[إأآا]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
+// recherche « au son » (règle commune § 11.11, 18/10/2026, Ahmed : « Jerba et Djerba doivent donner le même résultat ») : même calcul
+// pour ce qu'on tape et pour les fiches : Dj = J, Ou = W = U, Q = K, Sh = Ch, Y = I, Ph = F, lettres doublées, article collé
+// (Essouk = Souk), el / al / l', « e » ou « a » entre deux consonnes (Houmet = Houmt, Ghazela = Ghazala)
+const son = s => (" " + sansAccent(s).replace(/[^a-z0-9\u0600-\u06ff]+/g, " ") + " ")
+  .replace(/ e([bcdfgjklmnpqrstvxz])\1/g, " $1").replace(/dj/g, "j").replace(/sh/g, "ch").replace(/ph/g, "f").replace(/q/g, "k")
+  .replace(/ou/g, "u").replace(/w/g, "u").replace(/y/g, "i").replace(/([a-z])\1/g, "$1").replace(/ (el|al|l|le|la|les) /g, " ").replace(/ (el|al|l|le|la|les) /g, " ")
+  .replace(/([bcdfghjklmnpqrstvxz])[ea](?=[bcdfghjklmnpqrstvxz])/g, "$1").replace(/ +/g, " ");
 const compter = (path, title) => { try { if (window.goatcounter && window.goatcounter.count) window.goatcounter.count({ path, title, event: true }); } catch (e) {} };
 
 /* --- recherche et filtres --- */
@@ -15,11 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const depart = new URLSearchParams(location.search);
   if (choixG && depart.get("g")) choixG.value = depart.get("g");
   function filtrer() {
-    const mots = sansAccent(champ ? champ.value.trim() : "").split(/\s+/).filter(Boolean);
+    const mots = son(champ ? champ.value : "").trim().split(" ").filter(Boolean);
+    if (mots.length && mots[mots.length - 1].length > 1) mots[mots.length - 1] = mots[mots.length - 1].replace(/[ea]+$/, "");   // mot en cours de frappe
     const g = choixG ? choixG.value : "";
     let n = 0;
     for (const c of cartes) {
-      const ok = (!g || c.dataset.g === g) && (!metier || c.dataset.m === metier) && (!cat || catDe[c.dataset.m] === cat) && mots.every(m => sansAccent(c.dataset.cherche).includes(m));
+      const ok = (!g || c.dataset.g === g) && (!metier || c.dataset.m === metier) && (!cat || catDe[c.dataset.m] === cat) && mots.every(m => son(c.dataset.cherche).includes(m));
       c.hidden = !ok; if (ok) n++;
     }
     const vide = document.getElementById("aucun"); if (vide) vide.hidden = n > 0;

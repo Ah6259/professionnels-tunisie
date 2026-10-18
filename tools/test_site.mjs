@@ -255,6 +255,16 @@ else {
   d.getElementById("choix-g").value = g; d.getElementById("choix-g").dispatchEvent(new w.Event("change"));
   check("accueil : le filtre par gouvernorat ne garde que ce gouvernorat", visibles() > 0 && [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).every(c => c.dataset.g === g));
   check("accueil : la carte suit le filtre (le gouvernorat choisi, et lui seul, est entouré sur la carte — règle § 11.11)", (() => { const a = [...d.querySelectorAll(".carte-tn .tn-b.actif")]; return a.length === 1 && a[0].dataset.gouv === g; })());
+  { const ch = d.getElementById("recherche"), sel = d.getElementById("choix-g"); sel.value = ""; sel.dispatchEvent(new w.Event("change"));
+    const nb = t => { ch.value = t; ch.dispatchEvent(new w.Event("input")); return visibles(); };
+    // même résultat pour deux écritures d'un même nom (règle § 11.11, 18/10/2026 : Jerba = Djerba) ; et une vraie ville d'une fiche,
+    // écrite autrement (lettre doublée), trouve les mêmes fiches
+    const v = (attendues.find(f => /[a-z]{4,}/i.test(f.ville || "")) || {}).ville || "";
+    const paires = [["Djerba", "Jerba"], ["Hammamet", "Hamamet"], ["Kairouan", "Qairouan"], ["Houmet Souk", "Houmt Souk"], ["El Ghazala", "Ghazela"]]
+      .concat(v ? [[v, v.replace(/([bcdfgklmnprst])/i, "$1$1")]] : []);
+    const diff = paires.filter(([x, y]) => nb(x) !== nb(y));
+    check("recherche « au son » : deux écritures d'un même lieu donnent le même nombre de fiches " + JSON.stringify(diff), !diff.length && (!v || nb(v) > 0));
+    ch.value = ""; ch.dispatchEvent(new w.Event("input")); sel.value = g; sel.dispatchEvent(new w.Event("change")); }
   const champ = d.getElementById("recherche"); champ.value = "zzzzqqq"; champ.dispatchEvent(new w.Event("input"));
   check("accueil : recherche sans résultat → message « Aucun résultat »", visibles() === 0 && !d.getElementById("aucun").hidden);
   check("recherche sans résultat : comptée pour le relevé des demandes (événement recherche-vide@<annuaire>/mot, une fois par mot)", /recherche-vide@\$\{/.test(lire("assets/annuaire.js")) && /cherches\.has\(mot\)/.test(lire("assets/annuaire.js")));
