@@ -779,6 +779,30 @@
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=37736547"
       }
+    },
+    {
+      "id": "lavage-auto",
+      "osm": [
+        "amenity=car_wash"
+      ],
+      "fr": "Lavage auto",
+      "fr_pl": "Stations de lavage auto",
+      "ar": "غسل السيارات",
+      "ar_pl": "محطات غسل السيارات",
+      "mots": "lavage auto voiture voitures car wash station de lavage nettoyage carrosserie lavage automobile ghsil sayarat ghsil karhba ghassil station lavage غسل السيارات غسيل سيارة محطة غسيل تنظيف",
+      "photo": {
+        "fichier": "assets/metiers-photos/lavage-auto.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Des voitures dans une station de lavage",
+          "ar": "سيارات في محطة غسل السيارات"
+        },
+        "auteur": "Juan Emilio Prades Bel",
+        "licence": "CC BY 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=172184694"
+      }
     }
   ],
   "categories": [
@@ -836,7 +860,8 @@
         "pneus",
         "demenagement",
         "location-voiture",
-        "agence-voyage"
+        "agence-voyage",
+        "lavage-auto"
       ]
     },
     {
