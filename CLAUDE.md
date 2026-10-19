@@ -71,3 +71,5 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
 
 - **Lieux officiels (18/10/2026, règle commune § 11.11)** : test_site.mjs vérifie dans les deux sens que la liste « Gouvernorat » (accueil, formulaires, pages, carte) = les 24 gouvernorats de La Poste, rien d'autre (les annuaires ne filtrent pas par délégation ; « ville » = texte libre) ; la carte de l'accueil entoure le gouvernorat choisi dans le filtre (annuaire.js).
 - 18/10/2026 : recherche « au son » (Jerba = Djerba, Houmt = Houmet, Qairouan = Kairouan, lettres doublées…), même calcul pour ce qu'on tape et pour la liste ; test de paires d'écritures.
+
+- **19/10/2026 — Visiteur simulé : contrôle des ESPACES (§ 29)** : cases gouvernorat / métier, le nombre était COLLÉ au nom (« Traducteurs66 ») ou SORTAIT de la case (« Photographes 46 ») → corrigé dans style.css du moteur (le nombre passe sous un nom trop long) ; 0 anomalie.

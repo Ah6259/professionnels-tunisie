@@ -46,8 +46,10 @@ select{font:inherit;border:1px solid var(--ligne);border-radius:12px;padding:10p
 /* gouvernorats */
 .titre-section{font-size:18px;margin:26px 0 10px}
 .gouvernorats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px}
-.gouvernorats a{display:flex;justify-content:space-between;align-items:center;background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--texte);font-weight:700}
+.gouvernorats a{display:flex;flex-wrap:wrap;gap:4px 8px;justify-content:space-between;align-items:center;align-content:center;background:#fff;border:1px solid var(--ligne);border-radius:12px;padding:10px 12px;text-decoration:none;color:var(--texte);font-weight:700}
 .gouvernorats .n{background:var(--p-clair);color:var(--p);border-radius:999px;padding:1px 9px;font-size:13px}
+/* nom trop long pour tenir avec son nombre : le nombre passe dessous, jamais collé ni hors de la case (§ 29, 19/10/2026) */
+.gouvernorats a>span:not(.n){flex:1 1 5em}.gouvernorats .n{flex:none}
 /* cartes, boutons */
 .carte{background:var(--carte);border:1px solid var(--ligne);border-radius:16px;padding:18px;margin:16px 0;box-shadow:var(--ombre)}
 .carte h2{margin:0 0 6px;font-size:18px}
