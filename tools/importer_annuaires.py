@@ -50,7 +50,7 @@ def corriger_sites_osm():
         if s and not s.lower().startswith(("http://", "https://")):
             f["site"] = "https://" + s.lstrip("/"); n += 1
     if n:
-        p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+        p.write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
         print(f"{n} adresse(s) de site OSM complétée(s) par https://")
 
 
@@ -92,7 +92,7 @@ def main():
         return 1
     SORTIE.parent.mkdir(exist_ok=True)
     SORTIE.write_text(json.dumps({"source": "annuaires spécialisés du même éditeur (dépôts publics Ah6259)", "fiches": fiches},
-                                 ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+                                 ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     print(f"{len(fiches)} fiches reprises :", ", ".join(bilan))
     return 0   # une panne partielle n'empêche pas la mise à jour (anciennes fiches gardées)
 
