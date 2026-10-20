@@ -115,7 +115,7 @@ def main():
         print(f"ÉCHEC : {len(fiches)} fiches au lieu de {avant} (chute suspecte), ancien fichier gardé.")
         return 1
     SORTIE.parent.mkdir(exist_ok=True)
-    SORTIE.write_text(json.dumps({"source": "OpenStreetMap (ODbL)", "fiches": fiches}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    SORTIE.write_text(json.dumps({"source": "OpenStreetMap (ODbL)", "fiches": fiches}, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
     par_g = {}
     for f in fiches:
         par_g[f["gouvernorat"]] = par_g.get(f["gouvernorat"], 0) + 1

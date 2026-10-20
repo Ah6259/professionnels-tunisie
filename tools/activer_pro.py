@@ -28,7 +28,7 @@ def lire(nom, defaut):
 
 
 def ecrire(nom, d):
-    (RACINE / "donnees" / nom).write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
+    (RACINE / "donnees" / nom).write_text(json.dumps(d, ensure_ascii=False, indent=1) + "\n", encoding="utf-8", newline="\n")
 
 
 def plus_mois(d, n):
