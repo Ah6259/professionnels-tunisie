@@ -1,0 +1,32 @@
+# Liste des métiers présents en Tunisie dans OpenStreetMap (20/10/2026), préparée ICI (GitHub joint les serveurs Overpass) pour la
+# routine cloud « professionnels-nouveau-metier » (2h30 à Tunis), dont le réseau bloque Overpass depuis le 08/10/2026 :
+# la routine lit donnees/candidats-metiers.json au lieu d'interroger OpenStreetMap elle-même.
+name: candidats-metiers
+on:
+  schedule:
+    - cron: "50 0 * * *"   # 1h50 à Tunis, avant la routine de 2h30
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: maj-site
+  cancel-in-progress: false
+jobs:
+  candidats:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - name: Métiers présents en Tunisie (OpenStreetMap)
+        run: python tools/candidats_metiers.py
+      - name: Enregistrer la liste
+        run: |
+          git config user.name "robot-annuaire"
+          git config user.email "robot-annuaire@users.noreply.github.com"
+          git add donnees/candidats-metiers.json
+          if git diff --cached --quiet; then echo "Liste inchangée"; exit 0; fi
+          git commit -q -m "Métiers présents en Tunisie (OpenStreetMap) du $(date -u +%d/%m/%Y)"
+          for i in 1 2 3 4 5; do git pull -q --rebase --autostash && git push -q && exit 0; sleep $((i * 10)); done
+          echo "ÉCHEC : liste non enregistrée"; exit 1
