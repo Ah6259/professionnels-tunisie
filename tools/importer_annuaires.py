@@ -54,6 +54,57 @@ def corriger_sites_osm():
         print(f"{n} adresse(s) de site OSM complétée(s) par https://")
 
 
+AGENCES_IMMO = "https://immobilier.clicvia.com/donnees/agences.json"
+METIER_AGENCE = "agence-immobiliere"
+
+
+def _hote(u):
+    import re
+    return re.sub(r"^https?://(www\.)?", "", (u or "").lower()).split("/")[0]
+
+
+def locaux_infos():
+    """(sites, numéros) des fiches déjà présentes ici (OpenStreetMap, pages publiques) : pas de doublon."""
+    sites, tels = set(), set()
+    for nom in ("osm.json", "manuels.json"):
+        p = RACINE / "donnees" / nom
+        if p.exists():
+            for f in json.loads(p.read_text(encoding="utf-8")).get("fiches", []):
+                if f.get("site"):
+                    sites.add(_hote(f["site"]))
+                if f.get("tel"):
+                    tels.add(str(f["tel"])[-8:])
+    return sites, tels
+
+
+def agences_immobilier(locaux, ancien, lire=None):
+    """Fiches des agences de la liste publique d'Immobilier Tunisie (fonction testée hors ligne avec `lire`)."""
+    import re
+    sites, tels = locaux
+    try:
+        if lire:
+            d = lire()
+        else:
+            with urllib.request.urlopen(urllib.request.Request(AGENCES_IMMO, headers=AGENT), timeout=60) as r:
+                d = json.loads(r.read().decode("utf-8"))
+    except Exception as e:
+        gardees = [f for f in ancien.get("fiches", []) if f["id"].startswith("im-")]
+        print(f"ATTENTION : liste des agences d'Immobilier Tunisie indisponible ({e}) : {len(gardees)} anciennes fiches gardées")
+        return gardees
+    out = []
+    for a in d.get("agences", []):
+        h = _hote(a.get("site"))
+        tel = re.sub(r"\D", "", a.get("tel") or "")[-8:] or None
+        if not h or not a.get("gouvernorat") or h in sites or (tel and tel in tels):
+            continue
+        out.append({"id": "im-" + re.sub(r"[^a-z0-9]+", "-", h).strip("-"), "source": "web", "source_url": a["site"],
+                    "releve": d.get("maj"), "metier": METIER_AGENCE, "nom": a.get("nom") or h, "nom_ar": None,
+                    "gouvernorat": a["gouvernorat"], "ville": None, "adresse": a.get("adresse"), "tel": tel,
+                    "site": a["site"], "facebook": a.get("facebook"), "horaires": None, "annuaire": "immobilier",
+                    "annonces_immobilier": a.get("annonces") or 0})
+    return out
+
+
 def main():
     corriger_sites_osm()
     metiers = {m["id"] for m in CONF["metiers"]}
@@ -87,6 +138,13 @@ def main():
             fiches.append({**f, "id": f"{prefixe}-{f['id']}", "annuaire": depot})
             n += 1
         bilan.append(f"{depot} {n}")
+    # 21/10/2026 (Ahmed, contrepartie des accords des agences) : les agences immobilières dont Immobilier Tunisie lit les annonces
+    # (liste publique https://immobilier.clicvia.com/donnees/agences.json : nom, site, Facebook, adresse, numéro PROFESSIONNEL lus sur
+    # le site de l'agence elle-même). Fiche « web » (informations publiées par l'établissement) ; jamais en double d'une fiche
+    # OpenStreetMap (même site ou même numéro) ; agence sans gouvernorat connu : reprise au passage suivant.
+    im = agences_immobilier(locaux_infos(), ancien)
+    fiches += im
+    bilan.append(f"immobilier {len(im)}")
     if not fiches:
         print("ÉCHEC : aucune fiche reprise, ancien fichier gardé.")
         return 1

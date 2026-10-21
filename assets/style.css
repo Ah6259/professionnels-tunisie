@@ -41,6 +41,8 @@ select{font:inherit;border:1px solid var(--ligne);border-radius:12px;padding:10p
 .fc-ar{display:block;font-weight:600;color:var(--doux);font-family:"Noto Kufi Arabic",sans-serif;font-size:14px}
 .fc-lieu,.fc-tel,.fc-metier{display:flex;align-items:center;gap:6px;font-size:14px;color:var(--doux)}
 .fc-tel{color:var(--p);font-weight:700}
+.fc-adresse,.fc-web{font-size:13px;color:var(--doux);line-height:1.35;overflow-wrap:anywhere}   /* 21/10/2026 : adresse et site / Facebook sur la carte */
+.fc-web{color:var(--p)}
 .fiche-carte svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .vide{color:var(--doux);background:#fff;border:1px dashed var(--ligne);border-radius:12px;padding:16px;text-align:center}
 /* gouvernorats */

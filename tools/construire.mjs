@@ -181,6 +181,8 @@ function carte(f, racine) {
   <span class="fc-lieu">${svg("carte")}${[f.ville, null].filter(Boolean).map(esc).join("")}${f.ville ? " · " : ""}${bi(esc(g[1]), esc(g[2]))}</span>
   ${C.metiers.length > 1 ? `<span class="fc-metier">${biO({ fr: m.fr, ar: m.ar })}</span>` : ""}
   ${f.tel ? `<span class="fc-tel">${svg("tel")}<bdi dir="ltr">${telLisible(f.tel)}</bdi></span>` : ""}
+  ${f.adresse ? `<span class="fc-adresse">${esc(f.adresse)}</span>` : ""}
+  ${f.site || f.facebook ? `<span class="fc-web">${[f.site ? esc(f.site.replace(/^https?:\/\/(www\.)?/, "").replace(/\/.*$/, "")) : "", f.facebook ? "Facebook" : ""].filter(Boolean).join(" · ")}</span>` : ""}
 </a>`;
 }
 
@@ -368,6 +370,7 @@ for (const f of FICHES) {
       <dt>${bi("Gouvernorat", "الولاية")}</dt><dd>${bi(esc(g[1]), esc(g[2]))}</dd>
       ${f.horaires ? `<dt>${bi("Horaires", "التوقيت")}</dt><dd><bdi dir="ltr">${esc(f.horaires)}</bdi></dd>` : ""}
       ${f.site ? `<dt>${bi("Site", "الموقع")}</dt><dd><a href="${esc(f.site)}" rel="noopener nofollow">${esc(f.site.replace(/^https?:\/\//, "").replace(/\/$/, ""))}</a></dd>` : ""}
+      ${f.facebook && /^https:\/\/(www\.|m\.)?facebook\.com\//.test(f.facebook) ? `<dt>Facebook</dt><dd><a href="${esc(f.facebook)}" rel="noopener nofollow">${bi("Page Facebook", "صفحة فيسبوك")}</a></dd>` : ""}
       ${!f.tel ? `<dt>${bi("Téléphone", "الهاتف")}</dt><dd>${bi("non renseigné", "غير متوفر")}</dd>` : ""}
     </dl>
     ${f.verifiee ? `<p class="source">${svg("ok")} ${bi(`Fiche vérifiée par l'établissement${typeof f.verifiee === "string" ? " le " + esc(f.verifiee) : ""}.`, `بطاقة وثّقتها المؤسسة${typeof f.verifiee === "string" ? " بتاريخ " + esc(f.verifiee) : ""}.`)}</p>` : ""}
