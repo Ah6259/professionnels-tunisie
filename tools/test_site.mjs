@@ -119,7 +119,8 @@ check(`référencement : titre, description, canonique, JSON-LD valide (${pbSeo.
 check(`liens internes vers des fichiers existants (${pbLiens.slice(0, 3).join(" ; ")})`, !pbLiens.length);
 
 // -- fiches
-const f0 = attendues[0];
+// 21/10/2026 : la 1re fiche attendue peut être un doublon fusionné (sans page) : prendre la 1re qui a une page
+const f0 = attendues.find(f => existsSync(join(root, `fiche/${f.id}/index.html`))) || attendues[0];
 const s0 = lire(`fiche/${f0.id}/index.html`);
 check("fiche : crédit OpenStreetMap (ODbL) et liens corriger / retirer", /OpenStreetMap/.test(s0) && /ODbL/.test(s0) && s0.includes(`inscription/?fiche=${f0.id}&amp;action=retirer`) && s0.includes("action=corriger"));
 // doublons fusionnés par la construction (même nom à moins de 300 m) : une fiche sans page doit avoir un jumeau publié
