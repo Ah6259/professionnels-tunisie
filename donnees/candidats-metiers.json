@@ -1,5 +1,5 @@
 {
-"maj": "2026-10-20",
+"maj": "2026-10-21",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -7,1708 +7,1952 @@
 "lieux": 92,
 "joignables": 68,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "office=government",
 "lieux": 843,
 "joignables": 55,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "office=company",
 "lieux": 230,
 "joignables": 51,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "shop=supermarket",
 "lieux": 628,
 "joignables": 33,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=butcher",
 "lieux": 328,
 "joignables": 25,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=computer",
 "lieux": 100,
 "joignables": 24,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=clothes",
 "lieux": 751,
 "joignables": 15,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=travel_agency",
 "lieux": 95,
 "joignables": 14,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=pastry",
 "lieux": 184,
 "joignables": 13,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=car",
 "lieux": 115,
 "joignables": 12,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=hairdresser",
 "lieux": 471,
 "joignables": 11,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=bakery",
 "lieux": 466,
 "joignables": 11,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=car_repair",
 "lieux": 293,
 "joignables": 11,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=electronics",
 "lieux": 83,
 "joignables": 11,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=car_parts",
 "lieux": 60,
 "joignables": 11,
-"deja": false,
-"sante": false
+"deja": true,
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=optician",
 "lieux": 73,
 "joignables": 10,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=estate_agent",
 "lieux": 51,
 "joignables": 10,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=it",
 "lieux": 39,
 "joignables": 10,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=ngo",
 "lieux": 38,
 "joignables": 10,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "shop=books",
 "lieux": 213,
 "joignables": 9,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=furniture",
 "lieux": 129,
 "joignables": 9,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=beauty",
 "lieux": 75,
 "joignables": 8,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=convenience",
 "lieux": 980,
 "joignables": 7,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=mobile_phone",
 "lieux": 119,
 "joignables": 7,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=association",
 "lieux": 36,
 "joignables": 7,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "shop=musical_instrument",
 "lieux": 9,
 "joignables": 7,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=educational_institution",
 "lieux": 49,
 "joignables": 6,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "office=insurance",
 "lieux": 44,
 "joignables": 6,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=lawyer",
 "lieux": 32,
 "joignables": 6,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=bicycle",
 "lieux": 13,
 "joignables": 6,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=mall",
 "lieux": 103,
 "joignables": 5,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=jewelry",
 "lieux": 105,
 "joignables": 4,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=photographer",
 "lieux": 49,
 "joignables": 4,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=department_store",
 "lieux": 28,
 "joignables": 4,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=pet",
 "lieux": 22,
 "joignables": 4,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=motorcycle",
 "lieux": 15,
 "joignables": 4,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=tailor",
 "lieux": 9,
 "joignables": 4,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=hardware",
 "lieux": 185,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=shoes",
 "lieux": 74,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tailor",
 "lieux": 45,
 "joignables": 3,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=houseware",
 "lieux": 31,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=telecommunication",
 "lieux": 27,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=electrical",
 "lieux": 18,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=art",
 "lieux": 11,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=hvac",
 "lieux": 7,
 "joignables": 3,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=coworking",
 "lieux": 5,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=employment_agency",
 "lieux": 5,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=engineer",
 "lieux": 3,
 "joignables": 3,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=telecommunication",
 "lieux": 76,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=chemist",
 "lieux": 71,
 "joignables": 2,
 "deja": false,
-"sante": true
+"sante": true,
+"pas_un_metier": false
 },
 {
 "osm": "shop=florist",
 "lieux": 54,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=confectionery",
 "lieux": 52,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=cosmetics",
 "lieux": 41,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=copyshop",
 "lieux": 35,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=interior_decoration",
 "lieux": 27,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=laundry",
 "lieux": 26,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=doityourself",
 "lieux": 25,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=sports",
 "lieux": 23,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=photo",
 "lieux": 21,
 "joignables": 2,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=toys",
 "lieux": 18,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=party",
 "lieux": 16,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=architect",
 "lieux": 15,
 "joignables": 2,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=plumber",
 "lieux": 12,
 "joignables": 2,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=massage",
 "lieux": 10,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=paint",
 "lieux": 9,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=video_games",
 "lieux": 7,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=travel_agent",
 "lieux": 6,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=surveyor",
 "lieux": 2,
 "joignables": 2,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tobacco",
 "lieux": 280,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=greengrocer",
 "lieux": 191,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=gift",
 "lieux": 59,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=ticket",
 "lieux": 47,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=carpenter",
 "lieux": 32,
 "joignables": 1,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=wholesale",
 "lieux": 31,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=dry_cleaning",
 "lieux": 30,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=trade",
 "lieux": 27,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=stationery",
 "lieux": 22,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=cheese",
 "lieux": 21,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=boutique",
 "lieux": 19,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=handicraft",
 "lieux": 17,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=motorcycle_repair",
 "lieux": 17,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=notary",
 "lieux": 16,
 "joignables": 1,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=electrician",
 "lieux": 15,
 "joignables": 1,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=kitchen",
 "lieux": 13,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=alcohol",
 "lieux": 12,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=antiques",
 "lieux": 10,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=fishing",
 "lieux": 10,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=medical_supply",
 "lieux": 9,
 "joignables": 1,
 "deja": false,
-"sante": true
+"sante": true,
+"pas_un_metier": false
 },
 {
 "osm": "craft=upholsterer",
 "lieux": 8,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=beverages",
 "lieux": 8,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=farm",
 "lieux": 7,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=research",
 "lieux": 6,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=radiotechnics",
 "lieux": 5,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=tax_advisor",
 "lieux": 4,
 "joignables": 1,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=estate_agent",
 "lieux": 4,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=advertising_agency",
 "lieux": 3,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=country_store",
 "lieux": 3,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=craft",
 "lieux": 3,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=bakery",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=confectionery",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=security",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=union",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "shop=swimming_pool",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=visa",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=wedding_planner",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=animalerie",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=centre de recyclage",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=construction",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=scuba_diving",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=vente_et_réparation_gsm",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=video",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=kiosk",
 "lieux": 150,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=perfumery",
 "lieux": 106,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=dressmaker",
 "lieux": 101,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=joiner",
 "lieux": 58,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=seafood",
 "lieux": 54,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=deli",
 "lieux": 52,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=blacksmith",
 "lieux": 47,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=coffee",
 "lieux": 45,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=electronics_repair",
 "lieux": 44,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=spices",
 "lieux": 41,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=general",
 "lieux": 38,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=variety_store",
 "lieux": 33,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=appliance",
 "lieux": 31,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tyres",
 "lieux": 29,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=repair",
 "lieux": 23,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=fabric",
 "lieux": 17,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=doors",
 "lieux": 16,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=dairy",
 "lieux": 15,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=nuts",
 "lieux": 15,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=shoemaker",
 "lieux": 14,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=garden_centre",
 "lieux": 13,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=second_hand",
 "lieux": 13,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=photographic_laboratory",
 "lieux": 11,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=water_utility",
 "lieux": 10,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=sewing",
 "lieux": 10,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=shoe_repair",
 "lieux": 10,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=fashion_accessories",
 "lieux": 9,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=newsagent",
 "lieux": 9,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=pottery",
 "lieux": 9,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=key_cutter",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=painter",
 "lieux": 8,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=pottery",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=financial",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=political_party",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "shop=carpet",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=lighting",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tiles",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=water",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=insulation",
 "lieux": 7,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=optician",
 "lieux": 7,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=agrarian",
 "lieux": 7,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=physician",
 "lieux": 6,
 "joignables": 0,
 "deja": false,
-"sante": true
+"sante": true,
+"pas_un_metier": false
 },
 {
 "osm": "office=quango",
 "lieux": 6,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": true
 },
 {
 "osm": "shop=bookmaker",
 "lieux": 6,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=hifi",
 "lieux": 6,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=vacuum_cleaner",
 "lieux": 6,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=cleaning",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=metal_construction",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=watchmaker",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=leather",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=music",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tool_hire",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=watches",
 "lieux": 5,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=clockmaker",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=club",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=consulting",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=energy_supplier",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=bathroom_furnishing",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=cleaning_supplies",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=nutrition_supplements",
 "lieux": 4,
 "joignables": 0,
 "deja": false,
-"sante": true
+"sante": true,
+"pas_un_metier": false
 },
 {
 "osm": "craft=plasterer",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=stonemason",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=window_construction",
 "lieux": 3,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=forestry",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=bed",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=candles",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=chocolate",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=curtain",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=fuel",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=hairdresser_supply",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=health_food",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=herbalist",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": true
+"sante": true,
+"pas_un_metier": false
 },
 {
 "osm": "shop=outdoor",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=photo_studio",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=wine",
 "lieux": 3,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=agricultural_engines",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=cabinet_maker",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=caterer",
 "lieux": 2,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=grinding_mill",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=accountant",
 "lieux": 2,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=newspaper",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=frame",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=grocery",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=locksmith",
 "lieux": 2,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tea",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=vacant",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=water_sports",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=window_blind",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=beekeeper",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=builder",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=glaziery",
 "lieux": 1,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=oil_mill",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=printer",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=rigger",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=saddler",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=sailmaker",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=sculptor",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "craft=tinsmith",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=charity",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=graphic_design",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=guide",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=logitics",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=marina",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=moving_company",
 "lieux": 1,
 "joignables": 0,
 "deja": true,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=property_management",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=service",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=société",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "office=tax",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=accessoires_pour_voitures",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=anime",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=baby_goods",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=boat",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=camera",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=caravan",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=concept_store",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=e-cigarette",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=fruit_sec",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=funeral_directors",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=games",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=gas",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=glaziery",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=groundskeeping",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=makroudh",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=pawnbroker",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=phone",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=printer_ink",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=promosport",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=religion",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=storage_rental",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tapissier",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tattoo",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=television",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=tissus",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false
+"sante": false,
+"pas_un_metier": false
 }
 ]
 }
