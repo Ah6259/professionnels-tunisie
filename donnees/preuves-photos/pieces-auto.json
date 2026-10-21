@@ -1,0 +1,113 @@
+{
+ "date": "2026-10-21",
+ "titre": "File:Engine oil filter cutaway.JPG",
+ "page": "https://commons.wikimedia.org/wiki/File:Engine_oil_filter_cutaway.JPG",
+ "reponse_api": {
+  "batchcomplete": "",
+  "query": {
+   "pages": {
+    "9967769": {
+     "pageid": 9967769,
+     "ns": 6,
+     "title": "File:Engine oil filter cutaway.JPG",
+     "imagerepository": "local",
+     "imageinfo": [
+      {
+       "size": 2076525,
+       "width": 4000,
+       "height": 3000,
+       "thumburl": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Engine_oil_filter_cutaway.JPG/1280px-Engine_oil_filter_cutaway.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+       "thumbwidth": 1200,
+       "thumbheight": 900,
+       "responsiveUrls": {
+        "2": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Engine_oil_filter_cutaway.JPG/3840px-Engine_oil_filter_cutaway.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail"
+       },
+       "thumbattribs": {
+        "src": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Engine_oil_filter_cutaway.JPG/1280px-Engine_oil_filter_cutaway.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+        "decoding": "async",
+        "loading": "lazy",
+        "width": 1200,
+        "height": 900,
+        "srcset": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Engine_oil_filter_cutaway.JPG/3840px-Engine_oil_filter_cutaway.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail 2x"
+       },
+       "url": "https://upload.wikimedia.org/wikipedia/commons/4/43/Engine_oil_filter_cutaway.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=original",
+       "descriptionurl": "https://commons.wikimedia.org/wiki/File:Engine_oil_filter_cutaway.JPG",
+       "descriptionshorturl": "https://commons.wikimedia.org/w/index.php?curid=9967769",
+       "extmetadata": {
+        "DateTime": {
+         "value": "2010-04-09 16:50:35",
+         "source": "mediawiki-metadata",
+         "hidden": ""
+        },
+        "ObjectName": {
+         "value": "Engine oil filter cutaway",
+         "source": "mediawiki-metadata"
+        },
+        "CommonsMetadataExtension": {
+         "value": 1.2,
+         "source": "extension",
+         "hidden": ""
+        },
+        "Categories": {
+         "value": "Taken with Canon Digital IXUS 120 IS|Paper filters|Self-published work|PD-self|Automobile oil filters|Cutaways of automobile parts",
+         "source": "commons-categories",
+         "hidden": ""
+        },
+        "Assessments": {
+         "value": "",
+         "source": "commons-categories",
+         "hidden": ""
+        },
+        "ImageDescription": {
+         "value": "Motor oil filter cutaway image (Bosch P3029) - one quarter is cutted away from filter casing. Oil enters the paper from the outside of paper and leaves from the centre of filter cartridge.\nSome of the filter paper is also removed, so the paper support frame is visible. There are two rows of (4 mm diameter) oil flow holes in the high end of the frame (not visible). At the top of filter cartridge is oil bypass-valve.",
+         "source": "commons-desc-page"
+        },
+        "DateTimeOriginal": {
+         "value": "2010-04-09",
+         "source": "commons-desc-page"
+        },
+        "Credit": {
+         "value": "<span class=\"int-own-work\" lang=\"en\">Own work</span>",
+         "source": "commons-desc-page"
+        },
+        "Artist": {
+         "value": "<a href=\"//commons.wikimedia.org/w/index.php?title=User:Harrikkamies&amp;action=edit&amp;redlink=1\" class=\"new\" title=\"User:Harrikkamies (page does not exist)\">Harrikkamies</a>",
+         "source": "commons-desc-page"
+        },
+        "LicenseShortName": {
+         "value": "Public domain",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "UsageTerms": {
+         "value": "Public domain",
+         "source": "commons-desc-page"
+        },
+        "AttributionRequired": {
+         "value": "false",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "Copyrighted": {
+         "value": "False",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "Restrictions": {
+         "value": "",
+         "source": "commons-desc-page",
+         "hidden": ""
+        },
+        "License": {
+         "value": "pd",
+         "source": "commons-templates",
+         "hidden": ""
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ }
+}

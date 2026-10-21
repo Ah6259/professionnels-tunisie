@@ -803,6 +803,30 @@
         "licence_url": "https://creativecommons.org/licenses/by/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=172184694"
       }
+    },
+    {
+      "id": "pieces-auto",
+      "osm": [
+        "shop=car_parts"
+      ],
+      "fr": "Pièces détachées auto",
+      "fr_pl": "Pièces détachées auto",
+      "ar": "قطع غيار السيارات",
+      "ar_pl": "محلات قطع غيار السيارات",
+      "mots": "pièces détachées pièce auto automobile accessoires batterie filtre huile freins pare-chocs piece rechange قطع غيار سيارات بيس ديتاشي بياس بطارية زيت",
+      "photo": {
+        "fichier": "assets/metiers-photos/pieces-auto.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Filtre à huile de moteur, vue en coupe",
+          "ar": "مرشح زيت المحرك (مقطع)"
+        },
+        "auteur": "Harrikkamies",
+        "licence": "Public domain",
+        "licence_url": "https://commons.wikimedia.org/wiki/File:Engine_oil_filter_cutaway.JPG",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=9967769"
+      }
     }
   ],
   "categories": [
@@ -861,7 +885,8 @@
         "demenagement",
         "location-voiture",
         "agence-voyage",
-        "lavage-auto"
+        "lavage-auto",
+        "pieces-auto"
       ]
     },
     {
