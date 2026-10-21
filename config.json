@@ -770,6 +770,76 @@
           "fr": "Immobilier Tunisie : les annonces de ces agences",
           "ar": "عقارات تونس: إعلانات هذه الوكالات"
         }
+      ],
+      "listes": [
+        {
+          "titre": {
+            "fr": "Sites d'annonces immobilières en Tunisie",
+            "ar": "مواقع الإعلانات العقارية في تونس"
+          },
+          "liens": [
+            {
+              "url": "https://www.tayara.tn/",
+              "fr": "Tayara",
+              "ar": "تيارة"
+            },
+            {
+              "url": "https://www.tunisie-annonce.com/",
+              "fr": "Tunisie Annonce",
+              "ar": "تونس أنونس"
+            },
+            {
+              "url": "https://www.affare.tn/",
+              "fr": "Affare",
+              "ar": "أفاري"
+            },
+            {
+              "url": "https://www.cava.tn/",
+              "fr": "Cava",
+              "ar": "كافا"
+            },
+            {
+              "url": "https://www.bnb.tn/",
+              "fr": "BNB.tn",
+              "ar": "BNB.tn"
+            },
+            {
+              "url": "https://immobiliere.tn/",
+              "fr": "Immobiliere.tn",
+              "ar": "Immobiliere.tn"
+            },
+            {
+              "url": "https://www.behya.tn/",
+              "fr": "Behya",
+              "ar": "بهية"
+            },
+            {
+              "url": "https://fi-dari.tn/",
+              "fr": "Fidari",
+              "ar": "في داري"
+            },
+            {
+              "url": "https://www.akarat.tn/",
+              "fr": "Akarat",
+              "ar": "عقارات"
+            },
+            {
+              "url": "https://www.tunimmob.com/",
+              "fr": "Tunisie Immobilier (Tunimmob)",
+              "ar": "تونس للعقارات (Tunimmob)"
+            },
+            {
+              "url": "https://www.tecnocasa.tn/",
+              "fr": "Tecnocasa Tunisie",
+              "ar": "تكنوكازا تونس"
+            },
+            {
+              "url": "https://century21.tn/",
+              "fr": "Century 21 Tunisie",
+              "ar": "سانشوري 21 تونس"
+            }
+          ]
+        }
       ]
     },
     {

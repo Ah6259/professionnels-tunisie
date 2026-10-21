@@ -309,6 +309,10 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
 
 // pages « métier » (toute la Tunisie) et « métier dans un gouvernorat » (« Plombiers à Sfax ») : c'est ce que les gens tapent
 // dans Google (visibilité, 08/10/2026). Seulement les combinaisons qui ont au moins une fiche (jamais de page vide).
+// liens réglables d'un métier (config.json : metiers[].liens = « Voir aussi » en haut ; metiers[].listes = [{titre, liens}] en bas),
+// 21/10/2026 (Ahmed : GPAI et les sites d'annonces immobilières sur la page des agences)
+const blocLiens = (titre, liens) => (liens || []).length ? `<section class="carte voir-aussi"><h2>${bi(esc(titre.fr), esc(titre.ar || titre.fr))}</h2><ul>${liens.map(l => `<li><a href="${esc(l.url)}" rel="noopener" target="_blank">${bi(esc(l.fr), esc(l.ar || l.fr))}</a>${l.note ? ` — ${bi(esc(l.note.fr), esc(l.note.ar || l.note.fr))}` : ""}</li>`).join("")}</ul></section>` : "";
+
 function pageMetier({ m, slug, liste, compteMG }) {
   const g = slug ? G[slug] : null, racine = slug ? "../../../" : "../../", chemin = `metier/${m.id}/${slug ? slug + "/" : ""}`;
   const lieuFr = g ? `à ${g[1]}` : "en Tunisie", lieuAr = g ? `في ولاية ${g[2]}` : "في تونس";
@@ -321,12 +325,13 @@ function pageMetier({ m, slug, liste, compteMG }) {
   <p class="intro">${bi(`${liste.length} fiche(s), triées par nom. Annuaire gratuit.`, `${ISO(liste.length)} بطاقة، مرتبة حسب الاسم. دليل مجاني.`)}</p>
 </div></section>
 <main class="wrap">
-  ${(m.liens || []).length ? `<section class="carte voir-aussi"><h2>${bi("Voir aussi", "انظر أيضًا")}</h2><ul>${m.liens.map(l => `<li><a href="${esc(l.url)}" rel="noopener" target="_blank">${bi(esc(l.fr), esc(l.ar || l.fr))}</a>${l.note ? ` — ${bi(esc(l.note.fr), esc(l.note.ar || l.note.fr))}` : ""}</li>`).join("")}</ul></section>` : ""}
+  ${blocLiens({ fr: "Voir aussi", ar: "انظر أيضًا" }, m.liens)}
   ${filtres(racine, true, liste)}${notePro(liste)}<div class="liste protege" id="liste">${liste.map(f => carte(f, racine)).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>
   ${autres.length ? `<section class="carte">
     <h2>${bi(`${esc(m.fr_pl)} dans les autres gouvernorats`, `${esc(m.ar_pl)} في الولايات الأخرى`)}</h2>
     <div class="gouvernorats">${autres.map(x => `<a href="${racine}metier/${m.id}/${x[0]}/">${bi(esc(x[1]), esc(x[2]))}<span class="n">${compteMG[x[0]]}</span></a>`).join("")}</div>
   </section>` : ""}
+  ${(m.listes || []).map(x => blocLiens(x.titre, x.liens)).join("")}
   ${blocPro(racine)}
   ${liensAmis()}
 </main>

@@ -142,7 +142,7 @@ check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portab
 // 21/10/2026 (Ahmed : « dans la page des agences ajoute aussi GPAI.tn ») : liens « Voir aussi » d'un métier (config.json : metiers[].liens)
 { const mL = C.metiers.find(m => (m.liens || []).length && parMetierPage(m.id));
   check("page d'un métier : liens « Voir aussi » du réglage (ex. GPAI pour les agences immobilières)",
-    !mL || mL.liens.every(l => lire(`metier/${mL.id}/index.html`).includes(`href="${l.url}"`))); }
+    !mL || [...mL.liens, ...(mL.listes || []).flatMap(x => x.liens)].every(l => lire(`metier/${mL.id}/index.html`).includes(`href="${l.url}"`))); }
 check("fiche : JSON-LD du bon type (" + (C.schema || "LocalBusiness") + ")", s0.includes(`"@type":"${C.schema || "LocalBusiness"}"`));
 check("« gratuit » dans le titre ou la description de l'accueil et des gouvernorats", [lire("index.html"), lire("gouvernorat/tunis/index.html")].every(s => /<title>[^<]*gratuit|name="description" content="[^"]*gratuit/i.test(s)));
 check("à propos : sources OpenStreetMap / ODbL, retrait, statistiques sans cookies", /ODbL/.test(lire("a-propos/index.html")) && /retrait/i.test(lire("a-propos/index.html")) && /GoatCounter/.test(lire("a-propos/index.html")));
