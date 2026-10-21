@@ -321,6 +321,7 @@ function pageMetier({ m, slug, liste, compteMG }) {
   <p class="intro">${bi(`${liste.length} fiche(s), triées par nom. Annuaire gratuit.`, `${ISO(liste.length)} بطاقة، مرتبة حسب الاسم. دليل مجاني.`)}</p>
 </div></section>
 <main class="wrap">
+  ${(m.liens || []).length ? `<section class="carte voir-aussi"><h2>${bi("Voir aussi", "انظر أيضًا")}</h2><ul>${m.liens.map(l => `<li><a href="${esc(l.url)}" rel="noopener" target="_blank">${bi(esc(l.fr), esc(l.ar || l.fr))}</a>${l.note ? ` — ${bi(esc(l.note.fr), esc(l.note.ar || l.note.fr))}` : ""}</li>`).join("")}</ul></section>` : ""}
   ${filtres(racine, true, liste)}${notePro(liste)}<div class="liste protege" id="liste">${liste.map(f => carte(f, racine)).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>
   ${autres.length ? `<section class="carte">
     <h2>${bi(`${esc(m.fr_pl)} dans les autres gouvernorats`, `${esc(m.ar_pl)} في الولايات الأخرى`)}</h2>

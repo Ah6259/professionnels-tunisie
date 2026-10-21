@@ -754,7 +754,23 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=197293183"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://gpai.tn/",
+          "fr": "GPAI — Groupement professionnel des agences immobilières",
+          "ar": "الغرفة المهنية للوكالات العقارية (GPAI)",
+          "note": {
+            "fr": "la liste de ses agences membres agréées",
+            "ar": "قائمة الوكالات المنخرطة والمرخّصة"
+          }
+        },
+        {
+          "url": "https://immobilier.clicvia.com/",
+          "fr": "Immobilier Tunisie : les annonces de ces agences",
+          "ar": "عقارات تونس: إعلانات هذه الوكالات"
+        }
+      ]
     },
     {
       "id": "agence-voyage",

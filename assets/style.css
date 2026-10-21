@@ -43,6 +43,7 @@ select{font:inherit;border:1px solid var(--ligne);border-radius:12px;padding:10p
 .fc-tel{color:var(--p);font-weight:700}
 .fc-adresse,.fc-web{font-size:13px;color:var(--doux);line-height:1.35;overflow-wrap:anywhere}   /* 21/10/2026 : adresse et site / Facebook sur la carte */
 .fc-web{color:var(--p)}
+.voir-aussi ul{margin:6px 0 0;padding-left:18px}.voir-aussi li{margin:4px 0}   /* 21/10/2026 : liens « Voir aussi » d'un métier (GPAI pour les agences) */
 .fiche-carte svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;flex:none}
 .vide{color:var(--doux);background:#fff;border:1px dashed var(--ligne);border-radius:12px;padding:16px;text-align:center}
 /* gouvernorats */

@@ -32,6 +32,7 @@ const sansContact = [...osm, ...manuels, ...inscrits, ...(existsSync(join(root, 
 const importes = existsSync(join(root, "donnees/importes.json")) ? JSON.parse(lire("donnees/importes.json")).fiches : [];
 const attendues = [...osm, ...manuels, ...inscrits, ...importes].filter(f => !retraits.includes(f.id) && contact(f));
 const fichesPages = pages.filter(p => p.startsWith("fiche/"));
+const parMetierPage = id => existsSync(join(root, `metier/${id}/index.html`));
 
 // -- structure
 check("accueil, à propos, professionnels et 24 pages de gouvernorat", ["index.html", "a-propos/index.html", "inscription/index.html"].every(p => pages.includes(p)) && pages.filter(p => p.startsWith("gouvernorat/")).length === 24);
@@ -138,6 +139,10 @@ check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portab
   const acc = lire("index.html") + (avecAdr ? lire(`gouvernorat/${avecAdr.gouvernorat}/index.html`) : "");
   check("carte de la liste : adresse et site / Facebook affichés quand la fiche les a ; fiche : lien Facebook",
     (!avecAdr || acc.includes(`<span class="fc-adresse">`)) && (!avecFb || lire(`fiche/${avecFb.id}/index.html`).includes(`href="${avecFb.facebook.replace(/&/g, "&amp;")}"`))); }
+// 21/10/2026 (Ahmed : « dans la page des agences ajoute aussi GPAI.tn ») : liens « Voir aussi » d'un métier (config.json : metiers[].liens)
+{ const mL = C.metiers.find(m => (m.liens || []).length && parMetierPage(m.id));
+  check("page d'un métier : liens « Voir aussi » du réglage (ex. GPAI pour les agences immobilières)",
+    !mL || mL.liens.every(l => lire(`metier/${mL.id}/index.html`).includes(`href="${l.url}"`))); }
 check("fiche : JSON-LD du bon type (" + (C.schema || "LocalBusiness") + ")", s0.includes(`"@type":"${C.schema || "LocalBusiness"}"`));
 check("« gratuit » dans le titre ou la description de l'accueil et des gouvernorats", [lire("index.html"), lire("gouvernorat/tunis/index.html")].every(s => /<title>[^<]*gratuit|name="description" content="[^"]*gratuit/i.test(s)));
 check("à propos : sources OpenStreetMap / ODbL, retrait, statistiques sans cookies", /ODbL/.test(lire("a-propos/index.html")) && /retrait/i.test(lire("a-propos/index.html")) && /GoatCounter/.test(lire("a-propos/index.html")));
