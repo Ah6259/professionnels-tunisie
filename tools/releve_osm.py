@@ -11,7 +11,7 @@ import sys
 import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from osm import requete  # noqa: E402
+from osm import requete, reste  # noqa: E402
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 CONF = json.loads((RACINE / "config.json").read_text(encoding="utf-8"))
@@ -105,8 +105,11 @@ def main():
             fiches = releve()
             break
         except Exception as e:  # serveur saturé : on réessaie un peu plus tard
-            print("relevé impossible :", e)
-            time.sleep(120)
+            print("relevé impossible :", e, flush=True)
+            if reste() < 180:   # budget de temps épuisé (osm.py) : on s'arrête avant que GitHub coupe le robot
+                print("ÉCHEC : OpenStreetMap trop lent aujourd'hui, ancien fichier gardé (nouvel essai au prochain passage).")
+                return 1
+            time.sleep(min(120, reste() - 150))
     else:
         print("ÉCHEC : OpenStreetMap indisponible, ancien fichier gardé.")
         return 1
