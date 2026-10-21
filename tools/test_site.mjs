@@ -122,7 +122,15 @@ check(`liens internes vers des fichiers existants (${pbLiens.slice(0, 3).join(" 
 const f0 = attendues[0];
 const s0 = lire(`fiche/${f0.id}/index.html`);
 check("fiche : crédit OpenStreetMap (ODbL) et liens corriger / retirer", /OpenStreetMap/.test(s0) && /ODbL/.test(s0) && s0.includes(`inscription/?fiche=${f0.id}&amp;action=retirer`) && s0.includes("action=corriger"));
-check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portable", attendues.filter(f => f.tel).every(f => { const s = lire(`fiche/${f.id}/index.html`); return s.includes(`tel:+216${f.tel}`) && (s.includes(`wa.me/216${f.tel}`) === /^[2459]/.test(f.tel)); }));
+// doublons fusionnés par la construction (même nom à moins de 300 m) : une fiche sans page doit avoir un jumeau publié
+const nomN = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9؀-ۿ]+/g, " ").trim();
+const distM = (a, b) => Math.hypot((a.lat - b.lat) * 111000, (a.lon - b.lon) * 111000 * Math.cos(a.lat * Math.PI / 180));
+const aUnePage = f => existsSync(join(root, `fiche/${f.id}/index.html`));
+const publiees = [...osm, ...manuels, ...inscrits, ...importes].filter(aUnePage);
+const avecPage = attendues.filter(aUnePage);
+const sansPage = attendues.filter(f => !aUnePage(f));
+check("fiche : toute fiche sans page est un doublon fusionné (même nom à moins de 300 m d'une fiche publiée)", sansPage.every(f => f.lat && publiees.some(g => g.lat && nomN(g.nom) === nomN(f.nom) && distM(g, f) < 300)));
+check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portable", avecPage.filter(f => f.tel).every(f => { const s = lire(`fiche/${f.id}/index.html`); return s.includes(`tel:+216${f.tel}`) && (s.includes(`wa.me/216${f.tel}`) === /^[2459]/.test(f.tel)); }));
 check("fiche : JSON-LD du bon type (" + (C.schema || "LocalBusiness") + ")", s0.includes(`"@type":"${C.schema || "LocalBusiness"}"`));
 check("« gratuit » dans le titre ou la description de l'accueil et des gouvernorats", [lire("index.html"), lire("gouvernorat/tunis/index.html")].every(s => /<title>[^<]*gratuit|name="description" content="[^"]*gratuit/i.test(s)));
 check("à propos : sources OpenStreetMap / ODbL, retrait, statistiques sans cookies", /ODbL/.test(lire("a-propos/index.html")) && /retrait/i.test(lire("a-propos/index.html")) && /GoatCounter/.test(lire("a-propos/index.html")));
