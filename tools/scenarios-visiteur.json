@@ -51,32 +51,16 @@
   "croissant": true
  },
  {
-  "page": "",
+  "page": "metier/comptable/gafsa/",
   "nom": "métier (Comptables et experts-comptables) + gouvernorat (Gafsa) : nombre de résultats",
-  "etapes": [
-   {
-    "sel": "#choix-g",
-    "valeur": "gafsa"
-   },
-   {
-    "sel": ".puce[data-m=\"comptable\"]",
-    "clic": true
-   }
-  ],
   "lire": "#compte",
   "groupe": "metier",
   "ordre": 1,
   "croissant": true
  },
  {
-  "page": "",
-  "nom": "métier (Comptables et experts-comptables) dans toute la Tunisie : nombre de résultats",
-  "etapes": [
-   {
-    "sel": ".puce[data-m=\"comptable\"]",
-    "clic": true
-   }
-  ],
+  "page": "metier/comptable/",
+  "nom": "métier (Comptables et experts-comptables) dans toute la Tunisie (page du métier) : nombre de résultats",
   "lire": "#compte",
   "groupe": "metier",
   "ordre": 2,

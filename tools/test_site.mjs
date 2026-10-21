@@ -167,7 +167,7 @@ const photosM = C.metiers.filter(m => m.photo);
 check(`chaque métier a sa vraie photo (tools/photo_metier.py) ${C.metiers.filter(m => !m.photo).map(m => m.id).join(" ")}`, photosM.length === C.metiers.length);
 check(`photos réelles par métier (${photosM.length}/${C.metiers.length}) : fichier ≤ 160 Ko, licence complète, crédit sur À propos, affichée sur la tuile du métier et les fiches`,
   photosM.every(m => existsSync(join(root, m.photo.fichier)) && statSync(join(root, m.photo.fichier)).size <= 160 * 1024 && m.photo.auteur && m.photo.licence && m.photo.licence_url && /commons\.wikimedia\.org/.test(m.photo.source || "") &&
-    lire("a-propos/index.html").includes(m.photo.source.replace(/&/g, "&amp;")) && (C.metiers.length === 1 || !lire("index.html").includes(`class="metier avec-photo" href="#liste" data-m="${m.id}"`) && !lire("index.html").includes(`class="metier" href="#liste" data-m="${m.id}"`) || lire("index.html").includes(`src="${m.photo.fichier}"`))) &&
+    lire("a-propos/index.html").includes(m.photo.source.replace(/&/g, "&amp;")) && (C.metiers.length === 1 || !lire("index.html").includes(`class="metier avec-photo" href="metier/${m.id}/" data-m="${m.id}"`) && !lire("index.html").includes(`class="metier" href="metier/${m.id}/" data-m="${m.id}"`) || lire("index.html").includes(`src="${m.photo.fichier}"`))) &&
   lire("a-propos/index.html").includes("Crédits des photos"));
 check("image d'aperçu WhatsApp : fichier JPEG < 250 Ko déclaré dans les pages",
   !!C.og_image && existsSync(join(root, "assets", C.og_image)) && statSync(join(root, "assets", C.og_image)).size < 250 * 1024 && lire("index.html").includes("assets/" + C.og_image));
@@ -253,13 +253,14 @@ else {
   check("accueil : en-tête et pied fabriqués (nom du site, crédit OpenStreetMap)", d.getElementById("entete").textContent.includes(C.nom.fr) && /OpenStreetMap/.test(d.getElementById("pied").textContent));
   const visibles = () => [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).length;
   check("accueil : toutes les fiches visibles au départ", visibles() === fichesPages.length);
-  { const carte = d.querySelector("a.metier[data-m]");
-    if (carte) {
-      const m = carte.dataset.m; carte.dispatchEvent(new w.MouseEvent("click", { bubbles: true, cancelable: true }));
-      const vis = [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden);
-      check("accueil : une grande carte de métier filtre la liste sur ce métier (et allume son bouton)", vis.length > 0 && vis.every(c => c.dataset.m === m) && d.querySelector(`.puce[data-m="${m}"]`).classList.contains("on"));
-      d.querySelector(`.puce[data-m="${m}"]`).dispatchEvent(new w.Event("click"));
-      check("accueil : un 2e clic sur le bouton du métier retire le filtre", visibles() === fichesPages.length);
+  // 21/10/2026 (Ahmed) : chaque grande carte de métier mène à la page du métier (comme la liste « Par métier ») ;
+  // plus de petits boutons de métier en double sur l'accueil
+  { const cartesM = [...d.querySelectorAll("a.metier[data-m]")];
+    if (cartesM.length) {
+      check("accueil : chaque grande carte de métier mène à la page de ce métier (qui existe)", cartesM.every(a => a.getAttribute("href") === `metier/${a.dataset.m}/` && existsSync(join(root, `metier/${a.dataset.m}/index.html`))));
+      check("accueil : pas de petits boutons de métier en double (seulement les cartes avec image)", !d.querySelector(".puce"));
+      cartesM[0].dispatchEvent(new w.MouseEvent("click", { bubbles: true, cancelable: true }));
+      check("accueil : un clic sur une carte de métier ne cache aucune fiche (c'est un lien, pas un filtre)", visibles() === fichesPages.length);
     } }
   { const b = d.querySelector(".cat[data-cat]");
     if (b) {

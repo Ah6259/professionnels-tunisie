@@ -186,13 +186,15 @@ function carte(f, racine) {
 </a>`;
 }
 
-function filtres(racine, gouvernoratFixe, liste = FICHES) {
+// avecPuces = false sur l'accueil (21/10/2026, Ahmed) : les grandes cartes de métier (avec photo) mènent à la page du métier,
+// les petits boutons de métier en double sont retirés. Ils restent sur les pages de gouvernorat (filtre dans le gouvernorat).
+function filtres(racine, gouvernoratFixe, liste = FICHES, avecPuces = true) {
   const nb = Object.fromEntries(C.metiers.map(m => [m.id, liste.filter(f => f.metier === m.id).length]));
   const presents = C.metiers.filter(m => nb[m.id] > 0);
   return `<div class="filtres" id="filtres">
   <label class="recherche">${svg("loupe")}<input type="search" id="recherche" autocomplete="off" aria-label="Rechercher"></label>
   ${gouvernoratFixe ? "" : `<select id="choix-g" aria-label="Gouvernorat"><option value="">${esc("Tous les gouvernorats")}</option>${GOUVERNORATS.map(g => `<option value="${g[0]}" data-ar="${esc(g[2])}">${esc(g[1])}</option>`).join("")}</select>`}
-  ${presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}"${dCat(m.id)}>${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
+  ${avecPuces && presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}"${dCat(m.id)}>${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
 </div>
 <p class="compte" id="compte" aria-live="polite"></p>`;
 }
@@ -258,8 +260,8 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
 </div>${P ? `<div class="wrap">${creditPhoto()}</div>` : ""}</section>
 <main class="wrap">
   ${CATS.length > 1 ? `<div class="cats" id="cats">${CATS.filter(k => k.metiers.some(id => FICHES.some(f => f.metier === id))).map(k => { const m = C.metiers.find(x => x.id === k.metiers.find(id => FICHES.some(f => f.metier === id))); return `<button type="button" class="cat" data-cat="${k.id}">${imgMetier(m, "", 22)}${biO(k)}</button>`; }).join("")}</div>` : ""}
-  ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.filter(m => FICHES.some(f => f.metier === m.id)).map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="#liste" data-m="${m.id}"${dCat(m.id)}>${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
-  ${filtres("", false)}
+  ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.filter(m => FICHES.some(f => f.metier === m.id)).map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="metier/${m.id}/" data-m="${m.id}"${dCat(m.id)}>${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
+  ${filtres("", false, FICHES, false)}
   ${notePro(FICHES)}
   <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>
   <p class="vide" id="aucun" hidden>${bi("Aucun résultat. Essayez un autre mot ou un autre gouvernorat.", "لا توجد نتيجة. جرّب كلمة أو ولاية أخرى.")}</p>
@@ -676,9 +678,9 @@ pagesVideo(root, {
       { page: "", nom: `recherche par nom + gouvernorat (${g[1]}) : nombre de résultats`, etapes: [{ sel: "#choix-g", valeur: g[0] }, { sel: "#recherche", valeur: f1.nom }], lire: "#compte", groupe: "gouvernorat", ordre: 1, croissant: true },
       { page: "", nom: `recherche par gouvernorat (${g[1]}) : nombre de résultats`, etapes: [{ sel: "#choix-g", valeur: g[0] }], lire: "#compte", groupe: "gouvernorat", ordre: 2, croissant: true },
       { page: "", nom: "accueil sans filtre : nombre total de fiches", lire: "#compte", groupe: "gouvernorat", ordre: 3, croissant: true });
-    if (puces) sc.push(
-      { page: "", nom: `métier (${m.fr_pl}) + gouvernorat (${g[1]}) : nombre de résultats`, etapes: [{ sel: "#choix-g", valeur: g[0] }, { sel: `.puce[data-m="${m.id}"]`, clic: true }], lire: "#compte", groupe: "metier", ordre: 1, croissant: true },
-      { page: "", nom: `métier (${m.fr_pl}) dans toute la Tunisie : nombre de résultats`, etapes: [{ sel: `.puce[data-m="${m.id}"]`, clic: true }], lire: "#compte", groupe: "metier", ordre: 2, croissant: true },
+    if (puces && AVEC_PAGES_METIER) sc.push(
+      { page: `metier/${m.id}/${g[0]}/`, nom: `métier (${m.fr_pl}) + gouvernorat (${g[1]}) : nombre de résultats`, lire: "#compte", groupe: "metier", ordre: 1, croissant: true },
+      { page: `metier/${m.id}/`, nom: `métier (${m.fr_pl}) dans toute la Tunisie (page du métier) : nombre de résultats`, lire: "#compte", groupe: "metier", ordre: 2, croissant: true },
       { page: "", nom: "accueil sans filtre (métiers) : nombre total de fiches", lire: "#compte", groupe: "metier", ordre: 3, croissant: true });
     sc.push(
       { page: `gouvernorat/${g[0]}/`, nom: `page du gouvernorat (${g[1]}) : nombre de fiches affiché`, lire: ".hero .intro" },

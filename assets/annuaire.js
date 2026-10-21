@@ -49,10 +49,9 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".puce").forEach(x => x.classList.toggle("on", x.dataset.m === metier));
     filtrer();
   };
-  // petits boutons : un 2e clic retire le filtre ; grandes cartes de métier : filtrent puis descendent à la liste (#liste)
-  // (correction du 06/10/2026, effacée par une synchronisation du moteur du PC le 07/10, remise le 07/10 : à reporter dans annuaires/moteur/)
+  // petits boutons (pages de gouvernorat) : un 2e clic retire le filtre.
+  // Les grandes cartes de métier de l'accueil sont de vrais liens vers la page du métier (21/10/2026) : aucun filtre ici.
   document.querySelectorAll(".puce").forEach(b => b.addEventListener("click", () => choisir(metier === b.dataset.m ? "" : b.dataset.m)));
-  document.querySelectorAll("a.metier[data-m]").forEach(a => a.addEventListener("click", () => choisir(a.dataset.m)));
   // catégories (rangée de boutons au-dessus des métiers) : ne montrent que les métiers et les fiches de la catégorie ;
   // un 2e clic sur la même catégorie montre tout (08/10/2026)
   const catDe = {};
