@@ -5,7 +5,7 @@ cloud de Claude bloque ces serveurs depuis le 08/10/2026 : aucun métier ajouté
 GitHub, lui, joint Overpass : il prépare chaque nuit cette liste (donnees/candidats-metiers.json), la routine la lit.
 
 Pour chaque étiquette craft=… / office=… / shop=… présente en Tunisie : nombre de lieux, nombre de lieux JOIGNABLES (téléphone,
-site ou e-mail), déjà dans l'annuaire ou non, santé (jamais proposée : règle de l'annuaire). Les plus joignables d'abord.
+site ou e-mail), déjà dans l'annuaire ou non, santé (indiqué pour information : la santé est permise depuis le 22/10/2026). Les plus joignables d'abord.
 """
 import datetime as dt
 import json
@@ -56,7 +56,7 @@ def main():
     sortie = {"maj": dt.date.today().isoformat(), "source": "© les contributeurs d'OpenStreetMap (ODbL)", "candidats": candidats}
     with open(os.path.join(RACINE, "donnees", "candidats-metiers.json"), "w", encoding="utf-8", newline="\n") as f:
         f.write(json.dumps(sortie, ensure_ascii=False, indent=0) + "\n")
-    libres = [c for c in candidats if not c["deja"] and not c["sante"] and not c["pas_un_metier"] and c["joignables"] >= 5]
+    libres = [c for c in candidats if not c["deja"] and not c["pas_un_metier"] and c["joignables"] >= 5]
     print(f"{len(candidats)} métiers trouvés ; {len(libres)} absents de l'annuaire avec au moins 5 lieux joignables : "
           + ", ".join(f"{c['osm']} ({c['joignables']})" for c in libres[:8]))
 
