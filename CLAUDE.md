@@ -26,6 +26,8 @@ Répondre à Ahmed **en français**, simplement. Règles communes : `../../regle
   Tunis, avant le relevé OpenStreetMap de 3h40). Elle choisit un métier absent, vérifie dans OpenStreetMap qu'il existe en Tunisie
   avec assez de fiches joignables, l'ajoute (étiquettes OSM, noms FR + AR, mots de recherche, catégorie, image SVG), teste et
   publie. Jamais de santé ni de cours particuliers.
+  Depuis le 22/10/2026, elle cherche aussi l'ORGANISME de la profession (lien `"organisme": true` ou `"organisme_aucun"`, voir le
+  CLAUDE.md du moteur).
 
 ## D'où viennent les fiches
 1. `donnees/osm.json` : robot OpenStreetMap (`tools/releve_osm.py`, moteur commun).

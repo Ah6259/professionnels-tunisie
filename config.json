@@ -49,7 +49,19 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Road_signs_Tunisia.jpg"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://www.attt.com.tn/",
+          "fr": "ATTT — Agence technique des transports terrestres",
+          "ar": "الوكالة الفنية للنقل البري",
+          "note": {
+            "fr": "l'organisme public des examens du permis de conduire (délais des examens)",
+            "ar": "الهيكل العمومي لامتحانات رخص السياقة (آجال الامتحانات)"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "avocat",
@@ -73,7 +85,19 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Close-up_of_Lady_Justice_statue_holding_scales,_symbolizing_justice_and_fairness.jpg"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://avocat.org.tn/annuaire",
+          "fr": "ONAT — Ordre national des avocats de Tunisie",
+          "ar": "الهيئة الوطنية للمحامين بتونس",
+          "note": {
+            "fr": "l'annuaire officiel des avocats inscrits à l'Ordre",
+            "ar": "الدليل الرسمي للمحامين المرسمين بالهيئة"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "notaire",
@@ -97,7 +121,19 @@
         "licence": "CC0",
         "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "source": "https://commons.wikimedia.org/wiki/File:Tampon_encreur_pour_timbre_humide_du_Service_Cin%C3%A9matographique_FFI,_2002.73(2).jpg"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://www.justice.gov.tn/index.php?id=367",
+          "fr": "Ministère de la Justice — tableau des notaires",
+          "ar": "وزارة العدل — جدول عدول الإشهاد",
+          "note": {
+            "fr": "la liste officielle des notaires par circonscription",
+            "ar": "الجدول الرسمي لعدول الإشهاد حسب الدوائر"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "huissier",
@@ -121,7 +157,19 @@
         "licence": "CC0",
         "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "source": "https://commons.wikimedia.org/wiki/File:Sommation_par_huissier_de_justice_%C3%A0_l%E2%80%99encontre_de_Jean_Gigoux,_BAL_46.3.jpg"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://www.justice.gov.tn/index.php?id=366",
+          "fr": "Ministère de la Justice — tableau des huissiers de justice",
+          "ar": "وزارة العدل — جدول العدول المنفذين",
+          "note": {
+            "fr": "la liste officielle des huissiers de justice par circonscription",
+            "ar": "الجدول الرسمي للعدول المنفذين حسب الدوائر"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "traducteur",
@@ -145,7 +193,29 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Arabic_dictionary_(1923).jpg"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://www.justice.gov.tn/index.php?id=368",
+          "fr": "Ministère de la Justice — traducteurs assermentés par langue",
+          "ar": "وزارة العدل — جدول المترجمين المحلفين حسب الاختصاص",
+          "note": {
+            "fr": "la liste officielle des traducteurs assermentés, langue par langue",
+            "ar": "الجدول الرسمي للمترجمين المحلفين حسب اللغة"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://www.justice.gov.tn/index.php?id=369",
+          "fr": "Ministère de la Justice — traducteurs assermentés par région",
+          "ar": "وزارة العدل — جدول المترجمين المحلفين حسب الدوائر",
+          "note": {
+            "fr": "la même liste officielle, classée par tribunal",
+            "ar": "نفس الجدول الرسمي مرتّبًا حسب المحاكم"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "comptable",
@@ -169,7 +239,29 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Accounting_book.jpg"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://oect.org.tn/annuaire-des-membres-de-lordre-des-experts-comptables-de-tunisie-a/",
+          "fr": "OECT — Ordre des experts-comptables de Tunisie",
+          "ar": "هيئة الخبراء المحاسبين بالبلاد التونسية",
+          "note": {
+            "fr": "l'annuaire officiel des experts-comptables inscrits",
+            "ar": "الدليل الرسمي للخبراء المحاسبين المرسمين"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://www.cct.tn/annuaire/",
+          "fr": "CCT — Compagnie des comptables de Tunisie",
+          "ar": "مجمع المحاسبين بالبلاد التونسية",
+          "note": {
+            "fr": "l'annuaire des comptables membres, par région",
+            "ar": "دليل المحاسبين الأعضاء حسب الجهة"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "conseiller-fiscal",
@@ -193,7 +285,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Accounting_book.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : pas d'Ordre (projet de loi) ; la chambre nationale des conseils fiscaux (UTICA) n'a pas de site"
     },
     {
       "id": "salle-des-fetes",
@@ -218,7 +311,8 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Elegant_banquet_setup_for_wedding_reception_with_beautifully_arranged_tables_in_soft_lighting.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "photographe",
@@ -243,7 +337,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:2012-05-20_Professional_wedding_group_portrait_on_the_lawn.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre UTICA sans site officiel"
     },
     {
       "id": "traiteur",
@@ -267,7 +362,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Cucina_tunisina.JPG"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "patisserie",
@@ -291,7 +387,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Sweets_of_Tunisia_01.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre nationale des pâtissiers (UTICA) sans site"
     },
     {
       "id": "coiffure-beaute",
@@ -316,7 +413,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Henna_Party_-_Moroccan_Wedding_-_Brahim_FARAJI.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre nationale des coiffeurs (UTICA) sans site"
     },
     {
       "id": "plombier",
@@ -340,7 +438,8 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=160475495"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre UTICA sans site ; utica.org.tn ne s'affiche pas"
     },
     {
       "id": "electricien",
@@ -364,7 +463,8 @@
         "licence": "CC BY-SA 3.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=11768173"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre UTICA sans site ; utica.org.tn ne s'affiche pas"
     },
     {
       "id": "menuisier",
@@ -389,7 +489,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=57915833"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre UTICA sans site ; utica.org.tn ne s'affiche pas"
     },
     {
       "id": "aluminium-vitrerie",
@@ -414,7 +515,8 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=189236117"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre UTICA sans site ; utica.org.tn ne s'affiche pas"
     },
     {
       "id": "peintre",
@@ -438,7 +540,8 @@
         "licence": "CC BY-SA 2.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
         "source": "https://commons.wikimedia.org/wiki/File:Rolling_in_the_Middle_(34571931105)_(cropped).jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : fédération du bâtiment (UTICA) sans site"
     },
     {
       "id": "climatisation",
@@ -463,7 +566,8 @@
         "licence": "CC BY-SA 3.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=35392058"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "serrurier",
@@ -488,7 +592,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/wiki/File:Key_Duplication_Machine_Code_Cutter.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "mecanicien",
@@ -512,7 +617,8 @@
         "licence": "CC0",
         "licence_url": "https://creativecommons.org/publicdomain/zero/1.0/",
         "source": "https://commons.wikimedia.org/wiki/File:Mechanic_repairing_car_engine_1.jpg"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : fédération nationale de la mécanique (UTICA) sans site"
     },
     {
       "id": "pneus",
@@ -536,7 +642,8 @@
         "licence": "CC BY-SA 2.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=14141154"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "reparation-telephone",
@@ -561,7 +668,8 @@
         "licence": "CC BY-SA 2.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=69190948"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "informatique",
@@ -586,7 +694,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=39693335"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre des SSII (UTICA) sans site officiel trouvé"
     },
     {
       "id": "opticien",
@@ -610,7 +719,8 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=97552019"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre syndicale des opticiens sans site ; site du ministère de la Santé injoignable"
     },
     {
       "id": "architecte",
@@ -634,7 +744,19 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=99971121"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://oat.tn/oat24/fr/finduser.html",
+          "fr": "OAT — Ordre des architectes de Tunisie",
+          "ar": "هيئة المهندسين المعماريين التونسيين",
+          "note": {
+            "fr": "trouver un architecte inscrit à l'Ordre",
+            "ar": "البحث عن مهندس معماري مرسّم بالهيئة"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "demenagement",
@@ -658,7 +780,8 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=50576123"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : page du ministère du Transport (cahiers des charges) au certificat expiré : à reprendre quand il sera renouvelé"
     },
     {
       "id": "location-voiture",
@@ -682,7 +805,8 @@
         "licence": "CC0",
         "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "source": "https://commons.wikimedia.org/w/index.php?curid=91322012"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : page du ministère du Transport (cahiers des charges) au certificat expiré : à reprendre quand il sera renouvelé ; chambre UTICA sans site"
     },
     {
       "id": "couturier",
@@ -706,7 +830,19 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=79255139"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://artisanat.nat.tn/",
+          "fr": "ONAT — Office national de l'artisanat tunisien",
+          "ar": "الديوان الوطني للصناعات التقليدية",
+          "note": {
+            "fr": "l'organisme public de l'artisanat (carte d'artisan, registre des artisans)",
+            "ar": "الهيكل العمومي للصناعات التقليدية (بطاقة حرفي، سجل الحرفيين)"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "salle-de-sport",
@@ -730,7 +866,19 @@
         "licence": "CC BY 2.0",
         "licence_url": "https://creativecommons.org/licenses/by/2.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=197293168"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://www.mjs.tn/index.php/ar/%D8%AE%D8%AF%D9%85%D8%A7%D8%AA/%D8%A8%D8%B9%D8%AB-%D8%A7%D9%84%D9%85%D8%B4%D8%A7%D8%B1%D9%8A%D8%B9/%D9%83%D8%B1%D8%A7%D8%B3%D8%A7%D8%AA-%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D8%B7.html",
+          "fr": "Ministère de la Jeunesse et des Sports — cahiers des charges",
+          "ar": "وزارة الشباب والرياضة — كراسات الشروط",
+          "note": {
+            "fr": "le cahier des charges officiel des salles de sport privées (en arabe)",
+            "ar": "كراس الشروط الرسمي للقاعات الخاصة للرياضة"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "agence-immobiliere",
@@ -763,7 +911,8 @@
           "note": {
             "fr": "la liste de ses agences membres agréées",
             "ar": "قائمة الوكالات المنخرطة والمرخّصة"
-          }
+          },
+          "organisme": true
         },
         {
           "url": "https://immobilier.clicvia.com/",
@@ -864,7 +1013,29 @@
         "licence": "CC BY-SA 4.0",
         "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=37736547"
-      }
+      },
+      "liens": [
+        {
+          "url": "https://www.ftav.org/",
+          "fr": "FTAV — Fédération tunisienne des agences de voyages et de tourisme",
+          "ar": "الجامعة التونسية لوكالات الأسفار والسياحة",
+          "note": {
+            "fr": "la fédération de la profession et l'annuaire de ses agences membres",
+            "ar": "جامعة المهنة ودليل الوكالات المنخرطة"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://www.discovertunisia.com/informations_touristiques?title=&shs_term_node_tid_depth=13&field_designation_crt_tid=All",
+          "fr": "ONTT — liste officielle des agences de voyages",
+          "ar": "الديوان الوطني التونسي للسياحة — قائمة وكالات الأسفار",
+          "note": {
+            "fr": "la liste officielle des agences agréées, avec leurs coordonnées",
+            "ar": "القائمة الرسمية للوكالات المرخّصة مع عناوينها"
+          },
+          "organisme": true
+        }
+      ]
     },
     {
       "id": "lavage-auto",
@@ -888,7 +1059,8 @@
         "licence": "CC BY 4.0",
         "licence_url": "https://creativecommons.org/licenses/by/4.0",
         "source": "https://commons.wikimedia.org/w/index.php?curid=172184694"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : aucun organisme avec un site officiel"
     },
     {
       "id": "pieces-auto",
@@ -912,7 +1084,8 @@
         "licence": "Public domain",
         "licence_url": "https://commons.wikimedia.org/wiki/File:Engine_oil_filter_cutaway.JPG",
         "source": "https://commons.wikimedia.org/w/index.php?curid=9967769"
-      }
+      },
+      "organisme_aucun": "22/10/2026 : chambre UTICA sans site"
     }
   ],
   "categories": [

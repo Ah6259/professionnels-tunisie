@@ -139,6 +139,15 @@ check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portab
   const acc = lire("index.html") + (avecAdr ? lire(`gouvernorat/${avecAdr.gouvernorat}/index.html`) : "");
   check("carte de la liste : adresse et site / Facebook affichés quand la fiche les a ; fiche : lien Facebook",
     (!avecAdr || acc.includes(`<span class="fc-adresse">`)) && (!avecFb || lire(`fiche/${avecFb.id}/index.html`).includes(`href="${avecFb.facebook.replace(/&/g, "&amp;")}"`))); }
+// 22/10/2026 (Ahmed : « faire pareil pour les autres professions [...] et pour chaque métier que le robot va ajouter ») :
+// chaque métier a l'ORGANISME de sa profession (ordre, chambre, fédération, administration) dans metiers[].liens avec "organisme": true,
+// ou, si aucun site officiel vérifiable n'existe, "organisme_aucun": "JJ/MM/AAAA : raison" (la recherche a été faite).
+{
+  const sansOrg = C.metiers.filter(m => !(m.liens || []).some(l => l.organisme && /^https:\/\//.test(l.url) && l.fr && /[؀-ۿ]/.test(l.ar || "")) && !/^\d\d\/\d\d\/20\d\d : ./.test(m.organisme_aucun || ""));
+  check(`organisme de la profession cherché pour chaque métier (lien "organisme": true, ou "organisme_aucun": "date : raison") ${sansOrg.map(m => m.id).join(" ")}`, !sansOrg.length);
+  const orgs = C.metiers.flatMap(m => (m.liens || []).filter(l => l.organisme).map(l => [m.id, l.url]));
+  check("organismes affichés : sur la page du métier, ou sur l'accueil d'un annuaire à un seul métier", orgs.every(([id, u]) => lire(C.metiers.length === 1 ? "index.html" : `metier/${id}/index.html`).includes(`href="${u.replace(/&/g, "&amp;")}"`)));
+}
 // 21/10/2026 (Ahmed : « dans la page des agences ajoute aussi GPAI.tn ») : liens « Voir aussi » d'un métier (config.json : metiers[].liens)
 { const mL = C.metiers.find(m => (m.liens || []).length && parMetierPage(m.id));
   check("page d'un métier : liens « Voir aussi » du réglage (ex. GPAI pour les agences immobilières)",

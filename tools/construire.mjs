@@ -242,6 +242,7 @@ function carteTunisie(racine, comptes, actif = "") {
   return `<svg class="carte-tn" viewBox="0 0 232 462" role="img" aria-label="Carte de la Tunisie par gouvernorat"><path class="tn-terre" d="${TN_CONTOUR}"/><ellipse class="tn-terre" cx="${TN_DJERBA[0]}" cy="${TN_DJERBA[1]}" rx="9" ry="6.5"/>${bulles}</svg>`;
 }
 
+const blocLiens = (titre, liens) => (liens || []).length ? `<section class="carte voir-aussi"><h2>${bi(esc(titre.fr), esc(titre.ar || titre.fr))}</h2><ul>${liens.map(l => `<li><a href="${esc(l.url)}" rel="noopener" target="_blank">${bi(esc(l.fr), esc(l.ar || l.fr))}</a>${l.note ? ` — ${bi(esc(l.note.fr), esc(l.note.ar || l.note.fr))}` : ""}</li>`).join("")}</ul></section>` : "";
 /* ---------------- pages ---------------- */
 const pages = {};
 const compteG = Object.fromEntries(GOUVERNORATS.map(g => [g[0], FICHES.filter(f => f.gouvernorat === g[0]).length]));
@@ -264,6 +265,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
 <main class="wrap">
   ${CATS.length > 1 ? `<div class="cats" id="cats">${CATS.filter(k => k.metiers.some(id => FICHES.some(f => f.metier === id))).map(k => { const m = C.metiers.find(x => x.id === k.metiers.find(id => FICHES.some(f => f.metier === id))); return `<button type="button" class="cat" data-cat="${k.id}">${imgMetier(m, "", 22)}${biO(k)}</button>`; }).join("")}</div>` : ""}
   ${C.metiers.length > 1 ? `<div class="metiers">${C.metiers.filter(m => FICHES.some(f => f.metier === m.id)).map(m => `<a class="metier${m.photo ? " avec-photo" : ""}" href="metier/${m.id}/" data-m="${m.id}"${dCat(m.id)}>${m.photo ? `<img class="photo-metier" src="${esc(m.photo.fichier)}" alt="${esc((m.photo.alt || {}).fr || m.fr_pl)}" width="300" height="225" loading="lazy">` : ""}${imgMetier(m, "", 44)}<span>${biO({ fr: m.fr_pl, ar: m.ar_pl })}</span><span class="n">${FICHES.filter(f => f.metier === m.id).length}</span></a>`).join("")}</div>` : ""}
+  ${C.metiers.length === 1 ? blocLiens({ fr: "Voir aussi", ar: "انظر أيضًا" }, C.metiers[0].liens) : "" /* annuaire à un seul métier : pas de page métier, l'organisme est sur l'accueil (22/10/2026) */}
   ${filtres("", false, FICHES, false)}
   ${notePro(FICHES)}
   <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>
@@ -311,7 +313,6 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
 // dans Google (visibilité, 08/10/2026). Seulement les combinaisons qui ont au moins une fiche (jamais de page vide).
 // liens réglables d'un métier (config.json : metiers[].liens = « Voir aussi » en haut ; metiers[].listes = [{titre, liens}] en bas),
 // 21/10/2026 (Ahmed : GPAI et les sites d'annonces immobilières sur la page des agences)
-const blocLiens = (titre, liens) => (liens || []).length ? `<section class="carte voir-aussi"><h2>${bi(esc(titre.fr), esc(titre.ar || titre.fr))}</h2><ul>${liens.map(l => `<li><a href="${esc(l.url)}" rel="noopener" target="_blank">${bi(esc(l.fr), esc(l.ar || l.fr))}</a>${l.note ? ` — ${bi(esc(l.note.fr), esc(l.note.ar || l.note.fr))}` : ""}</li>`).join("")}</ul></section>` : "";
 
 function pageMetier({ m, slug, liste, compteMG }) {
   const g = slug ? G[slug] : null, racine = slug ? "../../../" : "../../", chemin = `metier/${m.id}/${slug ? slug + "/" : ""}`;
