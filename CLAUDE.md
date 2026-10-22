@@ -3,7 +3,9 @@
 > **Ce site** : https://ah6259.github.io/professionnels-tunisie/ — annuaire gratuit qui REGROUPE les métiers de nos 4 annuaires
 > spécialisés (auto-écoles, avocats/notaires/huissiers/traducteurs, comptables/conseillers fiscaux, mariage) et ajoute 13 métiers
 > d'artisans et de services. Couleur vert sobre (#2E6B4E), icône mallette. Les 4 annuaires spécialisés continuent à vivre séparément.
-> Pas de santé ni de cours particuliers.
+> Pas de cours particuliers. **Santé ajoutée le 22/10/2026 (décision d'Ahmed)** : médecins, dentistes, cliniques et chirurgie,
+> pharmacies (catégorie « Santé », avec les opticiens) ; liens vers l'Ordre et les sites médicaux connus en « Voir aussi ».
+> Étape suivante prévue : notre propre liste de médecins classée par spécialité (les spécialités sont rarement dans OpenStreetMap).
 
 Fichier lu par Claude Code au début de chaque session. **Dépôt PUBLIC : rien de personnel ni de secret, jamais le nom d'un concurrent.**
 Répondre à Ahmed **en français**, simplement. Règles communes : `../../regles communes a tous les sites.md`.
@@ -25,7 +27,7 @@ Répondre à Ahmed **en français**, simplement. Règles communes : `../../regle
 - **Un nouveau métier par jour** (demande d'Ahmed, 08/10/2026) : routine cloud `professionnels-nouveau-metier` (2h30, heure de
   Tunis, avant le relevé OpenStreetMap de 3h40). Elle choisit un métier absent, vérifie dans OpenStreetMap qu'il existe en Tunisie
   avec assez de fiches joignables, l'ajoute (étiquettes OSM, noms FR + AR, mots de recherche, catégorie, image SVG), teste et
-  publie. Jamais de santé ni de cours particuliers.
+  publie. Jamais de cours particuliers (la santé est permise depuis le 22/10/2026).
   Depuis le 22/10/2026, elle cherche aussi l'ORGANISME de la profession (lien `"organisme": true` ou `"organisme_aucun"`, voir le
   CLAUDE.md du moteur).
 

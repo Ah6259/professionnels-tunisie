@@ -1086,6 +1086,334 @@
         "source": "https://commons.wikimedia.org/w/index.php?curid=9967769"
       },
       "organisme_aucun": "22/10/2026 : chambre UTICA sans site"
+    },
+    {
+      "id": "medecin",
+      "osm": [
+        "amenity=doctors",
+        "healthcare=doctor"
+      ],
+      "fr": "Médecin",
+      "fr_pl": "Médecins",
+      "ar": "طبيب",
+      "ar_pl": "أطباء",
+      "mots": "médecin medecin docteur dr cabinet médical généraliste spécialiste consultation toubib tbib doctour طبيب أطباء دكتور عيادة طب طبيب عام",
+      "photo": {
+        "fichier": "assets/metiers-photos/medecin.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Stéthoscope de médecin posé sur une table",
+          "ar": "سماعة طبيب موضوعة على طاولة"
+        },
+        "auteur": "Jacek Halicki",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=134681297"
+      },
+      "liens": [
+        {
+          "url": "https://ordremedecins.tn/tableau-ordre.html",
+          "fr": "CNOM — Conseil national de l'Ordre des médecins de Tunisie",
+          "ar": "المجلس الوطني لعمادة الأطباء بتونس",
+          "note": {
+            "fr": "le tableau officiel des médecins inscrits, recherche par spécialité et gouvernorat",
+            "ar": "الجدول الرسمي للأطباء المرسّمين، بحث حسب الاختصاص والولاية"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://santetunisie.rns.tn/fr/component/specialistes/",
+          "fr": "Ministère de la Santé — médecins spécialistes",
+          "ar": "وزارة الصحة — دليل الأطباء المختصين",
+          "note": {
+            "fr": "l'annuaire officiel des spécialistes, par spécialité et gouvernorat",
+            "ar": "الدليل الرسمي للأطباء المختصين حسب الاختصاص والولاية"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://santetunisie.rns.tn/fr/component/annuaire/?view=medecinsgeneralistes",
+          "fr": "Ministère de la Santé — médecins généralistes",
+          "ar": "وزارة الصحة — دليل أطباء الطب العام",
+          "note": {
+            "fr": "l'annuaire officiel des généralistes, par gouvernorat",
+            "ar": "الدليل الرسمي لأطباء الطب العام حسب الولاية"
+          },
+          "organisme": true
+        }
+      ],
+      "listes": [
+        {
+          "titre": {
+            "fr": "Sites médicaux connus en Tunisie",
+            "ar": "مواقع طبية معروفة في تونس"
+          },
+          "liens": [
+            {
+              "url": "https://www.med.tn/medecin",
+              "fr": "Med.tn",
+              "ar": "Med.tn",
+              "note": {
+                "fr": "médecins par spécialité et par ville, rendez-vous en ligne",
+                "ar": "الأطباء حسب الاختصاص والمدينة، حجز موعد"
+              }
+            },
+            {
+              "url": "https://www.dabadoc.com/tn",
+              "fr": "DabaDoc Tunisie",
+              "ar": "DabaDoc تونس",
+              "note": {
+                "fr": "rendez-vous médicaux en ligne",
+                "ar": "حجز المواعيد الطبية عبر الإنترنت"
+              }
+            },
+            {
+              "url": "https://www.tobba.tn/",
+              "fr": "Tobba.tn",
+              "ar": "Tobba.tn",
+              "note": {
+                "fr": "rendez-vous au cabinet avec des médecins",
+                "ar": "حجز موعد في العيادة"
+              }
+            },
+            {
+              "url": "https://medicano.tn/",
+              "fr": "Medicano.tn",
+              "ar": "Medicano.tn",
+              "note": {
+                "fr": "annuaire médical, rendez-vous et avis de patients",
+                "ar": "دليل طبي، مواعيد وآراء المرضى"
+              }
+            },
+            {
+              "url": "https://www.allodocteur.tn/index-fr.php",
+              "fr": "Allo Docteur",
+              "ar": "ألو دكتور",
+              "note": {
+                "fr": "médecin à domicile et ambulance 24h/24 (Tunis)",
+                "ar": "طبيب في المنزل وإسعاف 24/24 (تونس)"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "dentiste",
+      "osm": [
+        "amenity=dentist",
+        "healthcare=dentist"
+      ],
+      "fr": "Dentiste",
+      "fr_pl": "Dentistes",
+      "ar": "طبيب أسنان",
+      "ar_pl": "أطباء الأسنان",
+      "mots": "dentiste dentaire dents chirurgien-dentiste orthodontiste cabinet dentaire tbib snan سنان أسنان طبيب أسنان تقويم الأسنان",
+      "photo": {
+        "fichier": "assets/metiers-photos/dentiste.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Fauteuil de dentiste dans un cabinet dentaire",
+          "ar": "كرسي طبيب الأسنان في عيادة"
+        },
+        "auteur": "User:Nizil Shah",
+        "licence": "CC BY-SA 3.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/3.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=28021148"
+      },
+      "liens": [
+        {
+          "url": "https://santetunisie.rns.tn/fr/component/annuaire/?view=dentistes",
+          "fr": "Ministère de la Santé — dentistes",
+          "ar": "وزارة الصحة — دليل أطباء الأسنان",
+          "note": {
+            "fr": "l'annuaire officiel des dentistes, par gouvernorat",
+            "ar": "الدليل الرسمي لأطباء الأسنان حسب الولاية"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://www.cnomdt.tn/medecins/",
+          "fr": "CNOMDT — Ordre des médecins dentistes de Tunisie",
+          "ar": "المجلس الوطني لهيئة أطباء الأسنان بتونس",
+          "note": {
+            "fr": "le site officiel de l'Ordre des dentistes",
+            "ar": "الموقع الرسمي لهيئة أطباء الأسنان"
+          },
+          "organisme": true
+        }
+      ],
+      "listes": [
+        {
+          "titre": {
+            "fr": "Sites médicaux connus en Tunisie",
+            "ar": "مواقع طبية معروفة في تونس"
+          },
+          "liens": [
+            {
+              "url": "https://www.med.tn/medecin/dentiste",
+              "fr": "Med.tn — dentistes",
+              "ar": "Med.tn — أطباء الأسنان",
+              "note": {
+                "fr": "dentistes par ville, rendez-vous en ligne",
+                "ar": "أطباء الأسنان حسب المدينة، حجز موعد"
+              }
+            },
+            {
+              "url": "https://www.dabadoc.com/tn/dentiste",
+              "fr": "DabaDoc Tunisie — dentistes",
+              "ar": "DabaDoc تونس — أطباء الأسنان",
+              "note": {
+                "fr": "rendez-vous en ligne",
+                "ar": "حجز موعد عبر الإنترنت"
+              }
+            },
+            {
+              "url": "https://medicano.tn/dentiste/",
+              "fr": "Medicano.tn — dentistes",
+              "ar": "Medicano.tn — أطباء الأسنان",
+              "note": {
+                "fr": "avis et rendez-vous",
+                "ar": "آراء ومواعيد"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "clinique",
+      "osm": [
+        "amenity=clinic",
+        "healthcare=clinic"
+      ],
+      "fr": "Clinique",
+      "fr_pl": "Cliniques et chirurgie",
+      "ar": "مصحة",
+      "ar_pl": "المصحات والجراحة",
+      "mots": "clinique polyclinique chirurgie chirurgien opération maternité urgences hospitalisation mosha mus7a مصحة مصحات جراحة جراح عملية ولادة استعجالي",
+      "photo": {
+        "fichier": "assets/metiers-photos/clinique.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Chambre de clinique avec un lit médicalisé",
+          "ar": "غرفة في مصحة بسرير طبي"
+        },
+        "auteur": "Tiia Monto",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=118000139"
+      },
+      "liens": [
+        {
+          "url": "https://santetunisie.rns.tn/fr/component/polycliniques/",
+          "fr": "Ministère de la Santé — cliniques privées",
+          "ar": "وزارة الصحة — قائمة المصحات الخاصة",
+          "note": {
+            "fr": "la liste officielle des cliniques privées autorisées, par gouvernorat",
+            "ar": "القائمة الرسمية للمصحات الخاصة المرخّص لها حسب الولاية"
+          },
+          "organisme": true
+        }
+      ],
+      "listes": [
+        {
+          "titre": {
+            "fr": "Sites médicaux connus en Tunisie",
+            "ar": "مواقع طبية معروفة في تونس"
+          },
+          "liens": [
+            {
+              "url": "https://www.med.tn/clinique",
+              "fr": "Med.tn — cliniques",
+              "ar": "Med.tn — المصحات",
+              "note": {
+                "fr": "cliniques par spécialité (chirurgie, maternité…) et par région",
+                "ar": "المصحات حسب الاختصاص (جراحة، ولادة…) والجهة"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "pharmacie",
+      "osm": [
+        "amenity=pharmacy",
+        "healthcare=pharmacy"
+      ],
+      "fr": "Pharmacie",
+      "fr_pl": "Pharmacies",
+      "ar": "صيدلية",
+      "ar_pl": "صيدليات",
+      "mots": "pharmacie pharmacien pharmacienne médicament médicaments ordonnance pharmacie de garde farmasia sbiteria صيدلية صيدليات صيدلي دواء أدوية",
+      "photo": {
+        "fichier": "assets/metiers-photos/pharmacie.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Étagères de médicaments dans une pharmacie",
+          "ar": "رفوف أدوية في صيدلية"
+        },
+        "auteur": "User:Mattes",
+        "licence": "Public domain",
+        "licence_url": "https://commons.wikimedia.org/wiki/File:Hospital_Pharmacy.JPG",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=1729055"
+      },
+      "liens": [
+        {
+          "url": "https://cnopt.tn/",
+          "fr": "CNOPT — Conseil national de l'Ordre des pharmaciens de Tunisie",
+          "ar": "المجلس الوطني لهيئة الصيادلة بتونس",
+          "note": {
+            "fr": "le site officiel de l'Ordre des pharmaciens",
+            "ar": "الموقع الرسمي لهيئة الصيادلة"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://www.apothicare.tn/findmaps",
+          "fr": "Apothicare — pharmacies de garde (Ordre des pharmaciens)",
+          "ar": "أبوتيكار — صيدليات الاستمرار (هيئة الصيادلة)",
+          "note": {
+            "fr": "le tableau de garde officiel et la carte des pharmacies de garde et de nuit",
+            "ar": "جدول الاستمرار الرسمي وخريطة صيدليات الاستمرار والليل"
+          },
+          "organisme": true
+        },
+        {
+          "url": "https://dpm.tn/pharmacie/liste-des-officines",
+          "fr": "DPM — Direction de la pharmacie et du médicament : liste des pharmacies",
+          "ar": "إدارة الصيدلة والدواء — قائمة الصيدليات",
+          "note": {
+            "fr": "la liste officielle des pharmacies de jour et de nuit, par gouvernorat",
+            "ar": "القائمة الرسمية لصيدليات النهار والليل حسب الولاية"
+          },
+          "organisme": true
+        }
+      ],
+      "listes": [
+        {
+          "titre": {
+            "fr": "Sites médicaux connus en Tunisie",
+            "ar": "مواقع طبية معروفة في تونس"
+          },
+          "liens": [
+            {
+              "url": "https://www.med.tn/pharmacie",
+              "fr": "Med.tn — pharmacies ouvertes",
+              "ar": "Med.tn — الصيدليات المفتوحة",
+              "note": {
+                "fr": "pharmacies de jour, de nuit et de garde, par gouvernorat",
+                "ar": "صيدليات النهار والليل والاستمرار حسب الولاية"
+              }
+            }
+          ]
+        }
+      ]
     }
   ],
   "categories": [
@@ -1112,7 +1440,6 @@
         "traiteur",
         "patisserie",
         "coiffure-beaute",
-        "opticien",
         "couturier",
         "salle-de-sport"
       ]
@@ -1155,6 +1482,18 @@
       "metiers": [
         "reparation-telephone",
         "informatique"
+      ]
+    },
+    {
+      "id": "sante",
+      "fr": "Santé",
+      "ar": "الصحة",
+      "metiers": [
+        "medecin",
+        "dentiste",
+        "clinique",
+        "pharmacie",
+        "opticien"
       ]
     }
   ],

@@ -74,6 +74,12 @@ for (const f of gardees) {
     for (const k of ["description", "specialites", "whatsapp", "horaires"]) if (p[k]) f[k] = p[k];
   }
 }
+// site web d'une fiche (22/10/2026) : OpenStreetMap contient parfois « nn » ou « www.exemple.com » sans https:// ;
+// on complète une adresse de site plausible, on retire le reste (sinon lien cassé vers une page du site)
+for (const f of gardees) if (f.site) {
+  const s = String(f.site).trim().split(/[;\s]/)[0];
+  f.site = /^https?:\/\/[^\s/]+\.[^\s]+/i.test(s) ? s : /^(www\.)?[a-z0-9-]+(\.[a-z0-9-]+)+(\/\S*)?$/i.test(s) ? "https://" + s : null;
+}
 // règle d'Ahmed (06/10/2026) : aucune fiche vide. Une fiche sans téléphone, sans WhatsApp et sans adresse
 // de l'établissement n'est pas publiée (elle reste dans les données et revient toute seule dès qu'un contact est connu).
 // règle renforcée (06/10/2026) : une fiche publiée a un TÉLÉPHONE, un WhatsApp ou une ADRESSE ; nom + lien seuls = fiche vide
