@@ -188,13 +188,16 @@ function carte(f, racine) {
 
 // avecPuces = false sur l'accueil (21/10/2026, Ahmed) : les grandes cartes de métier (avec photo) mènent à la page du métier,
 // les petits boutons de métier en double sont retirés. Ils restent sur les pages de gouvernorat (filtre dans le gouvernorat).
-function filtres(racine, gouvernoratFixe, liste = FICHES, avecPuces = true) {
+// lienPuce (pages de gouvernorat, 22/10/2026, Ahmed) : chaque bouton de métier (avec icône) MÈNE à la page « ce métier dans ce
+// gouvernorat » ; la liste « Par métier à … » du bas, en double, est retirée.
+function filtres(racine, gouvernoratFixe, liste = FICHES, avecPuces = true, lienPuce = null) {
   const nb = Object.fromEntries(C.metiers.map(m => [m.id, liste.filter(f => f.metier === m.id).length]));
   const presents = C.metiers.filter(m => nb[m.id] > 0);
   return `<div class="filtres" id="filtres">
   <label class="recherche">${svg("loupe")}<input type="search" id="recherche" autocomplete="off" aria-label="Rechercher"></label>
   ${gouvernoratFixe ? "" : `<select id="choix-g" aria-label="Gouvernorat"><option value="">${esc("Tous les gouvernorats")}</option>${GOUVERNORATS.map(g => `<option value="${g[0]}" data-ar="${esc(g[2])}">${esc(g[1])}</option>`).join("")}</select>`}
-  ${avecPuces && presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}"${dCat(m.id)}>${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
+  ${lienPuce && presents.length ? `<div class="puces">${presents.map(m => `<a class="puce" data-m="${m.id}" href="${lienPuce(m)}">${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></a>`).join("")}</div>`
+    : avecPuces && presents.length > 1 ? `<div class="puces">${presents.map(m => `<button type="button" class="puce" data-m="${m.id}"${dCat(m.id)}>${imgMetier(m, racine, 22)}${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${nb[m.id]}</span></button>`).join("")}</div>` : ""}
 </div>
 <p class="compte" id="compte" aria-live="polite"></p>`;
 }
@@ -265,8 +268,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   ${notePro(FICHES)}
   <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>
   <p class="vide" id="aucun" hidden>${bi("Aucun résultat. Essayez un autre mot ou un autre gouvernorat.", "لا توجد نتيجة. جرّب كلمة أو ولاية أخرى.")}</p>
-  ${AVEC_PAGES_METIER ? `<h2 class="titre-section">${bi("Par métier", "حسب المهنة")}</h2>
-  <section class="carte"><div class="gouvernorats">${C.metiers.filter(m => parMetier(m.id).length).map(m => `<a href="metier/${m.id}/">${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${parMetier(m.id).length}</span></a>`).join("")}</div></section>` : ""}
+  ${"" /* liste « Par métier » retirée le 22/10/2026 (Ahmed) : en double des cartes de métier avec photo, qui mènent aux mêmes pages */}
   <h2 class="titre-section">${bi("Par gouvernorat", "حسب الولاية")}</h2>
   <section class="carte">
     <div class="gouvernorats">${GOUVERNORATS.map(g => `<a href="gouvernorat/${g[0]}/">${bi(esc(g[1]), esc(g[2]))}<span class="n">${compteG[g[0]]}</span></a>`).join("")}</div>
@@ -293,12 +295,8 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
   <figure class="hero-carte petite">${carteTunisie("../../", compteG, slug)}<figcaption>${bi("Autres gouvernorats : touchez la carte", "ولايات أخرى: اضغط على الخريطة")}</figcaption></figure>
 </div></section>
 <main class="wrap">
-  ${liste.length ? filtres("../../", true, liste) + notePro(liste) + `<div class="liste protege" id="liste">${liste.map(f => carte(f, "../../")).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>`
+  ${liste.length ? filtres("../../", true, liste, true, AVEC_PAGES_METIER ? m => `../../metier/${m.id}/${slug}/` : null) + notePro(liste) + `<div class="liste protege" id="liste">${liste.map(f => carte(f, "../../")).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>`
     : `<section class="carte appel-vide"><h2>${bi(`Soyez parmi les premiers à ${esc(fr)}`, `كن من الأوائل في ${esc(ar)}`)}</h2><p>${bi(`Aucune fiche pour l'instant dans le gouvernorat de ${esc(fr)}. Vous êtes un professionnel ici, ou vous en connaissez un ? L'ajout est gratuit.`, `لا توجد بطاقة حاليًا في ولاية ${esc(ar)}. هل أنت مهني هنا أو تعرف مهنيًا؟ الإضافة مجانية.`)}</p><a class="btn" href="../../inscription/">${bi("Ajouter une fiche gratuitement", "أضف بطاقة مجانًا")}</a></section>`}
-  ${AVEC_PAGES_METIER && liste.length ? `<section class="carte">
-    <h2>${bi(`Par métier à ${esc(fr)}`, `حسب المهنة في ولاية ${esc(ar)}`)}</h2>
-    <div class="gouvernorats">${C.metiers.map(m => [m, liste.filter(f => f.metier === m.id).length]).filter(x => x[1]).map(([m, n]) => `<a href="../../metier/${m.id}/${slug}/">${biO({ fr: m.fr_pl, ar: m.ar_pl })}<span class="n">${n}</span></a>`).join("")}</div>
-  </section>` : ""}
   <section class="carte">
     <h2>${bi("Autres gouvernorats", "ولايات أخرى")}</h2>
     <div class="gouvernorats">${GOUVERNORATS.filter(g => g[0] !== slug).map(g => `<a href="../../gouvernorat/${g[0]}/">${bi(esc(g[1]), esc(g[2]))}<span class="n">${compteG[g[0]]}</span></a>`).join("")}</div>
