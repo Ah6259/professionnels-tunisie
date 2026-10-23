@@ -152,6 +152,14 @@ check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portab
 { const mL = C.metiers.find(m => (m.liens || []).length && parMetierPage(m.id));
   check("page d'un métier : liens « Voir aussi » du réglage (ex. GPAI pour les agences immobilières)",
     !mL || [...mL.liens, ...(mL.listes || []).flatMap(x => x.liens)].every(l => lire(`metier/${mL.id}/index.html`).includes(`href="${l.url}"`))); }
+// 23/10/2026 (Ahmed) : bouton de RETOUR vers un de nos sites (agences -> Immobilier Tunisie by IA) ; ?q= / ?g= d'un lien lus par la page
+{ const mR = C.metiers.filter(m => m.retour && parMetierPage(m.id));
+  check("page d'un métier : bouton de retour (config metiers[].retour) en haut de la page du métier ET de ses gouvernorats",
+    mR.every(m => { const pg = [`metier/${m.id}/index.html`, ...readdirSync(join(root, `metier/${m.id}`)).filter(x => existsSync(join(root, `metier/${m.id}/${x}/index.html`))).map(x => `metier/${m.id}/${x}/index.html`)];
+      return pg.every(p => new RegExp(`class="lien-retour" href="${m.retour.url.replace(/[.\/]/g, "\\$&")}"`).test(lire(p))); }));
+  const aj = lire("assets/annuaire.js");
+  check("recherche : un lien ?q=<texte>&g=<gouvernorat> (venu de l'Immobilier) remplit la recherche et filtre le gouvernorat",
+    /depart\.get\("q"\)/.test(aj) && /gLien/.test(aj)); }
 check("fiche : JSON-LD du bon type (" + (C.schema || "LocalBusiness") + ")", s0.includes(`"@type":"${C.schema || "LocalBusiness"}"`));
 check("« gratuit » dans le titre ou la description de l'accueil et des gouvernorats", [lire("index.html"), lire("gouvernorat/tunis/index.html")].every(s => /<title>[^<]*gratuit|name="description" content="[^"]*gratuit/i.test(s)));
 check("à propos : sources OpenStreetMap / ODbL, retrait, statistiques sans cookies", /ODbL/.test(lire("a-propos/index.html")) && /retrait/i.test(lire("a-propos/index.html")) && /GoatCounter/.test(lire("a-propos/index.html")));

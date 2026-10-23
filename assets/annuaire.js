@@ -21,10 +21,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const cherches = new Set();
   const depart = new URLSearchParams(location.search);
   if (choixG && depart.get("g")) choixG.value = depart.get("g");
+  // 23/10/2026 : lien venu d'un autre de nos sites (Immobilier, onglet « Agences ») : ?q=<texte> remplit la recherche ; ?g=<gouvernorat>
+  // filtre aussi une page qui n'a pas de menu des gouvernorats
+  const gLien = !choixG && /^[a-z-]{2,20}$/.test(depart.get("g") || "") ? depart.get("g") : "";
+  if (champ && depart.get("q")) champ.value = String(depart.get("q")).slice(0, 60);
   function filtrer() {
     const mots = son(champ ? champ.value : "").trim().split(" ").filter(Boolean);
     if (mots.length && mots[mots.length - 1].length > 1) mots[mots.length - 1] = mots[mots.length - 1].replace(/[ea]+$/, "");   // mot en cours de frappe
-    const g = choixG ? choixG.value : "";
+    const g = choixG ? choixG.value : gLien;
     let n = 0;
     for (const c of cartes) {
       const ok = (!g || c.dataset.g === g) && (!metier || c.dataset.m === metier) && (!cat || catDe[c.dataset.m] === cat) && mots.every(m => son(c.dataset.cherche).includes(m));

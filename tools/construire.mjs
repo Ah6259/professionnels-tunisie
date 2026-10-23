@@ -320,6 +320,11 @@ for (const [slug, fr, ar] of GOUVERNORATS) {
 // liens réglables d'un métier (config.json : metiers[].liens = « Voir aussi » en haut ; metiers[].listes = [{titre, liens}] en bas),
 // 21/10/2026 (Ahmed : GPAI et les sites d'annonces immobilières sur la page des agences)
 
+// bouton de RETOUR vers un de nos sites (23/10/2026, Ahmed : depuis la page des agences immobilières, revenir facilement à
+// « Immobilier Tunisie by IA ») : config.json metiers[].retour = { url, fr, ar } ; en haut de la page du métier et de ses gouvernorats
+const lienRetour = m => m.retour && /^https:\/\/[a-z0-9.-]+\.clicvia\.com\//.test(m.retour.url)
+  ? `<a class="lien-retour" href="${esc(m.retour.url)}" data-lien="retour"><span aria-hidden="true">←</span> ${bi(esc(m.retour.fr), esc(m.retour.ar))}</a>` : "";
+
 function pageMetier({ m, slug, liste, compteMG }) {
   const g = slug ? G[slug] : null, racine = slug ? "../../../" : "../../", chemin = `metier/${m.id}/${slug ? slug + "/" : ""}`;
   const lieuFr = g ? `à ${g[1]}` : "en Tunisie", lieuAr = g ? `في ولاية ${g[2]}` : "في تونس";
@@ -332,6 +337,7 @@ function pageMetier({ m, slug, liste, compteMG }) {
   <p class="intro">${bi(`${liste.length} fiche(s), triées par nom. Annuaire gratuit.`, `${ISO(liste.length)} بطاقة، مرتبة حسب الاسم. دليل مجاني.`)}</p>
 </div></section>
 <main class="wrap">
+  ${lienRetour(m)}
   ${blocLiens({ fr: "Voir aussi", ar: "انظر أيضًا" }, m.liens)}
   ${filtres(racine, true, liste)}${notePro(liste)}<div class="liste protege" id="liste">${liste.map(f => carte(f, racine)).join("\n")}</div><p class="vide" id="aucun" hidden>${bi("Aucun résultat.", "لا توجد نتيجة.")}</p>
   ${autres.length ? `<section class="carte">
