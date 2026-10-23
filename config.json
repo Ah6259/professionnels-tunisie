@@ -1088,6 +1088,31 @@
       "organisme_aucun": "22/10/2026 : chambre UTICA sans site"
     },
     {
+      "id": "concessionnaire",
+      "osm": [
+        "shop=car"
+      ],
+      "fr": "Concessionnaire automobile",
+      "fr_pl": "Concessionnaires automobiles",
+      "ar": "وكيل سيارات",
+      "ar_pl": "وكلاء بيع السيارات",
+      "mots": "concessionnaire automobile voiture neuve occasion vente auto showroom agence achat voiture وكيل سيارات بيع سيارات سيارة جديدة مستعملة معرض سيارات كونسيسيونير طوموبيل",
+      "organisme_aucun": "23/10/2026 : chambre syndicale des concessionnaires (UTICA) sans site officiel propre",
+      "photo": {
+        "fichier": "assets/metiers-photos/concessionnaire.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Salle d'exposition de voitures vide",
+          "ar": "قاعة عرض سيارات فارغة"
+        },
+        "auteur": "David Smith",
+        "licence": "CC BY-SA 2.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/2.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=168315548"
+      }
+    },
+    {
       "id": "medecin",
       "osm": [
         "amenity=doctors",
@@ -1472,7 +1497,8 @@
         "location-voiture",
         "agence-voyage",
         "lavage-auto",
-        "pieces-auto"
+        "pieces-auto",
+        "concessionnaire"
       ]
     },
     {
