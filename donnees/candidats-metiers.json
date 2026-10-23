@@ -1,5 +1,5 @@
 {
-"maj": "2026-10-22",
+"maj": "2026-10-23",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -78,7 +78,7 @@
 "osm": "shop=car",
 "lieux": 115,
 "joignables": 12,
-"deja": false,
+"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
@@ -340,7 +340,7 @@
 },
 {
 "osm": "shop=electrical",
-"lieux": 18,
+"lieux": 19,
 "joignables": 3,
 "deja": false,
 "sante": false,
