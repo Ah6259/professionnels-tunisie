@@ -48,7 +48,7 @@ Répondre à Ahmed **en français**, simplement. Règles communes : `../../regle
 et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Zaghouan…) manquent encore de fiches d'artisans.
 
 ## Robots (sans PC)
-- `maj.yml` chaque nuit (02h40 UTC) : relevé OSM → reprise des 4 annuaires (étape présente aussi dans le maj.yml du moteur, sans
+- `maj.yml` le 1er de chaque mois (02h40 UTC, décision d'Ahmed du 10/10/2026 ; aussi à chaque modification de `config.json` et à la main) : relevé OSM → reprise des 4 annuaires (étape présente aussi dans le maj.yml du moteur, sans
   effet sur les sites qui n'ont pas `tools/importer_annuaires.py`) → pages → tests → publication. `tests.yml` à chaque modification.
 - **18/10/2026 (VS.8, règle commune du 15/10)** : `maj.yml` ENREGISTRE (commit + push avec 5 essais) `donnees/osm.json` (+ `importes.json`) juste après le relevé, AVANT les pages et les tests ; les pages ne sont publiées que si les tests passent. Tout dans le même robot (un seul robot en attente par groupe de concurrence). Le `maj.yml` n'est PAS copié par `synchroniser.py` : le même fichier est dans les 5 annuaires, à modifier partout pareil.
 - Le moteur commun (`annuaires/moteur/`) est copié ici par `python annuaires/synchroniser.py` (CLAUDE.md et README.md jamais écrasés).
@@ -58,7 +58,7 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
 `node tools/construire.mjs` puis `node tools/test_site.mjs` → **TOUT PASSE** (jsdom : `npm install --no-save --no-package-lock jsdom`).
 
 ## Professionnels
-`inscriptions_ouvertes: false` tant que la déclaration INPDP n'est pas faite. Formule Pro : 29 DT la 1re année puis 59 DT/an
+`inscriptions_ouvertes: true` depuis le 06/10/2026 (accord de l'INPDP obtenu par Ahmed, `config.pro.inpdp_accord` ; paiement D17, IZI, Wafacash, preuve par WhatsApp). Formule Pro : 29 DT la 1re année puis 59 DT/an
 (`config.json` → `pro`), 1er mois offert, sans renouvellement automatique.
 
 - **Vidéos de présentation** (06/10/2026) : `assets/video/presentation.mp4` (visiteurs) et `presentation-pro.mp4` (professionnels), 1080 × 1920, + couvertures et aperçus 1200 × 630 (`apercu-video*.jpg`). Musique de fond : J. S. Bach, Aria des Variations Goldberg (enregistrement Musopen, CC0, Wikimedia Commons ; preuve dans le dossier privé `videos (outil)/preuves musique/`). Pages **`video/`** et **`video-pro/`** fabriquées par `tools/page_video.mjs` (appelé par construire.mjs, à partir de À propos : mêmes en-tête, pied, CSP) avec og:video / og:image. Le bouton « Partager » envoie un LIEN : la page vidéo (video-pro/ sur inscription/) + l'adresse du site dans le texte, jamais le fichier. Tests dans test_site.mjs.
