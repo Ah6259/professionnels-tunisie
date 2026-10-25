@@ -77,3 +77,9 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
 - 18/10/2026 : recherche « au son » (Jerba = Djerba, Houmt = Houmet, Qairouan = Kairouan, lettres doublées…), même calcul pour ce qu'on tape et pour la liste ; test de paires d'écritures.
 
 - **19/10/2026 — Visiteur simulé : contrôle des ESPACES (§ 29)** : cases gouvernorat / métier, le nombre était COLLÉ au nom (« Traducteurs66 ») ou SORTAIT de la case (« Photographes 46 ») → corrigé dans style.css du moteur (le nombre passe sous un nom trop long) ; 0 anomalie.
+
+- **RÈGLE D'AHMED (25/10/2026, règle commune § 44) : la page « Comment fonctionne le site ? » (`a-propos/`, FR + AR) est mise à jour à CHAQUE
+  modification visible, dans le même envoi.** Elle est fabriquée par le moteur commun (bloc « Comment fonctionne le site ? » de
+  `tools/construire.mjs`, à modifier dans `annuaires/moteur/` du dépôt projets-ahmed) ; lien sur l'accueil (`.lien-comment`) et dans le pied
+  de page de toutes les pages (`assets/page.js`). Test « FONCTIONS » dans `tools/test_site.mjs` : une fonction présente dans les pages mais
+  absente de la page = test rouge = publication bloquée ; nouvelle fonction = une ligne dans `FONCTIONS` + son explication.

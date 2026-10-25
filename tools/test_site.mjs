@@ -443,5 +443,39 @@ else {
   finally { rmSync(tmp, { recursive: true, force: true }); }
 }
 
+// 25/10/2026 (RÈGLE D'AHMED, règle commune § 44 : « la page Comment fonctionne le site doit être mise à jour chaque fois qu'on modifie
+// le site ») : chaque fonction visible (repère dans les pages ou le code) doit être expliquée dans a-propos/ ; nouvelle fonction = une ligne
+// ici + son explication dans la page (construire.mjs, bloc « Comment fonctionne le site ? »)
+{ const ap = lire("a-propos/index.html"), acc = lire("index.html"), pjs = lire("assets/page.js"), ajs = lire("assets/annuaire.js");
+  const fiches = fichesPages.slice(0, 400).map(lire).join("\n"), ins = lire("inscription/index.html");
+  const autres = pages.filter(p => p.startsWith("metier/") || p.startsWith("gouvernorat/")).map(lire).join("\n");
+  const FONCTIONS = [
+    ["recherche (aussi « au son »)", /id="recherche"/.test(acc), /Recherche<\/strong>[\s\S]*Jerba = Djerba/],
+    ["filtre par gouvernorat", /id="choix-g"/.test(acc), /Filtre par gouvernorat/],
+    ["carte de la Tunisie", /class="carte-tn"/.test(acc), /Carte de la Tunisie/],
+    ["catégories de métiers", /class="cats"/.test(acc), /Catégories<\/strong>/],
+    ["pages par métier", existsSync(join(root, "metier")), /Page de chaque métier/],
+    ["bouton Appeler", /data-clic="tel"/.test(fiches), /Appeler/],
+    ["bouton WhatsApp", /data-clic="whatsapp"/.test(fiches), /WhatsApp<\/strong>/],
+    ["bouton Itinéraire", /data-clic="itineraire"/.test(fiches), /Itinéraire<\/strong>/],
+    ["badges Vérifiée / Pro", /Vérifiée/.test(ins), /« Vérifiée »[\s\S]*« Pro »/],
+    ["corriger ou retirer une fiche", /action=retirer/.test(fiches), /Corriger ou retirer une fiche/],
+    ["espace professionnels et formule Pro", /id="offres"/.test(ins), /Espace professionnels[\s\S]*formule Pro/],
+    ["« Voir aussi » (organisme de la profession)", /class="carte voir-aussi"/.test(acc + autres), /Voir aussi<\/strong>/],
+    ["français et arabe", /class="langue"/.test(pjs), /Français et arabe/],
+    ["bouton Partager", /class="partager"/.test(pjs), /Partager<\/strong>/],
+    ["vidéo de présentation", existsSync(join(root, "video/index.html")), /Vidéo de présentation/],
+    ["Votre avis", /id="avis"/.test(acc), /Votre avis<\/strong>/],
+    ["liens vers nos autres sites", /liens-amis|lien-vedette|lien-retour/.test(acc + autres), /Nos autres sites gratuits/],
+    ["installation sur le téléphone", existsSync(join(root, "manifest.webmanifest")) && existsSync(join(root, "sw.js")), /écran d'accueil/],
+    ["mise à jour automatique (robot du 1er du mois)", existsSync(join(root, ".github/workflows/maj.yml")), /chaque mois \(le 1er\)/],
+    ["statistiques anonymes (GoatCounter, recherches sans résultat)", /recherche-vide@/.test(ajs), /GoatCounter[\s\S]*mots cherchés sans résultat/]];
+  const manque = FONCTIONS.filter(([, sur, re]) => sur && !re.test(ap)).map(([n]) => n);
+  check(`page « Comment fonctionne le site ? » à jour : chaque fonction du site y est expliquée (${FONCTIONS.filter(f => f[1]).length} fonctions)` + (manque.length ? " — manque : " + manque.join(", ") : ""),
+    manque.length === 0);
+  check("page « Comment fonctionne le site ? » : titre h1 (FR + AR), lien sur l'accueil et dans le pied de page de toutes les pages",
+    /<h1><span data-l="fr">Comment fonctionne le site\u00a0\?<\/span><span data-l="ar">كيف يعمل الموقع؟<\/span><\/h1>/.test(ap)
+    && /class="lien-comment"><a href="a-propos\/">/.test(acc) && /a-propos\/">\$\{T\("Comment fonctionne le site/.test(pjs) && /<footer id="pied">/.test(acc) && /<footer id="pied">/.test(ap)); }
+
 console.log(ko ? `\n${ko} PROBLÈME(S) sur ${ok + ko} vérifications` : `\nTOUT PASSE (${ok} vérifications)`);
 process.exit(ko ? 1 : 0);

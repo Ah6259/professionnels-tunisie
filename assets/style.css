@@ -65,7 +65,7 @@ select{font:inherit;border:1px solid var(--ligne);border-radius:12px;padding:10p
 .actions.petites a{display:inline-flex;align-items:center;gap:8px;color:var(--doux)}
 .actions.petites svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:2}
 .infos{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:16px 0 0}
-.infos dt{color:var(--doux);font-size:14px}.infos dd{margin:0;font-weight:600}
+.infos dt{color:var(--doux);font-size:14px}.infos dd{margin:0;font-weight:600;min-width:0;overflow-wrap:anywhere}
 .source{font-size:13px;color:var(--doux);margin:14px 0 0}
 .pro-appel{background:var(--p-clair);border-color:transparent}
 .liens-amis a{display:block;font-weight:700;padding:4px 0}
@@ -245,3 +245,7 @@ html[dir="rtl"] .paie-etapes>li::before{left:auto;right:12px}
 /* bouton de retour vers un de nos sites (23/10/2026 : agences -> Immobilier Tunisie by IA), config.json metiers[].retour */
 .lien-retour{display:inline-flex;align-items:center;gap:8px;margin:14px 0 4px;padding:10px 16px;border-radius:999px;background:var(--couleur,#1f4e6b);color:#fff;font-weight:700;text-decoration:none;box-shadow:0 2px 8px rgba(0,0,0,.12)}
 .lien-retour:hover{filter:brightness(1.08)}
+/* lien « Comment fonctionne le site ? » de l'accueil (règle commune § 44, 25/10/2026) */
+.hero .lien-comment{margin:12px 0 0;font-size:14px}
+.hero .lien-comment a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.texte .fonctions li,.texte ol li{margin:0 0 8px}

@@ -28,7 +28,7 @@
     const p = document.getElementById("pied");
     if (p) p.innerHTML = `<div class="wrap">
       <nav><a href="${racine || "./"}">${T("Accueil", "الرئيسية")}</a><a href="${racine}inscription/">${T("Professionnels", "المهنيون")}</a>
-        <a href="${racine}a-propos/">${T("À propos et sources", "من نحن والمصادر")}</a><a href="${racine || "./"}#avis">${T("Votre avis", "رأيك")}</a>
+        <a href="${racine}a-propos/">${T("Comment fonctionne le site\u00a0?", "كيف يعمل الموقع؟")}</a><a href="${racine || "./"}#avis">${T("Votre avis", "رأيك")}</a>
         ${C.liens.slice(0, 1).map(l => `<a href="${l.url}">${t(l)}</a>`).join("")}<a href="https://clicvia.com/" rel="noopener" target="_blank">${T("Tous nos services", "كل خدماتنا")}</a>
         </nav>
       <p>${T("Fiches : © les contributeurs d'OpenStreetMap (licence ODbL) et demandes des professionnels. Site gratuit et non officiel : appelez avant de vous déplacer.",

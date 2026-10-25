@@ -263,6 +263,7 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   <h1>${biO(C.titre_accueil)}</h1>
   <p class="intro">${biO(C.intro)}</p>
   <p class="chiffre">${bi(`${FICHES.length} ${esc(metierPl.fr_pl.toLowerCase())} dans ${Object.values(compteG).filter(Boolean).length} gouvernorats`, `${ISO(FICHES.length)} ${esc(metierPl.ar_pl)} في ${ISO(Object.values(compteG).filter(Boolean).length)} ولاية`)}</p>
+  <p class="lien-comment"><a href="a-propos/">${bi("Comment fonctionne le site\u00a0?", "كيف يعمل الموقع؟")}</a></p>
   <p class="appel-pro"><a class="btn btn-pro" href="inscription/#offres">${bi("Professionnel ? Inscription Pro : 1er mois gratuit", "مهني؟ تسجيل Pro: الشهر الأول مجاني")}</a></p>
   ${lienVedette("")}
   </div>
@@ -580,20 +581,60 @@ pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formul
 </main>
 ` + pied;
 
-// à propos
-pages["a-propos/"] = tete({ titre: `À propos et sources | ${C.nom.fr}`, desc: `D'où viennent les fiches de ${C.nom.fr} (OpenStreetMap, demandes des professionnels), données personnelles et retrait.`, chemin: "a-propos/", racine: "../" }) + `
-<section class="hero"><div class="wrap">${fil("../", bi("À propos", "من نحن"))}<h1>${bi("À propos et sources", "من نحن والمصادر")}</h1></div></section>
+// page « Comment fonctionne le site ? » (a-propos/) — RÈGLE D'AHMED (25/10/2026, règle commune § 44) : elle explique CHAQUE fonction
+// visible du site et est mise à jour à chaque modification visible, dans le même envoi. Test « FONCTIONS » dans tools/test_site.mjs :
+// une fonction présente dans les pages mais absente d'ici = test rouge = publication bloquée. Nouvelle fonction = une ligne ici + là-bas.
+const NB = " ", CFS = { fr: `Comment fonctionne le site${NB}?`, ar: "كيف يعمل الموقع؟" };
+{
+  const nbG = Object.values(compteG).filter(Boolean).length;
+  const src = k => FICHES.some(f => f.source === k);
+  const fonctions = [
+    [true, "<strong>Recherche</strong> : tapez un nom, une ville ou un quartier ; la recherche reconnaît aussi les écritures proches (Jerba = Djerba).", "<strong>البحث</strong>: اكتب اسمًا أو مدينة أو حيًّا؛ يتعرّف البحث أيضًا على الكتابات القريبة (Jerba = Djerba)."],
+    [true, "<strong>Filtre par gouvernorat</strong> : la liste « Tous les gouvernorats » ne garde que les fiches du gouvernorat choisi.", "<strong>التصفية حسب الولاية</strong>: قائمة « كل الولايات » تُبقي بطاقات الولاية المختارة فقط."],
+    [true, "<strong>Carte de la Tunisie</strong> : touchez un gouvernorat sur la carte pour ouvrir sa page ; le nombre de fiches est écrit dans chaque bulle.", "<strong>خريطة تونس</strong>: اضغط على ولاية في الخريطة لفتح صفحتها؛ عدد البطاقات مكتوب في كل دائرة."],
+    [CATS.length > 1, "<strong>Catégories</strong> : les boutons en haut de l'accueil regroupent les métiers d'une même famille.", "<strong>الأصناف</strong>: الأزرار في أعلى الصفحة الرئيسية تجمع المهن من نفس العائلة."],
+    [AVEC_PAGES_METIER, "<strong>Page de chaque métier</strong> : touchez une carte de métier pour voir ce métier dans toute la Tunisie, puis dans chaque gouvernorat.", "<strong>صفحة كل مهنة</strong>: اضغط على بطاقة مهنة لترى هذه المهنة في كامل تونس ثم في كل ولاية."],
+    [true, "<strong>Fiche d'un professionnel</strong> : adresse, horaires et site quand ils sont connus, avec les boutons <strong>Appeler</strong>, <strong>WhatsApp</strong> (numéros de portable) et <strong>Itinéraire</strong> (carte OpenStreetMap).", "<strong>بطاقة المهني</strong>: العنوان والتوقيت والموقع عند توفرها، مع أزرار <strong>اتصال</strong> و<strong>واتساب</strong> (أرقام الجوال) و<strong>الطريق</strong> (خريطة OpenStreetMap)."],
+    [true, "<strong>Badges</strong> : « Vérifiée » = l'établissement a confirmé sa fiche ; « Pro » = formule payante, affichée en premier. Les autres fiches sont triées par nom : nous ne classons pas les professionnels.", "<strong>الشارات</strong>: « موثّقة » = أكّدت المؤسسة بطاقتها؛ « Pro » = صيغة مدفوعة تظهر أولًا. البطاقات الأخرى مرتبة حسب الاسم: لا نرتّب المهنيين."],
+    [true, "<strong>Corriger ou retirer une fiche</strong> : sous chaque fiche, l'établissement peut demander une correction ou le retrait (définitif).", "<strong>تصحيح بطاقة أو حذفها</strong>: تحت كل بطاقة، يمكن للمؤسسة طلب التصحيح أو الحذف (نهائي)."],
+    [true, "<strong>Espace professionnels</strong> : ajouter une fiche gratuite, la vérifier, ou choisir la formule Pro (bouton « Inscription Pro » en haut de chaque page).", "<strong>فضاء المهنيين</strong>: إضافة بطاقة مجانية أو توثيقها أو اختيار صيغة Pro (زر « تسجيل Pro » في أعلى كل صفحة)."],
+    [C.metiers.some(m => (m.liens || []).length), "<strong>Voir aussi</strong> : le lien vers l'organisme officiel de la profession (Ordre, chambre, administration).", "<strong>انظر أيضًا</strong>: رابط الهيكل الرسمي للمهنة (هيئة، غرفة، إدارة)."],
+    [true, "<strong>Français et arabe</strong> : le bouton « ع » / « Fr » en haut change la langue de tout le site.", "<strong>الفرنسية والعربية</strong>: زر « ع » / « Fr » في الأعلى يغيّر لغة الموقع كله."],
+    [true, "<strong>Partager</strong> : le bouton de partage en haut envoie le lien du site (avec sa vidéo de présentation) par WhatsApp ou une autre application.", "<strong>المشاركة</strong>: زر المشاركة في الأعلى يرسل رابط الموقع (مع الفيديو التقديمي) عبر واتساب أو تطبيق آخر."],
+    [true, "<strong>Vidéo de présentation</strong> : une courte vidéo qui montre le site (lien en bas de l'accueil).", "<strong>الفيديو التقديمي</strong>: فيديو قصير يعرّف بالموقع (رابط في أسفل الصفحة الرئيسية)."],
+    [true, "<strong>Votre avis</strong> : un formulaire en bas de l'accueil pour nous écrire ; votre e-mail sert seulement à vous répondre.", "<strong>رأيك</strong>: استمارة في أسفل الصفحة الرئيسية لمراسلتنا؛ بريدك يُستعمل فقط للرد عليك."],
+    [(C.liens || []).length > 0 || C.metiers.some(m => m.retour), "<strong>Nos autres sites gratuits</strong> : des liens vers nos autres services (documents, outils…), sur l'accueil et les pages.", "<strong>مواقعنا المجانية الأخرى</strong>: روابط نحو خدماتنا الأخرى في الصفحة الرئيسية والصفحات."],
+    [true, "<strong>Installer sur le téléphone</strong> : le site peut être ajouté à l'écran d'accueil du téléphone, comme une application.", "<strong>التثبيت على الهاتف</strong>: يمكن إضافة الموقع إلى الشاشة الرئيسية للهاتف مثل تطبيق."],
+  ].filter(x => x[0]);
+  pages["a-propos/"] = tete({ titre: `${CFS.fr} | ${C.nom.fr}`, desc: `Comment fonctionne ${C.nom.fr} : d'où viennent les fiches (OpenStreetMap, demandes des professionnels), comment chercher, gratuit et formule Pro, vos données.`, chemin: "a-propos/", racine: "../" }) + `
+<section class="hero"><div class="wrap">${fil("../", bi(CFS.fr, CFS.ar))}<h1>${bi(CFS.fr, CFS.ar)}</h1></div></section>
 <main class="wrap"><section class="carte texte">
-  <h2>${bi("D'où viennent les fiches ?", "من أين تأتي البطاقات؟")}</h2>
-  <p>${bi(`Les fiches viennent de la carte libre <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (© les contributeurs d'OpenStreetMap, licence ODbL), mise à jour chaque nuit, et des demandes des professionnels eux-mêmes. Les fiches OpenStreetMap ne sont pas vérifiées par les établissements : appelez avant de vous déplacer.`, `تأتي البطاقات من الخريطة الحرة <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (© المساهمون في OpenStreetMap، رخصة ODbL) التي تُحيَّن كل ليلة، ومن طلبات المهنيين أنفسهم. بطاقات OpenStreetMap لم تتحقق منها المؤسسات: اتصل قبل التنقل.`)}</p>
-  <h2>${bi("Site gratuit et non officiel", "موقع مجاني وغير رسمي")}</h2>
-  <p>${bi("Ce site n'est lié à aucune administration ni organisation professionnelle. La consultation est gratuite et sans inscription.", "هذا الموقع غير مرتبط بأي إدارة أو هيكل مهني. التصفح مجاني ودون تسجيل.")}</p>
+  <h2>${bi("À quoi sert le site ?".replace(" ?", NB + "?"), "ما فائدة الموقع؟")}</h2>
+  <p>${bi(`${esc(C.nom.fr)} aide à trouver des ${esc(metierPl.fr_pl.toLowerCase())} partout en Tunisie : adresse, téléphone, WhatsApp et itinéraire. Aujourd'hui : ${FICHES.length}${NB}fiches dans ${nbG}${NB}gouvernorats. La consultation est gratuite et sans inscription.`, `يساعد ${esc(C.nom.ar)} على إيجاد ${esc(metierPl.ar_pl)} في كامل تونس: العنوان والهاتف وواتساب والطريق. اليوم: ${ISO(FICHES.length)} بطاقة في ${ISO(nbG)} ولاية. التصفح مجاني ودون تسجيل.`)}</p>
+  <h2>${bi(`D'où viennent les fiches${NB}?`, "من أين تأتي البطاقات؟")}</h2>
+  <p>${bi(`Les fiches viennent de la carte libre <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (© les contributeurs d'OpenStreetMap, licence ODbL)${src("officiel") ? ", de listes officielles publiées par une administration" : ""}${src("web") ? ", de la page publique de l'établissement lui-même" : ""} et des demandes des professionnels eux-mêmes. Chaque fiche affiche sa source. Les fiches ne sont pas toutes vérifiées par les établissements : appelez avant de vous déplacer.`, `تأتي البطاقات من الخريطة الحرة <a href="https://www.openstreetmap.org/copyright" rel="noopener">OpenStreetMap</a> (© المساهمون في OpenStreetMap، رخصة ODbL)${src("officiel") ? "، ومن قوائم رسمية تنشرها إدارة" : ""}${src("web") ? "، ومن الصفحة العامة للمؤسسة نفسها" : ""}، ومن طلبات المهنيين أنفسهم. كل بطاقة تذكر مصدرها. ليست كل البطاقات موثّقة من المؤسسات: اتصل قبل التنقل.`)}</p>
+  <p>${bi("Une fiche sans téléphone, sans WhatsApp et sans adresse n'est pas publiée (elle reviendra dès qu'un contact sera connu).", "البطاقة التي لا تحتوي على هاتف ولا واتساب ولا عنوان لا تُنشر (تعود حالما يُعرف وسيلة اتصال).")}</p>
+  <h2>${bi(`Comment s'en servir${NB}?`, "كيف تستعمله؟")}</h2>
+  <ol>
+    <li>${bi(`Choisissez ${AVEC_PAGES_METIER ? "un métier, " : ""}un gouvernorat (liste ou carte), ou tapez un nom dans la recherche.`, `اختر ${AVEC_PAGES_METIER ? "مهنة أو " : ""}ولاية (القائمة أو الخريطة)، أو اكتب اسمًا في البحث.`)}</li>
+    <li>${bi("Touchez une fiche pour voir l'adresse, le téléphone et les horaires.", "اضغط على بطاقة لترى العنوان والهاتف والتوقيت.")}</li>
+    <li>${bi("Appelez, écrivez sur WhatsApp ou ouvrez l'itinéraire d'un seul clic.", "اتصل أو راسل عبر واتساب أو افتح الطريق بنقرة واحدة.")}</li>
+  </ol>
+  <h2>${bi("Ce que vous pouvez faire sur le site", "ما يمكنك فعله في الموقع")}</h2>
+  <ul class="fonctions">${fonctions.map(([, fr, ar]) => `<li>${bi(fr, ar)}</li>`).join("")}</ul>
+  <h2>${bi("Gratuit et formule Pro", "مجاني وصيغة Pro")}</h2>
+  <p>${bi("Pour les visiteurs, tout est gratuit. Pour les professionnels, la fiche de base est gratuite pour toujours.", "كل شيء مجاني للزوار. وللمهنيين، البطاقة الأساسية مجانية دائمًا.")} ${OUVERT ? bi(`La formule Pro (${PRO.mois_gratuits === 1 ? "1er mois gratuit" : PRO.mois_gratuits + NB + "mois gratuits"}, puis `, `صيغة Pro (${PRO.mois_gratuits === 1 ? "الشهر الأول مجاني" : ISO(PRO.mois_gratuits) + " أشهر مجانية"}، ثم `) + prixTexte().replace(/(\d) (DT|د\.ت)/g, "$1" + NB + "$2").replace(/\u2069 د\.ت/g, "\u2069" + NB + "د.ت") + bi(`) place la fiche en tête de son gouvernorat avec la mention « Pro », une présentation, des spécialités et un bouton WhatsApp. Pas de renouvellement automatique : sans paiement, la fiche redevient gratuite, sans être supprimée. Voir la page <a href="../inscription/#offres">Professionnels</a>.`, `) تضع البطاقة في أعلى ولايتها مع إشارة « Pro » وتقديمًا واختصاصات وزر واتساب. لا يوجد تجديد آلي: دون دفع تعود البطاقة مجانية دون حذف. انظر صفحة <a href="../inscription/#offres">المهنيون</a>.`) : bi("La formule Pro ouvrira prochainement.", "صيغة Pro تُفتح قريبًا.")}</p>
+  <h2>${bi("Données personnelles et retrait", "المعطيات الشخصية والحذف")}</h2>
+  <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction ou le retrait de sa fiche depuis la page <a href="../inscription/">Professionnels</a> ; un retrait est définitif. Statistiques de visite anonymes, sans cookies (GoatCounter) : nous comptons les visites, les clics sur Appeler / WhatsApp / Itinéraire et les mots cherchés sans résultat, jamais qui vous êtes. Les formulaires (avis, demandes) sont envoyés seulement quand vous cliquez sur « Envoyer ».`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها أو حذفها من صفحة <a href="../inscription/">المهنيون</a>؛ والحذف نهائي. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter): نحسب الزيارات والنقرات على اتصال / واتساب / الطريق والكلمات التي لم تُعط نتيجة، ولا نعرف أبدًا من أنت. لا تُرسل الاستمارات إلا عند الضغط على « إرسال ».`)}</p>
+  <h2>${bi("Mises à jour automatiques", "تحديث آلي")}</h2>
+  <p>${bi("Un robot relit OpenStreetMap chaque mois (le 1er) et refait toutes les pages, sans intervention. Si OpenStreetMap ne répond pas, les fiches précédentes sont gardées. Les demandes des professionnels sont ajoutées après vérification.", "يعيد روبوت قراءة OpenStreetMap كل شهر (يوم 1) ويعيد بناء كل الصفحات دون تدخل. إذا لم يستجب OpenStreetMap تُحفظ البطاقات السابقة. تُضاف طلبات المهنيين بعد التثبت.")}</p>
+  <h2>${bi("Site indépendant, gratuit et non officiel", "موقع مستقل ومجاني وغير رسمي")}</h2>
+  <p>${bi("Ce site n'est lié à aucune administration ni organisation professionnelle. Il fait partie des services gratuits de <a href=\"https://clicvia.com/\" rel=\"noopener\">clicvia.com</a>.", "هذا الموقع غير مرتبط بأي إدارة أو هيكل مهني. هو جزء من الخدمات المجانية لـ <a href=\"https://clicvia.com/\" rel=\"noopener\">clicvia.com</a>.")}</p>
   <h2>${bi("Crédits des photos", "حقوق الصور")}</h2>
   <ul class="credits">${[...(P && P.mosaique ? P.mosaique : [P]), ...C.metiers.map(m => m.photo)].filter(Boolean).filter((ph, i, t) => t.findIndex(x => x.source === ph.source) === i).map(ph => `<li><bdi>${esc(ph.auteur)}</bdi>, <a href="${esc(ph.licence_url)}" rel="noopener license">${esc(ph.licence)}</a>, <a href="${esc(ph.source)}" rel="noopener">Wikimedia Commons</a></li>`).join("")}</ul>
-  <h2>${bi("Données personnelles et retrait", "المعطيات الشخصية والحذف")}</h2>
-  <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction ou le retrait de sa fiche depuis la page <a href="../inscription/">Professionnels</a> ; un retrait est définitif. Statistiques de visite anonymes, sans cookies (GoatCounter).`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها أو حذفها من صفحة <a href="../inscription/">المهنيون</a>؛ والحذف نهائي. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter).`)}</p>
 </section></main>
 ` + pied;
+}
 
 // conditions de la formule Pro (publiées seulement quand les inscriptions sont ouvertes)
 if (OUVERT) pages["conditions/"] = tete({ titre: `Conditions pour les professionnels | ${C.nom.fr}`, desc: `Conditions de la fiche gratuite et de la formule Pro de ${C.nom.fr} : prix, mois gratuit, paiement par virement, sans renouvellement automatique.`, chemin: "conditions/", racine: "../" }) + `
