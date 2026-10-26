@@ -1,5 +1,5 @@
 {
-"maj": "2026-10-25",
+"maj": "2026-10-26",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -20,15 +20,15 @@
 },
 {
 "osm": "office=company",
-"lieux": 230,
-"joignables": 51,
+"lieux": 231,
+"joignables": 52,
 "deja": false,
 "sante": false,
 "pas_un_metier": true
 },
 {
 "osm": "shop=supermarket",
-"lieux": 628,
+"lieux": 630,
 "joignables": 33,
 "deja": false,
 "sante": false,
@@ -52,7 +52,7 @@
 },
 {
 "osm": "shop=clothes",
-"lieux": 751,
+"lieux": 752,
 "joignables": 15,
 "deja": false,
 "sante": false,
@@ -92,7 +92,7 @@
 },
 {
 "osm": "shop=bakery",
-"lieux": 466,
+"lieux": 467,
 "joignables": 11,
 "deja": false,
 "sante": false,
@@ -180,7 +180,7 @@
 },
 {
 "osm": "shop=convenience",
-"lieux": 980,
+"lieux": 981,
 "joignables": 7,
 "deja": false,
 "sante": false,
@@ -420,7 +420,7 @@
 },
 {
 "osm": "shop=cosmetics",
-"lieux": 41,
+"lieux": 42,
 "joignables": 2,
 "deja": false,
 "sante": false,
@@ -612,7 +612,7 @@
 },
 {
 "osm": "shop=stationery",
-"lieux": 22,
+"lieux": 23,
 "joignables": 1,
 "deja": false,
 "sante": false,
@@ -763,6 +763,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "craft=confectionery",
+"lieux": 3,
+"joignables": 1,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "office=advertising_agency",
 "lieux": 3,
 "joignables": 1,
@@ -788,14 +796,6 @@
 },
 {
 "osm": "craft=bakery",
-"lieux": 2,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "craft=confectionery",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
