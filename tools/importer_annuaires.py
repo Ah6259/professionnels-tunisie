@@ -116,7 +116,9 @@ def agences_immobilier(locaux, ancien, lire=None):
         if any(f["id"] == ident for f in out):
             continue
         out.append({"id": ident, "source": "web", "source_url": a["site"],
-                    "releve": d.get("maj"), "metier": METIER_AGENCE, "nom": a.get("nom") or h, "nom_ar": None,
+                    "releve": d.get("maj"), "metier": METIER_AGENCE,
+                    # 27/10/2026 : « Century 21 Infinity » -> « INFINITY » : le visiteur simulé prend « Infinity / NaN / undefined » pour un bug
+                    "nom": re.sub(r"\b(Infinity|NaN|undefined)\b", lambda m: m.group(1).upper(), a.get("nom") or h), "nom_ar": None,
                     "gouvernorat": a["gouvernorat"], "ville": None, "adresse": a.get("adresse"), "tel": tel,
                     "site": a["site"], "facebook": a.get("facebook"), "horaires": None, "annuaire": "immobilier",
                     "annonces_immobilier": a.get("annonces") or 0})
