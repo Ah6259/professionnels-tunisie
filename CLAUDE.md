@@ -83,3 +83,11 @@ et du Sud (Béja, Jendouba, Kasserine, Kébili, Siliana, Sidi Bouzid, Tozeur, Za
   `tools/construire.mjs`, à modifier dans `annuaires/moteur/` du dépôt projets-ahmed) ; lien sur l'accueil (`.lien-comment`) et dans le pied
   de page de toutes les pages (`assets/page.js`). Test « FONCTIONS » dans `tools/test_site.mjs` : une fonction présente dans les pages mais
   absente de la page = test rouge = publication bloquée ; nouvelle fonction = une ligne dans `FONCTIONS` + son explication.
+
+- **27/10/2026 — agences immobilières des réseaux (« oui » d'Ahmed)** : `tools/importer_annuaires.py` reprend aussi les agences Tecnocasa
+  (78) et Century 21 (12) de https://immobilier.clicvia.com/donnees/agences.json : identifiant `im-<id_reseau>` (tecnocasa-tugm1,
+  century21-century-21-alliance…) car plusieurs agences partagent le site du réseau ; doublon jugé par le NUMÉRO seulement ; gouvernorat
+  « manouba » du site immobilier = « la-manouba » ici (sinon fiche sans page = test rouge) ; « Infinity / NaN / undefined » dans un nom
+  écrit en capitales (le visiteur simulé les prend pour un bug : publication bloquée par « Century 21 Infinity »). Page des agences :
+  135 fiches. Liste « Sites d'annonces immobilières » : + Mubawab, Menzili, Dari (Plany) ; Tunisiapromo et Location Vacance non mis
+  (leurs sites refusent les robots : le contrôle des liens les croirait morts). Lancer la mise à jour à la main : Actions -> maj -> Run.
