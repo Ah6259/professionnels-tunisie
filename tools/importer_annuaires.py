@@ -95,9 +95,16 @@ def agences_immobilier(locaux, ancien, lire=None):
     for a in d.get("agences", []):
         h = _hote(a.get("site"))
         tel = re.sub(r"\D", "", a.get("tel") or "")[-8:] or None
-        if not h or not a.get("gouvernorat") or h in sites or (tel and tel in tels):
+        # 27/10/2026 (Ahmed : « ajoute les agences Tecnocasa et Century 21 ») : une agence d'un RÉSEAU a son identifiant propre
+        # (« id_reseau » : tecnocasa-tugm1, century21-century-21-alliance) ; plusieurs agences partagent le site du réseau, donc
+        # ni l'identifiant ni le doublon ne se décident par le site (seulement par le numéro)
+        reseau = re.sub(r"[^a-z0-9]+", "-", str(a.get("id_reseau") or "").lower()).strip("-")
+        if not h or not a.get("gouvernorat") or (h in sites and not reseau) or (tel and tel in tels):
             continue
-        out.append({"id": "im-" + re.sub(r"[^a-z0-9]+", "-", h).strip("-"), "source": "web", "source_url": a["site"],
+        ident = "im-" + (reseau or re.sub(r"[^a-z0-9]+", "-", h).strip("-"))
+        if any(f["id"] == ident for f in out):
+            continue
+        out.append({"id": ident, "source": "web", "source_url": a["site"],
                     "releve": d.get("maj"), "metier": METIER_AGENCE, "nom": a.get("nom") or h, "nom_ar": None,
                     "gouvernorat": a["gouvernorat"], "ville": None, "adresse": a.get("adresse"), "tel": tel,
                     "site": a["site"], "facebook": a.get("facebook"), "horaires": None, "annuaire": "immobilier",
