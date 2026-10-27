@@ -77,6 +77,11 @@ def locaux_infos():
     return sites, tels
 
 
+GOUVS = [["ariana"], ["beja"], ["ben-arous"], ["bizerte"], ["gabes"], ["gafsa"], ["jendouba"], ["kairouan"], ["kasserine"], ["kebili"],
+         ["le-kef"], ["mahdia"], ["la-manouba"], ["medenine"], ["monastir"], ["nabeul"], ["sfax"], ["sidi-bouzid"], ["siliana"],
+         ["sousse"], ["tataouine"], ["tozeur"], ["tunis"], ["zaghouan"]]   # mêmes identifiants que tools/construire.mjs (liste de La Poste)
+
+
 def agences_immobilier(locaux, ancien, lire=None):
     """Fiches des agences de la liste publique d'Immobilier Tunisie (fonction testée hors ligne avec `lire`)."""
     import re
@@ -98,6 +103,12 @@ def agences_immobilier(locaux, ancien, lire=None):
         # 27/10/2026 (Ahmed : « ajoute les agences Tecnocasa et Century 21 ») : une agence d'un RÉSEAU a son identifiant propre
         # (« id_reseau » : tecnocasa-tugm1, century21-century-21-alliance) ; plusieurs agences partagent le site du réseau, donc
         # ni l'identifiant ni le doublon ne se décident par le site (seulement par le numéro)
+        # 27/10/2026 : le site immobilier écrit « manouba », l'annuaire « la-manouba » ; un gouvernorat inconnu de l'annuaire = fiche
+        # sans page (test « toute fiche sans page est un doublon ») : jamais reprise
+        g = {"manouba": "la-manouba"}.get(a.get("gouvernorat"), a.get("gouvernorat"))
+        if g not in {x[0] for x in GOUVS}:
+            continue
+        a = {**a, "gouvernorat": g}
         reseau = re.sub(r"[^a-z0-9]+", "-", str(a.get("id_reseau") or "").lower()).strip("-")
         if not h or not a.get("gouvernorat") or (h in sites and not reseau) or (tel and tel in tels):
             continue
