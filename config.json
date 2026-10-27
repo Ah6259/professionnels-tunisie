@@ -1444,6 +1444,31 @@
           ]
         }
       ]
+    },
+    {
+      "id": "boucherie",
+      "osm": [
+        "shop=butcher"
+      ],
+      "fr": "Boucherie",
+      "fr_pl": "Boucheries",
+      "ar": "جزارة",
+      "ar_pl": "محلات الجزارة",
+      "mots": "boucherie boucher viande agneau bœuf veau merguez escalope hachée halal jazzar jezzar جزارة جزار لحم لحوم علوش لحم بقري",
+      "photo": {
+        "fichier": "assets/metiers-photos/boucherie.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Épaules d'agneau exposées à l'étal d'un boucher",
+          "ar": "أكتاف خروف معروضة في محل جزّار"
+        },
+        "auteur": "Juan Emilio Prades Bel",
+        "licence": "CC BY 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=155483727"
+      },
+      "organisme_aucun": "27/10/2026 : chambre syndicale nationale des bouchers sans site officiel trouvé"
     }
   ],
   "categories": [
@@ -1525,6 +1550,14 @@
         "clinique",
         "pharmacie",
         "opticien"
+      ]
+    },
+    {
+      "id": "alimentation",
+      "fr": "Alimentation",
+      "ar": "التغذية",
+      "metiers": [
+        "boucherie"
       ]
     }
   ],
