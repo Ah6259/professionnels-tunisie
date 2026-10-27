@@ -1,5 +1,5 @@
 {
-"maj": "2026-10-26",
+"maj": "2026-10-27",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -38,7 +38,7 @@
 "osm": "shop=butcher",
 "lieux": 328,
 "joignables": 25,
-"deja": false,
+"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
