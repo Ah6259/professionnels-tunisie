@@ -13689,7 +13689,7 @@
    "id": "im-aknar-immo-tn",
    "source": "web",
    "source_url": "https://aknar-immo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "AKNAR Immo",
    "nom_ar": null,
@@ -13707,43 +13707,43 @@
    "id": "im-aspisimmo-com",
    "source": "web",
    "source_url": "https://aspisimmo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "ASPIS IMMO",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Avenue du militant Abdelkader Dardouri, 8090, Kélibia, Tunisie.",
-   "tel": "29760700",
+   "tel": "29760600",
    "site": "https://aspisimmo.com/",
    "facebook": "https://www.facebook.com/vente.location.kelibia",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 130
+   "annonces_immobilier": 131
   },
   {
    "id": "im-ayoubimmobilierhammamet-com",
    "source": "web",
    "source_url": "https://ayoubimmobilierhammamet.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Ayoub Immobilier",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Rue Dag Hammarskjold 8050, Hammamet, Tunisie.",
-   "tel": "53564038",
+   "tel": "53564536",
    "site": "https://ayoubimmobilierhammamet.com/",
    "facebook": "https://www.facebook.com/ayoubimmobilierhammamet",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 556
+   "annonces_immobilier": 590
   },
   {
    "id": "im-bigimmo-tn",
    "source": "web",
    "source_url": "https://bigimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière BIG IMMO",
    "nom_ar": null,
@@ -13755,13 +13755,13 @@
    "facebook": "https://www.facebook.com/BIGIMMOTUNISIA",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 178
+   "annonces_immobilier": 180
   },
   {
    "id": "im-cabinetimmo-com",
    "source": "web",
    "source_url": "https://cabinetimmo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "CABINET Immo",
    "nom_ar": null,
@@ -13779,25 +13779,25 @@
    "id": "im-cactusimmobilier-com",
    "source": "web",
    "source_url": "https://cactusimmobilier.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Cactus Immo",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Résidence Horizon+, Local n°06, Cité el Wafa, Nabeul 8000, Tunisie.",
-   "tel": "29074198",
+   "tel": "56103783",
    "site": "https://cactusimmobilier.com/",
    "facebook": "https://www.facebook.com/cactusimmobilier",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 100
+   "annonces_immobilier": 101
   },
   {
    "id": "im-casaimmo-tn",
    "source": "web",
    "source_url": "https://casaimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "CASA IMMO",
    "nom_ar": null,
@@ -13809,13 +13809,13 @@
    "facebook": "https://www.facebook.com/casaimmo.tn",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 14
+   "annonces_immobilier": 16
   },
   {
    "id": "im-colombusimmobilier-com",
    "source": "web",
    "source_url": "https://colombusimmobilier.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Colombus Immo",
    "nom_ar": null,
@@ -13833,7 +13833,7 @@
    "id": "im-edf-tn",
    "source": "web",
    "source_url": "https://edf.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "EDF IMMOBILIÈRE",
    "nom_ar": null,
@@ -13845,13 +13845,13 @@
    "facebook": "https://www.facebook.com/limmobiliere",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 21
+   "annonces_immobilier": 121
   },
   {
    "id": "im-expatsandhousing-com",
    "source": "web",
    "source_url": "https://expatsandhousing.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Expats and housing Immobilier",
    "nom_ar": null,
@@ -13863,13 +13863,13 @@
    "facebook": "https://www.facebook.com/ExpatsAndHousingLaMarsa",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 231
+   "annonces_immobilier": 226
   },
   {
    "id": "im-igh-immo-tn",
    "source": "web",
    "source_url": "https://igh-immo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "IGH International Golden House",
    "nom_ar": null,
@@ -13881,13 +13881,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=61559937574593",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 372
+   "annonces_immobilier": 382
   },
   {
    "id": "im-immo-internationale-com-tn",
    "source": "web",
    "source_url": "https://immo-internationale.com.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "L'immobilière Internationale Tunisie",
    "nom_ar": null,
@@ -13905,25 +13905,25 @@
    "id": "im-immobiliere-nour-ennasr-com",
    "source": "web",
    "source_url": "https://immobiliere-nour-ennasr.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Immobiliere Nour Ennasr",
    "nom_ar": null,
    "gouvernorat": "ben-arous",
    "ville": null,
    "adresse": null,
-   "tel": "70036231",
+   "tel": "20400655",
    "site": "https://immobiliere-nour-ennasr.com/",
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 571
+   "annonces_immobilier": 630
   },
   {
    "id": "im-immoland-tn",
    "source": "web",
    "source_url": "https://immoland.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Immoland",
    "nom_ar": null,
@@ -13935,13 +13935,13 @@
    "facebook": "https://www.facebook.com/AgenceImmoLand",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 219
+   "annonces_immobilier": 247
   },
   {
    "id": "im-kelibiaimmo-tn",
    "source": "web",
    "source_url": "https://kelibiaimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence immobilière Kerkouane",
    "nom_ar": null,
@@ -13959,7 +13959,7 @@
    "id": "im-klouzimmobilier-com",
    "source": "web",
    "source_url": "https://klouzimmobilier.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Klouz immo",
    "nom_ar": null,
@@ -13971,31 +13971,31 @@
    "facebook": "https://www.facebook.com/klouzimmo",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 372
+   "annonces_immobilier": 460
   },
   {
    "id": "im-leboulevardimmo-com",
    "source": "web",
    "source_url": "https://leboulevardimmo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Le Boulevard",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Rue ibnou sina, oued souhil, Nabeul - 8000",
-   "tel": "29698992",
+   "tel": "55982862",
    "site": "https://leboulevardimmo.com/",
    "facebook": "https://www.facebook.com/LeBoulevard.immobiliere",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 110
+   "annonces_immobilier": 113
   },
   {
    "id": "im-lecarre9-com",
    "source": "web",
    "source_url": "https://lecarre9.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Le Carré 9",
    "nom_ar": null,
@@ -14007,13 +14007,13 @@
    "facebook": "https://www.facebook.com/lecarre9",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 253
+   "annonces_immobilier": 245
   },
   {
    "id": "im-luxury-house-tn",
    "source": "web",
    "source_url": "https://luxury-house.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Luxury House",
    "nom_ar": null,
@@ -14025,13 +14025,13 @@
    "facebook": "https://www.facebook.com/pg/luxuryHouse.Tunisie/posts",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 133
+   "annonces_immobilier": 135
   },
   {
    "id": "im-metisimmo-tn",
    "source": "web",
    "source_url": "https://metisimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Metis",
    "nom_ar": null,
@@ -14043,13 +14043,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=100083010956326",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 67
+   "annonces_immobilier": 110
   },
   {
    "id": "im-narjess-immo-tn",
    "source": "web",
    "source_url": "https://narjess-immo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Narjess Immo",
    "nom_ar": null,
@@ -14061,13 +14061,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=100092324713150",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 198
+   "annonces_immobilier": 220
   },
   {
    "id": "im-newkey-com-tn",
    "source": "web",
    "source_url": "https://newkey.com.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "New Key Immobilier",
    "nom_ar": null,
@@ -14079,13 +14079,13 @@
    "facebook": "https://www.facebook.com/AgenceImmobiliereNewKey",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 139
+   "annonces_immobilier": 161
   },
   {
    "id": "im-perlaimmo-tn",
    "source": "web",
    "source_url": "https://perlaimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Perla Immo",
    "nom_ar": null,
@@ -14103,7 +14103,7 @@
    "id": "im-plaza-immo-com",
    "source": "web",
    "source_url": "https://plaza-immo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "PLAZA IMMO",
    "nom_ar": null,
@@ -14115,13 +14115,13 @@
    "facebook": "https://www.facebook.com/plaza.immo",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 224
+   "annonces_immobilier": 228
   },
   {
    "id": "im-riahi-immo-tn",
    "source": "web",
    "source_url": "https://riahi-immo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Riahi",
    "nom_ar": null,
@@ -14133,13 +14133,13 @@
    "facebook": "https://www.facebook.com/immoriahilocationvente",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 28
+   "annonces_immobilier": 147
   },
   {
    "id": "im-saiekimmobilier-tn",
    "source": "web",
    "source_url": "https://saiekimmobilier.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence SAIEK & Belhouane",
    "nom_ar": null,
@@ -14151,13 +14151,13 @@
    "facebook": "https://www.facebook.com/BelhouaneNidhal",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 316
+   "annonces_immobilier": 318
   },
   {
    "id": "im-vecteurimmo-com-tn",
    "source": "web",
    "source_url": "https://vecteurimmo.com.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Vecteurimmo",
    "nom_ar": null,
@@ -14169,13 +14169,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 44
+   "annonces_immobilier": 45
   },
   {
    "id": "im-adam-immo-com",
    "source": "web",
    "source_url": "https://www.adam-immo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "ADAM Immobilière",
    "nom_ar": null,
@@ -14193,7 +14193,7 @@
    "id": "im-djerbaimmo-tn",
    "source": "web",
    "source_url": "https://www.djerbaimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence Immoblière Amine Djerba",
    "nom_ar": null,
@@ -14211,7 +14211,7 @@
    "id": "im-mostakbalimmo-com",
    "source": "web",
    "source_url": "https://www.mostakbalimmo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "IMMOBILIÉRE EL MOUSTAKBAL",
    "nom_ar": null,
@@ -14223,13 +14223,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 66
+   "annonces_immobilier": 71
   },
   {
    "id": "im-mouin-immobilier-com",
    "source": "web",
    "source_url": "https://www.mouin-immobilier.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Mouin Immobilier",
    "nom_ar": null,
@@ -14241,13 +14241,13 @@
    "facebook": "https://www.facebook.com/Agence-Mouin-Immobilier-Hammamet-140038273005768",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 162
+   "annonces_immobilier": 204
   },
   {
    "id": "im-nova-immo-tn",
    "source": "web",
    "source_url": "https://www.nova-immo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Nova Immo Sfax",
    "nom_ar": null,
@@ -14265,7 +14265,7 @@
    "id": "im-vieuxportimmo-com",
    "source": "web",
    "source_url": "https://www.vieuxportimmo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Agence immobilière du Vieux Port Djerba",
    "nom_ar": null,
@@ -14277,13 +14277,13 @@
    "facebook": "https://www.facebook.com/vieuxportimmodjerba",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 8
+   "annonces_immobilier": 7
   },
   {
    "id": "im-visavis-immobilier-com",
    "source": "web",
    "source_url": "https://www.visavis-immobilier.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "www.visavis-immobilier.com",
    "nom_ar": null,
@@ -14301,14 +14301,14 @@
    "id": "im-zarzidar-com",
    "source": "web",
    "source_url": "https://zarzidar.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Zarzidar",
    "nom_ar": null,
    "gouvernorat": "medenine",
    "ville": null,
    "adresse": "1ere etage,Bureau N° 2 Immeuble Baaboura",
-   "tel": "75693221",
+   "tel": "22285809",
    "site": "https://zarzidar.com/",
    "facebook": "https://www.facebook.com/profile.php?id=61565868279605",
    "horaires": null,
@@ -14319,7 +14319,7 @@
    "id": "im-zephyrimmo-tn",
    "source": "web",
    "source_url": "https://zephyrimmo.tn/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Zephyr Immo La Marsa",
    "nom_ar": null,
@@ -14331,13 +14331,13 @@
    "facebook": "https://www.facebook.com/ZephyrImmoLaMarsa",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 226
+   "annonces_immobilier": 279
   },
   {
    "id": "im-zitounaimmo-com",
    "source": "web",
    "source_url": "https://zitounaimmo.com/",
-   "releve": "2026-10-23",
+   "releve": "2026-10-26",
    "metier": "agence-immobiliere",
    "nom": "Zitouna Immobilier",
    "nom_ar": null,
@@ -14349,7 +14349,7 @@
    "facebook": "https://www.facebook.com/Zitouna.Immobiliers.tn",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 210
+   "annonces_immobilier": 213
   }
  ]
 }
