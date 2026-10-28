@@ -13714,7 +13714,7 @@
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Avenue du militant Abdelkader Dardouri, 8090, Kélibia, Tunisie.",
-   "tel": "29760600",
+   "tel": "29760700",
    "site": "https://aspisimmo.com/",
    "facebook": "https://www.facebook.com/vente.location.kelibia",
    "horaires": null,
@@ -13732,12 +13732,12 @@
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Rue Dag Hammarskjold 8050, Hammamet, Tunisie.",
-   "tel": "53564038",
+   "tel": "53564536",
    "site": "https://ayoubimmobilierhammamet.com/",
    "facebook": "https://www.facebook.com/ayoubimmobilierhammamet",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 590
+   "annonces_immobilier": 591
   },
   {
    "id": "im-bigimmo-tn",
@@ -13755,7 +13755,7 @@
    "facebook": "https://www.facebook.com/BIGIMMOTUNISIA",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 180
+   "annonces_immobilier": 181
   },
   {
    "id": "im-cabinetimmo-com",
@@ -13794,6 +13794,24 @@
    "annonces_immobilier": 101
   },
   {
+   "id": "im-casaimmo-tn",
+   "source": "web",
+   "source_url": "https://casaimmo.tn/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "CASA IMMO",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": "Avenue de république, Résidence Zaineb BLOC A, Magasin N° 7-1, La Nouvelle Médina, 2063, Ben Arous, Tunisie.",
+   "tel": "20813000",
+   "site": "https://casaimmo.tn/",
+   "facebook": "https://www.facebook.com/casaimmo.tn",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 16
+  },
+  {
    "id": "im-colombusimmobilier-com",
    "source": "web",
    "source_url": "https://colombusimmobilier.com/",
@@ -13809,7 +13827,7 @@
    "facebook": "https://www.facebook.com/agencecolombusimmo",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 31
+   "annonces_immobilier": 29
   },
   {
    "id": "im-expatsandhousing-com",
@@ -13827,7 +13845,7 @@
    "facebook": "https://www.facebook.com/ExpatsAndHousingLaMarsa",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 226
+   "annonces_immobilier": 228
   },
   {
    "id": "im-igh-immo-tn",
@@ -13863,7 +13881,7 @@
    "facebook": "https://www.facebook.com/immo.internationale",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 342
+   "annonces_immobilier": 343
   },
   {
    "id": "im-immobiliere-nour-ennasr-com",
@@ -13876,7 +13894,7 @@
    "gouvernorat": "ben-arous",
    "ville": null,
    "adresse": null,
-   "tel": "20400655",
+   "tel": "70036231",
    "site": "https://immobiliere-nour-ennasr.com/",
    "facebook": null,
    "horaires": null,
@@ -13948,12 +13966,12 @@
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Rue ibnou sina, oued souhil, Nabeul - 8000",
-   "tel": "55982862",
+   "tel": "22232885",
    "site": "https://leboulevardimmo.com/",
    "facebook": "https://www.facebook.com/LeBoulevard.immobiliere",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 113
+   "annonces_immobilier": 116
   },
   {
    "id": "im-lecarre9-com",
@@ -13971,7 +13989,7 @@
    "facebook": "https://www.facebook.com/lecarre9",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 246
+   "annonces_immobilier": 242
   },
   {
    "id": "im-luxury-house-tn",
@@ -14007,7 +14025,7 @@
    "facebook": "https://www.facebook.com/profile.php?id=100083010956326",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 110
+   "annonces_immobilier": 112
   },
   {
    "id": "im-narjess-immo-tn",
@@ -14020,12 +14038,12 @@
    "gouvernorat": "sousse",
    "ville": null,
    "adresse": "93 Route de la plage 4011 - Hammam Sousse, Tunisie.",
-   "tel": "55153800",
+   "tel": "52502988",
    "site": "https://narjess-immo.tn/",
    "facebook": "https://www.facebook.com/profile.php?id=100092324713150",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 220
+   "annonces_immobilier": 221
   },
   {
    "id": "im-perlaimmo-tn",
@@ -14061,7 +14079,7 @@
    "facebook": "https://www.facebook.com/plaza.immo",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 228
+   "annonces_immobilier": 230
   },
   {
    "id": "im-riahi-immo-tn",
@@ -14079,7 +14097,7 @@
    "facebook": "https://www.facebook.com/immoriahilocationvente",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 147
+   "annonces_immobilier": 148
   },
   {
    "id": "im-saiekimmobilier-tn",
@@ -14169,7 +14187,7 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 71
+   "annonces_immobilier": 68
   },
   {
    "id": "im-mouin-immobilier-com",
@@ -14187,7 +14205,7 @@
    "facebook": "https://www.facebook.com/Agence-Mouin-Immobilier-Hammamet-140038273005768",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 204
+   "annonces_immobilier": 187
   },
   {
    "id": "im-newkey-com-tn",
@@ -14205,7 +14223,7 @@
    "facebook": "https://www.facebook.com/AgenceImmobiliereNewKey",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 164
+   "annonces_immobilier": 356
   },
   {
    "id": "im-nova-immo-tn",
@@ -14224,6 +14242,24 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 5
+  },
+  {
+   "id": "im-verdar-tn",
+   "source": "web",
+   "source_url": "https://www.verdar.tn/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Verdar",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": null,
+   "tel": "28600612",
+   "site": "https://www.verdar.tn/",
+   "facebook": "https://www.facebook.com/verdar.tn",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 216
   },
   {
    "id": "im-vieuxportimmo-com",
@@ -14272,7 +14308,7 @@
    "gouvernorat": "medenine",
    "ville": null,
    "adresse": "1ere etage,Bureau N° 2 Immeuble Baaboura",
-   "tel": "51426226",
+   "tel": "97541641",
    "site": "https://zarzidar.com/",
    "facebook": "https://www.facebook.com/profile.php?id=61565868279605",
    "horaires": null,
@@ -14295,7 +14331,7 @@
    "facebook": "https://www.facebook.com/ZephyrImmoLaMarsa",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 279
+   "annonces_immobilier": 281
   },
   {
    "id": "im-zitounaimmo-com",
@@ -14313,7 +14349,7 @@
    "facebook": "https://www.facebook.com/Zitouna.Immobiliers.tn",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 213
+   "annonces_immobilier": 214
   },
   {
    "id": "im-tecnocasa-tuha3",
@@ -14440,6 +14476,24 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 5
+  },
+  {
+   "id": "im-tecnocasa-tuhd2",
+   "source": "web",
+   "source_url": "https://borjcedria1.tecnocasa.tn/borj-cedria/borj-cedria/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa Borj Cédria",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": "Avenue de Tunis, Borj Cédria , 2084 Borj Cédria",
+   "tel": "23610010",
+   "site": "https://borjcedria1.tecnocasa.tn/borj-cedria/borj-cedria/",
+   "facebook": "https://www.facebook.com/profile.php?id=100064063602000&locale=fr_FR",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 6
   },
   {
    "id": "im-tecnocasa-sscb5",
@@ -14964,6 +15018,24 @@
    "annonces_immobilier": 15
   },
   {
+   "id": "im-tecnocasa-ssca7",
+   "source": "web",
+   "source_url": "https://msaken1.tecnocasa.tn/msaken/msaken/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa M'Saken",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": null,
+   "adresse": "Avenue De l'Environnement N°02, 4070 M'Saken",
+   "tel": "29619555",
+   "site": "https://msaken1.tecnocasa.tn/msaken/msaken/",
+   "facebook": null,
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 6
+  },
+  {
    "id": "im-tecnocasa-mdca3",
    "source": "web",
    "source_url": "https://mahdia1.tecnocasa.tn/mahdia/rejiche/",
@@ -15016,6 +15088,24 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 27
+  },
+  {
+   "id": "im-tecnocasa-tucc1",
+   "source": "web",
+   "source_url": "https://megrine.tecnocasa.tn/megrine/megrine/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa Mégrine",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": "Rue HEDI ERRAYES N°75, 2014 2014 Mégrine",
+   "tel": "29676673",
+   "site": "https://megrine.tecnocasa.tn/megrine/megrine/",
+   "facebook": "https://www.facebook.com/Tecnocasa.Megrine",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-moca4",
@@ -15378,6 +15468,42 @@
    "annonces_immobilier": 7
   },
   {
+   "id": "im-tecnocasa-arcb1",
+   "source": "web",
+   "source_url": "https://ariana2.tecnocasa.tn/ariana/el-menzah-56/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa El Menzah 5, 6",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": null,
+   "adresse": "Avenue d'Afrique N°38, Menzah 5 2080 Ariana",
+   "tel": "71750630",
+   "site": "https://ariana2.tecnocasa.tn/ariana/el-menzah-56/",
+   "facebook": "https://www.facebook.com/tecnocasamenzahV",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 7
+  },
+  {
+   "id": "im-tecnocasa-tuch3",
+   "source": "web",
+   "source_url": "https://mutuelleville.tecnocasa.tn/mutuelleville/mutuelleville/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa Mutuelleville",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": "Place MENDÉS FRANCE,N° 12 RUE OUHOD, 1082 Mutuelleville",
+   "tel": "71844351",
+   "site": "https://mutuelleville.tecnocasa.tn/mutuelleville/mutuelleville/",
+   "facebook": "https://www.facebook.com/Tecnocasamutuelleville",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 3
+  },
+  {
    "id": "im-tecnocasa-tuch4",
    "source": "web",
    "source_url": "https://manar1.tecnocasa.tn/manar/manar-1/",
@@ -15414,6 +15540,24 @@
    "annonces_immobilier": 10
   },
   {
+   "id": "im-tecnocasa-moca1",
+   "source": "web",
+   "source_url": "https://monastirlafalaise.tecnocasa.tn/monastir/monastir-la-falaise/",
+   "releve": "2026-10-27",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa Monastir La Falaise",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": "Avenue De La République N° 3 Monastir, 5060 Monastir",
+   "tel": "73505111",
+   "site": "https://monastirlafalaise.tecnocasa.tn/monastir/monastir-la-falaise/",
+   "facebook": "https://www.facebook.com/tecnocasamonastirlafalaise",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 10
+  },
+  {
    "id": "im-tecnocasa-mdca1",
    "source": "web",
    "source_url": "https://mahdiacv.tecnocasa.tn/mahdia/mahdia-centre-ville/",
@@ -15430,24 +15574,6 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 8
-  },
-  {
-   "id": "im-tecnocasa-arcb1",
-   "source": "web",
-   "source_url": "https://ariana2.tecnocasa.tn/ariana/el-menzah-56/",
-   "releve": "2026-10-27",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa El Menzah 5, 6",
-   "nom_ar": null,
-   "gouvernorat": "ariana",
-   "ville": null,
-   "adresse": "Avenue d'Afrique N°38, Menzah 5 2080 Ariana",
-   "tel": "71750630",
-   "site": "https://ariana2.tecnocasa.tn/ariana/el-menzah-56/",
-   "facebook": "https://www.facebook.com/tecnocasamenzahV",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 7
   },
   {
    "id": "im-tecnocasa-mdca2",
@@ -15484,24 +15610,6 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 0
-  },
-  {
-   "id": "im-tecnocasa-moca1",
-   "source": "web",
-   "source_url": "https://monastirlafalaise.tecnocasa.tn/monastir/monastir-la-falaise/",
-   "releve": "2026-10-27",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa Monastir La Falaise",
-   "nom_ar": null,
-   "gouvernorat": "monastir",
-   "ville": null,
-   "adresse": "Avenue De La République N° 3 Monastir, 5060 Monastir",
-   "tel": "73505111",
-   "site": "https://monastirlafalaise.tecnocasa.tn/monastir/monastir-la-falaise/",
-   "facebook": "https://www.facebook.com/tecnocasamonastirlafalaise",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-ssca2",
@@ -15576,24 +15684,6 @@
    "annonces_immobilier": 3
   },
   {
-   "id": "im-tecnocasa-ssca7",
-   "source": "web",
-   "source_url": "https://msaken1.tecnocasa.tn/msaken/msaken/",
-   "releve": "2026-10-27",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa M'Saken",
-   "nom_ar": null,
-   "gouvernorat": "sousse",
-   "ville": null,
-   "adresse": "Avenue De l'Environnement N°02, 4070 M'Saken",
-   "tel": "29619555",
-   "site": "https://msaken1.tecnocasa.tn/msaken/msaken/",
-   "facebook": null,
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 6
-  },
-  {
    "id": "im-tecnocasa-tuca3",
    "source": "web",
    "source_url": "https://lac2.tecnocasa.tn/les-berges-du-lac/le-lac-2/",
@@ -15610,24 +15700,6 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 12
-  },
-  {
-   "id": "im-tecnocasa-tucc1",
-   "source": "web",
-   "source_url": "https://megrine.tecnocasa.tn/megrine/megrine/",
-   "releve": "2026-10-27",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa Mégrine",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": "Rue HEDI ERRAYES N°75, 2014 2014 Mégrine",
-   "tel": "29676673",
-   "site": "https://megrine.tecnocasa.tn/megrine/megrine/",
-   "facebook": "https://www.facebook.com/Tecnocasa.Megrine",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-tucg2",
@@ -15666,24 +15738,6 @@
    "annonces_immobilier": 1
   },
   {
-   "id": "im-tecnocasa-tuch3",
-   "source": "web",
-   "source_url": "https://mutuelleville.tecnocasa.tn/mutuelleville/mutuelleville/",
-   "releve": "2026-10-27",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa Mutuelleville",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": null,
-   "adresse": "Place MENDÉS FRANCE,N° 12 RUE OUHOD, 1082 Mutuelleville",
-   "tel": "71844351",
-   "site": "https://mutuelleville.tecnocasa.tn/mutuelleville/mutuelleville/",
-   "facebook": "https://www.facebook.com/Tecnocasamutuelleville",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 3
-  },
-  {
    "id": "im-tecnocasa-tuha6",
    "source": "web",
    "source_url": "https://lasoukra2.tecnocasa.tn/la-soukra/la-soukra-2/",
@@ -15700,24 +15754,6 @@
    "horaires": null,
    "annuaire": "immobilier",
    "annonces_immobilier": 1
-  },
-  {
-   "id": "im-tecnocasa-tuhd2",
-   "source": "web",
-   "source_url": "https://borjcedria1.tecnocasa.tn/borj-cedria/borj-cedria/",
-   "releve": "2026-10-27",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa Borj Cédria",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": "Avenue de Tunis, Borj Cédria , 2084 Borj Cédria",
-   "tel": "23610010",
-   "site": "https://borjcedria1.tecnocasa.tn/borj-cedria/borj-cedria/",
-   "facebook": "https://www.facebook.com/profile.php?id=100064063602000&locale=fr_FR",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 6
   },
   {
    "id": "im-century21-century-21-alliance",
