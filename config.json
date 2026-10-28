@@ -1484,6 +1484,31 @@
         "source": "https://commons.wikimedia.org/w/index.php?curid=155483727"
       },
       "organisme_aucun": "27/10/2026 : chambre syndicale nationale des bouchers sans site officiel trouvé"
+    },
+    {
+      "id": "boulangerie",
+      "osm": [
+        "shop=bakery"
+      ],
+      "fr": "Boulangerie",
+      "fr_pl": "Boulangeries",
+      "ar": "مخبزة",
+      "ar_pl": "المخابز",
+      "mots": "boulangerie boulanger pain baguette tabouna khobz khobza mkhabza makhbaza مخبزة مخبز خبز خبّاز طابونة باقات",
+      "organisme_aucun": "28/10/2026 : chambre syndicale nationale des boulangers (UTICA) sans site officiel trouvé",
+      "photo": {
+        "fichier": "assets/metiers-photos/boulangerie.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Grands pains ronds en vente",
+          "ar": "أرغفة خبز كبيرة معروضة للبيع"
+        },
+        "auteur": "Ahmet Düz",
+        "licence": "CC0",
+        "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=195596254"
+      }
     }
   ],
   "categories": [
@@ -1572,7 +1597,8 @@
       "fr": "Alimentation",
       "ar": "التغذية",
       "metiers": [
-        "boucherie"
+        "boucherie",
+        "boulangerie"
       ]
     }
   ],
