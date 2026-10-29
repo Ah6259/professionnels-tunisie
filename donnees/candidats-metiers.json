@@ -1,5 +1,5 @@
 {
-"maj": "2026-10-28",
+"maj": "2026-10-29",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -110,7 +110,7 @@
 "osm": "shop=electronics",
 "lieux": 83,
 "joignables": 11,
-"deja": false,
+"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
