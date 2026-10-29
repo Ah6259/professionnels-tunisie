@@ -657,7 +657,7 @@ if (OUVERT) pages["conditions/"] = tete({ titre: `Conditions pour les profession
 
 /* ---------------- écriture ---------------- */
 // on efface les anciennes pages de fiches (une fiche retirée ne doit plus exister)
-for (const dossier of ["fiche", "gouvernorat", "conditions"]) if (existsSync(join(root, dossier))) rmSync(join(root, dossier), { recursive: true, force: true });
+for (const dossier of ["fiche", "gouvernorat", "metier", "conditions"]) if (existsSync(join(root, dossier))) rmSync(join(root, dossier), { recursive: true, force: true });
 for (const [chemin, html] of Object.entries(pages)) {
   const d = join(root, chemin); mkdirSync(d, { recursive: true });
   writeFileSync(join(d, "index.html"), html, "utf8");

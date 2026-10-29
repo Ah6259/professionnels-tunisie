@@ -404,7 +404,6 @@
   <url><loc>https://pros.clicvia.com/metier/medecin/tunis/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/dentiste/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/dentiste/ariana/</loc></url>
-  <url><loc>https://pros.clicvia.com/metier/dentiste/ben-arous/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/dentiste/bizerte/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/dentiste/gabes/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/dentiste/la-manouba/</loc></url>
@@ -470,6 +469,17 @@
   <url><loc>https://pros.clicvia.com/metier/boulangerie/tataouine/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/boulangerie/tozeur/</loc></url>
   <url><loc>https://pros.clicvia.com/metier/boulangerie/tunis/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/ariana/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/ben-arous/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/le-kef/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/monastir/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/nabeul/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/sfax/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/sidi-bouzid/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/sousse/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/tataouine/</loc></url>
+  <url><loc>https://pros.clicvia.com/metier/electronique/tunis/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11140095099/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-gafsa-oect-aac/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11270254886/</loc></url>
@@ -519,7 +529,7 @@
   <url><loc>https://pros.clicvia.com/fiche/an-web-sousse-amor-law-firm/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-la-manouba-ange-coiffure/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n9968209017/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-w990345033/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/ma-osm-w990345033/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-nabeul-arcadia/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n4294811498/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-kasserine-oct-asmahen-abdelli/</loc></url>
@@ -637,7 +647,7 @@
   <url><loc>https://pros.clicvia.com/fiche/im-ayoubimmobilierhammamet-com/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7643330593/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ae-web-tozeur-badi/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14127164026/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/ma-osm-n14127164026/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n10791272952/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11036230058/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-w924411910/</loc></url>
@@ -695,7 +705,6 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n5091626034/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12458528948/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n13788009391/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14294673295/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12587415235/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n13070533697/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7617623546/</loc></url>
@@ -715,6 +724,7 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n4143553989/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-sousse-cabinet-zaatir/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-ariana-cakes-with-love-by-sabrina/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n12335415975/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7615562265/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/im-casaimmo-tn/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11085327303/</loc></url>
@@ -758,8 +768,6 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n9174550889/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-siliana-oct-chokri-askri/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11061466829/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14105204677/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14105204679/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n3898900660/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n1446276820/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-w350644171/</loc></url>
@@ -814,7 +822,7 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n7618828588/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7647085633/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7649076687/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14211573001/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/ma-osm-n14211573001/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n8380941317/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n8422607618/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/im-colombusimmobilier-com/</loc></url>
@@ -832,7 +840,6 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n11149292902/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11161902948/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n5132475221/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14267391288/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n13047922011/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n1801351726/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n4332075198/</loc></url>
@@ -906,7 +913,11 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n11148197770/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12941258774/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n10875768904/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n9059598205/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n9825316829/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n10120705517/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n9823657275/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n8943583969/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n4694960889/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-w1225871305/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-zaghouan-oect-errached-auditing/</loc></url>
@@ -944,7 +955,7 @@
   <url><loc>https://pros.clicvia.com/fiche/im-expatsandhousing-com/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n5174834627/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n8951310148/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14102583472/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n13698563193/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11061467325/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-ben-arous-oect-faker-chouchane/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n5062665333/</loc></url>
@@ -1080,10 +1091,11 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n7643380609/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-zaghouan-le-regal/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n9180411784/</loc></url>
-  <url><loc>https://pros.clicvia.com/fiche/osm-n14161996428/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/ma-osm-n14161996428/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12839209790/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-nabeul-levotre-traiteur/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n4548124889/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n12215891584/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n8913714106/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-le-kef-oct-lotfi-salhi/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-sfax-luca-pacioli/</loc></url>
@@ -1096,6 +1108,7 @@
   <url><loc>https://pros.clicvia.com/fiche/co-web-sidi-bouzid-oect-m2n-audit-et-consulting/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-tataouine-oct-mabrouk-azri/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-la-manouba-madame-najet-traiteur/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n6535365913/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-sfax-oect-mahdi-aouichaoui/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-kebili-oct-mahdia-abid/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-monastir-oct-maher-behi/</loc></url>
@@ -1112,6 +1125,7 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n8879640443/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11149308008/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-tunis-makhlouf-traiteur/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n7615357061/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n4544628190/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n9828725193/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n2624546913/</loc></url>
@@ -1137,7 +1151,9 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n11164869930/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n9775293694/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-w100788079/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n4117141299/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n5292665537/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n5210409295/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-sousse-mkhinini-avocats/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-medenine-oect-moez-ellafi/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-gabes-mohamed-ali-photographe/</loc></url>
@@ -1153,6 +1169,7 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n3708190288/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-la-manouba-oect-mon-expertise-comptable-audit-conseil/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-jendouba-oct-moncef-ayari/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n11107140108/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-kebili-oct-mongi-ben-belgacem/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ae-web-tunis-moto-ecole-mahdi/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-sidi-bouzid-oct-moufid-mnasri/</loc></url>
@@ -1565,6 +1582,7 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-w252496265/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-tataouine-oct-ste-rhaf-accounting/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-kasserine-oct-ste-rihab-de-comptabilite-finance-suarl/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n7656085479/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7635711648/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n5427853521/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-tataouine-studio-9/</loc></url>
@@ -1593,6 +1611,7 @@
   <url><loc>https://pros.clicvia.com/fiche/ma-web-sidi-bouzid-tatin-patisserie/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11132855013/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12941741594/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n7620701135/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n10820484023/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12228236121/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/im-tecnocasa-tuhb2/</loc></url>
@@ -1692,15 +1711,19 @@
   <url><loc>https://pros.clicvia.com/fiche/ma-web-sfax-traiteur-wafa/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n3729335263/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n12163342931/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n4745000925/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n4745029824/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/im-vecteurimmo-com-tn/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11166922363/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11166922353/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-w966484192/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11145909580/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11145909579/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n11127374803/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/im-verdar-tn/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-kairouan-versailles-kairouan/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-nabeul-victoria-salle-des-fetes/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n3004044789/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n6258959887/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n4546317890/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n3862820748/</loc></url>
@@ -1728,6 +1751,7 @@
   <url><loc>https://pros.clicvia.com/fiche/osm-n7644133067/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/co-web-la-manouba-oect-zha-audit-conseils/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/im-zitounaimmo-com/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n10754534645/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/ma-web-mahdia-zouali-photography/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/osm-n7211675810/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-traducteur-sousse-2/</loc></url>
@@ -1917,6 +1941,7 @@
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-notaire-le-kef-1/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-notaire-kebili-2/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-huissier-la-manouba-3/</loc></url>
+  <url><loc>https://pros.clicvia.com/fiche/osm-n5296572379/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-traducteur-sousse-3/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-traducteur-siliana-2/</loc></url>
   <url><loc>https://pros.clicvia.com/fiche/an-web-mj-traducteur-tunis-1/</loc></url>
