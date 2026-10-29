@@ -386,6 +386,22 @@
    "osm": "https://www.openstreetmap.org/node/13788009391"
   },
   {
+   "id": "osm-n14294673295",
+   "source": "osm",
+   "metier": "dentiste",
+   "nom": "Cabinet dentaire Dr rezgui Houssem",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": "Tunis",
+   "adresse": "23 Av. Iben Kholdoun",
+   "tel": "50149159",
+   "site": "https://www.smilevip.net/",
+   "horaires": null,
+   "lat": 36.839805,
+   "lon": 10.115715,
+   "osm": "https://www.openstreetmap.org/node/14294673295"
+  },
+  {
    "id": "osm-n4838920082",
    "source": "osm",
    "metier": "dentiste",
@@ -1968,6 +1984,22 @@
    "lat": 36.863205,
    "lon": 10.215542,
    "osm": "https://www.openstreetmap.org/node/6498956078"
+  },
+  {
+   "id": "osm-n11257691403",
+   "source": "osm",
+   "metier": "pharmacie",
+   "nom": "pharmacie de nuit",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.877991,
+   "lon": 10.185793,
+   "osm": "https://www.openstreetmap.org/node/11257691403"
   },
   {
    "id": "osm-w383101683",
@@ -4034,22 +4066,6 @@
    "osm": "https://www.openstreetmap.org/node/11140065337"
   },
   {
-   "id": "osm-n4859421621",
-   "source": "osm",
-   "metier": "clinique",
-   "nom": "Ben arouse",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.762074,
-   "lon": 10.235198,
-   "osm": "https://www.openstreetmap.org/node/4859421621"
-  },
-  {
    "id": "osm-n5295927935",
    "source": "osm",
    "metier": "boucherie",
@@ -4466,6 +4482,22 @@
    "osm": "https://www.openstreetmap.org/node/4810567621"
   },
   {
+   "id": "osm-r21167582",
+   "source": "osm",
+   "metier": "clinique",
+   "nom": "Clinique Beau Séjour",
+   "nom_ar": "مصحة بو سيجور",
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.761423,
+   "lon": 10.234696,
+   "osm": "https://www.openstreetmap.org/relation/21167582"
+  },
+  {
    "id": "osm-w487927064",
    "source": "osm",
    "metier": "clinique",
@@ -4544,6 +4576,22 @@
    "lat": 36.71937,
    "lon": 10.172097,
    "osm": "https://www.openstreetmap.org/way/1198826780"
+  },
+  {
+   "id": "osm-n14267391288",
+   "source": "osm",
+   "metier": "dentiste",
+   "nom": "Dentiste Dr Montaha Yaakoubi",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": "Cité Erriadh",
+   "adresse": null,
+   "tel": "99706020",
+   "site": null,
+   "horaires": "HORAIRES DE TRAVAIL أوقات العمل  Lundi → Vendredi الاثنين ← الجمعة 🕘 08h00 – 19h00  Samedi السبت 🕗 08h00 – 13h00",
+   "lat": 36.703589,
+   "lon": 10.406159,
+   "osm": "https://www.openstreetmap.org/node/14267391288"
   },
   {
    "id": "osm-n3191322586",
@@ -4866,22 +4914,6 @@
    "osm": "https://www.openstreetmap.org/node/11142087205"
   },
   {
-   "id": "osm-w1541348243",
-   "source": "osm",
-   "metier": "salle-de-sport",
-   "nom": "Gym Max",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": "Mo-Fr,Su 07:00-22:00; Sa 07:00-17:00",
-   "lat": 36.748593,
-   "lon": 10.220573,
-   "osm": "https://www.openstreetmap.org/way/1541348243"
-  },
-  {
    "id": "osm-n4366610592",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -5179,7 +5211,7 @@
    "ville": "الزهراء",
    "adresse": "5 شارع الجمهورية",
    "tel": "23518000",
-   "site": "https://www.facebook.com/pg/MirageStudio.tn/about/?ref=page_internal",
+   "site": "https://www.facebook.com/pg/MirageStudio.tn/about/",
    "horaires": "Mo-Su 08:00-20:00",
    "lat": 36.747078,
    "lon": 10.309781,
@@ -5789,8 +5821,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 36.744222,
-   "lon": 10.224576,
+   "lat": 36.744248,
+   "lon": 10.224575,
    "osm": "https://www.openstreetmap.org/node/2007666932"
   },
   {
@@ -6192,6 +6224,22 @@
    "lat": 36.696292,
    "lon": 10.166362,
    "osm": "https://www.openstreetmap.org/node/11142540865"
+  },
+  {
+   "id": "osm-w1564660374",
+   "source": "osm",
+   "metier": "salle-de-sport",
+   "nom": "Salle de sport Majoul",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.752575,
+   "lon": 10.221143,
+   "osm": "https://www.openstreetmap.org/way/1564660374"
   },
   {
    "id": "osm-n5291448318",
@@ -7744,6 +7792,22 @@
    "lat": 36.696163,
    "lon": 10.167107,
    "osm": "https://www.openstreetmap.org/node/11143282956"
+  },
+  {
+   "id": "osm-n14061527894",
+   "source": "osm",
+   "metier": "boucherie",
+   "nom": "ولد بريك للدواجن",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.747744,
+   "lon": 10.219835,
+   "osm": "https://www.openstreetmap.org/node/14061527894"
   },
   {
    "id": "osm-n11142474754",
@@ -10512,6 +10576,22 @@
    "lat": 36.431531,
    "lon": 8.623396,
    "osm": "https://www.openstreetmap.org/node/11064286396"
+  },
+  {
+   "id": "osm-n14127164026",
+   "source": "osm",
+   "metier": "coiffure-beaute",
+   "nom": "Bahia",
+   "nom_ar": null,
+   "gouvernorat": "kairouan",
+   "ville": "Kairouan",
+   "adresse": "Av. Oqba Ibn Nafaâ",
+   "tel": "53351358",
+   "site": "https://bahiacosmetic.com/",
+   "horaires": null,
+   "lat": 35.682697,
+   "lon": 10.104024,
+   "osm": "https://www.openstreetmap.org/node/14127164026"
   },
   {
    "id": "osm-n10006526011",
@@ -13346,6 +13426,22 @@
    "osm": "https://www.openstreetmap.org/way/665454109"
   },
   {
+   "id": "osm-n14161996428",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "Les Délices de Afaf",
+   "nom_ar": null,
+   "gouvernorat": "la-manouba",
+   "ville": null,
+   "adresse": null,
+   "tel": "93896055",
+   "site": null,
+   "horaires": null,
+   "lat": 36.809093,
+   "lon": 10.09814,
+   "osm": "https://www.openstreetmap.org/node/14161996428"
+  },
+  {
    "id": "osm-n6284202315",
    "source": "osm",
    "metier": "dentiste",
@@ -14370,6 +14466,22 @@
    "osm": "https://www.openstreetmap.org/node/13097652097"
   },
   {
+   "id": "osm-w990345033",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "Arabesque Pâtisserie Tunisienne",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": "Erriadh",
+   "adresse": null,
+   "tel": "75670499",
+   "site": null,
+   "horaires": null,
+   "lat": 33.818741,
+   "lon": 10.859849,
+   "osm": "https://www.openstreetmap.org/way/990345033"
+  },
+  {
    "id": "osm-n5296963321",
    "source": "osm",
    "metier": "agence-voyage",
@@ -14716,7 +14828,7 @@
    "adresse": null,
    "tel": null,
    "site": null,
-   "horaires": null,
+   "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
    "lat": 33.876706,
    "lon": 10.856834,
    "osm": "https://www.openstreetmap.org/node/12917478981"
@@ -14765,8 +14877,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 33.3454,
-   "lon": 10.489596,
+   "lat": 33.345363,
+   "lon": 10.489515,
    "osm": "https://www.openstreetmap.org/node/4687642889"
   },
   {
@@ -14845,8 +14957,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 33.342819,
-   "lon": 10.48981,
+   "lat": 33.342772,
+   "lon": 10.489736,
    "osm": "https://www.openstreetmap.org/way/284132473"
   },
   {
@@ -15058,6 +15170,38 @@
    "osm": "https://www.openstreetmap.org/node/13239145943"
   },
   {
+   "id": "osm-n14103544537",
+   "source": "osm",
+   "metier": "coiffure-beaute",
+   "nom": "افندي",
+   "nom_ar": "افندي",
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Su",
+   "lat": 33.33525,
+   "lon": 10.487368,
+   "osm": "https://www.openstreetmap.org/node/14103544537"
+  },
+  {
+   "id": "osm-n14129951349",
+   "source": "osm",
+   "metier": "reparation-telephone",
+   "nom": "تيك سنتر",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.333574,
+   "lon": 10.485404,
+   "osm": "https://www.openstreetmap.org/node/14129951349"
+  },
+  {
    "id": "osm-n6250017485",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -15072,6 +15216,38 @@
    "lat": 33.806193,
    "lon": 10.987895,
    "osm": "https://www.openstreetmap.org/node/6250017485"
+  },
+  {
+   "id": "osm-n14101830177",
+   "source": "osm",
+   "metier": "pharmacie",
+   "nom": "صيدلية الليل",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.337245,
+   "lon": 10.486157,
+   "osm": "https://www.openstreetmap.org/node/14101830177"
+  },
+  {
+   "id": "osm-n14216516190",
+   "source": "osm",
+   "metier": "pharmacie",
+   "nom": "صيدلية عبشة",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.338962,
+   "lon": 10.486851,
+   "osm": "https://www.openstreetmap.org/node/14216516190"
   },
   {
    "id": "osm-n9106134128",
@@ -15106,6 +15282,22 @@
    "osm": "https://www.openstreetmap.org/node/9123038404"
   },
   {
+   "id": "osm-n14129951353",
+   "source": "osm",
+   "metier": "informatique",
+   "nom": "عبدالمجيد",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.334338,
+   "lon": 10.485446,
+   "osm": "https://www.openstreetmap.org/node/14129951353"
+  },
+  {
    "id": "osm-n11218819337",
    "source": "osm",
    "metier": "medecin",
@@ -15136,6 +15328,54 @@
    "lat": 33.879464,
    "lon": 10.854718,
    "osm": "https://www.openstreetmap.org/node/7656186299"
+  },
+  {
+   "id": "osm-n14103544538",
+   "source": "osm",
+   "metier": "coiffure-beaute",
+   "nom": "فهموش",
+   "nom_ar": "فهموش",
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.337574,
+   "lon": 10.48601,
+   "osm": "https://www.openstreetmap.org/node/14103544538"
+  },
+  {
+   "id": "osm-n14103544540",
+   "source": "osm",
+   "metier": "salle-de-sport",
+   "nom": "قاعة زياد",
+   "nom_ar": "قاعة زياد",
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Su",
+   "lat": 33.334106,
+   "lon": 10.486503,
+   "osm": "https://www.openstreetmap.org/node/14103544540"
+  },
+  {
+   "id": "osm-n14304973578",
+   "source": "osm",
+   "metier": "salle-de-sport",
+   "nom": "قاعة زيتا",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.339242,
+   "lon": 10.489493,
+   "osm": "https://www.openstreetmap.org/node/14304973578"
   },
   {
    "id": "osm-n5567472939",
@@ -15184,6 +15424,54 @@
    "lat": 33.87646,
    "lon": 10.855449,
    "osm": "https://www.openstreetmap.org/node/6310846986"
+  },
+  {
+   "id": "osm-n14103544539",
+   "source": "osm",
+   "metier": "boulangerie",
+   "nom": "مخبزة اللولب",
+   "nom_ar": "مخبزة اللولب",
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Sa",
+   "lat": 33.334206,
+   "lon": 10.486651,
+   "osm": "https://www.openstreetmap.org/node/14103544539"
+  },
+  {
+   "id": "osm-n14125819796",
+   "source": "osm",
+   "metier": "boulangerie",
+   "nom": "مرطبات مطاوع",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.340345,
+   "lon": 10.487374,
+   "osm": "https://www.openstreetmap.org/node/14125819796"
+  },
+  {
+   "id": "osm-w1561827175",
+   "source": "osm",
+   "metier": "clinique",
+   "nom": "مصحة ابن عرفة",
+   "nom_ar": null,
+   "gouvernorat": "medenine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Su,PH 08:00-08:00",
+   "lat": 33.338029,
+   "lon": 10.487319,
+   "osm": "https://www.openstreetmap.org/way/1561827175"
   },
   {
    "id": "osm-n12596312439",
@@ -16310,7 +16598,7 @@
    "source": "osm",
    "metier": "salle-de-sport",
    "nom": "Fitland salle de sport",
-   "nom_ar": null,
+   "nom_ar": "قاعة الرياضة فيت لاند",
    "gouvernorat": "monastir",
    "ville": null,
    "adresse": "شارع الحبيب بورقيبة",
@@ -16640,6 +16928,22 @@
    "lat": 35.652754,
    "lon": 10.880624,
    "osm": "https://www.openstreetmap.org/node/3715395991"
+  },
+  {
+   "id": "osm-n14096403702",
+   "source": "osm",
+   "metier": "mecanicien",
+   "nom": "MecArt TOYOTA",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Sa 08:00-15:30",
+   "lat": 35.632404,
+   "lon": 10.943048,
+   "osm": "https://www.openstreetmap.org/node/14096403702"
   },
   {
    "id": "osm-n11234554537",
@@ -17008,6 +17312,22 @@
    "lat": 35.772946,
    "lon": 10.829123,
    "osm": "https://www.openstreetmap.org/node/2981211644"
+  },
+  {
+   "id": "osm-w1551496346",
+   "source": "osm",
+   "metier": "pharmacie",
+   "nom": "Pharmacie Bouhawel",
+   "nom_ar": "صيدليّة بوحوال",
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.633043,
+   "lon": 10.910809,
+   "osm": "https://www.openstreetmap.org/way/1551496346"
   },
   {
    "id": "osm-n2981220069",
@@ -17794,6 +18114,22 @@
    "osm": "https://www.openstreetmap.org/way/1194328389"
   },
   {
+   "id": "osm-w1548302635",
+   "source": "osm",
+   "metier": "salle-des-fetes",
+   "nom": "Salle des fêtes Mozart",
+   "nom_ar": "قاعة الأفراح موزارت",
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.604525,
+   "lon": 10.889695,
+   "osm": "https://www.openstreetmap.org/way/1548302635"
+  },
+  {
    "id": "osm-n3085511972",
    "source": "osm",
    "metier": "reparation-telephone",
@@ -17920,22 +18256,6 @@
    "lat": 35.672237,
    "lon": 10.891798,
    "osm": "https://www.openstreetmap.org/node/3085499675"
-  },
-  {
-   "id": "osm-n3085509544",
-   "source": "osm",
-   "metier": "reparation-telephone",
-   "nom": "Taxiphone Samir",
-   "nom_ar": null,
-   "gouvernorat": "monastir",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 35.667073,
-   "lon": 10.892392,
-   "osm": "https://www.openstreetmap.org/node/3085509544"
   },
   {
    "id": "osm-n2306523998",
@@ -25565,8 +25885,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 34.791919,
-   "lon": 10.780406,
+   "lat": 34.791923,
+   "lon": 10.780456,
    "osm": "https://www.openstreetmap.org/node/6495193236"
   },
   {
@@ -26338,20 +26658,20 @@
    "osm": "https://www.openstreetmap.org/node/6550856496"
   },
   {
-   "id": "osm-n13698563193",
+   "id": "osm-n14102583472",
    "source": "osm",
    "metier": "opticien",
-   "nom": "Eye Studio Optic",
-   "nom_ar": null,
+   "nom": "Eye Studio Optic Gremda",
+   "nom_ar": "Eye Studio Optic Gremda",
    "gouvernorat": "sfax",
-   "ville": "SFAX",
-   "adresse": "ROUTE GREMDA KM6 EN FACE MUNICIPALITE GREMDA طريق قرمدة",
+   "ville": "صفاقس",
+   "adresse": "Route de Gremda Km 6 Merkez Kamoun",
    "tel": "27414455",
-   "site": "https://www.instagram.com/eye.studio.optic/",
-   "horaires": "Mo-Su 09:00-20:00",
-   "lat": 34.786549,
-   "lon": 10.720297,
-   "osm": "https://www.openstreetmap.org/node/13698563193"
+   "site": null,
+   "horaires": "Mo-Sa 08:30-19:30",
+   "lat": 34.786593,
+   "lon": 10.720346,
+   "osm": "https://www.openstreetmap.org/node/14102583472"
   },
   {
    "id": "osm-n4198930153",
@@ -26370,6 +26690,22 @@
    "osm": "https://www.openstreetmap.org/node/4198930153"
   },
   {
+   "id": "osm-n14214437997",
+   "source": "osm",
+   "metier": "mecanicien",
+   "nom": "Garage Bilel KIA",
+   "nom_ar": null,
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 34.761533,
+   "lon": 10.685083,
+   "osm": "https://www.openstreetmap.org/node/14214437997"
+  },
+  {
    "id": "osm-n4202082633",
    "source": "osm",
    "metier": "mecanicien",
@@ -26384,6 +26720,22 @@
    "lat": 34.705963,
    "lon": 11.203141,
    "osm": "https://www.openstreetmap.org/node/4202082633"
+  },
+  {
+   "id": "osm-n14214437996",
+   "source": "osm",
+   "metier": "mecanicien",
+   "nom": "Garage Mécanique Electrique Auto",
+   "nom_ar": null,
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 34.811909,
+   "lon": 10.784314,
+   "osm": "https://www.openstreetmap.org/node/14214437996"
   },
   {
    "id": "osm-n4639983066",
@@ -26448,6 +26800,22 @@
    "lat": 34.782007,
    "lon": 10.778126,
    "osm": "https://www.openstreetmap.org/node/7847253029"
+  },
+  {
+   "id": "osm-n14214420935",
+   "source": "osm",
+   "metier": "reparation-telephone",
+   "nom": "Hammadi Trabelsi",
+   "nom_ar": null,
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 34.756705,
+   "lon": 10.686004,
+   "osm": "https://www.openstreetmap.org/node/14214420935"
   },
   {
    "id": "osm-n9357398455",
@@ -26930,6 +27298,22 @@
    "osm": "https://www.openstreetmap.org/node/7176175085"
   },
   {
+   "id": "osm-n14068058243",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "Pastel",
+   "nom_ar": null,
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 34.793454,
+   "lon": 10.776957,
+   "osm": "https://www.openstreetmap.org/node/14068058243"
+  },
+  {
    "id": "osm-n4202109522",
    "source": "osm",
    "metier": "boulangerie",
@@ -26992,22 +27376,6 @@
    "lat": 34.792611,
    "lon": 10.780614,
    "osm": "https://www.openstreetmap.org/node/6495193239"
-  },
-  {
-   "id": "osm-n10725107118",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "Patisserie Et Boulangerie",
-   "nom_ar": "مخبزة ومرطبات",
-   "gouvernorat": "sfax",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 34.799325,
-   "lon": 10.796086,
-   "osm": "https://www.openstreetmap.org/node/10725107118"
   },
   {
    "id": "osm-n4639983088",
@@ -27869,8 +28237,8 @@
    "tel": "74893831",
    "site": null,
    "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
-   "lat": 34.791754,
-   "lon": 10.780381,
+   "lat": 34.791749,
+   "lon": 10.780415,
    "osm": "https://www.openstreetmap.org/node/6495193235"
   },
   {
@@ -28605,8 +28973,8 @@
    "tel": "74219055",
    "site": null,
    "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
-   "lat": 34.791263,
-   "lon": 10.716931,
+   "lat": 34.791274,
+   "lon": 10.716985,
    "osm": "https://www.openstreetmap.org/node/6964768113"
   },
   {
@@ -29081,7 +29449,7 @@
    "nom_ar": "صيدلية سنية الجراية",
    "gouvernorat": "sfax",
    "ville": "صفاقس",
-   "adresse": "طريق قرمدة",
+   "adresse": "Route de Gremda Km 6 Merkez Kamoun",
    "tel": "74236052",
    "site": null,
    "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
@@ -29890,6 +30258,22 @@
    "osm": "https://www.openstreetmap.org/node/4639995389"
   },
   {
+   "id": "osm-n10725107118",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "The Destination",
+   "nom_ar": "مخبزة ومرطبات",
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 34.799325,
+   "lon": 10.796086,
+   "osm": "https://www.openstreetmap.org/node/10725107118"
+  },
+  {
    "id": "osm-n4198941723",
    "source": "osm",
    "metier": "mecanicien",
@@ -30642,6 +31026,22 @@
    "osm": "https://www.openstreetmap.org/node/4745355121"
   },
   {
+   "id": "osm-w551770723",
+   "source": "osm",
+   "metier": "medecin",
+   "nom": "Cabinet d'orthophonie Mayssa Bacha",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.831091,
+   "lon": 10.625514,
+   "osm": "https://www.openstreetmap.org/way/551770723"
+  },
+  {
    "id": "osm-n5091626034",
    "source": "osm",
    "metier": "dentiste",
@@ -30773,7 +31173,7 @@
    "id": "osm-w789974885",
    "source": "osm",
    "metier": "clinique",
-   "nom": "CLINIQUE D'IMAGERIE MEDICALE NOUIRA",
+   "nom": "Clinique d'imagerie médicale Nouira",
    "nom_ar": null,
    "gouvernorat": "sousse",
    "ville": "سوسة",
@@ -34514,6 +34914,38 @@
    "osm": "https://www.openstreetmap.org/node/9831044532"
   },
   {
+   "id": "osm-n14266624786",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "Mehchi El Ksour",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": "Ksar Hadada",
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.098402,
+   "lon": 10.312937,
+   "osm": "https://www.openstreetmap.org/node/14266624786"
+  },
+  {
+   "id": "osm-n14266624785",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "Mehchi La Gazelle",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": "Ghomrassen",
+   "adresse": null,
+   "tel": null,
+   "site": "https://www.facebook.com/MehchiLagazelle",
+   "horaires": null,
+   "lat": 33.059198,
+   "lon": 10.331546,
+   "osm": "https://www.openstreetmap.org/node/14266624785"
+  },
+  {
    "id": "osm-n9775293694",
    "source": "osm",
    "metier": "menuisier",
@@ -37522,6 +37954,22 @@
    "osm": "https://www.openstreetmap.org/node/1422558155"
   },
   {
+   "id": "osm-n14107426096",
+   "source": "osm",
+   "metier": "coiffure-beaute",
+   "nom": "Chouf Poux",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.829029,
+   "lon": 10.178567,
+   "osm": "https://www.openstreetmap.org/node/14107426096"
+  },
+  {
    "id": "osm-w101114978",
    "source": "osm",
    "metier": "concessionnaire",
@@ -37552,6 +38000,38 @@
    "lat": 36.837856,
    "lon": 10.204012,
    "osm": "https://www.openstreetmap.org/way/100788087"
+  },
+  {
+   "id": "osm-n14105204677",
+   "source": "osm",
+   "metier": "climatisation",
+   "nom": "clim'confort",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": "تونس",
+   "adresse": "rue fatma el fehria",
+   "tel": "25092690",
+   "site": "https://clim-peach.vercel.app/",
+   "horaires": "lu-vu 8.00/18.00",
+   "lat": 36.837022,
+   "lon": 10.168205,
+   "osm": "https://www.openstreetmap.org/node/14105204677"
+  },
+  {
+   "id": "osm-n14105204679",
+   "source": "osm",
+   "metier": "climatisation",
+   "nom": "clim'confort",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": "أريانة",
+   "adresse": "شارع الملك عبد العزيز آل سعود",
+   "tel": "25092690",
+   "site": "https://clim-peach.vercel.app/",
+   "horaires": "lu-ve  08.00-18.00",
+   "lat": 36.842184,
+   "lon": 10.163278,
+   "osm": "https://www.openstreetmap.org/node/14105204679"
   },
   {
    "id": "osm-n1446276820",
@@ -38080,6 +38560,22 @@
    "lat": 36.855893,
    "lon": 10.253743,
    "osm": "https://www.openstreetmap.org/node/2590089915"
+  },
+  {
+   "id": "osm-n14211573001",
+   "source": "osm",
+   "metier": "coiffure-beaute",
+   "nom": "Coiffeur Salon 3H",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": "نهج الملاحة",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.802706,
+   "lon": 10.177204,
+   "osm": "https://www.openstreetmap.org/node/14211573001"
   },
   {
    "id": "osm-n11142500228",
@@ -42349,8 +42845,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 36.829722,
-   "lon": 10.179386,
+   "lat": 36.829706,
+   "lon": 10.179366,
    "osm": "https://www.openstreetmap.org/node/4547858091"
   },
   {
@@ -43312,6 +43808,22 @@
    "lat": 36.846574,
    "lon": 10.273475,
    "osm": "https://www.openstreetmap.org/node/6077303976"
+  },
+  {
+   "id": "osm-n14107426045",
+   "source": "osm",
+   "metier": "salle-de-sport",
+   "nom": "Renaissance Studio",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.829381,
+   "lon": 10.17959,
+   "osm": "https://www.openstreetmap.org/node/14107426045"
   },
   {
    "id": "osm-n2164657102",
@@ -44864,6 +45376,22 @@
    "lat": 36.883178,
    "lon": 10.308777,
    "osm": "https://www.openstreetmap.org/node/13236799606"
+  },
+  {
+   "id": "osm-n14107426041",
+   "source": "osm",
+   "metier": "coiffure-beaute",
+   "nom": "VOGUE",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.829106,
+   "lon": 10.178706,
+   "osm": "https://www.openstreetmap.org/node/14107426041"
   },
   {
    "id": "osm-w152181875",
