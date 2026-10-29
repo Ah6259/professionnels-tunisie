@@ -1509,6 +1509,31 @@
         "licence_url": "http://creativecommons.org/publicdomain/zero/1.0/deed.en",
         "source": "https://commons.wikimedia.org/w/index.php?curid=195596254"
       }
+    },
+    {
+      "id": "electronique",
+      "osm": [
+        "shop=electronics"
+      ],
+      "fr": "Magasin d'électronique",
+      "fr_pl": "Magasins d'électronique",
+      "ar": "محل إلكترونيات",
+      "ar_pl": "محلات الإلكترونيات",
+      "mots": "électronique électroménager magasin télévision téléviseur tv ordinateur hifi son câble composants electromenager elektronik إلكترونيك إلكترونيات كهرومنزلي تلفزة تلفاز",
+      "organisme_aucun": "29/10/2026 : aucune chambre syndicale des commerçants d'électronique avec site officiel trouvée",
+      "photo": {
+        "fichier": "assets/metiers-photos/electronique.webp",
+        "largeur": 600,
+        "hauteur": 450,
+        "alt": {
+          "fr": "Rayons d'un magasin d'électronique remplis de composants et de bobines de fil",
+          "ar": "أرفف محل إلكترونيات مليئة بالمكوّنات وبكرات الأسلاك"
+        },
+        "auteur": "PattayaPatrol",
+        "licence": "CC BY-SA 4.0",
+        "licence_url": "https://creativecommons.org/licenses/by-sa/4.0",
+        "source": "https://commons.wikimedia.org/w/index.php?curid=189044295"
+      }
     }
   ],
   "categories": [
@@ -1577,7 +1602,8 @@
       "ar": "الهاتف والإعلامية",
       "metiers": [
         "reparation-telephone",
-        "informatique"
+        "informatique",
+        "electronique"
       ]
     },
     {
