@@ -146,6 +146,22 @@
    "osm": "https://www.openstreetmap.org/node/2390119550"
   },
   {
+   "id": "osm-w389410993",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Batam",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.838798,
+   "lon": 10.116589,
+   "osm": "https://www.openstreetmap.org/way/389410993"
+  },
+  {
    "id": "osm-n1037118976",
    "source": "osm",
    "metier": "concessionnaire",
@@ -368,22 +384,6 @@
    "lat": 36.899234,
    "lon": 10.183938,
    "osm": "https://www.openstreetmap.org/node/13788009391"
-  },
-  {
-   "id": "osm-n14294673295",
-   "source": "osm",
-   "metier": "dentiste",
-   "nom": "Cabinet dentaire Dr rezgui Houssem",
-   "nom_ar": null,
-   "gouvernorat": "ariana",
-   "ville": "Tunis",
-   "adresse": "23 Av. Iben Kholdoun",
-   "tel": "50149159",
-   "site": "https://www.smilevip.net/",
-   "horaires": null,
-   "lat": 36.839805,
-   "lon": 10.115715,
-   "osm": "https://www.openstreetmap.org/node/14294673295"
   },
   {
    "id": "osm-n4838920082",
@@ -898,6 +898,22 @@
    "osm": "https://www.openstreetmap.org/node/9059598212"
   },
   {
+   "id": "osm-n9059598205",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro",
+   "nom_ar": "العروسة",
+   "gouvernorat": "ariana",
+   "ville": "أريانة",
+   "adresse": "نهج الصادق بسيّس",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.859703,
+   "lon": 10.190421,
+   "osm": "https://www.openstreetmap.org/node/9059598205"
+  },
+  {
    "id": "osm-n9021872113",
    "source": "osm",
    "metier": "salle-de-sport",
@@ -1312,6 +1328,22 @@
    "lat": 36.858414,
    "lon": 10.190021,
    "osm": "https://www.openstreetmap.org/node/8944356384"
+  },
+  {
+   "id": "osm-n6535365913",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Mageek Store",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": "تونس",
+   "adresse": "36 شارع أحمد التليلي",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.844297,
+   "lon": 10.170362,
+   "osm": "https://www.openstreetmap.org/node/6535365913"
   },
   {
    "id": "osm-n8944073840",
@@ -1938,22 +1970,6 @@
    "osm": "https://www.openstreetmap.org/node/6498956078"
   },
   {
-   "id": "osm-n11257691403",
-   "source": "osm",
-   "metier": "pharmacie",
-   "nom": "pharmacie de nuit",
-   "nom_ar": null,
-   "gouvernorat": "ariana",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.877991,
-   "lon": 10.185793,
-   "osm": "https://www.openstreetmap.org/node/11257691403"
-  },
-  {
    "id": "osm-w383101683",
    "source": "osm",
    "metier": "pharmacie",
@@ -2402,6 +2418,22 @@
    "osm": "https://www.openstreetmap.org/node/3867857700"
   },
   {
+   "id": "osm-n9059598203",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Réparation éléctroménager",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.85979,
+   "lon": 10.190381,
+   "osm": "https://www.openstreetmap.org/node/9059598203"
+  },
+  {
    "id": "osm-n12827989502",
    "source": "osm",
    "metier": "agence-immobiliere",
@@ -2736,6 +2768,22 @@
    "lat": 36.862773,
    "lon": 10.269994,
    "osm": "https://www.openstreetmap.org/node/9021872116"
+  },
+  {
+   "id": "osm-w966484192",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Vente de matériel éléctronique",
+   "nom_ar": null,
+   "gouvernorat": "ariana",
+   "ville": "أريانة",
+   "adresse": "نهج ماندس فرانس",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.858628,
+   "lon": 10.193002,
+   "osm": "https://www.openstreetmap.org/way/966484192"
   },
   {
    "id": "osm-n8944441047",
@@ -3986,6 +4034,22 @@
    "osm": "https://www.openstreetmap.org/node/11140065337"
   },
   {
+   "id": "osm-n4859421621",
+   "source": "osm",
+   "metier": "clinique",
+   "nom": "Ben arouse",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.762074,
+   "lon": 10.235198,
+   "osm": "https://www.openstreetmap.org/node/4859421621"
+  },
+  {
    "id": "osm-n5295927935",
    "source": "osm",
    "metier": "boucherie",
@@ -4402,22 +4466,6 @@
    "osm": "https://www.openstreetmap.org/node/4810567621"
   },
   {
-   "id": "osm-r21167582",
-   "source": "osm",
-   "metier": "clinique",
-   "nom": "Clinique Beau Séjour",
-   "nom_ar": "مصحة بو سيجور",
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.761423,
-   "lon": 10.234696,
-   "osm": "https://www.openstreetmap.org/relation/21167582"
-  },
-  {
    "id": "osm-w487927064",
    "source": "osm",
    "metier": "clinique",
@@ -4496,22 +4544,6 @@
    "lat": 36.71937,
    "lon": 10.172097,
    "osm": "https://www.openstreetmap.org/way/1198826780"
-  },
-  {
-   "id": "osm-n14267391288",
-   "source": "osm",
-   "metier": "dentiste",
-   "nom": "Dentiste Dr Montaha Yaakoubi",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": "Cité Erriadh",
-   "adresse": null,
-   "tel": "99706020",
-   "site": null,
-   "horaires": "HORAIRES DE TRAVAIL أوقات العمل  Lundi → Vendredi الاثنين ← الجمعة 🕘 08h00 – 19h00  Samedi السبت 🕗 08h00 – 13h00",
-   "lat": 36.703589,
-   "lon": 10.406159,
-   "osm": "https://www.openstreetmap.org/node/14267391288"
   },
   {
    "id": "osm-n3191322586",
@@ -4834,6 +4866,22 @@
    "osm": "https://www.openstreetmap.org/node/11142087205"
   },
   {
+   "id": "osm-w1541348243",
+   "source": "osm",
+   "metier": "salle-de-sport",
+   "nom": "Gym Max",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Fr,Su 07:00-22:00; Sa 07:00-17:00",
+   "lat": 36.748593,
+   "lon": 10.220573,
+   "osm": "https://www.openstreetmap.org/way/1541348243"
+  },
+  {
    "id": "osm-n4366610592",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -5131,7 +5179,7 @@
    "ville": "الزهراء",
    "adresse": "5 شارع الجمهورية",
    "tel": "23518000",
-   "site": "https://www.facebook.com/pg/MirageStudio.tn/about/",
+   "site": "https://www.facebook.com/pg/MirageStudio.tn/about/?ref=page_internal",
    "horaires": "Mo-Su 08:00-20:00",
    "lat": 36.747078,
    "lon": 10.309781,
@@ -5741,8 +5789,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 36.744248,
-   "lon": 10.224575,
+   "lat": 36.744222,
+   "lon": 10.224576,
    "osm": "https://www.openstreetmap.org/node/2007666932"
   },
   {
@@ -6146,22 +6194,6 @@
    "osm": "https://www.openstreetmap.org/node/11142540865"
   },
   {
-   "id": "osm-w1564660374",
-   "source": "osm",
-   "metier": "salle-de-sport",
-   "nom": "Salle de sport Majoul",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.752575,
-   "lon": 10.221143,
-   "osm": "https://www.openstreetmap.org/way/1564660374"
-  },
-  {
    "id": "osm-n5291448318",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -6528,6 +6560,38 @@
    "lat": 36.763772,
    "lon": 10.276982,
    "osm": "https://www.openstreetmap.org/node/11656288959"
+  },
+  {
+   "id": "osm-n4745000925",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "TunisiaTek",
+   "nom_ar": null,
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": "6 Rue Martyrs",
+   "tel": "51007103",
+   "site": null,
+   "horaires": "24/7",
+   "lat": 36.739019,
+   "lon": 10.206259,
+   "osm": "https://www.openstreetmap.org/node/4745000925"
+  },
+  {
+   "id": "osm-n4745029824",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "TunisiaTek",
+   "nom_ar": "تونسياتك",
+   "gouvernorat": "ben-arous",
+   "ville": null,
+   "adresse": "6",
+   "tel": "51007103",
+   "site": "http://tunisiatek.visiomedia.tn",
+   "horaires": "24/7",
+   "lat": 36.723302,
+   "lon": 10.212576,
+   "osm": "https://www.openstreetmap.org/node/4745029824"
   },
   {
    "id": "osm-w678173205",
@@ -7330,6 +7394,22 @@
    "osm": "https://www.openstreetmap.org/node/11143282941"
   },
   {
+   "id": "osm-n5296572379",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "كهرباء لزرڨ",
+   "nom_ar": "كهرباء لزرڨ",
+   "gouvernorat": "ben-arous",
+   "ville": "الزهراء",
+   "adresse": "شارع البيئة",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.740993,
+   "lon": 10.301436,
+   "osm": "https://www.openstreetmap.org/node/5296572379"
+  },
+  {
    "id": "osm-n11143282923",
    "source": "osm",
    "metier": "boucherie",
@@ -7664,22 +7744,6 @@
    "lat": 36.696163,
    "lon": 10.167107,
    "osm": "https://www.openstreetmap.org/node/11143282956"
-  },
-  {
-   "id": "osm-n14061527894",
-   "source": "osm",
-   "metier": "boucherie",
-   "nom": "ولد بريك للدواجن",
-   "nom_ar": null,
-   "gouvernorat": "ben-arous",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.747744,
-   "lon": 10.219835,
-   "osm": "https://www.openstreetmap.org/node/14061527894"
   },
   {
    "id": "osm-n11142474754",
@@ -8928,6 +8992,38 @@
    "lat": 33.980864,
    "lon": 9.973417,
    "osm": "https://www.openstreetmap.org/node/2195661277"
+  },
+  {
+   "id": "osm-n2271783254",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "بيع مواد كهربائية",
+   "nom_ar": "بيع مواد كهربائية",
+   "gouvernorat": "gabes",
+   "ville": "وذرف",
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.984346,
+   "lon": 9.96477,
+   "osm": "https://www.openstreetmap.org/node/2271783254"
+  },
+  {
+   "id": "osm-n1900792723",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "تصليح أجهزة التلفاز وصيانة البارابول",
+   "nom_ar": "تصليح أجهزة التلفاز وصيانة البارابول",
+   "gouvernorat": "gabes",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 33.984286,
+   "lon": 9.970446,
+   "osm": "https://www.openstreetmap.org/node/1900792723"
   },
   {
    "id": "osm-n1900809742",
@@ -10418,22 +10514,6 @@
    "osm": "https://www.openstreetmap.org/node/11064286396"
   },
   {
-   "id": "osm-n14127164026",
-   "source": "osm",
-   "metier": "coiffure-beaute",
-   "nom": "Bahia",
-   "nom_ar": null,
-   "gouvernorat": "kairouan",
-   "ville": "Kairouan",
-   "adresse": "Av. Oqba Ibn Nafaâ",
-   "tel": "53351358",
-   "site": "https://bahiacosmetic.com/",
-   "horaires": null,
-   "lat": 35.682697,
-   "lon": 10.104024,
-   "osm": "https://www.openstreetmap.org/node/14127164026"
-  },
-  {
    "id": "osm-n10006526011",
    "source": "osm",
    "metier": "boulangerie",
@@ -11152,6 +11232,22 @@
    "lat": 35.156909,
    "lon": 8.829821,
    "osm": "https://www.openstreetmap.org/node/9853793431"
+  },
+  {
+   "id": "osm-n6186349026",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Salim",
+   "nom_ar": null,
+   "gouvernorat": "kasserine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.170305,
+   "lon": 8.839628,
+   "osm": "https://www.openstreetmap.org/node/6186349026"
   },
   {
    "id": "osm-n6317165884",
@@ -12130,6 +12226,22 @@
    "osm": "https://www.openstreetmap.org/node/6317165872"
   },
   {
+   "id": "osm-n9848137362",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "éléctroménager",
+   "nom_ar": null,
+   "gouvernorat": "kasserine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.159947,
+   "lon": 8.832211,
+   "osm": "https://www.openstreetmap.org/node/9848137362"
+  },
+  {
    "id": "osm-n9829541064",
    "source": "osm",
    "metier": "boucherie",
@@ -12802,6 +12914,22 @@
    "osm": "https://www.openstreetmap.org/node/6829909785"
   },
   {
+   "id": "osm-n4370207737",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "بنبراهيم للجوال و الحاسوب",
+   "nom_ar": "بنبراهيم للجوال و الحاسوب",
+   "gouvernorat": "kebili",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": "Mo-Su 08:00-22:00",
+   "lat": 33.483536,
+   "lon": 9.008194,
+   "osm": "https://www.openstreetmap.org/node/4370207737"
+  },
+  {
    "id": "osm-n4227636490",
    "source": "osm",
    "metier": "pharmacie",
@@ -13216,22 +13344,6 @@
    "lat": 36.82291,
    "lon": 10.073808,
    "osm": "https://www.openstreetmap.org/way/665454109"
-  },
-  {
-   "id": "osm-n14161996428",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "Les Délices de Afaf",
-   "nom_ar": null,
-   "gouvernorat": "la-manouba",
-   "ville": null,
-   "adresse": null,
-   "tel": "93896055",
-   "site": null,
-   "horaires": null,
-   "lat": 36.809093,
-   "lon": 10.09814,
-   "osm": "https://www.openstreetmap.org/node/14161996428"
   },
   {
    "id": "osm-n6284202315",
@@ -13794,6 +13906,22 @@
    "osm": "https://www.openstreetmap.org/node/6284202318"
   },
   {
+   "id": "osm-n6004901298",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "électroménager chayma",
+   "nom_ar": null,
+   "gouvernorat": "la-manouba",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.832478,
+   "lon": 10.088039,
+   "osm": "https://www.openstreetmap.org/node/6004901298"
+  },
+  {
    "id": "osm-n6004901302",
    "source": "osm",
    "metier": "dentiste",
@@ -13888,6 +14016,22 @@
    "lat": 36.157423,
    "lon": 8.697684,
    "osm": "https://www.openstreetmap.org/node/4625476089"
+  },
+  {
+   "id": "osm-n12215891584",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "lofficiel el kef",
+   "nom_ar": null,
+   "gouvernorat": "le-kef",
+   "ville": "EL KEF",
+   "adresse": "RUE SALAH AYECH",
+   "tel": "98744063",
+   "site": null,
+   "horaires": "Mo-Su 09:00-21:00",
+   "lat": 36.179481,
+   "lon": 8.710358,
+   "osm": "https://www.openstreetmap.org/node/12215891584"
   },
   {
    "id": "osm-n5169130321",
@@ -14224,22 +14368,6 @@
    "lat": 33.883422,
    "lon": 10.855773,
    "osm": "https://www.openstreetmap.org/node/13097652097"
-  },
-  {
-   "id": "osm-w990345033",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "Arabesque Pâtisserie Tunisienne",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": "Erriadh",
-   "adresse": null,
-   "tel": "75670499",
-   "site": null,
-   "horaires": null,
-   "lat": 33.818741,
-   "lon": 10.859849,
-   "osm": "https://www.openstreetmap.org/way/990345033"
   },
   {
    "id": "osm-n5296963321",
@@ -14588,7 +14716,7 @@
    "adresse": null,
    "tel": null,
    "site": null,
-   "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
+   "horaires": null,
    "lat": 33.876706,
    "lon": 10.856834,
    "osm": "https://www.openstreetmap.org/node/12917478981"
@@ -14637,8 +14765,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 33.345363,
-   "lon": 10.489515,
+   "lat": 33.3454,
+   "lon": 10.489596,
    "osm": "https://www.openstreetmap.org/node/4687642889"
   },
   {
@@ -14717,8 +14845,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 33.342772,
-   "lon": 10.489736,
+   "lat": 33.342819,
+   "lon": 10.48981,
    "osm": "https://www.openstreetmap.org/way/284132473"
   },
   {
@@ -14930,38 +15058,6 @@
    "osm": "https://www.openstreetmap.org/node/13239145943"
   },
   {
-   "id": "osm-n14103544537",
-   "source": "osm",
-   "metier": "coiffure-beaute",
-   "nom": "افندي",
-   "nom_ar": "افندي",
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": "Mo-Su",
-   "lat": 33.33525,
-   "lon": 10.487368,
-   "osm": "https://www.openstreetmap.org/node/14103544537"
-  },
-  {
-   "id": "osm-n14129951349",
-   "source": "osm",
-   "metier": "reparation-telephone",
-   "nom": "تيك سنتر",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.333574,
-   "lon": 10.485404,
-   "osm": "https://www.openstreetmap.org/node/14129951349"
-  },
-  {
    "id": "osm-n6250017485",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -14976,38 +15072,6 @@
    "lat": 33.806193,
    "lon": 10.987895,
    "osm": "https://www.openstreetmap.org/node/6250017485"
-  },
-  {
-   "id": "osm-n14101830177",
-   "source": "osm",
-   "metier": "pharmacie",
-   "nom": "صيدلية الليل",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.337245,
-   "lon": 10.486157,
-   "osm": "https://www.openstreetmap.org/node/14101830177"
-  },
-  {
-   "id": "osm-n14216516190",
-   "source": "osm",
-   "metier": "pharmacie",
-   "nom": "صيدلية عبشة",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.338962,
-   "lon": 10.486851,
-   "osm": "https://www.openstreetmap.org/node/14216516190"
   },
   {
    "id": "osm-n9106134128",
@@ -15042,22 +15106,6 @@
    "osm": "https://www.openstreetmap.org/node/9123038404"
   },
   {
-   "id": "osm-n14129951353",
-   "source": "osm",
-   "metier": "informatique",
-   "nom": "عبدالمجيد",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.334338,
-   "lon": 10.485446,
-   "osm": "https://www.openstreetmap.org/node/14129951353"
-  },
-  {
    "id": "osm-n11218819337",
    "source": "osm",
    "metier": "medecin",
@@ -15088,54 +15136,6 @@
    "lat": 33.879464,
    "lon": 10.854718,
    "osm": "https://www.openstreetmap.org/node/7656186299"
-  },
-  {
-   "id": "osm-n14103544538",
-   "source": "osm",
-   "metier": "coiffure-beaute",
-   "nom": "فهموش",
-   "nom_ar": "فهموش",
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.337574,
-   "lon": 10.48601,
-   "osm": "https://www.openstreetmap.org/node/14103544538"
-  },
-  {
-   "id": "osm-n14103544540",
-   "source": "osm",
-   "metier": "salle-de-sport",
-   "nom": "قاعة زياد",
-   "nom_ar": "قاعة زياد",
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": "Mo-Su",
-   "lat": 33.334106,
-   "lon": 10.486503,
-   "osm": "https://www.openstreetmap.org/node/14103544540"
-  },
-  {
-   "id": "osm-n14304973578",
-   "source": "osm",
-   "metier": "salle-de-sport",
-   "nom": "قاعة زيتا",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.339242,
-   "lon": 10.489493,
-   "osm": "https://www.openstreetmap.org/node/14304973578"
   },
   {
    "id": "osm-n5567472939",
@@ -15184,54 +15184,6 @@
    "lat": 33.87646,
    "lon": 10.855449,
    "osm": "https://www.openstreetmap.org/node/6310846986"
-  },
-  {
-   "id": "osm-n14103544539",
-   "source": "osm",
-   "metier": "boulangerie",
-   "nom": "مخبزة اللولب",
-   "nom_ar": "مخبزة اللولب",
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": "Mo-Sa",
-   "lat": 33.334206,
-   "lon": 10.486651,
-   "osm": "https://www.openstreetmap.org/node/14103544539"
-  },
-  {
-   "id": "osm-n14125819796",
-   "source": "osm",
-   "metier": "boulangerie",
-   "nom": "مرطبات مطاوع",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.340345,
-   "lon": 10.487374,
-   "osm": "https://www.openstreetmap.org/node/14125819796"
-  },
-  {
-   "id": "osm-w1561827175",
-   "source": "osm",
-   "metier": "clinique",
-   "nom": "مصحة ابن عرفة",
-   "nom_ar": null,
-   "gouvernorat": "medenine",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": "Mo-Su,PH 08:00-08:00",
-   "lat": 33.338029,
-   "lon": 10.487319,
-   "osm": "https://www.openstreetmap.org/way/1561827175"
   },
   {
    "id": "osm-n12596312439",
@@ -16146,6 +16098,22 @@
    "osm": "https://www.openstreetmap.org/node/11061452950"
   },
   {
+   "id": "osm-n3077487152",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Mhenni",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.668779,
+   "lon": 10.891349,
+   "osm": "https://www.openstreetmap.org/node/3077487152"
+  },
+  {
    "id": "osm-n2934122312",
    "source": "osm",
    "metier": "boulangerie",
@@ -16342,7 +16310,7 @@
    "source": "osm",
    "metier": "salle-de-sport",
    "nom": "Fitland salle de sport",
-   "nom_ar": "قاعة الرياضة فيت لاند",
+   "nom_ar": null,
    "gouvernorat": "monastir",
    "ville": null,
    "adresse": "شارع الحبيب بورقيبة",
@@ -16400,6 +16368,22 @@
    "lat": 35.7723,
    "lon": 10.828877,
    "osm": "https://www.openstreetmap.org/node/6586921909"
+  },
+  {
+   "id": "osm-n3779211510",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Graiet electroménager",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.650681,
+   "lon": 10.887528,
+   "osm": "https://www.openstreetmap.org/node/3779211510"
   },
   {
    "id": "osm-n11061417957",
@@ -16658,22 +16642,6 @@
    "osm": "https://www.openstreetmap.org/node/3715395991"
   },
   {
-   "id": "osm-n14096403702",
-   "source": "osm",
-   "metier": "mecanicien",
-   "nom": "MecArt TOYOTA",
-   "nom_ar": null,
-   "gouvernorat": "monastir",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": "Mo-Sa 08:00-15:30",
-   "lat": 35.632404,
-   "lon": 10.943048,
-   "osm": "https://www.openstreetmap.org/node/14096403702"
-  },
-  {
    "id": "osm-n11234554537",
    "source": "osm",
    "metier": "informatique",
@@ -16832,6 +16800,22 @@
    "lat": 35.684001,
    "lon": 10.841869,
    "osm": "https://www.openstreetmap.org/node/11061390323"
+  },
+  {
+   "id": "osm-n6699076357",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Ooredoo Nouira",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.644276,
+   "lon": 10.970586,
+   "osm": "https://www.openstreetmap.org/node/6699076357"
   },
   {
    "id": "osm-n2306456802",
@@ -17024,22 +17008,6 @@
    "lat": 35.772946,
    "lon": 10.829123,
    "osm": "https://www.openstreetmap.org/node/2981211644"
-  },
-  {
-   "id": "osm-w1551496346",
-   "source": "osm",
-   "metier": "pharmacie",
-   "nom": "Pharmacie Bouhawel",
-   "nom_ar": "صيدليّة بوحوال",
-   "gouvernorat": "monastir",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 35.633043,
-   "lon": 10.910809,
-   "osm": "https://www.openstreetmap.org/way/1551496346"
   },
   {
    "id": "osm-n2981220069",
@@ -17682,6 +17650,54 @@
    "osm": "https://www.openstreetmap.org/way/672545289"
   },
   {
+   "id": "osm-n3085503715",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Récepteurs numériques",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.666531,
+   "lon": 10.891556,
+   "osm": "https://www.openstreetmap.org/node/3085503715"
+  },
+  {
+   "id": "osm-n3085506999",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Réparation TV",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.666281,
+   "lon": 10.892166,
+   "osm": "https://www.openstreetmap.org/node/3085506999"
+  },
+  {
+   "id": "osm-n3085498703",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Réparations informatiques",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.667759,
+   "lon": 10.89311,
+   "osm": "https://www.openstreetmap.org/node/3085498703"
+  },
+  {
    "id": "osm-n6743171715",
    "source": "osm",
    "metier": "salle-des-fetes",
@@ -17776,22 +17792,6 @@
    "lat": 35.655983,
    "lon": 10.888355,
    "osm": "https://www.openstreetmap.org/way/1194328389"
-  },
-  {
-   "id": "osm-w1548302635",
-   "source": "osm",
-   "metier": "salle-des-fetes",
-   "nom": "Salle des fêtes Mozart",
-   "nom_ar": "قاعة الأفراح موزارت",
-   "gouvernorat": "monastir",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 35.604525,
-   "lon": 10.889695,
-   "osm": "https://www.openstreetmap.org/way/1548302635"
   },
   {
    "id": "osm-n3085511972",
@@ -17890,6 +17890,22 @@
    "osm": "https://www.openstreetmap.org/node/3077484456"
   },
   {
+   "id": "osm-w209990288",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Sté Vedette",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.772137,
+   "lon": 10.816927,
+   "osm": "https://www.openstreetmap.org/way/209990288"
+  },
+  {
    "id": "osm-n3085499675",
    "source": "osm",
    "metier": "reparation-telephone",
@@ -17904,6 +17920,22 @@
    "lat": 35.672237,
    "lon": 10.891798,
    "osm": "https://www.openstreetmap.org/node/3085499675"
+  },
+  {
+   "id": "osm-n3085509544",
+   "source": "osm",
+   "metier": "reparation-telephone",
+   "nom": "Taxiphone Samir",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.667073,
+   "lon": 10.892392,
+   "osm": "https://www.openstreetmap.org/node/3085509544"
   },
   {
    "id": "osm-n2306523998",
@@ -17968,6 +18000,38 @@
    "lat": 35.643392,
    "lon": 10.891673,
    "osm": "https://www.openstreetmap.org/node/3715366909"
+  },
+  {
+   "id": "osm-n3004044789",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Vigitech",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": "المنستير",
+   "adresse": "Imm. Rokbani Bureau N°1",
+   "tel": "73461709",
+   "site": "http://www.vigitech.tn",
+   "horaires": null,
+   "lat": 35.770139,
+   "lon": 10.827687,
+   "osm": "https://www.openstreetmap.org/node/3004044789"
+  },
+  {
+   "id": "osm-w303791994",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "VIGITECH",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": "المنستير",
+   "adresse": "Imm. Rokbani Bureau N°1",
+   "tel": "73461709",
+   "site": "http://www.vigitech.tn",
+   "horaires": null,
+   "lat": 35.770023,
+   "lon": 10.827736,
+   "osm": "https://www.openstreetmap.org/way/303791994"
   },
   {
    "id": "osm-n3085519726",
@@ -18272,6 +18336,22 @@
    "lat": 36.449268,
    "lon": 10.72365,
    "osm": "https://www.openstreetmap.org/node/6088859397"
+  },
+  {
+   "id": "osm-n6228290124",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Apple Store",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.453669,
+   "lon": 10.741486,
+   "osm": "https://www.openstreetmap.org/node/6228290124"
   },
   {
    "id": "osm-n7680774982",
@@ -19088,6 +19168,22 @@
    "lat": 36.578938,
    "lon": 10.8586,
    "osm": "https://www.openstreetmap.org/node/13654811428"
+  },
+  {
+   "id": "osm-n12335415975",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "California Store",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": "29101197",
+   "site": null,
+   "horaires": null,
+   "lat": 36.405355,
+   "lon": 10.564268,
+   "osm": "https://www.openstreetmap.org/node/12335415975"
   },
   {
    "id": "osm-n7781551199",
@@ -19954,6 +20050,86 @@
    "osm": "https://www.openstreetmap.org/node/4825212321"
   },
   {
+   "id": "osm-n6204459432",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro El Gharbi",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.457343,
+   "lon": 10.730555,
+   "osm": "https://www.openstreetmap.org/node/6204459432"
+  },
+  {
+   "id": "osm-n10120705517",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro HADJ KACEM",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": "01 Avenue Habib BOURGUIBA / MAAMOURA",
+   "tel": "72369043",
+   "site": "https://www.electrohadjkacem.com/",
+   "horaires": "Su-Fr 09:00-19:00; Sa 00:00-24:00",
+   "lat": 36.465518,
+   "lon": 10.804723,
+   "osm": "https://www.openstreetmap.org/node/10120705517"
+  },
+  {
+   "id": "osm-n7826946271",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Meriem",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.465103,
+   "lon": 10.748012,
+   "osm": "https://www.openstreetmap.org/node/7826946271"
+  },
+  {
+   "id": "osm-n6204459436",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Nabli",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.45624,
+   "lon": 10.732328,
+   "osm": "https://www.openstreetmap.org/node/6204459436"
+  },
+  {
+   "id": "osm-n6221967106",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Plus",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.450829,
+   "lon": 10.726642,
+   "osm": "https://www.openstreetmap.org/node/6221967106"
+  },
+  {
    "id": "osm-n4694960889",
    "source": "osm",
    "metier": "informatique",
@@ -19968,6 +20144,54 @@
    "lat": 36.465741,
    "lon": 10.805785,
    "osm": "https://www.openstreetmap.org/node/4694960889"
+  },
+  {
+   "id": "osm-n6228290093",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Slama",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.456227,
+   "lon": 10.730883,
+   "osm": "https://www.openstreetmap.org/node/6228290093"
+  },
+  {
+   "id": "osm-n6210560692",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Youssef",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.450665,
+   "lon": 10.72562,
+   "osm": "https://www.openstreetmap.org/node/6210560692"
+  },
+  {
+   "id": "osm-w662504064",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "ELITE",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.446225,
+   "lon": 10.724868,
+   "osm": "https://www.openstreetmap.org/way/662504064"
   },
   {
    "id": "osm-n6088858371",
@@ -20882,6 +21106,22 @@
    "osm": "https://www.openstreetmap.org/node/6321849266"
   },
   {
+   "id": "osm-n7781564439",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Makni Audio",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.396079,
+   "lon": 10.617176,
+   "osm": "https://www.openstreetmap.org/node/7781564439"
+  },
+  {
    "id": "osm-n6252317185",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -21154,6 +21394,22 @@
    "osm": "https://www.openstreetmap.org/node/6352557787"
   },
   {
+   "id": "osm-n6202229636",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Mokhtar Slama SARL",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.449636,
+   "lon": 10.728924,
+   "osm": "https://www.openstreetmap.org/node/6202229636"
+  },
+  {
    "id": "osm-n10681710575",
    "source": "osm",
    "metier": "salle-de-sport",
@@ -21296,6 +21552,22 @@
    "lat": 36.852785,
    "lon": 11.093304,
    "osm": "https://www.openstreetmap.org/node/4430592490"
+  },
+  {
+   "id": "osm-n6238751127",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Nokia",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.453615,
+   "lon": 10.741401,
+   "osm": "https://www.openstreetmap.org/node/6238751127"
   },
   {
    "id": "osm-n1386076672",
@@ -23282,6 +23554,54 @@
    "osm": "https://www.openstreetmap.org/node/7646857950"
   },
   {
+   "id": "osm-n6228290123",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Samsung",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.453721,
+   "lon": 10.741578,
+   "osm": "https://www.openstreetmap.org/node/6228290123"
+  },
+  {
+   "id": "osm-n6231293133",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Samsung",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.435289,
+   "lon": 10.694164,
+   "osm": "https://www.openstreetmap.org/node/6231293133"
+  },
+  {
+   "id": "osm-n6275098159",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Samsung",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.454283,
+   "lon": 10.73406,
+   "osm": "https://www.openstreetmap.org/node/6275098159"
+  },
+  {
    "id": "osm-n6219477170",
    "source": "osm",
    "metier": "coiffure-beaute",
@@ -23440,6 +23760,22 @@
    "lat": 36.46869,
    "lon": 10.763292,
    "osm": "https://www.openstreetmap.org/node/7680774980"
+  },
+  {
+   "id": "osm-n6167343812",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Slama Electronique",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.44954,
+   "lon": 10.728448,
+   "osm": "https://www.openstreetmap.org/node/6167343812"
   },
   {
    "id": "osm-n6274661543",
@@ -23616,6 +23952,22 @@
    "lat": 36.458614,
    "lon": 10.727933,
    "osm": "https://www.openstreetmap.org/way/667024082"
+  },
+  {
+   "id": "osm-n7620701135",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "TBS Security",
+   "nom_ar": null,
+   "gouvernorat": "nabeul",
+   "ville": "دار شعبان الفهري",
+   "adresse": "شارع البيئة",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.456262,
+   "lon": 10.746818,
+   "osm": "https://www.openstreetmap.org/node/7620701135"
   },
   {
    "id": "osm-n6169398404",
@@ -25213,8 +25565,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 34.791923,
-   "lon": 10.780456,
+   "lat": 34.791919,
+   "lon": 10.780406,
    "osm": "https://www.openstreetmap.org/node/6495193236"
   },
   {
@@ -25938,6 +26290,22 @@
    "osm": "https://www.openstreetmap.org/node/4846652224"
   },
   {
+   "id": "osm-n8943583969",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Maalej",
+   "nom_ar": "عالم التكنولوجيا لخدمات الالكترونيك",
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": "22666450",
+   "site": null,
+   "horaires": null,
+   "lat": 34.797832,
+   "lon": 10.772195,
+   "osm": "https://www.openstreetmap.org/node/8943583969"
+  },
+  {
    "id": "osm-n4639983078",
    "source": "osm",
    "metier": "agence-voyage",
@@ -25970,20 +26338,20 @@
    "osm": "https://www.openstreetmap.org/node/6550856496"
   },
   {
-   "id": "osm-n14102583472",
+   "id": "osm-n13698563193",
    "source": "osm",
    "metier": "opticien",
-   "nom": "Eye Studio Optic Gremda",
-   "nom_ar": "Eye Studio Optic Gremda",
+   "nom": "Eye Studio Optic",
+   "nom_ar": null,
    "gouvernorat": "sfax",
-   "ville": "صفاقس",
-   "adresse": "Route de Gremda Km 6 Merkez Kamoun",
+   "ville": "SFAX",
+   "adresse": "ROUTE GREMDA KM6 EN FACE MUNICIPALITE GREMDA طريق قرمدة",
    "tel": "27414455",
-   "site": null,
-   "horaires": "Mo-Sa 08:30-19:30",
-   "lat": 34.786593,
-   "lon": 10.720346,
-   "osm": "https://www.openstreetmap.org/node/14102583472"
+   "site": "https://www.instagram.com/eye.studio.optic/",
+   "horaires": "Mo-Su 09:00-20:00",
+   "lat": 34.786549,
+   "lon": 10.720297,
+   "osm": "https://www.openstreetmap.org/node/13698563193"
   },
   {
    "id": "osm-n4198930153",
@@ -26002,22 +26370,6 @@
    "osm": "https://www.openstreetmap.org/node/4198930153"
   },
   {
-   "id": "osm-n14214437997",
-   "source": "osm",
-   "metier": "mecanicien",
-   "nom": "Garage Bilel KIA",
-   "nom_ar": null,
-   "gouvernorat": "sfax",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 34.761533,
-   "lon": 10.685083,
-   "osm": "https://www.openstreetmap.org/node/14214437997"
-  },
-  {
    "id": "osm-n4202082633",
    "source": "osm",
    "metier": "mecanicien",
@@ -26032,22 +26384,6 @@
    "lat": 34.705963,
    "lon": 11.203141,
    "osm": "https://www.openstreetmap.org/node/4202082633"
-  },
-  {
-   "id": "osm-n14214437996",
-   "source": "osm",
-   "metier": "mecanicien",
-   "nom": "Garage Mécanique Electrique Auto",
-   "nom_ar": null,
-   "gouvernorat": "sfax",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 34.811909,
-   "lon": 10.784314,
-   "osm": "https://www.openstreetmap.org/node/14214437996"
   },
   {
    "id": "osm-n4639983066",
@@ -26098,20 +26434,20 @@
    "osm": "https://www.openstreetmap.org/node/4639983054"
   },
   {
-   "id": "osm-n14214420935",
+   "id": "osm-n7847253029",
    "source": "osm",
-   "metier": "reparation-telephone",
-   "nom": "Hammadi Trabelsi",
-   "nom_ar": null,
+   "metier": "electronique",
+   "nom": "Hammadi Sat",
+   "nom_ar": "حمادي سات",
    "gouvernorat": "sfax",
    "ville": null,
    "adresse": null,
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 34.756705,
-   "lon": 10.686004,
-   "osm": "https://www.openstreetmap.org/node/14214420935"
+   "lat": 34.782007,
+   "lon": 10.778126,
+   "osm": "https://www.openstreetmap.org/node/7847253029"
   },
   {
    "id": "osm-n9357398455",
@@ -26354,6 +26690,22 @@
    "osm": "https://www.openstreetmap.org/node/7565108421"
   },
   {
+   "id": "osm-n11107140108",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "MONDIAL ELECTRONIQUE",
+   "nom_ar": null,
+   "gouvernorat": "sfax",
+   "ville": "صفاقس",
+   "adresse": "طريق العين",
+   "tel": "23245813",
+   "site": null,
+   "horaires": "Mo-Su 08:00-20:00",
+   "lat": 34.744124,
+   "lon": 10.745556,
+   "osm": "https://www.openstreetmap.org/node/11107140108"
+  },
+  {
    "id": "osm-n7835302602",
    "source": "osm",
    "metier": "concessionnaire",
@@ -26578,22 +26930,6 @@
    "osm": "https://www.openstreetmap.org/node/7176175085"
   },
   {
-   "id": "osm-n14068058243",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "Pastel",
-   "nom_ar": null,
-   "gouvernorat": "sfax",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 34.793454,
-   "lon": 10.776957,
-   "osm": "https://www.openstreetmap.org/node/14068058243"
-  },
-  {
    "id": "osm-n4202109522",
    "source": "osm",
    "metier": "boulangerie",
@@ -26656,6 +26992,22 @@
    "lat": 34.792611,
    "lon": 10.780614,
    "osm": "https://www.openstreetmap.org/node/6495193239"
+  },
+  {
+   "id": "osm-n10725107118",
+   "source": "osm",
+   "metier": "patisserie",
+   "nom": "Patisserie Et Boulangerie",
+   "nom_ar": "مخبزة ومرطبات",
+   "gouvernorat": "sfax",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 34.799325,
+   "lon": 10.796086,
+   "osm": "https://www.openstreetmap.org/node/10725107118"
   },
   {
    "id": "osm-n4639983088",
@@ -27517,8 +27869,8 @@
    "tel": "74893831",
    "site": null,
    "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
-   "lat": 34.791749,
-   "lon": 10.780415,
+   "lat": 34.791754,
+   "lon": 10.780381,
    "osm": "https://www.openstreetmap.org/node/6495193235"
   },
   {
@@ -28253,8 +28605,8 @@
    "tel": "74219055",
    "site": null,
    "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
-   "lat": 34.791274,
-   "lon": 10.716985,
+   "lat": 34.791263,
+   "lon": 10.716931,
    "osm": "https://www.openstreetmap.org/node/6964768113"
   },
   {
@@ -28729,7 +29081,7 @@
    "nom_ar": "صيدلية سنية الجراية",
    "gouvernorat": "sfax",
    "ville": "صفاقس",
-   "adresse": "Route de Gremda Km 6 Merkez Kamoun",
+   "adresse": "طريق قرمدة",
    "tel": "74236052",
    "site": null,
    "horaires": "Mo-Fr 08:30-13:00, 15:00-19:30; Sa 08:30-13:00",
@@ -29538,22 +29890,6 @@
    "osm": "https://www.openstreetmap.org/node/4639995389"
   },
   {
-   "id": "osm-n10725107118",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "The Destination",
-   "nom_ar": "مخبزة ومرطبات",
-   "gouvernorat": "sfax",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 34.799325,
-   "lon": 10.796086,
-   "osm": "https://www.openstreetmap.org/node/10725107118"
-  },
-  {
    "id": "osm-n4198941723",
    "source": "osm",
    "metier": "mecanicien",
@@ -29810,6 +30146,22 @@
    "osm": "https://www.openstreetmap.org/node/13708744464"
   },
   {
+   "id": "osm-n4117141299",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Metras.Tech",
+   "nom_ar": null,
+   "gouvernorat": "sidi-bouzid",
+   "ville": "Regueb",
+   "adresse": "46 Avenue Habib Bourguiba",
+   "tel": "23779977",
+   "site": "https://metras.tech",
+   "horaires": "Mo-Sa 08:00-18:00",
+   "lat": 34.857106,
+   "lon": 9.785232,
+   "osm": "https://www.openstreetmap.org/node/4117141299"
+  },
+  {
    "id": "osm-n2262006813",
    "source": "osm",
    "metier": "pharmacie",
@@ -30016,6 +30368,22 @@
    "lat": 35.759471,
    "lon": 10.599423,
    "osm": "https://www.openstreetmap.org/node/4546619204"
+  },
+  {
+   "id": "osm-n5995384185",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Amira Electronique",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.832311,
+   "lon": 10.635863,
+   "osm": "https://www.openstreetmap.org/node/5995384185"
   },
   {
    "id": "osm-n5315189944",
@@ -30274,22 +30642,6 @@
    "osm": "https://www.openstreetmap.org/node/4745355121"
   },
   {
-   "id": "osm-w551770723",
-   "source": "osm",
-   "metier": "medecin",
-   "nom": "Cabinet d'orthophonie Mayssa Bacha",
-   "nom_ar": null,
-   "gouvernorat": "sousse",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 35.831091,
-   "lon": 10.625514,
-   "osm": "https://www.openstreetmap.org/way/551770723"
-  },
-  {
    "id": "osm-n5091626034",
    "source": "osm",
    "metier": "dentiste",
@@ -30421,7 +30773,7 @@
    "id": "osm-w789974885",
    "source": "osm",
    "metier": "clinique",
-   "nom": "Clinique d'imagerie médicale Nouira",
+   "nom": "CLINIQUE D'IMAGERIE MEDICALE NOUIRA",
    "nom_ar": null,
    "gouvernorat": "sousse",
    "ville": "سوسة",
@@ -31202,6 +31554,38 @@
    "osm": "https://www.openstreetmap.org/way/258578662"
   },
   {
+   "id": "osm-w540037200",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Elector Nabli",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.731954,
+   "lon": 10.573827,
+   "osm": "https://www.openstreetmap.org/way/540037200"
+  },
+  {
+   "id": "osm-w259263499",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro Nabli - Fermé",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.849483,
+   "lon": 10.607819,
+   "osm": "https://www.openstreetmap.org/way/259263499"
+  },
+  {
    "id": "osm-n6356477735",
    "source": "osm",
    "metier": "pharmacie",
@@ -31232,6 +31616,22 @@
    "lat": 35.890195,
    "lon": 10.570923,
    "osm": "https://www.openstreetmap.org/node/3153397587"
+  },
+  {
+   "id": "osm-n3248394212",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Euronics City",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 35.797888,
+   "lon": 10.660985,
+   "osm": "https://www.openstreetmap.org/node/3248394212"
   },
   {
    "id": "osm-n4336642689",
@@ -31680,6 +32080,22 @@
    "lat": 35.833321,
    "lon": 10.629941,
    "osm": "https://www.openstreetmap.org/node/4546318590"
+  },
+  {
+   "id": "osm-n5210409295",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "MK Vision",
+   "nom_ar": null,
+   "gouvernorat": "sousse",
+   "ville": "سوسة",
+   "adresse": "40 شارع الطيب المهيري",
+   "tel": "99587474",
+   "site": "https://www.mkvision.tn",
+   "horaires": null,
+   "lat": 35.842001,
+   "lon": 10.623247,
+   "osm": "https://www.openstreetmap.org/node/5210409295"
   },
   {
    "id": "osm-n4592875389",
@@ -33010,6 +33426,22 @@
    "osm": "https://www.openstreetmap.org/node/6360042599"
   },
   {
+   "id": "osm-n9832252522",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Al Ofok",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.928392,
+   "lon": 10.450444,
+   "osm": "https://www.openstreetmap.org/node/9832252522"
+  },
+  {
    "id": "osm-n9832252313",
    "source": "osm",
    "metier": "auto-ecole",
@@ -33474,6 +33906,54 @@
    "osm": "https://www.openstreetmap.org/node/6168664826"
   },
   {
+   "id": "osm-n6448059824",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "ELCTRO SAYAH",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.92781,
+   "lon": 10.448682,
+   "osm": "https://www.openstreetmap.org/node/6448059824"
+  },
+  {
+   "id": "osm-w1070365755",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Elecrto el foudhaili",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.929923,
+   "lon": 10.450519,
+   "osm": "https://www.openstreetmap.org/way/1070365755"
+  },
+  {
+   "id": "osm-n9825316829",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Electro ben salem",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": "تطاوين",
+   "adresse": "شارع الحبيب بورقيبة",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.930366,
+   "lon": 10.449515,
+   "osm": "https://www.openstreetmap.org/node/9825316829"
+  },
+  {
    "id": "osm-n9823657275",
    "source": "osm",
    "metier": "reparation-telephone",
@@ -33504,6 +33984,22 @@
    "lat": 32.92864,
    "lon": 10.448568,
    "osm": "https://www.openstreetmap.org/way/1070434872"
+  },
+  {
+   "id": "osm-n9775178249",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "electro hannachi",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.927744,
+   "lon": 10.446919,
+   "osm": "https://www.openstreetmap.org/node/9775178249"
   },
   {
    "id": "osm-n9776453093",
@@ -33906,6 +34402,22 @@
    "osm": "https://www.openstreetmap.org/node/9775183453"
   },
   {
+   "id": "osm-n6168688341",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "latrach",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.903177,
+   "lon": 10.428466,
+   "osm": "https://www.openstreetmap.org/node/6168688341"
+  },
+  {
    "id": "osm-n9831826196",
    "source": "osm",
    "metier": "auto-ecole",
@@ -34000,38 +34512,6 @@
    "lat": 32.928245,
    "lon": 10.448718,
    "osm": "https://www.openstreetmap.org/node/9831044532"
-  },
-  {
-   "id": "osm-n14266624786",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "Mehchi El Ksour",
-   "nom_ar": null,
-   "gouvernorat": "tataouine",
-   "ville": "Ksar Hadada",
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 33.098402,
-   "lon": 10.312937,
-   "osm": "https://www.openstreetmap.org/node/14266624786"
-  },
-  {
-   "id": "osm-n14266624785",
-   "source": "osm",
-   "metier": "patisserie",
-   "nom": "Mehchi La Gazelle",
-   "nom_ar": null,
-   "gouvernorat": "tataouine",
-   "ville": "Ghomrassen",
-   "adresse": null,
-   "tel": null,
-   "site": "https://www.facebook.com/MehchiLagazelle",
-   "horaires": null,
-   "lat": 33.059198,
-   "lon": 10.331546,
-   "osm": "https://www.openstreetmap.org/node/14266624785"
   },
   {
    "id": "osm-n9775293694",
@@ -34688,6 +35168,22 @@
    "lat": 32.927875,
    "lon": 10.446209,
    "osm": "https://www.openstreetmap.org/node/9775178263"
+  },
+  {
+   "id": "osm-n9825362631",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "électro elfoudhaili",
+   "nom_ar": null,
+   "gouvernorat": "tataouine",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 32.929948,
+   "lon": 10.450543,
+   "osm": "https://www.openstreetmap.org/node/9825362631"
   },
   {
    "id": "osm-n9825521080",
@@ -37026,22 +37522,6 @@
    "osm": "https://www.openstreetmap.org/node/1422558155"
   },
   {
-   "id": "osm-n14107426096",
-   "source": "osm",
-   "metier": "coiffure-beaute",
-   "nom": "Chouf Poux",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.829029,
-   "lon": 10.178567,
-   "osm": "https://www.openstreetmap.org/node/14107426096"
-  },
-  {
    "id": "osm-w101114978",
    "source": "osm",
    "metier": "concessionnaire",
@@ -37072,38 +37552,6 @@
    "lat": 36.837856,
    "lon": 10.204012,
    "osm": "https://www.openstreetmap.org/way/100788087"
-  },
-  {
-   "id": "osm-n14105204677",
-   "source": "osm",
-   "metier": "climatisation",
-   "nom": "clim'confort",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": "تونس",
-   "adresse": "rue fatma el fehria",
-   "tel": "25092690",
-   "site": "https://clim-peach.vercel.app/",
-   "horaires": "lu-vu 8.00/18.00",
-   "lat": 36.837022,
-   "lon": 10.168205,
-   "osm": "https://www.openstreetmap.org/node/14105204677"
-  },
-  {
-   "id": "osm-n14105204679",
-   "source": "osm",
-   "metier": "climatisation",
-   "nom": "clim'confort",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": "أريانة",
-   "adresse": "شارع الملك عبد العزيز آل سعود",
-   "tel": "25092690",
-   "site": "https://clim-peach.vercel.app/",
-   "horaires": "lu-ve  08.00-18.00",
-   "lat": 36.842184,
-   "lon": 10.163278,
-   "osm": "https://www.openstreetmap.org/node/14105204679"
   },
   {
    "id": "osm-n1446276820",
@@ -37506,6 +37954,22 @@
    "osm": "https://www.openstreetmap.org/way/128232728"
   },
   {
+   "id": "osm-n7030023883",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "CME",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.78853,
+   "lon": 10.11927,
+   "osm": "https://www.openstreetmap.org/node/7030023883"
+  },
+  {
    "id": "osm-n8963792531",
    "source": "osm",
    "metier": "salle-de-sport",
@@ -37616,22 +38080,6 @@
    "lat": 36.855893,
    "lon": 10.253743,
    "osm": "https://www.openstreetmap.org/node/2590089915"
-  },
-  {
-   "id": "osm-n14211573001",
-   "source": "osm",
-   "metier": "coiffure-beaute",
-   "nom": "Coiffeur Salon 3H",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": null,
-   "adresse": "نهج الملاحة",
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.802706,
-   "lon": 10.177204,
-   "osm": "https://www.openstreetmap.org/node/14211573001"
   },
   {
    "id": "osm-n11142500228",
@@ -39426,6 +39874,22 @@
    "osm": "https://www.openstreetmap.org/node/10779636992"
   },
   {
+   "id": "osm-n2216594576",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "iStore – Apple",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.924445,
+   "lon": 10.274781,
+   "osm": "https://www.openstreetmap.org/node/2216594576"
+  },
+  {
    "id": "osm-w151853017",
    "source": "osm",
    "metier": "mecanicien",
@@ -40130,6 +40594,22 @@
    "osm": "https://www.openstreetmap.org/node/11149308014"
   },
   {
+   "id": "osm-n7615357061",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Makni Electromenager",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": "العوينة",
+   "adresse": "شارع خالد بن الوليد",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.856601,
+   "lon": 10.264897,
+   "osm": "https://www.openstreetmap.org/node/7615357061"
+  },
+  {
    "id": "osm-n7142424851",
    "source": "osm",
    "metier": "mecanicien",
@@ -40480,6 +40960,22 @@
    "lat": 36.794643,
    "lon": 10.114205,
    "osm": "https://www.openstreetmap.org/node/4774370223"
+  },
+  {
+   "id": "osm-n5220041422",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Mongi Slim",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.799924,
+   "lon": 10.176166,
+   "osm": "https://www.openstreetmap.org/node/5220041422"
   },
   {
    "id": "osm-n8748725130",
@@ -41853,8 +42349,8 @@
    "tel": null,
    "site": null,
    "horaires": null,
-   "lat": 36.829706,
-   "lon": 10.179366,
+   "lat": 36.829722,
+   "lon": 10.179386,
    "osm": "https://www.openstreetmap.org/node/4547858091"
   },
   {
@@ -42818,22 +43314,6 @@
    "osm": "https://www.openstreetmap.org/node/6077303976"
   },
   {
-   "id": "osm-n14107426045",
-   "source": "osm",
-   "metier": "salle-de-sport",
-   "nom": "Renaissance Studio",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.829381,
-   "lon": 10.17959,
-   "osm": "https://www.openstreetmap.org/node/14107426045"
-  },
-  {
    "id": "osm-n2164657102",
    "source": "osm",
    "metier": "mecanicien",
@@ -43218,6 +43698,54 @@
    "osm": "https://www.openstreetmap.org/node/10901588500"
   },
   {
+   "id": "osm-n5230782794",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Samsung",
+   "nom_ar": "سامسونغ",
+   "gouvernorat": "tunis",
+   "ville": "تونس",
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.833176,
+   "lon": 10.237914,
+   "osm": "https://www.openstreetmap.org/node/5230782794"
+  },
+  {
+   "id": "osm-n6552846685",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Samsung",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.845056,
+   "lon": 10.281213,
+   "osm": "https://www.openstreetmap.org/node/6552846685"
+  },
+  {
+   "id": "osm-n5079582316",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Samsung Costumer Show Room",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": "تونس",
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.833048,
+   "lon": 10.222785,
+   "osm": "https://www.openstreetmap.org/node/5079582316"
+  },
+  {
    "id": "osm-n2157231109",
    "source": "osm",
    "metier": "informatique",
@@ -43488,6 +44016,22 @@
    "lat": 36.773843,
    "lon": 10.112823,
    "osm": "https://www.openstreetmap.org/node/11133074866"
+  },
+  {
+   "id": "osm-n7656085479",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Ste Total Security",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": "العوينة",
+   "adresse": "Bretelle Parallèle à la Route de La Marsa",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.850286,
+   "lon": 10.26594,
+   "osm": "https://www.openstreetmap.org/node/7656085479"
   },
   {
    "id": "osm-n5603826235",
@@ -43938,6 +44482,22 @@
    "osm": "https://www.openstreetmap.org/node/11146059325"
   },
   {
+   "id": "osm-n1179004635",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Tools4com",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": null,
+   "adresse": null,
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.834127,
+   "lon": 10.139556,
+   "osm": "https://www.openstreetmap.org/node/1179004635"
+  },
+  {
    "id": "osm-w100788085",
    "source": "osm",
    "metier": "concessionnaire",
@@ -44306,22 +44866,6 @@
    "osm": "https://www.openstreetmap.org/node/13236799606"
   },
   {
-   "id": "osm-n14107426041",
-   "source": "osm",
-   "metier": "coiffure-beaute",
-   "nom": "VOGUE",
-   "nom_ar": null,
-   "gouvernorat": "tunis",
-   "ville": null,
-   "adresse": null,
-   "tel": null,
-   "site": null,
-   "horaires": null,
-   "lat": 36.829106,
-   "lon": 10.178706,
-   "osm": "https://www.openstreetmap.org/node/14107426041"
-  },
-  {
    "id": "osm-w152181875",
    "source": "osm",
    "metier": "concessionnaire",
@@ -44496,6 +45040,22 @@
    "lat": 36.746153,
    "lon": 10.185769,
    "osm": "https://www.openstreetmap.org/node/6723580178"
+  },
+  {
+   "id": "osm-n10754534645",
+   "source": "osm",
+   "metier": "electronique",
+   "nom": "Zoom Informatique",
+   "nom_ar": null,
+   "gouvernorat": "tunis",
+   "ville": "تونس",
+   "adresse": "22 شارع آلان سافاري",
+   "tel": null,
+   "site": null,
+   "horaires": null,
+   "lat": 36.826437,
+   "lon": 10.182927,
+   "osm": "https://www.openstreetmap.org/node/10754534645"
   },
   {
    "id": "osm-n7211675810",
