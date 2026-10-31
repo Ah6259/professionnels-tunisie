@@ -1,5 +1,5 @@
 {
-"maj": "2026-10-30",
+"maj": "2026-10-31",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -821,6 +821,14 @@
 {
 "osm": "shop=swimming_pool",
 "lieux": 2,
+"joignables": 1,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
+"osm": "office=logistics",
+"lieux": 1,
 "joignables": 1,
 "deja": false,
 "sante": false,
