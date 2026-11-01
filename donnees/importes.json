@@ -13689,7 +13689,7 @@
    "id": "im-aknar-immo-tn",
    "source": "web",
    "source_url": "https://aknar-immo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "AKNAR Immo",
    "nom_ar": null,
@@ -13707,14 +13707,14 @@
    "id": "im-aspisimmo-com",
    "source": "web",
    "source_url": "https://aspisimmo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "ASPIS IMMO",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Avenue du militant Abdelkader Dardouri, 8090, Kélibia, Tunisie.",
-   "tel": "29760700",
+   "tel": "29760600",
    "site": "https://aspisimmo.com/",
    "facebook": "https://www.facebook.com/vente.location.kelibia",
    "horaires": null,
@@ -13725,7 +13725,7 @@
    "id": "im-ayoubimmobilierhammamet-com",
    "source": "web",
    "source_url": "https://ayoubimmobilierhammamet.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Ayoub Immobilier",
    "nom_ar": null,
@@ -13737,13 +13737,13 @@
    "facebook": "https://www.facebook.com/ayoubimmobilierhammamet",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 591
+   "annonces_immobilier": 594
   },
   {
    "id": "im-bigimmo-tn",
    "source": "web",
    "source_url": "https://bigimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière BIG IMMO",
    "nom_ar": null,
@@ -13755,20 +13755,20 @@
    "facebook": "https://www.facebook.com/BIGIMMOTUNISIA",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 185
+   "annonces_immobilier": 191
   },
   {
    "id": "im-cabinetimmo-com",
    "source": "web",
    "source_url": "https://cabinetimmo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "CABINET Immo",
    "nom_ar": null,
    "gouvernorat": "tunis",
    "ville": null,
    "adresse": "Immeuble aicha médical Bloc B bureau B2-1 Les jardins de l'Aouina",
-   "tel": "26126000",
+   "tel": "70750980",
    "site": "https://cabinetimmo.com/",
    "facebook": null,
    "horaires": null,
@@ -13779,25 +13779,25 @@
    "id": "im-cactusimmobilier-com",
    "source": "web",
    "source_url": "https://cactusimmobilier.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Cactus Immo",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Résidence Horizon+, Local n°06, Cité el Wafa, Nabeul 8000, Tunisie.",
-   "tel": "29074198",
+   "tel": "56103783",
    "site": "https://cactusimmobilier.com/",
    "facebook": "https://www.facebook.com/cactusimmobilier",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 102
+   "annonces_immobilier": 107
   },
   {
    "id": "im-casaimmo-tn",
    "source": "web",
    "source_url": "https://casaimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "CASA IMMO",
    "nom_ar": null,
@@ -13809,13 +13809,13 @@
    "facebook": "https://www.facebook.com/casaimmo.tn",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 16
+   "annonces_immobilier": 19
   },
   {
    "id": "im-colombusimmobilier-com",
    "source": "web",
    "source_url": "https://colombusimmobilier.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Colombus Immo",
    "nom_ar": null,
@@ -13830,10 +13830,28 @@
    "annonces_immobilier": 31
   },
   {
+   "id": "im-edf-tn",
+   "source": "web",
+   "source_url": "https://edf.tn/",
+   "releve": "2026-10-31",
+   "metier": "agence-immobiliere",
+   "nom": "EDF IMMOBILIÈRE",
+   "nom_ar": null,
+   "gouvernorat": "bizerte",
+   "ville": null,
+   "adresse": "Complexe commercial Bizerte Center, bureau n° 58.",
+   "tel": "29276849",
+   "site": "https://edf.tn/",
+   "facebook": "https://www.facebook.com/limmobiliere",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 124
+  },
+  {
    "id": "im-expatsandhousing-com",
    "source": "web",
    "source_url": "https://expatsandhousing.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Expats and housing Immobilier",
    "nom_ar": null,
@@ -13851,7 +13869,7 @@
    "id": "im-igh-immo-tn",
    "source": "web",
    "source_url": "https://igh-immo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "IGH International Golden House",
    "nom_ar": null,
@@ -13869,7 +13887,7 @@
    "id": "im-immo-internationale-com-tn",
    "source": "web",
    "source_url": "https://immo-internationale.com.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "L'immobilière Internationale Tunisie",
    "nom_ar": null,
@@ -13881,13 +13899,13 @@
    "facebook": "https://www.facebook.com/immo.internationale",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 343
+   "annonces_immobilier": 344
   },
   {
    "id": "im-immobiliere-nour-ennasr-com",
    "source": "web",
    "source_url": "https://immobiliere-nour-ennasr.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Immobiliere Nour Ennasr",
    "nom_ar": null,
@@ -13905,7 +13923,7 @@
    "id": "im-immoland-tn",
    "source": "web",
    "source_url": "https://immoland.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Immoland",
    "nom_ar": null,
@@ -13923,7 +13941,7 @@
    "id": "im-kelibiaimmo-tn",
    "source": "web",
    "source_url": "https://kelibiaimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence immobilière Kerkouane",
    "nom_ar": null,
@@ -13941,7 +13959,7 @@
    "id": "im-klouzimmobilier-com",
    "source": "web",
    "source_url": "https://klouzimmobilier.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Klouz immo",
    "nom_ar": null,
@@ -13959,25 +13977,25 @@
    "id": "im-leboulevardimmo-com",
    "source": "web",
    "source_url": "https://leboulevardimmo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Le Boulevard",
    "nom_ar": null,
    "gouvernorat": "nabeul",
    "ville": null,
    "adresse": "Rue ibnou sina, oued souhil, Nabeul - 8000",
-   "tel": "29698992",
+   "tel": "55982862",
    "site": "https://leboulevardimmo.com/",
    "facebook": "https://www.facebook.com/LeBoulevard.immobiliere",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 118
+   "annonces_immobilier": 119
   },
   {
    "id": "im-lecarre9-com",
    "source": "web",
    "source_url": "https://lecarre9.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Le Carré 9",
    "nom_ar": null,
@@ -13989,31 +14007,31 @@
    "facebook": "https://www.facebook.com/lecarre9",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 242
+   "annonces_immobilier": 237
   },
   {
    "id": "im-luxury-house-tn",
    "source": "web",
    "source_url": "https://luxury-house.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Luxury House",
    "nom_ar": null,
    "gouvernorat": "tunis",
    "ville": null,
    "adresse": "131 Avenue Khaled Ibn El Walid, l’Aouina 2045, Tunis.",
-   "tel": "99308359",
+   "tel": "94990579",
    "site": "https://luxury-house.tn/",
    "facebook": "https://www.facebook.com/pg/luxuryHouse.Tunisie/posts",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 137
+   "annonces_immobilier": 138
   },
   {
    "id": "im-metisimmo-tn",
    "source": "web",
    "source_url": "https://metisimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Metis",
    "nom_ar": null,
@@ -14025,31 +14043,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=100083010956326",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 113
-  },
-  {
-   "id": "im-narjess-immo-tn",
-   "source": "web",
-   "source_url": "https://narjess-immo.tn/",
-   "releve": "2026-10-28",
-   "metier": "agence-immobiliere",
-   "nom": "Agence Immobilière Narjess Immo",
-   "nom_ar": null,
-   "gouvernorat": "sousse",
-   "ville": null,
-   "adresse": "93 Route de la plage 4011 - Hammam Sousse, Tunisie.",
-   "tel": "55153800",
-   "site": "https://narjess-immo.tn/",
-   "facebook": "https://www.facebook.com/profile.php?id=100092324713150",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 221
+   "annonces_immobilier": 116
   },
   {
    "id": "im-perlaimmo-tn",
    "source": "web",
    "source_url": "https://perlaimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Perla Immo",
    "nom_ar": null,
@@ -14061,13 +14061,13 @@
    "facebook": "https://www.facebook.com/Perlaagenceimmo",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 355
+   "annonces_immobilier": 409
   },
   {
    "id": "im-plaza-immo-com",
    "source": "web",
    "source_url": "https://plaza-immo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "PLAZA IMMO",
    "nom_ar": null,
@@ -14079,13 +14079,13 @@
    "facebook": "https://www.facebook.com/plaza.immo",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 230
+   "annonces_immobilier": 228
   },
   {
    "id": "im-riahi-immo-tn",
    "source": "web",
    "source_url": "https://riahi-immo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence Immobilière Riahi",
    "nom_ar": null,
@@ -14097,13 +14097,13 @@
    "facebook": "https://www.facebook.com/immoriahilocationvente",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 148
+   "annonces_immobilier": 149
   },
   {
    "id": "im-saiekimmobilier-tn",
    "source": "web",
    "source_url": "https://saiekimmobilier.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence SAIEK & Belhouane",
    "nom_ar": null,
@@ -14115,13 +14115,13 @@
    "facebook": "https://www.facebook.com/BelhouaneNidhal",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 320
+   "annonces_immobilier": 317
   },
   {
    "id": "im-vecteurimmo-com-tn",
    "source": "web",
    "source_url": "https://vecteurimmo.com.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Vecteurimmo",
    "nom_ar": null,
@@ -14139,7 +14139,7 @@
    "id": "im-adam-immo-com",
    "source": "web",
    "source_url": "https://www.adam-immo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "ADAM Immobilière",
    "nom_ar": null,
@@ -14151,13 +14151,13 @@
    "facebook": "https://www.facebook.com/adamimmobiliere",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 152
+   "annonces_immobilier": 134
   },
   {
    "id": "im-djerbaimmo-tn",
    "source": "web",
    "source_url": "https://www.djerbaimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence Immoblière Amine Djerba",
    "nom_ar": null,
@@ -14169,13 +14169,13 @@
    "facebook": "https://www.facebook.com/pages/category/Real-Estate-Agent/Agence-Immobili%C3%A8re-Amine-Midoun-Tezdaine-531763633926255",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 25
+   "annonces_immobilier": 24
   },
   {
    "id": "im-mostakbalimmo-com",
    "source": "web",
    "source_url": "https://www.mostakbalimmo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "IMMOBILIÉRE EL MOUSTAKBAL",
    "nom_ar": null,
@@ -14193,7 +14193,7 @@
    "id": "im-mouin-immobilier-com",
    "source": "web",
    "source_url": "https://www.mouin-immobilier.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Mouin Immobilier",
    "nom_ar": null,
@@ -14205,13 +14205,13 @@
    "facebook": "https://www.facebook.com/Agence-Mouin-Immobilier-Hammamet-140038273005768",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 204
+   "annonces_immobilier": 205
   },
   {
    "id": "im-newkey-com-tn",
    "source": "web",
    "source_url": "https://www.newkey.com.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "New Key Immobilier",
    "nom_ar": null,
@@ -14223,13 +14223,13 @@
    "facebook": "https://www.facebook.com/AgenceImmobiliereNewKey",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 357
+   "annonces_immobilier": 358
   },
   {
    "id": "im-nova-immo-tn",
    "source": "web",
    "source_url": "https://www.nova-immo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Nova Immo Sfax",
    "nom_ar": null,
@@ -14247,7 +14247,7 @@
    "id": "im-verdar-tn",
    "source": "web",
    "source_url": "https://www.verdar.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Verdar",
    "nom_ar": null,
@@ -14259,13 +14259,13 @@
    "facebook": "https://www.facebook.com/verdar.tn",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 216
+   "annonces_immobilier": 215
   },
   {
    "id": "im-vieuxportimmo-com",
    "source": "web",
    "source_url": "https://www.vieuxportimmo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Agence immobilière du Vieux Port Djerba",
    "nom_ar": null,
@@ -14283,7 +14283,7 @@
    "id": "im-visavis-immobilier-com",
    "source": "web",
    "source_url": "https://www.visavis-immobilier.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "www.visavis-immobilier.com",
    "nom_ar": null,
@@ -14301,14 +14301,14 @@
    "id": "im-zarzidar-com",
    "source": "web",
    "source_url": "https://zarzidar.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Zarzidar",
    "nom_ar": null,
    "gouvernorat": "medenine",
    "ville": null,
    "adresse": "1ere etage,Bureau N° 2 Immeuble Baaboura",
-   "tel": "22285809",
+   "tel": "51426226",
    "site": "https://zarzidar.com/",
    "facebook": "https://www.facebook.com/profile.php?id=61565868279605",
    "horaires": null,
@@ -14319,7 +14319,7 @@
    "id": "im-zephyrimmo-tn",
    "source": "web",
    "source_url": "https://zephyrimmo.tn/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Zephyr Immo La Marsa",
    "nom_ar": null,
@@ -14331,13 +14331,13 @@
    "facebook": "https://www.facebook.com/ZephyrImmoLaMarsa",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 281
+   "annonces_immobilier": 283
   },
   {
    "id": "im-zitounaimmo-com",
    "source": "web",
    "source_url": "https://zitounaimmo.com/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Zitouna Immobilier",
    "nom_ar": null,
@@ -14349,13 +14349,13 @@
    "facebook": "https://www.facebook.com/Zitouna.Immobiliers.tn",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 217
+   "annonces_immobilier": 219
   },
   {
    "id": "im-tecnocasa-tuha3",
    "source": "web",
    "source_url": "https://aouina.tecnocasa.tn/aouina/aouina-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Aouina 1",
    "nom_ar": null,
@@ -14367,13 +14367,13 @@
    "facebook": "https://www.facebook.com/TecnocasaAouina",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 15
+   "annonces_immobilier": 14
   },
   {
    "id": "im-tecnocasa-sscb4",
    "source": "web",
    "source_url": "https://chottmeriam1.tecnocasa.tn/chott-meriam/chott-meriam/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Chott Meriam",
    "nom_ar": null,
@@ -14391,7 +14391,7 @@
    "id": "im-tecnocasa-arca3",
    "source": "web",
    "source_url": "https://ennasr3.tecnocasa.tn/ennasr/ennasr-3/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ennasr 3",
    "nom_ar": null,
@@ -14403,13 +14403,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=61571375150647&locale=fr_FR ",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 8
+   "annonces_immobilier": 9
   },
   {
    "id": "im-tecnocasa-tuha1",
    "source": "web",
    "source_url": "https://lamarsa.tecnocasa.tn/la-marsa/la-marsa/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa La Marsa",
    "nom_ar": null,
@@ -14421,13 +14421,13 @@
    "facebook": "https://www.facebook.com/TecnocasaLaMarsa",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 27
+   "annonces_immobilier": 33
   },
   {
    "id": "im-tecnocasa-tugm1",
    "source": "web",
    "source_url": "https://gammarth.tecnocasa.tn/la-marsa/gammarth-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Gammarth 1",
    "nom_ar": null,
@@ -14439,13 +14439,13 @@
    "facebook": "https://www.facebook.com/TecnocasaGammarth",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 26
+   "annonces_immobilier": 27
   },
   {
    "id": "im-tecnocasa-tuhb4",
    "source": "web",
    "source_url": "https://carthage1.tecnocasa.tn/la-goulette/les-jardins-de-carthage-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Les Jardins De Carthage 1",
    "nom_ar": null,
@@ -14457,13 +14457,13 @@
    "facebook": "https://www.facebook.com/TecnocacasaLesJardinsDeCarthage",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 7
+   "annonces_immobilier": 8
   },
   {
    "id": "im-tecnocasa-tuhd3",
    "source": "web",
    "source_url": "https://ezzahra.tecnocasa.tn/ezzahra/ezzahra/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ezzahra",
    "nom_ar": null,
@@ -14475,13 +14475,13 @@
    "facebook": "https://www.facebook.com/Tecnocasaezzahra",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 5
+   "annonces_immobilier": 7
   },
   {
    "id": "im-tecnocasa-tuhd2",
    "source": "web",
    "source_url": "https://borjcedria1.tecnocasa.tn/borj-cedria/borj-cedria/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Borj Cédria",
    "nom_ar": null,
@@ -14493,13 +14493,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=100064063602000&locale=fr_FR",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 6
+   "annonces_immobilier": 7
   },
   {
    "id": "im-tecnocasa-sscb5",
    "source": "web",
    "source_url": "https://akouda1.tecnocasa.tn/akouda/akouda/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Akouda",
    "nom_ar": null,
@@ -14514,28 +14514,10 @@
    "annonces_immobilier": 9
   },
   {
-   "id": "im-tecnocasa-moca9",
-   "source": "web",
-   "source_url": "https://bekalta1.tecnocasa.tn/bekalta/bekaltabaghdadi/",
-   "releve": "2026-10-28",
-   "metier": "agence-immobiliere",
-   "nom": "Tecnocasa Bekalta, Baghdadi",
-   "nom_ar": null,
-   "gouvernorat": "monastir",
-   "ville": null,
-   "adresse": "Rue DE MAGREB BEKALTA , 5090 Bekalta",
-   "tel": "26616040",
-   "site": "https://bekalta1.tecnocasa.tn/bekalta/bekaltabaghdadi/",
-   "facebook": "https://www.facebook.com/profile.php?id=61569949050077&mibextid=wwXIfr&rdid=SR5lV08dODlaRpaV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15zUtTynBL%2F%3Fmibextid%3DwwXIfr#",
-   "horaires": null,
-   "annuaire": "immobilier",
-   "annonces_immobilier": 4
-  },
-  {
    "id": "im-tecnocasa-ssfx2",
    "source": "web",
    "source_url": "https://sfax1.tecnocasa.tn/sfax/sfax-ennasria/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sfax Ennasria",
    "nom_ar": null,
@@ -14547,13 +14529,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 9
+   "annonces_immobilier": 12
   },
   {
    "id": "im-tecnocasa-tucg1",
    "source": "web",
    "source_url": "https://lebardo.tecnocasa.tn/le-bardo/le-bardo/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Le Bardo",
    "nom_ar": null,
@@ -14571,7 +14553,7 @@
    "id": "im-tecnocasa-bzco1",
    "source": "web",
    "source_url": "https://bizerte1.tecnocasa.tn/bizerte-nord/bizerte-corniche/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Bizerte Corniche",
    "nom_ar": null,
@@ -14583,13 +14565,13 @@
    "facebook": "https://www.facebook.com/p/Tecnocasa-Bizerte-Corniche-61557834577381/?paipv=0&eav=Afbxy5TwLnT76sl00OY8JsRxBQREU0TLJRuXWDmvXtc65GT8dFuoIon0jAx0IhWoEp8&_rdr",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 5
+   "annonces_immobilier": 8
   },
   {
    "id": "im-tecnocasa-tuhb2",
    "source": "web",
    "source_url": "https://ainzaghouan.tecnocasa.tn/ain-zaghouan/ain-zaghouan/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ain Zaghouan",
    "nom_ar": null,
@@ -14601,13 +14583,13 @@
    "facebook": "https://www.facebook.com/TecnocasaAinZaghouan",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 6
+   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-tumo1",
    "source": "web",
    "source_url": "https://elmourouj1.tecnocasa.tn/el-mourouj/mourouj-6/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Mourouj 6",
    "nom_ar": null,
@@ -14625,7 +14607,7 @@
    "id": "im-tecnocasa-tuaa1",
    "source": "web",
    "source_url": "https://ariana4.tecnocasa.tn/ariana/el-hedi-nouira-ariana/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa El Hedi Nouira Ariana",
    "nom_ar": null,
@@ -14643,7 +14625,7 @@
    "id": "im-tecnocasa-tuha8",
    "source": "web",
    "source_url": "https://lapetiteariana.tecnocasa.tn/ariana/la-petite-ariana/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa La Petite Ariana",
    "nom_ar": null,
@@ -14661,7 +14643,7 @@
    "id": "im-tecnocasa-tugz3",
    "source": "web",
    "source_url": "https://ariana5.tecnocasa.tn/ariana/el-ghazela-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa El Ghazela 2",
    "nom_ar": null,
@@ -14679,7 +14661,7 @@
    "id": "im-tecnocasa-imtn1",
    "source": "web",
    "source_url": "https://lamarsa1.tecnocasa.tn/la-marsa/immobilier-professionnel-tunis-nord/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Immobilier Professionnel Tunis Nord",
    "nom_ar": null,
@@ -14697,7 +14679,7 @@
    "id": "im-tecnocasa-tuca1",
    "source": "web",
    "source_url": "https://lac1.tecnocasa.tn/les-berges-du-lac/le-lac-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Le Lac 1",
    "nom_ar": null,
@@ -14709,13 +14691,13 @@
    "facebook": "https://www.facebook.com/tecnocasalac",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 10
+   "annonces_immobilier": 11
   },
   {
    "id": "im-tecnocasa-tuch2",
    "source": "web",
    "source_url": "https://jem.tecnocasa.tn/el-menzah/les-jardins-del-menzah/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Les Jardins d'El Menzah",
    "nom_ar": null,
@@ -14733,7 +14715,7 @@
    "id": "im-tecnocasa-tuha4",
    "source": "web",
    "source_url": "https://lasoukra1.tecnocasa.tn/la-soukra/la-soukra-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa La Soukra 1",
    "nom_ar": null,
@@ -14745,13 +14727,13 @@
    "facebook": "https://www.facebook.com/tecnosoukra",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 15
+   "annonces_immobilier": 16
   },
   {
    "id": "im-tecnocasa-tuao3",
    "source": "web",
    "source_url": "https://aouina1.tecnocasa.tn/aouina/aouina-3/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Aouina 3",
    "nom_ar": null,
@@ -14769,7 +14751,7 @@
    "id": "im-tecnocasa-mdca6",
    "source": "web",
    "source_url": "https://mahdia2.tecnocasa.tn/mahdia/mahdia-hiboun/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Mahdia Hiboun",
    "nom_ar": null,
@@ -14781,13 +14763,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=61574706118892",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 15
+   "annonces_immobilier": 16
   },
   {
    "id": "im-tecnocasa-tuhb5",
    "source": "web",
    "source_url": "https://lekram1.tecnocasa.tn/le-kram/les-jardins-de-carthage-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Les Jardins De Carthage 2",
    "nom_ar": null,
@@ -14799,13 +14781,13 @@
    "facebook": "https://www.facebook.com/share/1C499iPg9F/?mibextid=wwXIfr",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 14
+   "annonces_immobilier": 16
   },
   {
    "id": "im-tecnocasa-tuhd4",
    "source": "web",
    "source_url": "https://medinajedida2.tecnocasa.tn/medina-jedida/medina-jadida/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Medina Jadida",
    "nom_ar": null,
@@ -14823,7 +14805,7 @@
    "id": "im-tecnocasa-tuha2",
    "source": "web",
    "source_url": "https://riadhaandalous.tecnocasa.tn/ariana/riadh-landalous/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Riadh Landalous",
    "nom_ar": null,
@@ -14835,13 +14817,13 @@
    "facebook": "https://www.facebook.com/TecnocasaAriana ",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 13
+   "annonces_immobilier": 14
   },
   {
    "id": "im-tecnocasa-naca4",
    "source": "web",
    "source_url": "https://kelibia1.tecnocasa.tn/kelibia/kelibia/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Kélibia",
    "nom_ar": null,
@@ -14853,13 +14835,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 16
+   "annonces_immobilier": 17
   },
   {
    "id": "im-tecnocasa-kair1",
    "source": "web",
    "source_url": "https://kairouan1.tecnocasa.tn/kairouan/kairouan/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Kairouan",
    "nom_ar": null,
@@ -14877,7 +14859,7 @@
    "id": "im-tecnocasa-turd1",
    "source": "web",
    "source_url": "https://rades1.tecnocasa.tn/rades/rades/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Radés",
    "nom_ar": null,
@@ -14895,7 +14877,7 @@
    "id": "im-tecnocasa-tugm2",
    "source": "web",
    "source_url": "https://gammarth1.tecnocasa.tn/gammarth/gammarth-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Gammarth 2",
    "nom_ar": null,
@@ -14907,13 +14889,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=61571138462509&locale=fr_FR ",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 20
+   "annonces_immobilier": 24
   },
   {
    "id": "im-tecnocasa-tuha9",
    "source": "web",
    "source_url": "https://ariana3.tecnocasa.tn/ariana/ariana-ville/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ariana Ville",
    "nom_ar": null,
@@ -14925,13 +14907,13 @@
    "facebook": "https://www.facebook.com/TecnocasaArianaville/?locale=fr_FR",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 8
+   "annonces_immobilier": 11
   },
   {
    "id": "im-tecnocasa-tuch6",
    "source": "web",
    "source_url": "https://jardinsdelmenzah1.tecnocasa.tn/jardins-del-menzah/les-jardins-del-menzah-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Les Jardins d'El Menzah 2",
    "nom_ar": null,
@@ -14943,13 +14925,13 @@
    "facebook": "https://www.facebook.com/share/18Sw734Vrc/?mibextid=wwXIfr",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 8
+   "annonces_immobilier": 9
   },
   {
    "id": "im-tecnocasa-tusk3",
    "source": "web",
    "source_url": "https://lasoukra3.tecnocasa.tn/la-soukra/la-soukra-3/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa La Soukra 3",
    "nom_ar": null,
@@ -14961,13 +14943,13 @@
    "facebook": "https://www.facebook.com/share/1DCHomVtLy/?mibextid=wwXIfr",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 13
+   "annonces_immobilier": 17
   },
   {
    "id": "im-tecnocasa-sscb2",
    "source": "web",
    "source_url": "https://sahloul4.tecnocasa.tn/sousse-jawhara/sahloul-4/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sahloul 4",
    "nom_ar": null,
@@ -14979,13 +14961,13 @@
    "facebook": "https://www.facebook.com/TecnocasaSahloul4KhezamaOuest",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 3
+   "annonces_immobilier": 4
   },
   {
    "id": "im-tecnocasa-sscb1",
    "source": "web",
    "source_url": "https://sahloul.tecnocasa.tn/sahloul/sahloul/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sahloul",
    "nom_ar": null,
@@ -15003,7 +14985,7 @@
    "id": "im-tecnocasa-naca1",
    "source": "web",
    "source_url": "https://nabeul1.tecnocasa.tn/nabeul/nabeul-centreville/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Nabeul Centre",
    "nom_ar": null,
@@ -15021,7 +15003,7 @@
    "id": "im-tecnocasa-ssca7",
    "source": "web",
    "source_url": "https://msaken1.tecnocasa.tn/msaken/msaken/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa M'Saken",
    "nom_ar": null,
@@ -15039,7 +15021,7 @@
    "id": "im-tecnocasa-mdca3",
    "source": "web",
    "source_url": "https://mahdia1.tecnocasa.tn/mahdia/rejiche/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Rejiche",
    "nom_ar": null,
@@ -15051,13 +15033,13 @@
    "facebook": "https://www.facebook.com/tecnocasarejiche",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 15
+   "annonces_immobilier": 14
   },
   {
    "id": "im-tecnocasa-naha1",
    "source": "web",
    "source_url": "https://hammametcentre.tecnocasa.tn/hammamet/hammamet-centre/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Hammamet Centre",
    "nom_ar": null,
@@ -15069,13 +15051,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 19
+   "annonces_immobilier": 22
   },
   {
    "id": "im-tecnocasa-naca2",
    "source": "web",
    "source_url": "https://nabeulafh.tecnocasa.tn/nabeul/nabeul-afh/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Nabeul Afh",
    "nom_ar": null,
@@ -15093,7 +15075,7 @@
    "id": "im-tecnocasa-tucc1",
    "source": "web",
    "source_url": "https://megrine.tecnocasa.tn/megrine/megrine/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Mégrine",
    "nom_ar": null,
@@ -15105,13 +15087,13 @@
    "facebook": "https://www.facebook.com/Tecnocasa.Megrine",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 10
+   "annonces_immobilier": 13
   },
   {
    "id": "im-tecnocasa-moca4",
    "source": "web",
    "source_url": "https://monastir1.tecnocasa.tn/monastir/sahline/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sahline",
    "nom_ar": null,
@@ -15123,13 +15105,13 @@
    "facebook": "https://www.facebook.com/Tecnocasa-Sahline-105478625730569",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 15
+   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-mdca4",
    "source": "web",
    "source_url": "https://salakta1.tecnocasa.tn/salakta/kssour-essefsalakta/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Kssour Essef, Salakta",
    "nom_ar": null,
@@ -15147,7 +15129,7 @@
    "id": "im-tecnocasa-moca7",
    "source": "web",
    "source_url": "https://monastir2.tecnocasa.tn/monastir/monastir-centre-ville/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Monastir Centre Ville",
    "nom_ar": null,
@@ -15165,7 +15147,7 @@
    "id": "im-tecnocasa-tucg3",
    "source": "web",
    "source_url": "https://lamanouba1.tecnocasa.tn/la-manouba/manouba-el-waha/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Manouba El Waha",
    "nom_ar": null,
@@ -15177,13 +15159,13 @@
    "facebook": "https://www.facebook.com/TecnocasaManoubaElWaha",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 3
+   "annonces_immobilier": 5
   },
   {
    "id": "im-tecnocasa-tuma1",
    "source": "web",
    "source_url": "https://lamarsalespins.tecnocasa.tn/la-marsa/marsa-les-pins/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Marsa Les Pins",
    "nom_ar": null,
@@ -15195,13 +15177,13 @@
    "facebook": "https://www.facebook.com/Tecnocasa-Marsa-Les-Pins-102414125597353",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 20
+   "annonces_immobilier": 29
   },
   {
    "id": "im-tecnocasa-sscb3",
    "source": "web",
    "source_url": "https://hammamsousse1.tecnocasa.tn/hammam-sousse/hammam-sousse/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Hammam Sousse",
    "nom_ar": null,
@@ -15219,7 +15201,7 @@
    "id": "im-tecnocasa-moca2",
    "source": "web",
    "source_url": "https://monastirelagba.tecnocasa.tn/monastir/monastir-el-agba/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Monastir El Agba",
    "nom_ar": null,
@@ -15237,7 +15219,7 @@
    "id": "im-tecnocasa-ssgh1",
    "source": "web",
    "source_url": "https://hergla.tecnocasa.tn/hergla/hergla/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Hergla",
    "nom_ar": null,
@@ -15249,13 +15231,13 @@
    "facebook": "https://www.facebook.com/TecnocasaHergla?mibextid=LQQJ4d",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 15
+   "annonces_immobilier": 21
   },
   {
    "id": "im-tecnocasa-ssca5",
    "source": "web",
    "source_url": "https://soussejawhara2.tecnocasa.tn/sousse-jawhara/sousse-jawhara/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sousse Jawhara",
    "nom_ar": null,
@@ -15273,7 +15255,7 @@
    "id": "im-tecnocasa-moca5",
    "source": "web",
    "source_url": "https://ksarhellal1.tecnocasa.tn/ksar-hellal/ksar-hellal/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ksar Hellal",
    "nom_ar": null,
@@ -15285,13 +15267,13 @@
    "facebook": "https://www.facebook.com/TecnocasaKsarHellal",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 8
+   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-arca1",
    "source": "web",
    "source_url": "https://ennasr1.tecnocasa.tn/ennasr/ennasr-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ennasr 1",
    "nom_ar": null,
@@ -15303,13 +15285,13 @@
    "facebook": "https://www.facebook.com/TecnocasaEnnasr",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 7
+   "annonces_immobilier": 8
   },
   {
    "id": "im-tecnocasa-ssca1",
    "source": "web",
    "source_url": "https://khezama.tecnocasa.tn/sousse-jawhara/sousse-khzema/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sousse Khzema",
    "nom_ar": null,
@@ -15327,7 +15309,7 @@
    "id": "im-tecnocasa-ssfx1",
    "source": "web",
    "source_url": "https://sfaxville1.tecnocasa.tn/sfax/sfax-gremda-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sfax Gremda 1",
    "nom_ar": null,
@@ -15345,7 +15327,7 @@
    "id": "im-tecnocasa-moc10",
    "source": "web",
    "source_url": "https://jemmal1.tecnocasa.tn/jemmal/jemmal/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Jemmal",
    "nom_ar": null,
@@ -15363,7 +15345,7 @@
    "id": "im-tecnocasa-tuha5",
    "source": "web",
    "source_url": "https://aouinapalmeraie.tecnocasa.tn/aouina/aouina-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Aouina 2",
    "nom_ar": null,
@@ -15375,13 +15357,13 @@
    "facebook": "https://www.facebook.com/profile.php?id=61586010729845",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 4
+   "annonces_immobilier": 5
   },
   {
    "id": "im-tecnocasa-tuhd1",
    "source": "web",
    "source_url": "https://boumhel.tecnocasa.tn/bou-mhel-elbassatine/boumhal/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Boumhal",
    "nom_ar": null,
@@ -15399,7 +15381,7 @@
    "id": "im-tecnocasa-tucb1",
    "source": "web",
    "source_url": "https://lafayettemontplaisir.tecnocasa.tn/lafayette-centre-ville/lafayettemontplaisir/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Lafayette, Montplaisir",
    "nom_ar": null,
@@ -15417,7 +15399,7 @@
    "id": "im-tecnocasa-arca2",
    "source": "web",
    "source_url": "https://ennasr2.tecnocasa.tn/ennasr/ennasr-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Ennasr 2",
    "nom_ar": null,
@@ -15435,7 +15417,7 @@
    "id": "im-tecnocasa-tucb2",
    "source": "web",
    "source_url": "https://cun.tecnocasa.tn/centre-urbain-nord/le-centre-urbain-nord/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Le Centre Urbain Nord",
    "nom_ar": null,
@@ -15447,13 +15429,13 @@
    "facebook": "https://www.facebook.com/tecnocasacun",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 1
+   "annonces_immobilier": 3
   },
   {
    "id": "im-tecnocasa-arcb2",
    "source": "web",
    "source_url": "https://ariana1.tecnocasa.tn/ariana/el-menzah-78/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa El Menzah 7, 8",
    "nom_ar": null,
@@ -15465,13 +15447,13 @@
    "facebook": "https://www.facebook.com/TecnocasaElMenzah7",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 7
+   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-arcb1",
    "source": "web",
    "source_url": "https://ariana2.tecnocasa.tn/ariana/el-menzah-56/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa El Menzah 5, 6",
    "nom_ar": null,
@@ -15489,7 +15471,7 @@
    "id": "im-tecnocasa-tuch3",
    "source": "web",
    "source_url": "https://mutuelleville.tecnocasa.tn/mutuelleville/mutuelleville/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Mutuelleville",
    "nom_ar": null,
@@ -15507,7 +15489,7 @@
    "id": "im-tecnocasa-tuch4",
    "source": "web",
    "source_url": "https://manar1.tecnocasa.tn/manar/manar-1/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Manar 1",
    "nom_ar": null,
@@ -15519,13 +15501,13 @@
    "facebook": "https://www.facebook.com/TecnocasaManar1",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 7
+   "annonces_immobilier": 10
   },
   {
    "id": "im-tecnocasa-naha2",
    "source": "web",
    "source_url": "https://hammametnord.tecnocasa.tn/hammamet/hammamet-nord/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Hammamet Nord",
    "nom_ar": null,
@@ -15537,13 +15519,13 @@
    "facebook": "https://www.facebook.com/Tecnocasa-Hammamet-Nord-103967581638687",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 10
+   "annonces_immobilier": 14
   },
   {
    "id": "im-tecnocasa-moca1",
    "source": "web",
    "source_url": "https://monastirlafalaise.tecnocasa.tn/monastir/monastir-la-falaise/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Monastir La Falaise",
    "nom_ar": null,
@@ -15561,7 +15543,7 @@
    "id": "im-tecnocasa-mdca1",
    "source": "web",
    "source_url": "https://mahdiacv.tecnocasa.tn/mahdia/mahdia-centre-ville/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Mahdia Centre Ville",
    "nom_ar": null,
@@ -15573,13 +15555,13 @@
    "facebook": "https://www.facebook.com/TecnocasaMahdiaCentreVille",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 8
+   "annonces_immobilier": 7
   },
   {
    "id": "im-tecnocasa-mdca2",
    "source": "web",
    "source_url": "https://mahdiazt.tecnocasa.tn/mahdia/mahdia-zone-touristique/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Mahdia Zone Touristique",
    "nom_ar": null,
@@ -15591,13 +15573,13 @@
    "facebook": "https://www.facebook.com/TecnocasaMahdiaZoneTouristique",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 2
+   "annonces_immobilier": 3
   },
   {
    "id": "im-tecnocasa-mdca5",
    "source": "web",
    "source_url": "https://chebba1.tecnocasa.tn/chebba/chebba/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Chebba",
    "nom_ar": null,
@@ -15612,10 +15594,28 @@
    "annonces_immobilier": 0
   },
   {
+   "id": "im-tecnocasa-moca9",
+   "source": "web",
+   "source_url": "https://bekalta1.tecnocasa.tn/bekalta/bekaltabaghdadi/",
+   "releve": "2026-10-31",
+   "metier": "agence-immobiliere",
+   "nom": "Tecnocasa Bekalta, Baghdadi",
+   "nom_ar": null,
+   "gouvernorat": "monastir",
+   "ville": null,
+   "adresse": "Rue DE MAGREB BEKALTA , 5090 Bekalta",
+   "tel": "26616040",
+   "site": "https://bekalta1.tecnocasa.tn/bekalta/bekaltabaghdadi/",
+   "facebook": "https://www.facebook.com/profile.php?id=61569949050077&mibextid=wwXIfr&rdid=SR5lV08dODlaRpaV&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F15zUtTynBL%2F%3Fmibextid%3DwwXIfr#",
+   "horaires": null,
+   "annuaire": "immobilier",
+   "annonces_immobilier": 2
+  },
+  {
    "id": "im-tecnocasa-ssca2",
    "source": "web",
    "source_url": "https://kantaoui.tecnocasa.tn/el-kantaoui/el-kantaoui/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa El Kantaoui",
    "nom_ar": null,
@@ -15627,13 +15627,13 @@
    "facebook": "https://www.facebook.com/TECNOCASAKANTAOUII",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 7
+   "annonces_immobilier": 8
   },
   {
    "id": "im-tecnocasa-ssca3",
    "source": "web",
    "source_url": "https://bouhsina.tecnocasa.tn/sousse-centre-ville/sousse-bouhsina/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sousse Bouhsina",
    "nom_ar": null,
@@ -15651,7 +15651,7 @@
    "id": "im-tecnocasa-ssca4",
    "source": "web",
    "source_url": "https://sousseriadh1.tecnocasa.tn/sousse-riadh/cite-riadh/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Cité Riadh",
    "nom_ar": null,
@@ -15669,7 +15669,7 @@
    "id": "im-tecnocasa-ssca6",
    "source": "web",
    "source_url": "https://soussecentreville1.tecnocasa.tn/sousse-centre-ville/sousse-corniche/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Sousse Corniche",
    "nom_ar": null,
@@ -15681,13 +15681,13 @@
    "facebook": "https://www.facebook.com/TecnocasaSousseCorniche",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 3
+   "annonces_immobilier": 4
   },
   {
    "id": "im-tecnocasa-tuca3",
    "source": "web",
    "source_url": "https://lac2.tecnocasa.tn/les-berges-du-lac/le-lac-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Le Lac 2",
    "nom_ar": null,
@@ -15699,13 +15699,13 @@
    "facebook": "https://www.facebook.com/TecnocasaLac2",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 12
+   "annonces_immobilier": 14
   },
   {
    "id": "im-tecnocasa-tucg2",
    "source": "web",
    "source_url": "https://manouba.tecnocasa.tn/la-manouba/manouba/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa Manouba",
    "nom_ar": null,
@@ -15717,13 +15717,13 @@
    "facebook": "https://www.facebook.com/TecnocasaManouba",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 2
+   "annonces_immobilier": 4
   },
   {
    "id": "im-tecnocasa-tuch1",
    "source": "web",
    "source_url": "https://elmenzah9.tecnocasa.tn/el-menzah/el-menzah-9/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa El Menzah 9",
    "nom_ar": null,
@@ -15735,13 +15735,13 @@
    "facebook": "https://www.facebook.com/TecnocasaElMenzah9",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 1
+   "annonces_immobilier": 2
   },
   {
    "id": "im-tecnocasa-tuha6",
    "source": "web",
    "source_url": "https://lasoukra2.tecnocasa.tn/la-soukra/la-soukra-2/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Tecnocasa La Soukra 2",
    "nom_ar": null,
@@ -15753,13 +15753,13 @@
    "facebook": "https://www.facebook.com/TecnocasaLaSoukra2",
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 1
+   "annonces_immobilier": 3
   },
   {
    "id": "im-century21-century-21-alliance",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-alliance/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Alliance",
    "nom_ar": null,
@@ -15771,13 +15771,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 41
+   "annonces_immobilier": 38
   },
   {
    "id": "im-century21-century-21-barros",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-barros/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Barros",
    "nom_ar": null,
@@ -15789,13 +15789,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 127
+   "annonces_immobilier": 97
   },
   {
    "id": "im-century21-century-21-blue-lagoon-djerba",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-blue-lagoon-djerba/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Blue Lagoon",
    "nom_ar": null,
@@ -15813,7 +15813,7 @@
    "id": "im-century21-century-21-centre-urbain-nord",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-centre-urbain-nord/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Masters",
    "nom_ar": null,
@@ -15825,13 +15825,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 82
+   "annonces_immobilier": 73
   },
   {
    "id": "im-century21-century-21-challenge",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-challenge/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Challenge",
    "nom_ar": null,
@@ -15843,13 +15843,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 82
+   "annonces_immobilier": 78
   },
   {
    "id": "im-century21-century-21-excellence",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-excellence/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Excellence",
    "nom_ar": null,
@@ -15861,13 +15861,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 46
+   "annonces_immobilier": 47
   },
   {
    "id": "im-century21-century-21-horizon",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-horizon/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Horizon",
    "nom_ar": null,
@@ -15885,7 +15885,7 @@
    "id": "im-century21-century-21-infinity",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-infinity/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 INFINITY",
    "nom_ar": null,
@@ -15897,13 +15897,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 133
+   "annonces_immobilier": 119
   },
   {
    "id": "im-century21-century-21-invest",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-invest/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Invest",
    "nom_ar": null,
@@ -15915,13 +15915,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 218
+   "annonces_immobilier": 187
   },
   {
    "id": "im-century21-century-21-karaouli",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-karaouli/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Karaouli",
    "nom_ar": null,
@@ -15933,13 +15933,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 57
+   "annonces_immobilier": 55
   },
   {
    "id": "im-century21-century-21-patrimoine",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-patrimoine/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Patrimoine",
    "nom_ar": null,
@@ -15951,13 +15951,13 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 31
+   "annonces_immobilier": 30
   },
   {
    "id": "im-century21-century-21-prestige",
    "source": "web",
    "source_url": "https://century21.tn/agency/century-21-prestige/",
-   "releve": "2026-10-28",
+   "releve": "2026-10-31",
    "metier": "agence-immobiliere",
    "nom": "Century 21 Prestige",
    "nom_ar": null,
@@ -15969,7 +15969,7 @@
    "facebook": null,
    "horaires": null,
    "annuaire": "immobilier",
-   "annonces_immobilier": 154
+   "annonces_immobilier": 104
   }
  ]
 }
