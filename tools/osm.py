@@ -45,3 +45,55 @@ def requete(q, essais=10, verifier=None):
             print(f"  essai {i + 1} ({url.split('/')[2]}) : {str(e)[:120]}", flush=True)
             time.sleep(max(0, min(60, 8 * (i + 1), reste() - 30)))
     raise RuntimeError(f"Overpass indisponible après {essais} essais : {derniere}")
+
+
+# ---------------------------------------------------------------------------------------------------------------------------
+# Panne passagère d'OpenStreetMap (02/11/2026 : les 5 serveurs Overpass en panne en même temps, robot candidats-metiers rouge).
+# Règle commune (source en panne) : une panne courte n'est PAS une alerte ; l'ancien fichier est gardé, la date du début de la
+# panne est notée dans donnees/etat-osm.json (enregistré par le robot) et un nouvel essai a lieu au passage suivant ;
+# le robot devient ROUGE seulement si la panne dure depuis plus de 2 jours (PANNE_MAX_JOURS).
+PANNE_MAX_JOURS = 2
+
+
+def decider(etat, robot, reussi, aujourdhui):
+    """Fonction pure (testée). etat = contenu de etat-osm.json ; aujourdhui = date ISO.
+    Renvoie (nouvel état, code de sortie 0/1, message)."""
+    import datetime as _dt
+    etat = {k: dict(v) for k, v in (etat or {}).items()}
+    e = etat.setdefault(robot, {})
+    if reussi:
+        e["reussi"], e["panne_depuis"] = aujourdhui, None
+        return etat, 0, "relevé réussi"
+    debut = e.get("panne_depuis") or aujourdhui
+    e["panne_depuis"] = debut
+    jours = (_dt.date.fromisoformat(aujourdhui) - _dt.date.fromisoformat(debut)).days
+    if jours >= PANNE_MAX_JOURS:
+        return etat, 1, f"ÉCHEC : OpenStreetMap indisponible depuis le {debut} ({jours} jours) : à réparer"
+    return etat, 0, (f"PANNE PASSAGÈRE d'OpenStreetMap (depuis le {debut}) : ancien fichier gardé, nouvel essai au prochain passage "
+                     f"(rouge seulement après {PANNE_MAX_JOURS} jours)")
+
+
+def noter(racine, robot, reussi):
+    """Met à jour donnees/etat-osm.json et renvoie le code de sortie du robot (0 = vert)."""
+    import datetime as _dt
+    chemin = os.path.join(racine, "donnees", "etat-osm.json")
+    try:
+        with open(chemin, encoding="utf-8") as f:
+            etat = json.load(f)
+    except (OSError, ValueError):
+        etat = {}
+    etat, code, message = decider(etat, robot, reussi, _dt.date.today().isoformat())
+    os.makedirs(os.path.dirname(chemin), exist_ok=True)
+    with open(chemin, "w", encoding="utf-8", newline="\n") as f:
+        f.write(json.dumps(etat, ensure_ascii=False, indent=1, sort_keys=True) + "\n")
+    print(("::error::" if code else "::warning::" if not reussi else "") + message, flush=True)
+    return code
+
+
+def panne_en_cours(racine, robot):
+    """Vrai si le dernier essai de ce robot a échoué (un nouvel essai est attendu)."""
+    try:
+        with open(os.path.join(racine, "donnees", "etat-osm.json"), encoding="utf-8") as f:
+            return bool(json.load(f).get(robot, {}).get("panne_depuis"))
+    except (OSError, ValueError):
+        return False

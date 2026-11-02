@@ -1,12 +1,13 @@
 # Robot de nuit de l'annuaire (moteur commun) — tourne sur GitHub, sans PC.
-# Une fois par mois (le 1er, 3h40 à Tunis) : relevé OpenStreetMap → ENREGISTREMENT des données → pages → tests → publication.
+# Une fois par mois (le 1er, 3h40 à Tunis), et le lendemain d une panne d OpenStreetMap : relevé → ENREGISTREMENT des données → pages → tests → publication.
 # Règle commune (15/10/2026) : les données relevées sont enregistrées AVANT les pages et les tests : un test rouge bloque
 # la publication des pages, jamais la sauvegarde du relevé. Tout reste dans CE robot (GitHub ne garde qu'un robot en attente
 # par groupe de concurrence). En cas d'échec, GitHub envoie un e-mail à Ahmed et le site reste tel quel.
 name: maj
 on:
   schedule:
-    - cron: "40 2 1 * *"   # le 1er de chaque mois (décision d'Ahmed du 10/10/2026, audit des robots : chaque nuit = inutile)
+    - cron: "40 2 * * *"   # chaque nuit, mais le relevé n'a lieu que le 1er du mois (décision d'Ahmed du 10/10/2026) OU le
+                           # lendemain d'une panne d'OpenStreetMap (02/11/2026) ; les autres nuits le robot s'arrête en 1 minute
   push:                    # un métier ajouté (routine « nouveau métier », 20/10/2026) -> ses fiches relevées tout de suite
     branches: [main]
     paths: [config.json]
@@ -26,9 +27,15 @@ jobs:
         with: { python-version: "3.12" }
       - uses: actions/setup-node@v4
         with: { node-version: "20" }
+      - name: Règle de panne passagère d'OpenStreetMap (test)
+        run: python tools/test_osm_panne.py
       - name: Relevé OpenStreetMap
+        id: releve
+        env:
+          SEULEMENT_SI_ATTENDU: ${{ github.event_name == 'schedule' && '1' || '' }}
         run: python tools/releve_osm.py
       - name: Reprise des fiches de nos autres annuaires (seulement pour l'annuaire qui les regroupe)
+        if: steps.releve.outputs.fait == '1'
         run: |
           if [ -f tools/importer_annuaires.py ]; then python tools/importer_annuaires.py; fi
       - name: Enregistrer les données relevées (avant les pages et les tests)
@@ -36,6 +43,7 @@ jobs:
           git config user.name "robot-annuaire"
           git config user.email "robot-annuaire@users.noreply.github.com"
           git add donnees/osm.json
+          if [ -f donnees/etat-osm.json ]; then git add donnees/etat-osm.json; fi   # panne passagère notée (02/11/2026)
           if [ -f donnees/importes.json ]; then git add donnees/importes.json; fi
           if git diff --cached --quiet; then echo "Données inchangées : rien à enregistrer"; exit 0; fi
           git commit -q -m "Relevé OpenStreetMap enregistré ($(date -u +%d/%m/%Y))"
@@ -45,14 +53,18 @@ jobs:
           done
           echo "ÉCHEC : données non enregistrées"; exit 1
       - name: Pages
+        if: steps.releve.outputs.fait == '1'
         run: node tools/construire.mjs
       - name: Tests
+        if: steps.releve.outputs.fait == '1'
         run: |
           npm install --no-save --no-package-lock jsdom
           node tools/test_site.mjs
       - name: Visiteur simule (téléphone de 390 px, recherches et fiche comme un visiteur)
+        if: steps.releve.outputs.fait == '1'
         run: python3 tools/visiteur_simule.py
       - name: Publier les pages (seulement si les tests sont passés)
+        if: steps.releve.outputs.fait == '1'
         run: |
           git add -A
           git diff --cached --quiet || git commit -m "Mise à jour automatique des fiches ($(date -u +%d/%m/%Y))"

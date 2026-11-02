@@ -26,7 +26,8 @@ jobs:
           git config user.name "robot-annuaire"
           git config user.email "robot-annuaire@users.noreply.github.com"
           git add donnees/candidats-metiers.json
+          if [ -f donnees/etat-osm.json ]; then git add donnees/etat-osm.json; fi   # panne passagère notée (02/11/2026)
           if git diff --cached --quiet; then echo "Liste inchangée"; exit 0; fi
-          git commit -q -m "Métiers présents en Tunisie (OpenStreetMap) du $(date -u +%d/%m/%Y)"
+          git commit -q -m "Métiers présents en Tunisie (OpenStreetMap) du $(date -u +%d/%m/%Y) (ou panne notée)"
           for i in 1 2 3 4 5; do git pull -q --rebase --autostash && git push -q && exit 0; sleep $((i * 10)); done
           echo "ÉCHEC : liste non enregistrée"; exit 1

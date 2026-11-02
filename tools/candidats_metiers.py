@@ -47,7 +47,11 @@ def main():
     deja = {t for m in config["metiers"] for t in m.get("osm") or []}
     tout = {}
     for cle in CLES:
-        d = O.requete(REQUETE.format(cle=cle), verifier=lambda d: "elements" in d)
+        try:
+            d = O.requete(REQUETE.format(cle=cle), verifier=lambda d: "elements" in d)
+        except RuntimeError as e:   # panne d'OpenStreetMap (02/11/2026) : ancienne liste gardée, rouge seulement après 2 jours
+            print("OpenStreetMap indisponible :", e, flush=True)
+            return O.noter(RACINE, "candidats", False)
         tout.update(compter(d["elements"], cle))
         print(f"{cle} : {len(d['elements'])} lieux en Tunisie")
     candidats = sorted(({"osm": t, "lieux": n, "joignables": j, "deja": t in deja, "sante": t in SANTE,
@@ -59,7 +63,8 @@ def main():
     libres = [c for c in candidats if not c["deja"] and not c["pas_un_metier"] and c["joignables"] >= 5]
     print(f"{len(candidats)} métiers trouvés ; {len(libres)} absents de l'annuaire avec au moins 5 lieux joignables : "
           + ", ".join(f"{c['osm']} ({c['joignables']})" for c in libres[:8]))
+    return O.noter(RACINE, "candidats", True)
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

@@ -11,7 +11,9 @@ import sys
 import time
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
-from osm import requete, reste  # noqa: E402
+from osm import requete, reste, noter, panne_en_cours  # noqa: E402
+import datetime  # noqa: E402
+import os  # noqa: E402
 
 RACINE = pathlib.Path(__file__).resolve().parent.parent
 CONF = json.loads((RACINE / "config.json").read_text(encoding="utf-8"))
@@ -98,7 +100,24 @@ def releve():
     return sorted(fiches.values(), key=lambda f: (f["gouvernorat"], f["nom"].lower()))
 
 
+def sortie_github(fait):
+    """Dit au robot si un relevé a été fait (les étapes pages / tests / publication ne tournent qu'alors)."""
+    if os.environ.get("GITHUB_OUTPUT"):
+        with open(os.environ["GITHUB_OUTPUT"], "a", encoding="utf-8", newline="\n") as f:
+            f.write(f"fait={1 if fait else 0}\n")
+
+
+def attendu():
+    """Passage quotidien (02/11/2026) : relevé seulement le 1er du mois, ou pour réessayer après une panne passagère."""
+    return datetime.date.today().day == 1 or panne_en_cours(RACINE, "releve")
+
+
 def main():
+    if os.environ.get("SEULEMENT_SI_ATTENDU") and not attendu():
+        print("Pas de relevé aujourd'hui (le 1er du mois, ou le lendemain d'une panne d'OpenStreetMap).")
+        sortie_github(False)
+        return 0
+    sortie_github(False)
     ancien = json.loads(SORTIE.read_text(encoding="utf-8")) if SORTIE.exists() else {"fiches": []}
     for essai in range(3):
         try:
@@ -107,12 +126,12 @@ def main():
         except Exception as e:  # serveur saturé : on réessaie un peu plus tard
             print("relevé impossible :", e, flush=True)
             if reste() < 180:   # budget de temps épuisé (osm.py) : on s'arrête avant que GitHub coupe le robot
-                print("ÉCHEC : OpenStreetMap trop lent aujourd'hui, ancien fichier gardé (nouvel essai au prochain passage).")
-                return 1
+                print("OpenStreetMap trop lent aujourd'hui, ancien fichier gardé (nouvel essai au prochain passage).")
+                return noter(RACINE, "releve", False)
             time.sleep(min(120, reste() - 150))
     else:
-        print("ÉCHEC : OpenStreetMap indisponible, ancien fichier gardé.")
-        return 1
+        print("OpenStreetMap indisponible, ancien fichier gardé.")
+        return noter(RACINE, "releve", False)
     avant = len(ancien.get("fiches", []))
     if avant >= 10 and len(fiches) < avant * 0.5:
         print(f"ÉCHEC : {len(fiches)} fiches au lieu de {avant} (chute suspecte), ancien fichier gardé.")
@@ -123,7 +142,8 @@ def main():
     for f in fiches:
         par_g[f["gouvernorat"]] = par_g.get(f["gouvernorat"], 0) + 1
     print(f"{len(fiches)} fiches (avant : {avant}) :", ", ".join(f"{g} {n}" for g, n in sorted(par_g.items())))
-    return 0
+    sortie_github(True)
+    return noter(RACINE, "releve", True)
 
 
 if __name__ == "__main__":
