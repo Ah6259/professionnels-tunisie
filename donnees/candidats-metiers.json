@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-04",
+"maj": "2026-11-05",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -12,7 +12,7 @@
 },
 {
 "osm": "office=government",
-"lieux": 843,
+"lieux": 844,
 "joignables": 55,
 "deja": false,
 "sante": false,
@@ -20,7 +20,7 @@
 },
 {
 "osm": "office=company",
-"lieux": 231,
+"lieux": 232,
 "joignables": 52,
 "deja": false,
 "sante": false,
@@ -292,7 +292,7 @@
 },
 {
 "osm": "craft=tailor",
-"lieux": 8,
+"lieux": 9,
 "joignables": 4,
 "deja": false,
 "sante": false,
@@ -351,6 +351,14 @@
 "lieux": 11,
 "joignables": 3,
 "deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
+"osm": "craft=hvac",
+"lieux": 7,
+"joignables": 3,
+"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
@@ -731,14 +739,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "craft=hvac",
-"lieux": 5,
-"joignables": 1,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "shop=radiotechnics",
 "lieux": 5,
 "joignables": 1,
@@ -757,6 +757,14 @@
 {
 "osm": "shop=estate_agent",
 "lieux": 4,
+"joignables": 1,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
+"osm": "craft=confectionery",
+"lieux": 3,
 "joignables": 1,
 "deja": false,
 "sante": false,
@@ -787,7 +795,7 @@
 "pas_un_metier": false
 },
 {
-"osm": "craft=confectionery",
+"osm": "craft=bakery",
 "lieux": 2,
 "joignables": 1,
 "deja": false,
@@ -813,14 +821,6 @@
 {
 "osm": "shop=swimming_pool",
 "lieux": 2,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "craft=bakery",
-"lieux": 1,
 "joignables": 1,
 "deja": false,
 "sante": false,
@@ -916,7 +916,7 @@
 },
 {
 "osm": "craft=dressmaker",
-"lieux": 100,
+"lieux": 101,
 "joignables": 0,
 "deja": false,
 "sante": false,
@@ -964,7 +964,7 @@
 },
 {
 "osm": "craft=electronics_repair",
-"lieux": 43,
+"lieux": 44,
 "joignables": 0,
 "deja": true,
 "sante": false,
@@ -1139,6 +1139,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "craft=key_cutter",
+"lieux": 8,
+"joignables": 0,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "craft=painter",
 "lieux": 8,
 "joignables": 0,
@@ -1196,14 +1204,6 @@
 },
 {
 "osm": "craft=insulation",
-"lieux": 7,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "craft=key_cutter",
 "lieux": 7,
 "joignables": 0,
 "deja": false,
@@ -1523,6 +1523,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "craft=grinding_mill",
+"lieux": 2,
+"joignables": 0,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "office=accountant",
 "lieux": 2,
 "joignables": 0,
@@ -1615,14 +1623,6 @@
 "lieux": 1,
 "joignables": 0,
 "deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "craft=grinding_mill",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
 "sante": false,
 "pas_un_metier": false
 },
