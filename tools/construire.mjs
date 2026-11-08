@@ -124,7 +124,24 @@ const photoDe = m => (m && m.photo) || P;
 const fondPhoto = (ph, racine) => ph ? `<img class="hero-fond" src="${racine}${esc(ph.fichier)}" alt="" width="${ph.largeur || 900}" height="${ph.hauteur || 675}">` : "";
 const creditPhoto = () => P && P.mosaique ? `<p class="credit">${bi("Mosaïque de photos", "فسيفساء صور")} : ${P.mosaique.map(c => `<bdi>${esc(c.auteur)}</bdi>`).join(", ")} — ${bi("licences libres", "رخص حرة")} (<a href="${esc(P.licence_url)}" rel="noopener license">${esc(P.licence)}</a>…), <a href="a-propos/">${bi("détail", "التفاصيل")}</a>, Wikimedia Commons</p>` : P ? `<p class="credit">${bi("Photo", "صورة")} : <bdi>${esc(P.auteur)}</bdi>, <a href="${esc(P.licence_url)}" rel="noopener license">${esc(P.licence)}</a>, <a href="${esc(P.source)}" rel="noopener">Wikimedia Commons</a></p>` : "";
 
+// SEO (08/11/2026, plan d'Ahmed pour tous les sites) : Google coupe les titres vers 60-70 caractères et les descriptions vers 160 :
+// le suffixe « | nom du site » saute si le titre dépasse, puis coupe à un séparateur ; description coupée en fin de phrase
+function titreSeo(t, maxi = 70) {
+  if (t.length <= maxi) return t;
+  const i = t.lastIndexOf(" | ");
+  if (i > 0 && t.length - i <= 45 && t.slice(0, i).trim().length <= maxi) return t.slice(0, i).trim();
+  let base = i > 0 && t.length - i <= 45 ? t.slice(0, i).trim() : t;
+  if (base.length <= maxi) return base;
+  for (const sep of [" : ", " — ", " (", " – ", ", "]) { const j = base.lastIndexOf(sep, maxi); if (j >= 25) return base.slice(0, j).replace(/[\s,;:—-]+$/, ""); }
+  return base.slice(0, maxi - 1).replace(/\s+\S*$/, "").replace(/[\s,;:—(-]+$/, "") + "…";
+}
+function descSeo(d, maxi = 165) {
+  if (d.length <= maxi) return d;
+  const c = d.slice(0, maxi), i = Math.max(c.lastIndexOf(". "), c.lastIndexOf("۔ "));
+  return i >= 60 ? c.slice(0, i + 1) : c.slice(0, maxi - 1).replace(/\s+\S*$/, "").replace(/[\s,;:—(،-]+$/, "") + "…";
+}
 function tete({ titre, desc, chemin, racine, jsonld = [] }) {
+  titre = titreSeo(titre); desc = descSeo(desc);
   return `<!doctype html>
 <html translate="no" lang="fr" dir="ltr" data-racine="${racine}" data-base="${BASE}">
 <head>
@@ -678,7 +695,7 @@ writeFileSync(join(root, "manifest.webmanifest"), JSON.stringify({ id: BASE, nam
           { src: "assets/icons/icon-maskable-512.png", sizes: "512x512", type: "image/png", purpose: "maskable" }] }, null, 2) + "\n", "utf8");
 writeFileSync(join(root, "sitemap.xml"), `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${Object.keys(pages).map(p => `  <url><loc>${URL_SITE}${p}</loc></url>`).join("\n")}
+${Object.keys(pages).map(p => `  <url><loc>${URL_SITE}${p}</loc><lastmod>${new Date().toISOString().slice(0, 10)}</lastmod></url>`).join("\n")}
 </urlset>
 `, "utf8");
 writeFileSync(join(root, "robots.txt"), `# Assistants IA qui répondent à une question en citant leur source : bienvenus (référencement sur les IA, 13/10/2026)
