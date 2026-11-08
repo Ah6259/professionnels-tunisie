@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-07",
+"maj": "2026-11-08",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -180,7 +180,7 @@
 },
 {
 "osm": "shop=convenience",
-"lieux": 981,
+"lieux": 982,
 "joignables": 7,
 "deja": false,
 "sante": false,
