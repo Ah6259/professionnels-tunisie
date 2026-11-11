@@ -1,31 +1,7 @@
 {
-"maj": "2026-11-10",
+"maj": "2026-11-11",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
-{
-"osm": "office=diplomatic",
-"lieux": 92,
-"joignables": 68,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
-{
-"osm": "office=government",
-"lieux": 844,
-"joignables": 55,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
-{
-"osm": "office=company",
-"lieux": 232,
-"joignables": 52,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
 {
 "osm": "shop=supermarket",
 "lieux": 630,
@@ -131,30 +107,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=estate_agent",
-"lieux": 51,
-"joignables": 10,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=it",
-"lieux": 39,
-"joignables": 10,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=ngo",
-"lieux": 38,
-"joignables": 10,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
-{
 "osm": "shop=books",
 "lieux": 213,
 "joignables": 9,
@@ -188,49 +140,17 @@
 },
 {
 "osm": "shop=mobile_phone",
-"lieux": 119,
+"lieux": 120,
 "joignables": 7,
 "deja": true,
 "sante": false,
 "pas_un_metier": false
-},
-{
-"osm": "office=association",
-"lieux": 36,
-"joignables": 7,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
 },
 {
 "osm": "shop=musical_instrument",
 "lieux": 9,
 "joignables": 7,
 "deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=educational_institution",
-"lieux": 49,
-"joignables": 6,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
-{
-"osm": "office=insurance",
-"lieux": 44,
-"joignables": 6,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=lawyer",
-"lieux": 32,
-"joignables": 6,
-"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
@@ -300,7 +220,7 @@
 },
 {
 "osm": "shop=hardware",
-"lieux": 185,
+"lieux": 186,
 "joignables": 3,
 "deja": false,
 "sante": false,
@@ -359,38 +279,6 @@
 "lieux": 7,
 "joignables": 3,
 "deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=coworking",
-"lieux": 5,
-"joignables": 3,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=employment_agency",
-"lieux": 5,
-"joignables": 3,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=engineer",
-"lieux": 3,
-"joignables": 3,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=telecommunication",
-"lieux": 76,
-"joignables": 2,
-"deja": false,
 "sante": false,
 "pas_un_metier": false
 },
@@ -491,14 +379,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=architect",
-"lieux": 15,
-"joignables": 2,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "craft=plumber",
 "lieux": 12,
 "joignables": 2,
@@ -525,22 +405,6 @@
 {
 "osm": "shop=video_games",
 "lieux": 7,
-"joignables": 2,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=travel_agent",
-"lieux": 6,
-"joignables": 2,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=surveyor",
-"lieux": 2,
 "joignables": 2,
 "deja": false,
 "sante": false,
@@ -651,14 +515,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=notary",
-"lieux": 16,
-"joignables": 1,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "craft=electrician",
 "lieux": 15,
 "joignables": 1,
@@ -731,26 +587,10 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=research",
-"lieux": 6,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "shop=radiotechnics",
 "lieux": 5,
 "joignables": 1,
 "deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=tax_advisor",
-"lieux": 4,
-"joignables": 1,
-"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
@@ -764,14 +604,6 @@
 },
 {
 "osm": "craft=confectionery",
-"lieux": 3,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=advertising_agency",
 "lieux": 3,
 "joignables": 1,
 "deja": false,
@@ -803,48 +635,8 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=security",
-"lieux": 2,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=union",
-"lieux": 2,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
-{
 "osm": "shop=swimming_pool",
 "lieux": 2,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=logistics",
-"lieux": 1,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=visa",
-"lieux": 1,
-"joignables": 1,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=wedding_planner",
-"lieux": 1,
 "joignables": 1,
 "deja": false,
 "sante": false,
@@ -868,6 +660,14 @@
 },
 {
 "osm": "shop=construction",
+"lieux": 1,
+"joignables": 1,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
+"osm": "shop=rental",
 "lieux": 1,
 "joignables": 1,
 "deja": false,
@@ -1083,14 +883,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=water_utility",
-"lieux": 10,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "shop=sewing",
 "lieux": 10,
 "joignables": 0,
@@ -1163,22 +955,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=financial",
-"lieux": 8,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=political_party",
-"lieux": 8,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
-},
-{
 "osm": "shop=carpet",
 "lieux": 8,
 "joignables": 0,
@@ -1225,22 +1001,6 @@
 "deja": false,
 "sante": false,
 "pas_un_metier": false
-},
-{
-"osm": "office=physician",
-"lieux": 6,
-"joignables": 0,
-"deja": false,
-"sante": true,
-"pas_un_metier": false
-},
-{
-"osm": "office=quango",
-"lieux": 6,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": true
 },
 {
 "osm": "shop=bookmaker",
@@ -1331,30 +1091,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=club",
-"lieux": 4,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=consulting",
-"lieux": 4,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=energy_supplier",
-"lieux": 4,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "shop=bathroom_furnishing",
 "lieux": 4,
 "joignables": 0,
@@ -1399,14 +1135,6 @@
 "lieux": 3,
 "joignables": 0,
 "deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=forestry",
-"lieux": 3,
-"joignables": 0,
-"deja": false,
 "sante": false,
 "pas_un_metier": false
 },
@@ -1524,22 +1252,6 @@
 },
 {
 "osm": "craft=grinding_mill",
-"lieux": 2,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=accountant",
-"lieux": 2,
-"joignables": 0,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=newspaper",
 "lieux": 2,
 "joignables": 0,
 "deja": false,
@@ -1676,86 +1388,6 @@
 },
 {
 "osm": "craft=tinsmith",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=charity",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=graphic_design",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=guide",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=logitics",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=marina",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=moving_company",
-"lieux": 1,
-"joignables": 0,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=property_management",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=service",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=société",
-"lieux": 1,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=tax",
 "lieux": 1,
 "joignables": 0,
 "deja": false,
