@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-12",
+"maj": "2026-11-13",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -12,7 +12,7 @@
 },
 {
 "osm": "office=government",
-"lieux": 844,
+"lieux": 845,
 "joignables": 55,
 "deja": false,
 "sante": false,
@@ -171,6 +171,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "shop=mobile_phone",
+"lieux": 121,
+"joignables": 8,
+"deja": true,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "shop=beauty",
 "lieux": 75,
 "joignables": 8,
@@ -183,14 +191,6 @@
 "lieux": 982,
 "joignables": 7,
 "deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "shop=mobile_phone",
-"lieux": 120,
-"joignables": 7,
-"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
@@ -707,6 +707,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "shop=tiles",
+"lieux": 9,
+"joignables": 1,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "craft=upholsterer",
 "lieux": 8,
 "joignables": 1,
@@ -1196,14 +1204,6 @@
 },
 {
 "osm": "shop=lighting",
-"lieux": 8,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "shop=tiles",
 "lieux": 8,
 "joignables": 0,
 "deja": false,
