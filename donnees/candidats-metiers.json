@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-14",
+"maj": "2026-11-15",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -29,7 +29,7 @@
 {
 "osm": "shop=supermarket",
 "lieux": 630,
-"joignables": 33,
+"joignables": 34,
 "deja": false,
 "sante": false,
 "pas_un_metier": false
@@ -916,7 +916,7 @@
 },
 {
 "osm": "shop=kiosk",
-"lieux": 150,
+"lieux": 151,
 "joignables": 0,
 "deja": false,
 "sante": false,
