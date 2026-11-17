@@ -26,13 +26,13 @@
 <meta name="theme-color" content="#2E6B4E">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;600;700;800&amp;family=Noto+Kufi+Arabic:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/style.css?v=dd9ca4da98">
-<link rel="stylesheet" href="../assets/couleurs.css?v=dd9ca4da98">
-<script defer src="../assets/conf.js?v=dd9ca4da98"></script>
-<script defer src="../assets/page.js?v=dd9ca4da98"></script>
-<script defer src="../assets/annuaire.js?v=dd9ca4da98"></script>
+<link rel="stylesheet" href="../assets/style.css?v=1eeecfbeed">
+<link rel="stylesheet" href="../assets/couleurs.css?v=1eeecfbeed">
+<script defer src="../assets/conf.js?v=1eeecfbeed"></script>
+<script defer src="../assets/page.js?v=1eeecfbeed"></script>
+<script defer src="../assets/annuaire.js?v=1eeecfbeed"></script>
 
-<script data-goatcounter="https://prix-eaux-tunisie.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="https://prix-eaux-tunisie.goatcounter.com/count" defer src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header class="entete" id="entete"></header>
@@ -51,7 +51,7 @@
         <li><span data-l="fr">Nom, adresse, téléphone, itinéraire</span><span data-l="ar">الاسم، العنوان، الهاتف، الطريق</span></li>
         <li><span data-l="fr">En français et en arabe, sur votre gouvernorat</span><span data-l="ar">بالعربية والفرنسية، في ولايتك</span></li>
         <li><span data-l="fr">Badge « Vérifiée » quand vous confirmez votre fiche</span><span data-l="ar">شارة « موثّقة » عند تأكيد بطاقتك</span></li>
-        <li><span data-l="fr">Correction ou retrait à tout moment</span><span data-l="ar">تصحيح أو حذف في أي وقت</span></li>
+        <li><span data-l="fr">Correction à tout moment</span><span data-l="ar">تصحيح في أي وقت</span></li>
       </ul>
     </div>
     <div class="offre pro">
@@ -128,14 +128,13 @@
       <p><span data-l="fr">Après le mois gratuit, envoyez la preuve du paiement par WhatsApp. Une facture vous est adressée.</span><span data-l="ar">بعد الشهر المجاني، أرسل إثبات الدفع عبر واتساب. تُرسل إليك فاتورة.</span></p>
     </div>
   </section>
-  <h2 class="titre-section"><span data-l="fr">Ajouter, corriger ou retirer une fiche (gratuit)</span><span data-l="ar">إضافة بطاقة أو تصحيحها أو حذفها (مجانًا)</span></h2>
+  <h2 class="titre-section"><span data-l="fr">Ajouter ou corriger une fiche (gratuit)</span><span data-l="ar">إضافة بطاقة أو تصحيحها (مجانًا)</span></h2>
   <section class="carte">
     <form class="formulaire" data-envoi="demande" action="https://formspree.io/f/mwlpakqj" method="POST">
       <fieldset class="choix-action">
         <legend><span data-l="fr">Votre demande</span><span data-l="ar">طلبك</span></legend>
         <label><input type="radio" name="action" value="ajouter" checked> <span data-l="fr">Ajouter une fiche</span><span data-l="ar">إضافة بطاقة</span></label>
         <label><input type="radio" name="action" value="corriger"> <span data-l="fr">Corriger une fiche</span><span data-l="ar">تصحيح بطاقة</span></label>
-        <label><input type="radio" name="action" value="retirer"> <span data-l="fr">Retirer une fiche</span><span data-l="ar">حذف بطاقة</span></label>
       </fieldset>
       <input type="hidden" name="fiche" id="champ-fiche" value="">
       <p class="fiche-choisie" id="fiche-choisie" hidden></p>
@@ -177,7 +176,7 @@
       <input type="text" name="_gotcha" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit" class="btn"><span data-l="fr">Envoyer la demande</span><span data-l="ar">إرسال الطلب</span></button>
       <p class="statut" role="status" aria-live="polite"></p>
-      <p class="mention"><span data-l="fr">Vos coordonnées servent seulement à vérifier la demande ; elles ne sont pas publiées sans votre accord. Un retrait demandé est définitif.</span><span data-l="ar">تُستعمل بياناتك للتثبت من الطلب فقط ولا تُنشر دون موافقتك. الحذف المطلوب نهائي.</span></p>
+      <p class="mention"><span data-l="fr">Vos coordonnées servent seulement à vérifier la demande ; elles ne sont pas publiées sans votre accord.</span><span data-l="ar">تُستعمل بياناتك للتثبت من الطلب فقط ولا تُنشر دون موافقتك.</span></p>
     </form>
     <div class="apres-pro" id="apres-ajout" hidden>
       <h3><span data-l="fr">Merci, votre fiche gratuite est bien demandée</span><span data-l="ar">شكرًا، وصلنا طلب بطاقتك المجانية</span></h3>

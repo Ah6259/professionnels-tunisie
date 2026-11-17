@@ -123,7 +123,13 @@ check(`liens internes vers des fichiers existants (${pbLiens.slice(0, 3).join(" 
 // 21/10/2026 : la 1re fiche attendue peut être un doublon fusionné (sans page) : prendre la 1re qui a une page
 const f0 = attendues.find(f => existsSync(join(root, `fiche/${f.id}/index.html`))) || attendues[0];
 const s0 = lire(`fiche/${f0.id}/index.html`);
-check("fiche : crédit OpenStreetMap (ODbL) et liens corriger / retirer", /OpenStreetMap/.test(s0) && /ODbL/.test(s0) && s0.includes(`inscription/?fiche=${f0.id}&amp;action=retirer`) && s0.includes("action=corriger"));
+check("fiche : crédit OpenStreetMap (ODbL) et lien corriger", /OpenStreetMap/.test(s0) && /ODbL/.test(s0) && s0.includes("action=corriger"));
+// 17/11/2026 (Ahmed) : plus AUCUN bouton « Retirer cette fiche » (un concurrent pouvait demander le retrait de la fiche d'un autre) ;
+// un retrait n'est traité qu'après vérification auprès de l'établissement (À propos). Bloqué ici sur toutes les fiches et le formulaire.
+// 17/11/2026 : compteur GoatCounter en « defer » APRÈS page.js (qui pose le préfixe du site) : en « async » il partait parfois avant,
+// la visite était comptée « /fiche/… » sans préfixe et son lien dans les statistiques donnait « Page introuvable » sur clicvia.com.
+check("compteur GoatCounter lancé APRÈS page.js (defer, préfixe du site toujours posé)", /data-goatcounter="[^"]+" defer src=/.test(lire("index.html")) && !/data-goatcounter="[^"]+" async/.test(lire("index.html")));
+check("aucun bouton ni choix « Retirer » (fiches + formulaire)", fichesPages.every(p => !/action=retirer|Retirer cette fiche/.test(lire(p))) && !/value="retirer"|Retirer une fiche/.test(lire("inscription/index.html")));
 // doublons fusionnés par la construction (même nom à moins de 300 m) : une fiche sans page doit avoir un jumeau publié
 const nomN = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9؀-ۿ]+/g, " ").trim();
 const distM = (a, b) => Math.hypot((a.lat - b.lat) * 111000, (a.lon - b.lon) * 111000 * Math.cos(a.lat * Math.PI / 180));
@@ -163,7 +169,7 @@ check("fiche : téléphone en lien tel:+216 et WhatsApp seulement pour un portab
 check("fiche : JSON-LD du bon type (" + (C.schema || "LocalBusiness") + ")", s0.includes(`"@type":"${C.schema || "LocalBusiness"}"`));
 check("« gratuit » dans le titre ou la description de l'accueil et des gouvernorats", [lire("index.html"), lire("gouvernorat/tunis/index.html")].every(s => /<title>[^<]*gratuit|name="description" content="[^"]*gratuit/i.test(s)));
 check("à propos : sources OpenStreetMap / ODbL, retrait, statistiques sans cookies", /ODbL/.test(lire("a-propos/index.html")) && /retrait/i.test(lire("a-propos/index.html")) && /GoatCounter/.test(lire("a-propos/index.html")));
-check("inscriptions : formulaire de demande (ajout / correction / retrait), envoi Formspree, mention des données", /value="retirer"/.test(lire("inscription/index.html")) && lire("inscription/index.html").includes(C.formspree) && /ne sont pas publiées/.test(lire("inscription/index.html")));
+check("inscriptions : formulaire de demande (ajout / correction), envoi Formspree, mention des données", /value="corriger"/.test(lire("inscription/index.html")) && lire("inscription/index.html").includes(C.formspree) && /ne sont pas publiées/.test(lire("inscription/index.html")));
 
 // -- checklist visuelle obligatoire (règle d'Ahmed du 05/10/2026 : aucun site « basique »)
 const P = C.photo || {};
@@ -356,7 +362,7 @@ else {
   if (bouton) { bouton.addEventListener("click", e => e.preventDefault()); bouton.dispatchEvent(new r.w.MouseEvent("click", { bubbles: true })); }
   check("fiche : un clic (appel / WhatsApp / itinéraire) est compté anonymement", !bouton || r.envois.some(e => e === `clic-${bouton.dataset.clic}/${fTel.id}`));
   const ins = await ouvrir("inscription/index.html", `?fiche=${f0.id}&action=retirer`);
-  check("professionnels : fiche et action « retirer » pré-remplies depuis le lien d'une fiche", ins.d.getElementById("champ-fiche").value === f0.id && ins.d.querySelector('input[name="action"][value="retirer"]').checked);
+  check("professionnels : ancien lien « retirer » -> fiche pré-remplie et « corriger » choisi", ins.d.getElementById("champ-fiche").value === f0.id && ins.d.querySelector('input[name="action"][value="corriger"]').checked);
   {
     const v = await ouvrir("inscription/index.html");
     v.w.fetch = async () => ({ ok: true });
@@ -366,7 +372,7 @@ else {
     const ap = v.d.getElementById("apres-ajout");
     check("ajout gratuit envoyé : l'offre Pro (prix, avantages, sans engagement) et les modes de paiement s'affichent aussitôt", !!ap && !ap.hidden && /(Virement bancaire|D17|IZI|Wafacash)/.test(ap.textContent) && /sans engagement/.test(ap.textContent));
   }
-  check("retrait : seul le message court est demandé (formulaire complet désactivé)", ins.d.getElementById("champs-ajout").disabled && !ins.d.getElementById("champs-autre").disabled);
+  check("ancien lien retrait : seul le message court est demandé (formulaire complet désactivé)", ins.d.getElementById("champs-ajout").disabled && !ins.d.getElementById("champs-autre").disabled);
   const aj = await ouvrir("inscription/index.html");
   const req = n => { const e = aj.d.querySelector(`#champs-ajout [name="${n}"]`); return !!e && e.required; };
   check("ajout d'une fiche : formulaire complet obligatoire (ville, adresse, téléphone, e-mail, autorisation), comme une inscription pro",

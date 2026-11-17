@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pf = document.getElementById("p-fiche"), pn = document.getElementById("p-nom");
   if (pf && id) pf.value = id;
   if (pn && nom) pn.value = nom;
-  const r = document.querySelector(`input[name="action"][value="${action === "retirer" ? "retirer" : action === "corriger" ? "corriger" : "ajouter"}"]`);
+  const r = document.querySelector(`input[name="action"][value="${action === "corriger" || action === "retirer" ? "corriger" : "ajouter"}"]`);
   if (r) r.checked = true;
   // ajout = formulaire complet ; correction / retrait = message court (un fieldset désactivé n'est ni vérifié ni envoyé)
   const ajout = document.getElementById("champs-ajout"), autre = document.getElementById("champs-autre");

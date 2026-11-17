@@ -176,7 +176,7 @@ ${C.og_image ? `<meta property="og:image" content="${URL_SITE}assets/${C.og_imag
 <script defer src="${racine}assets/page.js?v=${V}"></script>
 <script defer src="${racine}assets/annuaire.js?v=${V}"></script>
 ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replace(/</g, "\\u003c")}</script>`).join("\n")}
-<script data-goatcounter="${C.goatcounter}/count" async src="https://gc.zgo.at/count.js"></script>
+<script data-goatcounter="${C.goatcounter}/count" defer src="https://gc.zgo.at/count.js"></script>
 </head>
 <body>
 <header class="entete" id="entete"></header>`;
@@ -415,7 +415,6 @@ for (const f of FICHES) {
     <div class="actions petites">
       ${OUVERT && !f.pro ? `<a href="../../inscription/?fiche=${f.id}&amp;nom=${encodeURIComponent(f.nom)}#pro" data-clic="reclamer">${svg("ok")}${bi("C'est votre établissement ? Vérifiez votre fiche gratuitement", "هذه مؤسستك؟ وثّق بطاقتك مجانًا")}</a>` : ""}
       <a href="../../inscription/?fiche=${f.id}&amp;action=corriger">${svg("crayon")}${bi("C'est votre établissement ? Compléter ou corriger", "هذه مؤسستك؟ أكمل البطاقة أو صحّحها")}</a>
-      <a href="../../inscription/?fiche=${f.id}&amp;action=retirer">${svg("retirer")}${bi("Retirer cette fiche", "حذف هذه البطاقة")}</a>
     </div>
   </section>
   ${liensAmis()}
@@ -451,7 +450,7 @@ const offres = `<section class="offres" id="offres">
         <li>${bi("Nom, adresse, téléphone, itinéraire", "الاسم، العنوان، الهاتف، الطريق")}</li>
         <li>${bi("En français et en arabe, sur votre gouvernorat", "بالعربية والفرنسية، في ولايتك")}</li>
         <li>${bi("Badge « Vérifiée » quand vous confirmez votre fiche", "شارة « موثّقة » عند تأكيد بطاقتك")}</li>
-        <li>${bi("Correction ou retrait à tout moment", "تصحيح أو حذف في أي وقت")}</li>
+        <li>${bi("Correction à tout moment", "تصحيح في أي وقت")}</li>
       </ul>
     </div>
     <div class="offre pro">
@@ -525,15 +524,14 @@ pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formul
 </div></section>
 <main class="wrap">
   ${offres}
-  ${OUVERT ? formPro : `<p class="note">${bi("La vérification des fiches et la formule Pro ouvriront bientôt. En attendant, vous pouvez déjà demander gratuitement l'ajout, la correction ou le retrait d'une fiche.", "توثيق البطاقات وصيغة Pro سيُفتحان قريبًا. في الأثناء يمكنك طلب إضافة بطاقة أو تصحيحها أو حذفها مجانًا.")}</p>`}
-  <h2 class="titre-section">${bi("Ajouter, corriger ou retirer une fiche (gratuit)", "إضافة بطاقة أو تصحيحها أو حذفها (مجانًا)")}</h2>
+  ${OUVERT ? formPro : `<p class="note">${bi("La vérification des fiches et la formule Pro ouvriront bientôt. En attendant, vous pouvez déjà demander gratuitement l'ajout ou la correction d'une fiche.", "توثيق البطاقات وصيغة Pro سيُفتحان قريبًا. في الأثناء يمكنك طلب إضافة بطاقة أو تصحيحها مجانًا.")}</p>`}
+  <h2 class="titre-section">${bi("Ajouter ou corriger une fiche (gratuit)", "إضافة بطاقة أو تصحيحها (مجانًا)")}</h2>
   <section class="carte">
     <form class="formulaire" data-envoi="demande" action="${C.formspree}" method="POST">
       <fieldset class="choix-action">
         <legend>${bi("Votre demande", "طلبك")}</legend>
         <label><input type="radio" name="action" value="ajouter" checked> ${bi("Ajouter une fiche", "إضافة بطاقة")}</label>
         <label><input type="radio" name="action" value="corriger"> ${bi("Corriger une fiche", "تصحيح بطاقة")}</label>
-        <label><input type="radio" name="action" value="retirer"> ${bi("Retirer une fiche", "حذف بطاقة")}</label>
       </fieldset>
       <input type="hidden" name="fiche" id="champ-fiche" value="">
       <p class="fiche-choisie" id="fiche-choisie" hidden></p>
@@ -577,7 +575,7 @@ pages["inscription/"] = tete({ titre: `Professionnels : fiche gratuite et formul
       <input type="text" name="_gotcha" class="piege" tabindex="-1" autocomplete="off" aria-hidden="true">
       <button type="submit" class="btn">${bi("Envoyer la demande", "إرسال الطلب")}</button>
       <p class="statut" role="status" aria-live="polite"></p>
-      <p class="mention">${bi("Vos coordonnées servent seulement à vérifier la demande ; elles ne sont pas publiées sans votre accord. Un retrait demandé est définitif.", "تُستعمل بياناتك للتثبت من الطلب فقط ولا تُنشر دون موافقتك. الحذف المطلوب نهائي.")}</p>
+      <p class="mention">${bi("Vos coordonnées servent seulement à vérifier la demande ; elles ne sont pas publiées sans votre accord.", "تُستعمل بياناتك للتثبت من الطلب فقط ولا تُنشر دون موافقتك.")}</p>
     </form>
     <div class="apres-pro" id="apres-ajout" hidden>
       <h3>${bi("Merci, votre fiche gratuite est bien demandée", "شكرًا، وصلنا طلب بطاقتك المجانية")}</h3>
@@ -613,7 +611,7 @@ const NB = " ", CFS = { fr: `Comment fonctionne le site${NB}?`, ar: "كيف ي�
     [AVEC_PAGES_METIER, "<strong>Page de chaque métier</strong> : touchez une carte de métier pour voir ce métier dans toute la Tunisie, puis dans chaque gouvernorat.", "<strong>صفحة كل مهنة</strong>: اضغط على بطاقة مهنة لترى هذه المهنة في كامل تونس ثم في كل ولاية."],
     [true, "<strong>Fiche d'un professionnel</strong> : adresse, horaires et site quand ils sont connus, avec les boutons <strong>Appeler</strong>, <strong>WhatsApp</strong> (numéros de portable) et <strong>Itinéraire</strong> (carte OpenStreetMap).", "<strong>بطاقة المهني</strong>: العنوان والتوقيت والموقع عند توفرها، مع أزرار <strong>اتصال</strong> و<strong>واتساب</strong> (أرقام الجوال) و<strong>الطريق</strong> (خريطة OpenStreetMap)."],
     [true, "<strong>Badges</strong> : « Vérifiée » = l'établissement a confirmé sa fiche ; « Pro » = formule payante, affichée en premier. Les autres fiches sont triées par nom : nous ne classons pas les professionnels.", "<strong>الشارات</strong>: « موثّقة » = أكّدت المؤسسة بطاقتها؛ « Pro » = صيغة مدفوعة تظهر أولًا. البطاقات الأخرى مرتبة حسب الاسم: لا نرتّب المهنيين."],
-    [true, "<strong>Corriger ou retirer une fiche</strong> : sous chaque fiche, l'établissement peut demander une correction ou le retrait (définitif).", "<strong>تصحيح بطاقة أو حذفها</strong>: تحت كل بطاقة، يمكن للمؤسسة طلب التصحيح أو الحذف (نهائي)."],
+    [true, "<strong>Corriger une fiche</strong> : sous chaque fiche, l'établissement peut demander une correction.", "<strong>تصحيح بطاقة</strong>: تحت كل بطاقة، يمكن للمؤسسة طلب التصحيح."],
     [true, "<strong>Espace professionnels</strong> : ajouter une fiche gratuite, la vérifier, ou choisir la formule Pro (bouton « Inscription Pro » en haut de chaque page).", "<strong>فضاء المهنيين</strong>: إضافة بطاقة مجانية أو توثيقها أو اختيار صيغة Pro (زر « تسجيل Pro » في أعلى كل صفحة)."],
     [C.metiers.some(m => (m.liens || []).length), "<strong>Voir aussi</strong> : le lien vers l'organisme officiel de la profession (Ordre, chambre, administration).", "<strong>انظر أيضًا</strong>: رابط الهيكل الرسمي للمهنة (هيئة، غرفة، إدارة)."],
     [true, "<strong>Français et arabe</strong> : le bouton « ع » / « Fr » en haut change la langue de tout le site.", "<strong>الفرنسية والعربية</strong>: زر « ع » / « Fr » في الأعلى يغيّر لغة الموقع كله."],
@@ -642,7 +640,7 @@ const NB = " ", CFS = { fr: `Comment fonctionne le site${NB}?`, ar: "كيف ي�
   <h2>${bi("Gratuit et formule Pro", "مجاني وصيغة Pro")}</h2>
   <p>${bi("Pour les visiteurs, tout est gratuit. Pour les professionnels, la fiche de base est gratuite pour toujours.", "كل شيء مجاني للزوار. وللمهنيين، البطاقة الأساسية مجانية دائمًا.")} ${OUVERT ? bi(`La formule Pro (${PRO.mois_gratuits === 1 ? "1er mois gratuit" : PRO.mois_gratuits + NB + "mois gratuits"}, puis `, `صيغة Pro (${PRO.mois_gratuits === 1 ? "الشهر الأول مجاني" : ISO(PRO.mois_gratuits) + " أشهر مجانية"}، ثم `) + prixTexte().replace(/(\d) (DT|د\.ت)/g, "$1" + NB + "$2").replace(/\u2069 د\.ت/g, "\u2069" + NB + "د.ت") + bi(`) place la fiche en tête de son gouvernorat avec la mention « Pro », une présentation, des spécialités et un bouton WhatsApp. Pas de renouvellement automatique : sans paiement, la fiche redevient gratuite, sans être supprimée. Voir la page <a href="../inscription/#offres">Professionnels</a>.`, `) تضع البطاقة في أعلى ولايتها مع إشارة « Pro » وتقديمًا واختصاصات وزر واتساب. لا يوجد تجديد آلي: دون دفع تعود البطاقة مجانية دون حذف. انظر صفحة <a href="../inscription/#offres">المهنيون</a>.`) : bi("La formule Pro ouvrira prochainement.", "صيغة Pro تُفتح قريبًا.")}</p>
   <h2>${bi("Données personnelles et retrait", "المعطيات الشخصية والحذف")}</h2>
-  <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction ou le retrait de sa fiche depuis la page <a href="../inscription/">Professionnels</a> ; un retrait est définitif. Statistiques de visite anonymes, sans cookies (GoatCounter) : nous comptons les visites, les clics sur Appeler / WhatsApp / Itinéraire et les mots cherchés sans résultat, jamais qui vous êtes. Les formulaires (avis, demandes) sont envoyés seulement quand vous cliquez sur « Envoyer ».`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها أو حذفها من صفحة <a href="../inscription/">المهنيون</a>؛ والحذف نهائي. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter): نحسب الزيارات والنقرات على اتصال / واتساب / الطريق والكلمات التي لم تُعط نتيجة، ولا نعرف أبدًا من أنت. لا تُرسل الاستمارات إلا عند الضغط على « إرسال ».`)}</p>
+  <p>${bi(`Nous ne publions que des informations professionnelles déjà publiques ou données par l'établissement. Tout établissement peut demander la correction de sa fiche depuis la page <a href="../inscription/">Professionnels</a>. Une demande de retrait (même formulaire, « Corriger une fiche ») n'est traitée qu'après avoir vérifié qu'elle vient bien de l'établissement lui-même, par un appel au numéro de la fiche : personne ne peut faire retirer la fiche d'un autre. Statistiques de visite anonymes, sans cookies (GoatCounter) : nous comptons les visites, les clics sur Appeler / WhatsApp / Itinéraire et les mots cherchés sans résultat, jamais qui vous êtes. Les formulaires (avis, demandes) sont envoyés seulement quand vous cliquez sur « Envoyer ».`, `لا ننشر إلا معلومات مهنية منشورة سابقًا أو قدّمتها المؤسسة. يمكن لكل مؤسسة طلب تصحيح بطاقتها من صفحة <a href="../inscription/">المهنيون</a>. لا يُعالج طلب الحذف (نفس الاستمارة، « تصحيح بطاقة ») إلا بعد التثبت من أنه صادر عن المؤسسة نفسها، باتصال بالرقم المذكور في البطاقة: لا يمكن لأحد حذف بطاقة غيره. إحصائيات زيارة مجهولة دون ملفات تعريف الارتباط (GoatCounter): نحسب الزيارات والنقرات على اتصال / واتساب / الطريق والكلمات التي لم تُعط نتيجة، ولا نعرف أبدًا من أنت. لا تُرسل الاستمارات إلا عند الضغط على « إرسال ».`)}</p>
   <h2>${bi("Mises à jour automatiques", "تحديث آلي")}</h2>
   <p>${bi("Un robot relit OpenStreetMap chaque mois (le 1er) et refait toutes les pages, sans intervention. Si OpenStreetMap ne répond pas, les fiches précédentes sont gardées. Les demandes des professionnels sont ajoutées après vérification.", "يعيد روبوت قراءة OpenStreetMap كل شهر (يوم 1) ويعيد بناء كل الصفحات دون تدخل. إذا لم يستجب OpenStreetMap تُحفظ البطاقات السابقة. تُضاف طلبات المهنيين بعد التثبت.")}</p>
   <h2>${bi("Site indépendant, gratuit et non officiel", "موقع مستقل ومجاني وغير رسمي")}</h2>
@@ -660,7 +658,7 @@ if (OUVERT) pages["conditions/"] = tete({ titre: `Conditions pour les profession
   <h2>${bi("1. Qui vend", "1. البائع")}</h2>
   <p>${bi(`${esc(PRO.vendeur || VIR.titulaire || "L'éditeur du site")}, éditeur de ${esc(C.nom.fr)}${WAP ? ` (WhatsApp <bdi dir="ltr">${WAP}</bdi>)` : ""}.`, `${esc(PRO.vendeur || VIR.titulaire || "ناشر الموقع")}، ناشر ${esc(C.nom.ar)}.`)}</p>
   <h2>${bi("2. Fiche gratuite", "2. البطاقة المجانية")}</h2>
-  <p>${bi("La fiche de base (nom, adresse, téléphone, itinéraire) est gratuite, sans limite de durée. L'établissement peut la vérifier, la corriger ou la faire retirer à tout moment, gratuitement.", "البطاقة الأساسية (الاسم، العنوان، الهاتف، الطريق) مجانية دون حدّ زمني. يمكن للمؤسسة توثيقها أو تصحيحها أو طلب حذفها في أي وقت مجانًا.")}</p>
+  <p>${bi("La fiche de base (nom, adresse, téléphone, itinéraire) est gratuite, sans limite de durée. L'établissement peut la vérifier ou la corriger à tout moment, gratuitement.", "البطاقة الأساسية (الاسم، العنوان، الهاتف، الطريق) مجانية دون حدّ زمني. يمكن للمؤسسة توثيقها أو تصحيحها في أي وقت مجانًا.")}</p>
   <h2>${bi("3. Formule Pro", "3. صيغة Pro")}</h2>
   <p>${bi(`Prix : `, `السعر: `)}${prixTexte()}${bi(`, pour 12 mois. Le ${PRO.mois_gratuits === 1 ? "1er mois est gratuit" : PRO.mois_gratuits + " premiers mois sont gratuits"} et commence à la mise en ligne de la fiche Pro. La formule Pro affiche la fiche en tête de son gouvernorat avec la mention « Pro », une présentation, des spécialités, un bouton WhatsApp et le nombre de contacts reçus depuis le site.`, `، لمدة 12 شهرًا. ${PRO.mois_gratuits === 1 ? "الشهر الأول مجاني" : "الأشهر الأولى مجانية"} ويبدأ عند نشر بطاقة Pro. تُظهر صيغة Pro البطاقة في أعلى ولايتها مع إشارة « Pro »، وتقديمًا واختصاصات وزر واتساب وعدد الاتصالات الواردة عبر الموقع.`)}</p>
   <h2>${bi("4. Paiement et renouvellement", "4. الدفع والتجديد")}</h2>
