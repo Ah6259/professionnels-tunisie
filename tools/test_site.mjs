@@ -129,6 +129,13 @@ check("fiche : crédit OpenStreetMap (ODbL) et lien corriger", /OpenStreetMap/.t
 // 17/11/2026 : compteur GoatCounter en « defer » APRÈS page.js (qui pose le préfixe du site) : en « async » il partait parfois avant,
 // la visite était comptée « /fiche/… » sans préfixe et son lien dans les statistiques donnait « Page introuvable » sur clicvia.com.
 check("compteur GoatCounter lancé APRÈS page.js (defer, préfixe du site toujours posé)", /data-goatcounter="[^"]+" defer src=/.test(lire("index.html")) && !/data-goatcounter="[^"]+" async/.test(lire("index.html")));
+// 17/11/2026 (20 points d'Ahmed, règle commune § 58) : page 404 du site (qui cherche l'adresse avant de dire « introuvable ») et liens
+// Confidentialité / Conditions d'utilisation (pages communes clicvia.com) dans le pied de TOUTES les pages (HTML) et dans le pied de page.js.
+check("page 404 du site (404.html + 404.js qui cherche la page) et liens Confidentialité / Conditions dans le pied de toutes les pages",
+  existsSync(join(root, "404.html")) && lire("404.html").includes(C.nom.fr.replace(/&/g, "&amp;")) && lire("404.html").includes('src="/404.js"') &&
+  existsSync(join(root, "404.js")) && lire("404.js").includes("Recherche de la page") &&
+  pages.every(p => { const h = lire(p); return h.includes('href="https://clicvia.com/confidentialite/"') && h.includes('href="https://clicvia.com/conditions/"'); }) &&
+  /clicvia\.com\/ar\/confidentialite\//.test(lire("assets/page.js")) && /clicvia\.com\/ar\/conditions\//.test(lire("assets/page.js")));
 check("aucun bouton ni choix « Retirer » (fiches + formulaire)", fichesPages.every(p => !/action=retirer|Retirer cette fiche/.test(lire(p))) && !/value="retirer"|Retirer une fiche/.test(lire("inscription/index.html")));
 // doublons fusionnés par la construction (même nom à moins de 300 m) : une fiche sans page doit avoir un jumeau publié
 const nomN = s => s.toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[^a-z0-9؀-ۿ]+/g, " ").trim();

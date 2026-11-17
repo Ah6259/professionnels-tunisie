@@ -30,6 +30,7 @@
       <nav><a href="${racine || "./"}">${T("Accueil", "الرئيسية")}</a><a href="${racine}inscription/">${T("Professionnels", "المهنيون")}</a>
         <a href="${racine}a-propos/">${T("Comment fonctionne le site\u00a0?", "كيف يعمل الموقع؟")}</a><a href="${racine || "./"}#avis">${T("Votre avis", "رأيك")}</a>
         ${C.liens.slice(0, 1).map(l => `<a href="${l.url}">${t(l)}</a>`).join("")}<a href="https://clicvia.com/" rel="noopener" target="_blank">${T("Tous nos services", "كل خدماتنا")}</a>
+        <a href="${T("https://clicvia.com/confidentialite/", "https://clicvia.com/ar/confidentialite/")}">${T("Confidentialité", "الخصوصية")}</a><a href="${T("https://clicvia.com/conditions/", "https://clicvia.com/ar/conditions/")}">${T("Conditions d'utilisation", "شروط الاستعمال")}</a>
         </nav>
       <p>${T("Fiches : © les contributeurs d'OpenStreetMap (licence ODbL) et demandes des professionnels. Site gratuit et non officiel : appelez avant de vous déplacer.",
              "البطاقات: © المساهمون في OpenStreetMap (رخصة ODbL) وطلبات المهنيين. موقع مجاني وغير رسمي: اتصل قبل التنقل.")}</p>

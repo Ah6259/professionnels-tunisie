@@ -181,7 +181,9 @@ ${jsonld.map(j => `<script type="application/ld+json">${JSON.stringify(j).replac
 <body>
 <header class="entete" id="entete"></header>`;
 }
-const pied = `<footer id="pied"></footer>\n</body>\n</html>\n`;
+// 17/11/2026 (20 points d'Ahmed, règle commune § 58) : liens Confidentialité / Conditions d'utilisation (pages communes de clicvia.com) déjà
+// dans le HTML (lus par Google et par le contrôle en ligne sans JavaScript) ; page.js remplace ensuite ce pied par le pied complet.
+const pied = `<footer id="pied"><div class="wrap"><nav><a href="https://clicvia.com/confidentialite/">Confidentialité · الخصوصية</a> <a href="https://clicvia.com/conditions/">Conditions d'utilisation · شروط الاستعمال</a></nav></div></footer>\n</body>\n</html>\n`;
 const parMetier = id => FICHES.filter(f => f.metier === id);
 const AVEC_PAGES_METIER = C.metiers.length > 1;
 const sameAs = f => [...new Set([f.site, f.source === "web" ? f.source_url : null].filter(u => u && /^https:\/\//.test(u)))];
@@ -677,6 +679,10 @@ for (const [chemin, html] of Object.entries(pages)) {
   const d = join(root, chemin); mkdirSync(d, { recursive: true });
   writeFileSync(join(d, "index.html"), html, "utf8");
 }
+// page 404 COMMUNE (17/11/2026, outils communs/page-404 du dépôt projets-ahmed, copiée dans tools/404-modele.html et 404.js du moteur) :
+// avant, GitHub montrait sa page anglaise ; celle-ci cherche d'abord l'adresse sur nos sites (« Recherche de la page… »).
+writeFileSync(join(root, "404.html"), readFileSync(join(root, "tools", "404-modele.html"), "utf8")
+  .replaceAll("{{NOM}}", C.nom.fr.replace(/&/g, "&amp;").replace(/</g, "&lt;")).replaceAll("{{COULEUR}}", C.couleur_fonce || C.couleur || "#2B3990"), "utf8");
 // adresse propre (11 octobre 2026, domaine clicvia.com) : fichier CNAME lu par GitHub Pages ; aucun sur l'ancienne adresse
 { const hote = new URL(C.url).host;
   if (hote !== "ah6259.github.io") writeFileSync(join(root, "CNAME"), hote + "\n", "utf8"); }
