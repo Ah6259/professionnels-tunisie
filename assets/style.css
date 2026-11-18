@@ -34,6 +34,7 @@ select{font:inherit;border:1px solid var(--ligne);border-radius:12px;padding:10p
 @media (max-width:560px){.filtres{grid-template-columns:1fr}}
 /* liste de fiches */
 .liste{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:10px}
+.voir-tout{text-align:center;margin:16px 0 4px}  /* accueil léger (19/11/2026) : charge le reste des fiches */
 .fiche-carte{display:flex;flex-direction:column;gap:4px;background:var(--carte);border:1px solid var(--ligne);border-radius:14px;padding:14px;text-decoration:none;color:var(--texte);box-shadow:var(--ombre)}
 .fiche-carte:hover{border-color:var(--p)}
 .fiche-carte.pro{border:2px solid var(--p)}

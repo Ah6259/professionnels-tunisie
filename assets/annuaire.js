@@ -15,7 +15,21 @@ const compter = (path, title) => { try { if (window.goatcounter && window.goatco
 document.addEventListener("DOMContentLoaded", () => {
   const liste = document.getElementById("liste");
   if (!liste) return;
-  const cartes = [...liste.querySelectorAll(".fiche-carte")];
+  let cartes = [...liste.querySelectorAll(".fiche-carte")];
+  // 19/11/2026 (accueil léger, CV.3) : l'accueil ne contient que les premières fiches ; le reste (data-reste) est chargé au 1er geste
+  // (recherche, gouvernorat, catégorie, « Voir les N fiches ») puis le filtre est rejoué. Sans réseau : les fiches affichées restent.
+  const reste = liste.dataset.reste, total = +liste.dataset.total || 0, voirTout = document.getElementById("voir-tout");
+  let charge = !reste, enCours = null;
+  const charger = () => {
+    if (charge) return Promise.resolve();
+    if (!enCours) enCours = fetch(reste).then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
+      liste.insertAdjacentHTML("beforeend", d.html);
+      cartes = [...liste.querySelectorAll(".fiche-carte")]; charge = true;
+      if (voirTout) voirTout.parentNode.hidden = true;
+      filtrer();
+    }).catch(() => { enCours = null; });
+    return enCours;
+  };
   const champ = document.getElementById("recherche"), choixG = document.getElementById("choix-g"), compte = document.getElementById("compte");
   let metier = "", cat = "", attente = 0;
   const cherches = new Set();
@@ -34,19 +48,23 @@ document.addEventListener("DOMContentLoaded", () => {
       const ok = (!g || c.dataset.g === g) && (!metier || c.dataset.m === metier) && (!cat || catDe[c.dataset.m] === cat) && mots.every(m => son(c.dataset.cherche).includes(m));
       c.hidden = !ok; if (ok) n++;
     }
-    const vide = document.getElementById("aucun"); if (vide) vide.hidden = n > 0;
+    const filtre = !!(g || metier || cat || mots.length);
+    if (!charge && filtre) charger();                            // le résultat complet arrive dès que la liste est là
+    if (!charge && !filtre) n = total;                           // accueil sans filtre : le vrai nombre de fiches
+    const vide = document.getElementById("aucun"); if (vide) vide.hidden = n > 0 || !charge;
     // la carte suit le filtre (règle commune § 11.11, 18/10/2026) : le gouvernorat choisi est entouré sur la carte de l'accueil
     if (choixG) document.querySelectorAll(".carte-tn .tn-b[data-gouv]").forEach(b => b.classList.toggle("actif", b.dataset.gouv === g));
     // recherche sans résultat : comptée UNE fois par mot, 1,5 s après la dernière frappe (13/10/2026). Le robot privé de relevé
     // en fait la liste « ce que les visiteurs cherchent et ne trouvent pas » ; seul le mot est compté, rien de personnel.
     clearTimeout(attente);
-    if (!n && mots.length) attente = setTimeout(() => {
+    if (charge && !n && mots.length) attente = setTimeout(() => {
       const mot = mots.join("-").slice(0, 60);
       if (mot.length >= 3 && !cherches.has(mot)) { cherches.add(mot); compter(`recherche-vide@${(window.CONF || {}).id || "annuaire"}/${mot}`, "Recherche sans résultat : " + mot); }
     }, 1500);
     if (compte) compte.textContent = T(`${n} résultat${n > 1 ? "s" : ""}`, `${n} نتيجة`);
   }
-  if (champ) champ.addEventListener("input", filtrer);
+  if (champ) { champ.addEventListener("input", filtrer); champ.addEventListener("focus", charger, { once: true }); }
+  if (voirTout) voirTout.addEventListener("click", () => { voirTout.disabled = true; charger().then(() => { voirTout.disabled = false; }); });
   if (choixG) choixG.addEventListener("change", filtrer);
   const choisir = m => {
     metier = m;

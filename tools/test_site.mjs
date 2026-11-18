@@ -243,10 +243,12 @@ const man = JSON.parse(lire("manifest.webmanifest"));
 check("manifeste : id unique du site, icônes présentes", man.id === BASE && man.icons.every(i => existsSync(join(root, i.src))) && existsSync(join(root, "assets/icons/apple-touch-icon.png")) && existsSync(join(root, "assets/logo.svg")));
 const sm = lire("sitemap.xml");
 check("plan du site : toutes les pages", pages.every(p => sm.includes(C.url + p.replace(/index\.html$/, ""))));
+// accueil complet = la page + le reste de la liste chargé au 1er geste (assets/liste-accueil.json, accueil léger du 19/11/2026)
+function accueilComplet(L) { let h = L("index.html"); try { h += JSON.parse(L("assets/liste-accueil.json")).html; } catch { /* petit annuaire : tout est dans la page */ } return h; }
 // pages « métier » et « métier dans un gouvernorat » (visibilité Google, 08/10/2026)
 if (C.metiers.length > 1) {
   const paires = {};
-  for (const [, g, m] of lire("index.html").matchAll(/class="fiche-carte[^"]*" href="[^"]*" data-cherche="[^"]*" data-g="([^"]+)" data-m="([^"]+)"/g)) paires[m + "/" + g] = (paires[m + "/" + g] || 0) + 1;
+  for (const [, g, m] of accueilComplet(lire).matchAll(/class="fiche-carte[^"]*" href="[^"]*" data-cherche="[^"]*" data-g="([^"]+)" data-m="([^"]+)"/g)) paires[m + "/" + g] = (paires[m + "/" + g] || 0) + 1;
   const metiersAvec = [...new Set(Object.keys(paires).map(k => k.split("/")[0]))];
   const pagesMG = pages.filter(p => /^metier\/[^/]+\/[^/]+\/index\.html$/.test(p));
   check(`pages « métier » (${metiersAvec.length}) et « métier dans un gouvernorat » (${Object.keys(paires).length}) : une par combinaison qui a des fiches, jamais de page vide, dans le plan du site`,
@@ -281,6 +283,8 @@ else {
     const dom = new JSDOM(html, { runScripts: "outside-only", url: C.url + p.replace(/index\.html$/, "") + query });
     const w = dom.window, envois = [];
     w.goatcounter = { count: o => envois.push(o.path) };
+    // fetch du faux navigateur : lit le fichier du site (reste de la liste de l'accueil, 19/11/2026)
+    w.fetch = async u => { const f = String(u).split("?")[0].replace(/^(\.\.\/)+/, ""); return existsSync(join(root, f)) ? { ok: true, json: async () => JSON.parse(lire(f)) } : { ok: false, status: 404 }; };
     for (const js of ["assets/conf.js", "assets/page.js", "assets/annuaire.js"]) w.eval(lire(js));
     await new Promise(r => setTimeout(r, 50));
     return { w, d: w.document, envois };
@@ -288,7 +292,17 @@ else {
   let { w, d } = await ouvrir("index.html");
   check("accueil : en-tête et pied fabriqués (nom du site, crédit OpenStreetMap)", d.getElementById("entete").textContent.includes(C.nom.fr) && /OpenStreetMap/.test(d.getElementById("pied").textContent));
   const visibles = () => [...d.querySelectorAll(".fiche-carte")].filter(c => !c.hidden).length;
-  check("accueil : toutes les fiches visibles au départ", visibles() === fichesPages.length);
+  // 19/11/2026 (accueil léger, CV.3) : au départ seulement les premières fiches, mais le VRAI total affiché ; « Voir les N fiches » charge le reste
+  { const reste = d.getElementById("liste").dataset.reste;
+    if (fichesPages.length > 24) {
+      check("accueil léger : 24 fiches au plus dans la page, le reste dans assets/liste-accueil.json, vrai total affiché",
+        !!reste && d.querySelectorAll(".fiche-carte").length <= 24 && d.getElementById("compte").textContent.startsWith(String(fichesPages.length)) && !!d.getElementById("voir-tout")
+        && JSON.parse(lire("assets/liste-accueil.json")).total === fichesPages.length);
+      d.getElementById("voir-tout").dispatchEvent(new w.Event("click"));
+      await new Promise(r => setTimeout(r, 50));
+    } else check("petit annuaire : toutes les fiches dans l'accueil, pas de fichier à charger", !reste && !existsSync(join(root, "assets/liste-accueil.json")));
+  }
+  check("accueil : toutes les fiches visibles (après « Voir les N fiches » si la liste est longue)", visibles() === fichesPages.length);
   // 21/10/2026 (Ahmed) : chaque grande carte de métier mène à la page du métier (comme la liste « Par métier ») ;
   // plus de petits boutons de métier en double sur l'accueil
   { const cartesM = [...d.querySelectorAll("a.metier[data-m]")];
@@ -422,7 +436,7 @@ else {
     writeFileSync(join(tmp, "config.json"), JSON.stringify(cfg));
     execFileSync(process.execPath, [join(tmp, "tools/construire.mjs")], { env: { ...process.env, PRO_OUVERT: "1", AUJOURDHUI: "2026-10-15" }, stdio: "pipe" });
     const L = f => readFileSync(join(tmp, f), "utf8");
-    const accueil = L("index.html"), gEssai = attendues.find(f => f.id === idEssai).gouvernorat;
+    const accueil = accueilComplet(L), gEssai = attendues.find(f => f.id === idEssai).gouvernorat;
     const ordre = [...L(`gouvernorat/${gEssai}/index.html`).matchAll(/href="\.\.\/\.\.\/fiche\/([^/]+)\//g)].map(m => m[1]);
     check("Pro en mois gratuit : en tête de son gouvernorat, badge « Pro », note honnête sur l'ordre", ordre[0] === idEssai && /class="badge pro"/.test(accueil) && /note-pro/.test(L(`gouvernorat/${gEssai}/index.html`)));
     const fe = L(`fiche/${idEssai}/index.html`);

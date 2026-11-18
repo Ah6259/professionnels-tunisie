@@ -116,7 +116,7 @@ const ICO = {
   ok: '<path d="M5 12l5 5 9-10"/>',
 };
 const svg = n => `<svg viewBox="0 0 24 24" aria-hidden="true">${ICO[n]}</svg>`;
-const imgMetier = (m, racine, taille = 40) => `<img class="ill-metier" src="${racine}assets/metiers/${m.id}.svg" alt="" width="${taille}" height="${taille}">`;
+const imgMetier = (m, racine, taille = 40, paresseux = false) => `<img class="ill-metier" src="${racine}assets/metiers/${m.id}.svg" alt="" width="${taille}" height="${taille}"${paresseux ? ' loading="lazy" decoding="async"' : ""}>`;
 // photo du bandeau (Wikimedia, licence libre) et son crédit : obligatoires (checklist visuelle)
 const P = C.photo;
 // photo réelle par métier (config.metiers[].photo, Wikimedia, licence libre) : plus de sérieux ; crédits sur la page À propos
@@ -200,7 +200,7 @@ function carte(f, racine) {
   const g = G[f.gouvernorat], m = M[f.metier];
   const cherche = [f.nom, f.nom_ar, f.ville, f.adresse, g[1], g[2], m.fr, m.ar, m.mots].filter(Boolean).join(" ");
   return `<a class="fiche-carte${f.pro ? " pro" : ""}" href="${racine}fiche/${f.id}/" data-cherche="${esc(cherche)}" data-g="${f.gouvernorat}" data-m="${f.metier}">
-  ${imgMetier(m, racine, 34)}
+  ${imgMetier(m, racine, 34, true)}
   <span class="fc-nom">${esc(f.nom)}${f.nom_ar ? ` <span class="fc-ar" lang="ar">${esc(f.nom_ar)}</span>` : ""}</span>
   ${badges(f)}
   <span class="fc-lieu">${svg("carte")}${[f.ville, null].filter(Boolean).map(esc).join("")}${f.ville ? " · " : ""}${bi(esc(g[1]), esc(g[2]))}</span>
@@ -274,6 +274,13 @@ const compteG = Object.fromEntries(GOUVERNORATS.map(g => [g[0], FICHES.filter(f 
 const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnels", ar_pl: "مهنيين" };
 
 // accueil
+// 19/11/2026 (Ahmed, CV.3 « accueils lourds ») : l'accueil de Professionnels écrivait ses 1 565 fiches (1,8 Mo, 26 000 éléments, 1 600 images) :
+// 9 s avant d'être utilisable sur un téléphone moyen. Seules les PREMIERES fiches sont dans la page ; les autres sont dans
+// assets/liste-accueil.json (même HTML), chargé au 1er geste (recherche, gouvernorat, catégorie, « Voir les N fiches ») — modèle de
+// l'Immobilier (17/11). Les fiches restent toutes liées depuis les pages de gouvernorat et de métier, et dans le plan du site.
+const PREMIERES = 24;
+if (FICHES.length > PREMIERES) writeFileSync(join(root, "assets", "liste-accueil.json"), JSON.stringify({ total: FICHES.length, html: FICHES.slice(PREMIERES).map(f => carte(f, "")).join("\n") }), "utf8");
+else if (existsSync(join(root, "assets", "liste-accueil.json"))) rmSync(join(root, "assets", "liste-accueil.json"));
 {
   const ld = [{ "@context": "https://schema.org", "@type": "WebSite", name: C.nom.fr, url: URL_SITE, inLanguage: ["fr", "ar"] }];
   pages[""] = tete({ titre: `${C.titre_accueil.fr} | ${C.nom.fr}`, desc: C.description, chemin: "", racine: "", jsonld: ld }) + `
@@ -294,7 +301,8 @@ const metierPl = C.metiers.length === 1 ? C.metiers[0] : { fr_pl: "professionnel
   ${C.metiers.length === 1 ? blocLiens({ fr: "Voir aussi", ar: "انظر أيضًا" }, C.metiers[0].liens) : "" /* annuaire à un seul métier : pas de page métier, l'organisme est sur l'accueil (22/10/2026) */}
   ${filtres("", false, FICHES, false)}
   ${notePro(FICHES)}
-  <div class="liste protege" id="liste">${FICHES.map(f => carte(f, "")).join("\n")}</div>
+  <div class="liste protege" id="liste"${FICHES.length > PREMIERES ? ` data-reste="assets/liste-accueil.json?v=${V}" data-total="${FICHES.length}"` : ""}>${FICHES.slice(0, PREMIERES).map(f => carte(f, "")).join("\n")}</div>
+  ${FICHES.length > PREMIERES ? `<p class="voir-tout"><button type="button" class="btn clair" id="voir-tout">${bi(`Voir les ${FICHES.length} fiches`, `عرض ${ISO(FICHES.length)} بطاقة`)}</button></p>` : ""}
   <p class="vide" id="aucun" hidden>${bi("Aucun résultat. Essayez un autre mot ou un autre gouvernorat.", "لا توجد نتيجة. جرّب كلمة أو ولاية أخرى.")}</p>
   ${"" /* liste « Par métier » retirée le 22/10/2026 (Ahmed) : en double des cartes de métier avec photo, qui mènent aux mêmes pages */}
   <h2 class="titre-section">${bi("Par gouvernorat", "حسب الولاية")}</h2>
