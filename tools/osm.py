@@ -7,8 +7,10 @@ import urllib.parse
 import urllib.request
 
 SERVEURS = ["https://overpass-api.de/api/interpreter", "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
-            "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter",
-            "https://overpass.openstreetmap.fr/api/interpreter"]   # un serveur en panne est simplement sauté
+            "https://overpass.kumi.systems/api/interpreter", "https://overpass.private.coffee/api/interpreter"]   # un serveur en panne est simplement sauté
+# 19/11/2026 (robot candidats-metiers rouge depuis le 17/11) : overpass.openstreetmap.fr répond toujours 403 à nos robots (retiré) ; les
+# autres serveurs secondaires étaient surchargés (504) alors que overpass-api.de répondait encore (lent) : le serveur PRINCIPAL est
+# réessayé un essai sur deux (essais 1, 3, 5…), les secondaires entre deux.
 AGENT = "annuaires-tunisie/1.0 (sites gratuits pour la Tunisie ; robot de nuit)"
 
 
@@ -28,7 +30,7 @@ def requete(q, essais=10, verifier=None):
     for i in range(essais):
         if reste() < 30:
             raise RuntimeError(f"Overpass trop lent : budget de {int(BUDGET // 60)} min dépassé ({derniere})")
-        url = SERVEURS[i % len(SERVEURS)]
+        url = SERVEURS[0] if i % 2 == 0 else SERVEURS[1 + (i // 2) % (len(SERVEURS) - 1)]
         try:
             req = urllib.request.Request(url, data=urllib.parse.urlencode({"data": q}).encode(),
                                          headers={"User-Agent": AGENT, "Accept": "application/json"})

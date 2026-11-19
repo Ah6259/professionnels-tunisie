@@ -25,7 +25,11 @@ PAS_UN_METIER = {"office=government", "office=diplomatic", "office=company", "of
                  "office=religion", "office=educational_institution", "office=administrative", "office=yes", "office=quango", "office=union"}
 CONTACT = ("phone", "contact:phone", "mobile", "contact:mobile", "website", "contact:website", "email", "contact:email",
            "contact:facebook", "facebook")
-REQUETE = '[out:json][timeout:180];area["ISO3166-1"="TN"][admin_level=2]->.tn;(nwr["{cle}"](area.tn););out tags;'
+# 19/11/2026 (robot rouge depuis le 17/11 : les serveurs Overpass surchargés refusaient la demande « tout le pays d'un coup », 502 / 504 sur
+# 10 essais, alors qu'une petite demande passait encore en 30 s) : la Tunisie est lue en 4 BANDES (sud, ouest, nord, est), chacune limitée
+# au pays (area), puis les lieux sont réunis sans doublon (un lieu sur une limite de bande n'est compté qu'une fois).
+BANDES = ("36.3,7.5,37.6,11.7", "35.2,7.5,36.3,11.7", "33.8,7.5,35.2,11.7", "30.2,7.5,33.8,11.7")
+REQUETE = '[out:json][timeout:120];area["ISO3166-1"="TN"][admin_level=2]->.tn;nwr["{cle}"]({bande})(area.tn);out tags;'
 
 
 def compter(elements, cle):
@@ -47,13 +51,17 @@ def main():
     deja = {t for m in config["metiers"] for t in m.get("osm") or []}
     tout = {}
     for cle in CLES:
-        try:
-            d = O.requete(REQUETE.format(cle=cle), verifier=lambda d: "elements" in d)
-        except RuntimeError as e:   # panne d'OpenStreetMap (02/11/2026) : ancienne liste gardée, rouge seulement après 2 jours
-            print("OpenStreetMap indisponible :", e, flush=True)
-            return O.noter(RACINE, "candidats", False)
-        tout.update(compter(d["elements"], cle))
-        print(f"{cle} : {len(d['elements'])} lieux en Tunisie")
+        lieux = {}
+        for bande in BANDES:
+            try:
+                d = O.requete(REQUETE.format(cle=cle, bande=bande), verifier=lambda d: "elements" in d)
+            except RuntimeError as e:   # panne d'OpenStreetMap (02/11/2026) : ancienne liste gardée, rouge seulement après 2 jours
+                print("OpenStreetMap indisponible :", e, flush=True)
+                return O.noter(RACINE, "candidats", False)
+            for el in d["elements"]:
+                lieux[(el.get("type"), el.get("id"))] = el
+        tout.update(compter(list(lieux.values()), cle))
+        print(f"{cle} : {len(lieux)} lieux en Tunisie ({len(BANDES)} bandes)")
     candidats = sorted(({"osm": t, "lieux": n, "joignables": j, "deja": t in deja, "sante": t in SANTE,
                          "pas_un_metier": t in PAS_UN_METIER} for t, (n, j) in tout.items()),
                        key=lambda x: (-x["joignables"], -x["lieux"], x["osm"]))
