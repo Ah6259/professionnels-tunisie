@@ -12,7 +12,7 @@
 },
 {
 "osm": "office=government",
-"lieux": 846,
+"lieux": 845,
 "joignables": 55,
 "deja": false,
 "sante": false,
@@ -212,7 +212,7 @@
 },
 {
 "osm": "office=educational_institution",
-"lieux": 52,
+"lieux": 51,
 "joignables": 6,
 "deja": false,
 "sante": false,
@@ -1099,14 +1099,6 @@
 "pas_un_metier": false
 },
 {
-"osm": "office=water_utility",
-"lieux": 10,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
 "osm": "shop=sewing",
 "lieux": 10,
 "joignables": 0,
@@ -1193,6 +1185,14 @@
 "deja": false,
 "sante": false,
 "pas_un_metier": true
+},
+{
+"osm": "office=water_utility",
+"lieux": 8,
+"joignables": 0,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
 },
 {
 "osm": "shop=carpet",
