@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-19",
+"maj": "2026-11-20",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -12,7 +12,7 @@
 },
 {
 "osm": "office=government",
-"lieux": 845,
+"lieux": 846,
 "joignables": 55,
 "deja": false,
 "sante": false,
@@ -188,7 +188,7 @@
 },
 {
 "osm": "shop=convenience",
-"lieux": 982,
+"lieux": 986,
 "joignables": 7,
 "deja": false,
 "sante": false,
@@ -212,7 +212,7 @@
 },
 {
 "osm": "office=educational_institution",
-"lieux": 51,
+"lieux": 55,
 "joignables": 6,
 "deja": false,
 "sante": false,
@@ -300,7 +300,7 @@
 },
 {
 "osm": "shop=hardware",
-"lieux": 186,
+"lieux": 188,
 "joignables": 3,
 "deja": false,
 "sante": false,
@@ -572,7 +572,7 @@
 },
 {
 "osm": "shop=ticket",
-"lieux": 47,
+"lieux": 48,
 "joignables": 1,
 "deja": false,
 "sante": false,
@@ -1099,6 +1099,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "office=water_utility",
+"lieux": 10,
+"joignables": 0,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "shop=sewing",
 "lieux": 10,
 "joignables": 0,
@@ -1185,14 +1193,6 @@
 "deja": false,
 "sante": false,
 "pas_un_metier": true
-},
-{
-"osm": "office=water_utility",
-"lieux": 8,
-"joignables": 0,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
 },
 {
 "osm": "shop=carpet",
@@ -1419,6 +1419,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "office=moving_company",
+"lieux": 3,
+"joignables": 0,
+"deja": true,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "shop=bed",
 "lieux": 3,
 "joignables": 0,
@@ -1540,14 +1548,6 @@
 },
 {
 "osm": "office=accountant",
-"lieux": 2,
-"joignables": 0,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=moving_company",
 "lieux": 2,
 "joignables": 0,
 "deja": true,
