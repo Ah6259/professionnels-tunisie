@@ -55,10 +55,23 @@ def requete(q, essais=10, verifier=None):
 # panne est notée dans donnees/etat-osm.json (enregistré par le robot) et un nouvel essai a lieu au passage suivant ;
 # le robot devient ROUGE seulement si la panne dure depuis plus de 2 jours (PANNE_MAX_JOURS).
 PANNE_MAX_JOURS = 2
+# 24/11/2026 (règle § 55.6, candidats-metiers rouge : les serveurs Overpass publics répondaient 502 / 504 / délai dépassé depuis le
+# 22/11) : une panne DU CÔTÉ des serveurs (5xx, délai dépassé, budget de temps épuisé à attendre) ne se répare pas chez nous ; la
+# source est EN SOMMEIL jusqu'à SOMMEIL_MAX_JOURS (ancien fichier gardé, essai à chaque passage, retour seul) : journal sans rouge.
+# Toute autre erreur (requête refusée 4xx, réponse incomplète…) garde la règle des 2 jours.
+SOMMEIL_MAX_JOURS = 30
 
 
-def decider(etat, robot, reussi, aujourdhui):
+def de_leur_cote(erreur):
+    """Vrai si l'erreur vient des serveurs Overpass eux-mêmes (surcharge, panne, lenteur) — fonction pure, testée."""
+    m = str(erreur).lower()
+    return any(x in m for x in ("http error 5", "gateway", "timed out", "budget de", "temporarily unavailable", "connection reset",
+                                "remote end closed"))
+
+
+def decider(etat, robot, reussi, aujourdhui, leur_cote=False):
     """Fonction pure (testée). etat = contenu de etat-osm.json ; aujourdhui = date ISO.
+    leur_cote = panne des serveurs Overpass eux-mêmes (de_leur_cote) : en sommeil jusqu'à SOMMEIL_MAX_JOURS.
     Renvoie (nouvel état, code de sortie 0/1, message)."""
     import datetime as _dt
     etat = {k: dict(v) for k, v in (etat or {}).items()}
@@ -69,13 +82,16 @@ def decider(etat, robot, reussi, aujourdhui):
     debut = e.get("panne_depuis") or aujourdhui
     e["panne_depuis"] = debut
     jours = (_dt.date.fromisoformat(aujourdhui) - _dt.date.fromisoformat(debut)).days
+    if leur_cote and jours < SOMMEIL_MAX_JOURS:
+        return etat, 0, (f"EN SOMMEIL : serveurs OpenStreetMap en panne de leur côté depuis le {debut} ({jours} jours) : ancien fichier "
+                         f"gardé, nouvel essai à chaque passage, retour seul (rouge après {SOMMEIL_MAX_JOURS} jours)")
     if jours >= PANNE_MAX_JOURS:
         return etat, 1, f"ÉCHEC : OpenStreetMap indisponible depuis le {debut} ({jours} jours) : à réparer"
     return etat, 0, (f"PANNE PASSAGÈRE d'OpenStreetMap (depuis le {debut}) : ancien fichier gardé, nouvel essai au prochain passage "
                      f"(rouge seulement après {PANNE_MAX_JOURS} jours)")
 
 
-def noter(racine, robot, reussi):
+def noter(racine, robot, reussi, leur_cote=False):
     """Met à jour donnees/etat-osm.json et renvoie le code de sortie du robot (0 = vert)."""
     import datetime as _dt
     chemin = os.path.join(racine, "donnees", "etat-osm.json")
@@ -84,7 +100,7 @@ def noter(racine, robot, reussi):
             etat = json.load(f)
     except (OSError, ValueError):
         etat = {}
-    etat, code, message = decider(etat, robot, reussi, _dt.date.today().isoformat())
+    etat, code, message = decider(etat, robot, reussi, _dt.date.today().isoformat(), leur_cote)
     os.makedirs(os.path.dirname(chemin), exist_ok=True)
     with open(chemin, "w", encoding="utf-8", newline="\n") as f:
         f.write(json.dumps(etat, ensure_ascii=False, indent=1, sort_keys=True) + "\n")

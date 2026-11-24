@@ -57,7 +57,7 @@ def main():
                 d = O.requete(REQUETE.format(cle=cle, bande=bande), verifier=lambda d: "elements" in d)
             except RuntimeError as e:   # panne d'OpenStreetMap (02/11/2026) : ancienne liste gardée, rouge seulement après 2 jours
                 print("OpenStreetMap indisponible :", e, flush=True)
-                return O.noter(RACINE, "candidats", False)
+                return O.noter(RACINE, "candidats", False, O.de_leur_cote(e))   # serveurs en panne de leur côté : en sommeil (24/11/2026)
             for el in d["elements"]:
                 lieux[(el.get("type"), el.get("id"))] = el
         tout.update(compter(list(lieux.values()), cle))
