@@ -1,5 +1,5 @@
 /* Moteur d'annuaire — style commun (les couleurs du site sont dans couleurs.css, fabriqué depuis config.json) */
-:root{--fond:#F4F7FA;--carte:#fff;--texte:#14202E;--doux:#5B6878;--ligne:#E1E7EE;--vert:#1E8E4E;--ombre:0 1px 3px rgba(14,34,56,.08),0 4px 14px rgba(14,34,56,.05)}
+:root{--fond:#F4F7FA;--carte:#fff;--texte:#14202E;--doux:#5B6878;--ligne:#E1E7EE;--vert:#1A7F45;--ombre:0 1px 3px rgba(14,34,56,.08),0 4px 14px rgba(14,34,56,.05)}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--fond);color:var(--texte);font:16px/1.55 Figtree,system-ui,-apple-system,"Segoe UI",sans-serif}
@@ -250,3 +250,12 @@ html[dir="rtl"] .paie-etapes>li::before{left:auto;right:12px}
 .hero .lien-comment{margin:12px 0 0;font-size:14px}
 .hero .lien-comment a{color:#fff;font-weight:700;text-decoration:underline;text-underline-offset:3px}
 .texte .fonctions li,.texte ol li{margin:0 0 8px}
+/* AN.2 (25/11/2026) : encadré discret « C'est votre établissement ? » en haut d'une fiche (sans formule Pro) ; AN.1 : contacts du mois.
+   Carte blanche sur le bandeau (texte foncé, lisible sur la photo), petit bouton : Appeler / WhatsApp restent visibles sans défiler. */
+.encadre-pro{display:flex;flex-wrap:wrap;align-items:center;gap:8px 12px;margin:12px 0 0;max-width:680px;background:var(--carte);color:var(--texte);border-radius:12px;padding:9px 12px;border-inline-start:4px solid #F2B33D;box-shadow:0 4px 14px rgba(0,0,0,.15);font-size:14px;line-height:1.4}
+.encadre-pro p{margin:0;flex:1 1 220px;min-width:0}
+.encadre-pro .contacts-mois{display:block;margin-top:2px;color:var(--p-fonce,var(--texte))}
+.encadre-pro .btn{padding:7px 12px;font-size:14px;border-radius:10px;flex:none}
+.encadre-pro .btn svg{width:16px;height:16px}
+p.contacts-mois{margin:12px 0 0;font-weight:700;font-size:14px;color:var(--texte)}
+@media (max-width:420px){.encadre-pro{font-size:13px;padding:8px 10px}.encadre-pro .btn{padding:6px 10px;font-size:13px}}

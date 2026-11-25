@@ -1,6 +1,6 @@
 /* Moteur d'annuaire — recherche et filtres, formulaires (envoi au clic), statistiques anonymes des clics.
-   Statistiques : GoatCounter compte « clic-<type>/<fiche> » (appel, WhatsApp, itinéraire) : c'est ce qui permettra
-   de montrer à un professionnel combien de clients l'ont contacté. Jamais de donnée personnelle. */
+   Statistiques : GoatCounter compte « clic-<type>@<annuaire>/<fiche> » (appel, WhatsApp, itinéraire) : chiffre « contacts du mois »
+   montré sur la fiche (AN.1) ; et « clic/inscription-<endroit>@<annuaire> » (AN.4). Jamais de donnée personnelle. */
 const sansAccent = s => (s || "").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[إأآا]/g, "ا").replace(/ة/g, "ه").replace(/ى/g, "ي");
 // recherche « au son » (règle commune § 11.11, 18/10/2026, Ahmed : « Jerba et Djerba doivent donner le même résultat ») : même calcul
 // pour ce qu'on tape et pour les fiches : Dj = J, Ou = W = U, Q = K, Sh = Ch, Y = I, Ph = F, lettres doublées, article collé
@@ -99,7 +99,16 @@ document.addEventListener("click", e => {
   const a = e.target.closest && e.target.closest("[data-clic]");
   if (!a) return;
   const fiche = a.closest("[data-fiche]");
-  if (fiche) compter(`clic-${a.dataset.clic}/${fiche.dataset.fiche}`, `Clic ${a.dataset.clic} : ${document.title.split(" — ")[0]}`);
+  // 25/11/2026 (AN.1) : « @<annuaire> » dans le nom, car une même fiche peut être dans deux annuaires (fiches reprises) : le robot
+  // annuaires/contacts_goatcounter.py (projets-ahmed) en tire le chiffre « contacts du mois » de CHAQUE fiche, sans mélange
+  if (fiche) compter(`clic-${a.dataset.clic}@${(window.CONF || {}).id || "annuaire"}/${fiche.dataset.fiche}`, `Clic ${a.dataset.clic} : ${document.title.split(" — ")[0]}`);
+});
+/* --- AN.4 (25/11/2026, Ahmed) : clics vers l'inscription des professionnels, comptés selon l'endroit (data-inscription) :
+   entete, fiche, fiche-corriger, accueil-haut, accueil-pro / -gratuite, gouvernorat-pro / -gratuite, gouvernorat-vide, metier-pro / -gratuite, pied.
+   Événement « clic/inscription-<endroit>@<annuaire> », séparé des contacts (clic-tel / whatsapp / itineraire). Rien de personnel. */
+document.addEventListener("click", e => {
+  const a = e.target.closest && e.target.closest("[data-inscription]");
+  if (a) compter(`clic/inscription-${a.dataset.inscription}@${(window.CONF || {}).id || "annuaire"}`, `Clic vers l'inscription (${a.dataset.inscription})`);
 });
 
 /* --- page Professionnels : fiche et action pré-remplies depuis le lien d'une fiche --- */

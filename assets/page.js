@@ -23,11 +23,11 @@
     if (e) e.innerHTML = `<div class="wrap">
       <a class="logo" href="${racine || "./"}"><img src="${racine}assets/logo.svg" alt="" width="34" height="34">
         <span>${t(C.nom)}<small>${t(C.sous_titre)}</small></span></a>
-      <div class="entete-boutons"><button class="partager" type="button" aria-label="${T("Partager cette page", "شارك هذه الصفحة")}" title="${T("Partager", "شارك")}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button><a class="entete-pro" href="${racine}inscription/#offres">${T("Inscription Pro", "تسجيل Pro")}</a>
+      <div class="entete-boutons"><button class="partager" type="button" aria-label="${T("Partager cette page", "شارك هذه الصفحة")}" title="${T("Partager", "شارك")}"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg></button><a class="entete-pro" href="${racine}inscription/#offres" data-inscription="entete">${T("Inscription Pro", "تسجيل Pro")}</a>
       <button class="langue" type="button" aria-label="${T("Lire en arabe", "Lire en français")}" title="${T("العربية", "Français")}">${T("ع", "Fr")}</button></div></div>`;
     const p = document.getElementById("pied");
     if (p) p.innerHTML = `<div class="wrap">
-      <nav><a href="${racine || "./"}">${T("Accueil", "الرئيسية")}</a><a href="${racine}inscription/">${T("Professionnels", "المهنيون")}</a>
+      <nav><a href="${racine || "./"}">${T("Accueil", "الرئيسية")}</a><a href="${racine}inscription/" data-inscription="pied">${T("Professionnels", "المهنيون")}</a>
         <a href="${racine}a-propos/">${T("Comment fonctionne le site\u00a0?", "كيف يعمل الموقع؟")}</a><a href="${racine || "./"}#avis">${T("Votre avis", "رأيك")}</a>
         ${C.liens.slice(0, 1).map(l => `<a href="${l.url}">${t(l)}</a>`).join("")}<a href="https://clicvia.com/" rel="noopener" target="_blank">${T("Tous nos services", "كل خدماتنا")}</a>
         <a href="${T("https://clicvia.com/confidentialite/", "https://clicvia.com/ar/confidentialite/")}">${T("Confidentialité", "الخصوصية")}</a><a href="${T("https://clicvia.com/conditions/", "https://clicvia.com/ar/conditions/")}">${T("Conditions d'utilisation", "شروط الاستعمال")}</a>

@@ -381,7 +381,22 @@ else {
   const r = await ouvrir(`fiche/${fTel.id}/index.html`);
   const bouton = r.d.querySelector("[data-clic]");
   if (bouton) { bouton.addEventListener("click", e => e.preventDefault()); bouton.dispatchEvent(new r.w.MouseEvent("click", { bubbles: true })); }
-  check("fiche : un clic (appel / WhatsApp / itinéraire) est compté anonymement", !bouton || r.envois.some(e => e === `clic-${bouton.dataset.clic}/${fTel.id}`));
+  check("fiche : un clic (appel / WhatsApp / itinéraire) est compté anonymement, avec l'annuaire (clic-<type>@<annuaire>/<fiche>, AN.1)", !bouton || r.envois.some(e => e === `clic-${bouton.dataset.clic}@${C.id}/${fTel.id}`));
+  // AN.4 (25/11/2026) : clics vers l'inscription comptés selon l'endroit, jamais mêlés aux contacts
+  { const clic = (o, el) => { if (!el) return false; el.addEventListener("click", e => e.preventDefault()); el.dispatchEvent(new o.w.MouseEvent("click", { bubbles: true })); return true; };
+    const ent = r.d.querySelector("#entete .entete-pro");
+    check("AN.4 : bouton doré de l'en-tête -> clic compté « clic/inscription-entete@<annuaire> »", clic(r, ent) && r.envois.includes(`clic/inscription-entete@${C.id}`));
+    const enc = r.d.querySelector(".encadre-pro a[data-inscription]");
+    if (C.inscriptions_ouvertes === true) check("AN.4 : bouton de l'encadré d'une fiche -> « clic/inscription-fiche@<annuaire> », pas un contact (aucun clic-reclamer)",
+      clic(r, enc) && r.envois.includes(`clic/inscription-fiche@${C.id}`) && !r.envois.some(e => /^clic-reclamer/.test(e)));
+    const a = await ouvrir("index.html"), b = a.d.querySelector('.pro-appel a[data-inscription="accueil-pro"]');
+    check("AN.4 : bouton Pro du bas de l'accueil -> « clic/inscription-accueil-pro@<annuaire> »", clic(a, b) && a.envois.includes(`clic/inscription-accueil-pro@${C.id}`));
+    const LIEUX = /^(entete|pied|fiche|fiche-corriger|accueil-haut|gouvernorat-vide|(accueil|gouvernorat|metier)-(pro|gratuite))$/;
+    const html = pages.filter(p => /^(index\.html|gouvernorat\/|metier\/|fiche\/)/.test(p)).slice(0, 600).map(lire).join("\n");
+    const liens = [...html.matchAll(/<a [^>]*href="[^"]*inscription\/[^"]*"[^>]*>/g)].map(m => m[0]);
+    const sans = liens.filter(l => !/data-inscription="([^"]+)"/.test(l) || !LIEUX.test(l.match(/data-inscription="([^"]+)"/)[1]));
+    check(`AN.4 : chaque lien vers l'inscription (accueil, gouvernorats, métiers, fiches) porte un endroit connu${sans.length ? " — " + sans[0] : ""}`, liens.length > 0 && !sans.length);
+    check("AN.4 : le lien « Professionnels » du pied de page est compté (pied)", /data-inscription="pied"/.test(lire("assets/page.js"))); }
   const ins = await ouvrir("inscription/index.html", `?fiche=${f0.id}&action=retirer`);
   check("professionnels : ancien lien « retirer » -> fiche pré-remplie et « corriger » choisi", ins.d.getElementById("champ-fiche").value === f0.id && ins.d.querySelector('input[name="action"][value="corriger"]').checked);
   {
@@ -449,6 +464,36 @@ else {
       /data-envoi="pro"/.test(io) && /name="formule" value="pro"/.test(io) && /name="autorise"[^>]*required/.test(io) && /name="conditions"[^>]*required/.test(io) && /aucun renouvellement automatique/.test(L("conditions/index.html")));
     check("coordonnées de paiement (virement + D17) dans le bouton « Paiement » de l'offre Pro ET dans la confirmation après l'envoi", ["00 000 0000000000000 00", "D17", "99 999 999"].every(x => io.slice(io.indexOf('<details class="paiement"'), io.indexOf("paie-confiance")).includes(x)) && /<div class="apres-pro" id="apres-pro" hidden>[\s\S]*00 000 0000000000000 00/.test(io) && /href="#pro"/.test(io));
     check("fiche non Pro : lien « Vérifiez votre fiche gratuitement » vers le formulaire Pro", L(`fiche/${idVerif}/index.html`).includes(`inscription/?fiche=${idVerif}&amp;nom=`));
+    // AN.2 (25/11/2026) : encadré du professionnel EN HAUT de la fiche (sous le nom), à la place de l'ancien lien du bas
+    { const fv = L(`fiche/${idVerif}/index.html`), gv = attendues.find(f => f.id === idVerif).gouvernorat;
+      const gNom = { "ariana": "Ariana", "beja": "Béja", "ben-arous": "Ben Arous", "bizerte": "Bizerte", "gabes": "Gabès", "gafsa": "Gafsa", "jendouba": "Jendouba", "kairouan": "Kairouan", "kasserine": "Kasserine", "kebili": "Kébili", "le-kef": "Le Kef", "mahdia": "Mahdia", "la-manouba": "La Manouba", "medenine": "Médenine", "monastir": "Monastir", "nabeul": "Nabeul", "sfax": "Sfax", "sidi-bouzid": "Sidi Bouzid", "siliana": "Siliana", "sousse": "Sousse", "tataouine": "Tataouine", "tozeur": "Tozeur", "tunis": "Tunis", "zaghouan": "Zaghouan" }[gv];
+      const enc = (fv.match(/<div class="encadre-pro">[\s\S]*?<\/div>/) || [""])[0];
+      check("AN.2 : fiche sans formule Pro -> encadré dans le bandeau, sous le nom (avant les boutons Appeler / WhatsApp), FR + AR, gouvernorat cité, vrai bouton vers le formulaire Pro (nom pré-rempli)",
+        !!enc && fv.indexOf('class="encadre-pro"') > fv.indexOf('class="titre-fiche"') && fv.indexOf('class="encadre-pro"') < fv.indexOf("<main") &&
+        enc.includes(`passez en tête ${/^[AEIOUÉ]/.test(gNom) ? "d'" + gNom : gNom === "Le Kef" ? "du Kef" : "de " + gNom} avec la formule Pro`) && /تصدّر قائمة ولاية/.test(enc) && /<a class="btn clair" href="\.\.\/\.\.\/inscription\/\?fiche=[^"&]+&amp;nom=[^"]+#pro" data-inscription="fiche">/.test(enc));
+      check("AN.2 : l'ancien lien « Vérifiez votre fiche gratuitement » du bas a disparu (pas de doublon), « Compléter ou corriger » reste", !/data-clic="reclamer"/.test(fv) && (fv.match(/Vérifiez votre fiche gratuitement/g) || []).length === 1 && /action=corriger/.test(fv));
+      check("AN.2 : fiche Pro -> pas d'encadré", !/class="encadre-pro"/.test(fe)); }
+    // AN.1 (25/11/2026) : contacts du mois (données inventées) ; AUJOURDHUI 2026-10-15 -> mois précédent = septembre 2026
+    { const idC = ids[2], idSans = ids[1];
+      const construire = (contenu, jour = "2026-10-15") => { writeFileSync(join(tmp, "donnees/contacts.json"), JSON.stringify(contenu));
+        execFileSync(process.execPath, [join(tmp, "tools/construire.mjs")], { env: { ...process.env, PRO_OUVERT: "1", AUJOURDHUI: jour }, stdio: "pipe" }); };
+      construire({ mois: "2026-09", fiches: { [idC]: 12, [idEssai]: 1, [idSans]: 0 } });
+      const fc = L(`fiche/${idC}/index.html`), fp = L(`fiche/${idEssai}/index.html`), fs0 = L(`fiche/${idSans}/index.html`);
+      check("AN.1 : chiffre du mois précédent dans l'encadré de la fiche (FR + AR), une seule fois",
+        /<div class="encadre-pro">[\s\S]*📞 12\u00a0contacts par notre site en septembre 2026[\s\S]*<\/div>/.test(fc) && fc.includes("طلب اتصال عبر موقعنا في سبتمبر") && (fc.match(/📞/g) || []).length === 2);
+      check("AN.1 : fiche Pro (sans encadré) -> phrase complète sous les boutons (singulier juste)", fp.includes('<p class="contacts-mois">') && fp.includes("📞 1\u00a0demande de contact (appel, WhatsApp, itinéraire) par notre site en septembre 2026"));
+      check("AN.1 : 0 contact ou fiche absente du fichier -> rien d'affiché", !/📞|contacts-mois/.test(fs0));
+      construire({ mois: "2026-08", fiches: { [idC]: 12 } });
+      check("AN.1 : fichier périmé (mois d'avant le mois précédent) -> rien d'affiché", !/contacts-mois|📞/.test(L(`fiche/${idC}/index.html`)));
+      construire({ mois: "2026-10", fiches: { [idC]: 12 } });
+      check("AN.1 : mois en cours (pas fini) -> rien d'affiché", !/contacts-mois|📞/.test(L(`fiche/${idC}/index.html`)));
+      construire({ mois: "2026-09", fiches: { [idC]: "12" } });
+      check("AN.1 : chiffre illisible -> rien d'affiché (jamais inventé)", !/📞/.test(L(`fiche/${idC}/index.html`)));
+      construire({ mois: "2026-12", fiches: { [idC]: 4 } }, "2027-01-03");
+      check("AN.1 : janvier -> décembre de l'année d'avant", L(`fiche/${idC}/index.html`).includes("décembre 2026"));
+      rmSync(join(tmp, "donnees/contacts.json"));
+      execFileSync(process.execPath, [join(tmp, "tools/construire.mjs")], { env: { ...process.env, PRO_OUVERT: "1", AUJOURDHUI: "2026-10-15" }, stdio: "pipe" });
+      check("AN.1 : pas de fichier contacts -> rien d'affiché, pages construites", !/📞/.test(L(`fiche/${idC}/index.html`)) && /class="encadre-pro"/.test(L(`fiche/${idC}/index.html`))); }
     check("jamais « meilleur » dans l'espace professionnels", !/meilleur/i.test(io.replace(/n'écrivons jamais qu'un établissement est « le meilleur »/g, "")) && !/meilleur/i.test(L("conditions/index.html").replace(/« le meilleur »/g, "")));
     if (JSDOM) {
       const html = io.replace(/<script[^>]*src="[^"]*"[^>]*><\/script>/g, "");
@@ -496,7 +541,10 @@ else {
     ["liens vers nos autres sites", /liens-amis|lien-vedette|lien-retour/.test(acc + autres), /Nos autres sites gratuits/],
     ["installation sur le téléphone", existsSync(join(root, "manifest.webmanifest")) && existsSync(join(root, "sw.js")), /écran d'accueil/],
     ["mise à jour automatique (robot du 1er du mois)", existsSync(join(root, ".github/workflows/maj.yml")), /chaque mois \(le 1er\)/],
-    ["statistiques anonymes (GoatCounter, recherches sans résultat)", /recherche-vide@/.test(ajs), /GoatCounter[\s\S]*mots cherchés sans résultat/]];
+    ["statistiques anonymes (GoatCounter, recherches sans résultat)", /recherche-vide@/.test(ajs), /GoatCounter[\s\S]*mots cherchés sans résultat/],
+    ["clics vers l'espace professionnels comptés (AN.4)", /data-inscription/.test(ajs), /clics vers l'espace professionnels/],
+    ["contacts du mois sur la fiche (AN.1)", /contacts\.json/.test(lire("tools/construire.mjs")), /Contacts du mois<\/strong>[\s\S]*mois précédent/],
+    ["encadré « C'est votre établissement ? » (AN.2)", /class="encadre-pro"/.test(fiches), /Encadré « C'est votre établissement/]];
   const manque = FONCTIONS.filter(([, sur, re]) => sur && !re.test(ap)).map(([n]) => n);
   check(`page « Comment fonctionne le site ? » à jour : chaque fonction du site y est expliquée (${FONCTIONS.filter(f => f[1]).length} fonctions)` + (manque.length ? " — manque : " + manque.join(", ") : ""),
     manque.length === 0);
