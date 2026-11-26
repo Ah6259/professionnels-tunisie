@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-25",
+"maj": "2026-11-26",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -323,6 +323,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "shop=copyshop",
+"lieux": 36,
+"joignables": 3,
+"deja": false,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "shop=houseware",
 "lieux": 31,
 "joignables": 3,
@@ -421,14 +429,6 @@
 {
 "osm": "shop=cosmetics",
 "lieux": 42,
-"joignables": 2,
-"deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "shop=copyshop",
-"lieux": 35,
 "joignables": 2,
 "deja": false,
 "sante": false,
