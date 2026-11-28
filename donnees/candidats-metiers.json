@@ -1,5 +1,5 @@
 {
-"maj": "2026-11-27",
+"maj": "2026-11-28",
 "source": "© les contributeurs d'OpenStreetMap (ODbL)",
 "candidats": [
 {
@@ -12,7 +12,7 @@
 },
 {
 "osm": "office=government",
-"lieux": 844,
+"lieux": 846,
 "joignables": 55,
 "deja": false,
 "sante": false,
@@ -20,7 +20,7 @@
 },
 {
 "osm": "office=company",
-"lieux": 232,
+"lieux": 233,
 "joignables": 52,
 "deja": false,
 "sante": false,
@@ -123,6 +123,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "office=it",
+"lieux": 40,
+"joignables": 11,
+"deja": true,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "shop=optician",
 "lieux": 73,
 "joignables": 10,
@@ -133,14 +141,6 @@
 {
 "osm": "office=estate_agent",
 "lieux": 51,
-"joignables": 10,
-"deja": true,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=it",
-"lieux": 39,
 "joignables": 10,
 "deja": true,
 "sante": false,
@@ -212,7 +212,7 @@
 },
 {
 "osm": "office=educational_institution",
-"lieux": 49,
+"lieux": 55,
 "joignables": 6,
 "deja": false,
 "sante": false,
@@ -396,7 +396,7 @@
 },
 {
 "osm": "office=telecommunication",
-"lieux": 76,
+"lieux": 77,
 "joignables": 2,
 "deja": false,
 "sante": false,
@@ -1419,6 +1419,14 @@
 "pas_un_metier": false
 },
 {
+"osm": "office=moving_company",
+"lieux": 3,
+"joignables": 0,
+"deja": true,
+"sante": false,
+"pas_un_metier": false
+},
+{
 "osm": "shop=bed",
 "lieux": 3,
 "joignables": 0,
@@ -1727,14 +1735,6 @@
 "lieux": 1,
 "joignables": 0,
 "deja": false,
-"sante": false,
-"pas_un_metier": false
-},
-{
-"osm": "office=moving_company",
-"lieux": 1,
-"joignables": 0,
-"deja": true,
 "sante": false,
 "pas_un_metier": false
 },
